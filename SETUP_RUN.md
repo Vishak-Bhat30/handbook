@@ -24,12 +24,32 @@ docker info | head -5  # verify: prints server info, no permission error
 ```
 
 > Fully log out/in (or restart your terminal) so the VS Code integrated
-> terminal also picks up the new group.
+> terminal also picks up the new group. In a shell whose session predates the
+> group change, run commands via `sg docker -c "<command>"` to activate the
+> group without re-logging.
 
 ## 3. Build the base image
 
+The Dockerfile uses `RUN --mount=type=cache ...`, which **requires BuildKit**
+(the legacy builder fails with `the --mount option requires BuildKit`). BuildKit
+needs the `buildx` CLI plugin. If `docker buildx version` errors, install it into
+your user directory (no sudo needed):
+
 ```bash
-docker build -t handbook_base docker/
+mkdir -p ~/.docker/cli-plugins
+VER=$(curl -sSL https://api.github.com/repos/docker/buildx/releases/latest \
+    | grep -oP '"tag_name":\s*"\K[^"]+')
+curl -sSL "https://github.com/docker/buildx/releases/download/${VER}/buildx-${VER}.linux-amd64" \
+    -o ~/.docker/cli-plugins/docker-buildx
+chmod +x ~/.docker/cli-plugins/docker-buildx
+docker buildx version   # verify
+```
+
+Then build (use `sg docker -c "..."` if the docker group isn't active in this
+session):
+
+```bash
+docker buildx build --load -t handbook_base docker/
 ```
 
 ## 4. Install Harbor + the agent harness
