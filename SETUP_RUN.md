@@ -52,6 +52,19 @@ session):
 docker buildx build --load -t handbook_base docker/
 ```
 
+Harbor also drives each task with `docker compose`, so the **Compose v2 CLI
+plugin** must be present. If `docker compose version` errors, install it the same
+way (no sudo):
+
+```bash
+VER=$(curl -sSL https://api.github.com/repos/docker/compose/releases/latest \
+    | grep -oP '"tag_name":\s*"\K[^"]+')
+curl -sSL "https://github.com/docker/compose/releases/download/${VER}/docker-compose-linux-x86_64" \
+    -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+docker compose version   # verify
+```
+
 ## 4. Install Harbor + the agent harness
 
 ```bash
@@ -91,8 +104,17 @@ In its own terminal, leave this running while you run tasks:
 
 ```bash
 .venv/bin/python scripts/proxy_bridge.py
-# [proxy_bridge] forwarding 172.17.0.1:3141 -> 127.0.0.1:3141
+# [proxy_bridge] HTTP bridge 172.17.0.1:3141 -> 127.0.0.1:3141 (flattening chat content; Ctrl-C to stop)
 ```
+
+The bridge does two things: (1) republishes the host-only proxy on the Docker
+bridge gateway so the in-container agent can reach it, and (2) rewrites
+`/v1/chat/completions` requests so each message's `content` is a plain string.
+The proxy crashes on array-style content
+(`(msg.content ?? "").replace is not a function`), but the OpenHands SDK always
+sends `content` as an array of parts, so the bridge flattens the text parts into
+a single string before forwarding. Non-text parts (e.g. images) are dropped
+because the proxy cannot accept them.
 
 ## 7. Run a single task
 
@@ -124,3 +146,6 @@ Results are written under `jobs/` (gitignored).
   avoids in-container MCP proxy port collisions.
 - The proxy reports `usage: 0` tokens, so Harbor's cost/token totals show as
   unknown for these runs.
+- The bridge drops non-text content parts (images from `read_pdf` / `read_media`
+  tool results) because the proxy only accepts string content; image-heavy task
+  steps may be affected.
