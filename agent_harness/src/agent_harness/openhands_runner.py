@@ -155,6 +155,113 @@ def _raise_tool_observation_limit() -> None:
     _message.DEFAULT_TEXT_CONTENT_LIMIT = TOOL_OBSERVATION_CHAR_LIMIT
 
 
+def _serialize_steps(events: list, model: str) -> list[dict[str, Any]]:
+    """Convert the OpenHands event stream into the viewer's ``steps`` schema.
+
+    The Harbor viewer's Trajectory tab renders ``trajectory.steps`` where each
+    step may carry ``message``/``reasoning_content``/``tool_calls``/``observation``
+    (all optional except ``step_id``). Tool calls are merged with their matching
+    observation so the viewer pairs each call with its result. Serialization is
+    best-effort: any per-event failure is skipped rather than aborting the run.
+    """
+    from openhands.sdk.event import ActionEvent, AgentErrorEvent, ObservationEvent
+    from openhands.sdk import MessageEvent
+    from openhands.sdk.llm.message import content_to_str
+
+    def _ts(event: Any) -> str | None:
+        ts = getattr(event, "timestamp", None)
+        if ts is None:
+            return None
+        return ts.isoformat() if hasattr(ts, "isoformat") else str(ts)
+
+    steps: list[dict[str, Any]] = []
+    call_index: dict[str, int] = {}
+
+    for event in events:
+        try:
+            if isinstance(event, ActionEvent):
+                tool_call = getattr(event, "tool_call", None)
+                call_id = event.tool_call_id or getattr(tool_call, "id", None)
+                args: Any = {}
+                raw_args = getattr(tool_call, "arguments", None)
+                if raw_args:
+                    try:
+                        args = json.loads(raw_args)
+                    except (json.JSONDecodeError, TypeError):
+                        args = {"_raw": raw_args}
+                if not isinstance(args, dict):
+                    args = {"value": args}
+                thought = "".join(content_to_str(list(event.thought or [])))
+                steps.append(
+                    {
+                        "step_id": len(steps) + 1,
+                        "timestamp": _ts(event),
+                        "source": "agent",
+                        "model_name": model,
+                        "message": thought or None,
+                        "reasoning_content": event.reasoning_content or None,
+                        "tool_calls": [
+                            {
+                                "tool_call_id": call_id,
+                                "function_name": event.tool_name
+                                or getattr(tool_call, "name", ""),
+                                "arguments": args,
+                            }
+                        ],
+                        "observation": {"results": []},
+                    }
+                )
+                if call_id is not None:
+                    call_index[call_id] = len(steps) - 1
+            elif isinstance(event, ObservationEvent):
+                obs = getattr(event, "observation", None)
+                content = ""
+                if obs is not None:
+                    content = "".join(content_to_str(obs.to_llm_content))
+                result = {"content": content, "source_call_id": event.tool_call_id}
+                idx = call_index.get(event.tool_call_id)
+                if idx is not None:
+                    steps[idx]["observation"]["results"].append(result)
+                else:
+                    steps.append(
+                        {
+                            "step_id": len(steps) + 1,
+                            "timestamp": _ts(event),
+                            "source": "environment",
+                            "observation": {"results": [result]},
+                        }
+                    )
+            elif isinstance(event, MessageEvent):
+                message = getattr(event, "llm_message", None)
+                text = ""
+                if message is not None:
+                    text = "".join(content_to_str(message.content))
+                if text.strip():
+                    is_user = event.source == "user"
+                    steps.append(
+                        {
+                            "step_id": len(steps) + 1,
+                            "timestamp": _ts(event),
+                            "source": "user" if is_user else "agent",
+                            "model_name": None if is_user else model,
+                            "message": text,
+                        }
+                    )
+            elif isinstance(event, AgentErrorEvent):
+                steps.append(
+                    {
+                        "step_id": len(steps) + 1,
+                        "timestamp": _ts(event),
+                        "source": "agent",
+                        "message": f"[agent error] {event.error}",
+                    }
+                )
+        except Exception as exc:  # never let trajectory serialization fail a run
+            _log(f"step serialization skipped an event: {exc}")
+
+    return steps
+
+
 def run(config: dict[str, Any]) -> dict[str, Any]:
     from pydantic import SecretStr
 
@@ -167,7 +274,7 @@ def run(config: dict[str, Any]) -> dict[str, Any]:
         LLMSummarizingCondenser,
         MessageEvent,
     )
-    from openhands.sdk.event import ActionEvent, AgentErrorEvent
+    from openhands.sdk.event import ActionEvent, AgentErrorEvent, ObservationEvent
     from openhands.sdk.llm.message import content_to_str
 
     _raise_tool_observation_limit()
@@ -254,9 +361,11 @@ def run(config: dict[str, Any]) -> dict[str, Any]:
     n_agent_errors = 0
     final_output = ""
     error_message: str | None = None
+    events: list[Event] = []
 
     def callback(event: Event) -> None:
         nonlocal n_tool_calls, n_agent_errors, final_output, error_message
+        events.append(event)
         if isinstance(event, ActionEvent):
             n_tool_calls += 1
         elif isinstance(event, AgentErrorEvent):
@@ -308,6 +417,14 @@ def run(config: dict[str, Any]) -> dict[str, Any]:
     return {
         "agent_id": "openhands_sdk",
         "model": litellm_model,
+        # The Harbor viewer reads the model name off a nested ``agent`` object
+        # (trial page does ``trajectory?.agent.model_name``); emit it so trial
+        # detail pages render instead of crashing.
+        "agent": {"model_name": litellm_model},
+        # The viewer's Trajectory tab reads ``trajectory.steps``; serialize the
+        # OpenHands event stream into its per-step schema so the tab is populated
+        # (an empty list simply renders "0 steps" without crashing).
+        "steps": _serialize_steps(events, litellm_model),
         "final_output": final_output,
         "n_tool_calls": n_tool_calls,
         "n_agent_errors": n_agent_errors,
@@ -335,6 +452,8 @@ def main() -> None:
         result = {
             "agent_id": "openhands_sdk",
             "model": config.get("model"),
+            "agent": {"model_name": config.get("model")},
+            "steps": [],
             "final_output": "",
             "n_tool_calls": 0,
             "stopped_reason": "error",
