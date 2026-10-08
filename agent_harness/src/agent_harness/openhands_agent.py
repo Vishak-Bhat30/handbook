@@ -86,6 +86,8 @@ FORWARDED_LLM_KWARGS = (
 class OpenHandsAgent(BaseAgent):
     """Runs a single OpenHands SDK agent loop inside the task container."""
 
+    runner_path = RUNNER_PATH
+
     def __init__(self, *args, **kwargs) -> None:
         # Pull the allow-listed LLM kwargs out of harbor's ``--ak`` kwargs;
         # BaseAgent would otherwise drop them into **kwargs and discard them.
@@ -149,6 +151,7 @@ class OpenHandsAgent(BaseAgent):
             # trial syncs them back (see openhands_runner log_completions).
             "logDir": REMOTE_LOG_DIR,
         }
+        config.update(self._extra_run_config(task_dir))
         config_path = (self.logs_dir / "openhands_run_config.json").resolve()
         config_path.write_text(json.dumps(config, indent=2))
         await environment.upload_file(str(config_path), REMOTE_CONFIG_PATH)
@@ -162,7 +165,7 @@ class OpenHandsAgent(BaseAgent):
         # redirect would corrupt the machine-readable trajectory.
         command = (
             f"mkdir -p {REMOTE_LOG_DIR} && "
-            f"{shlex.quote(RUNNER_PYTHON)} {shlex.quote(RUNNER_PATH)} "
+            f"{shlex.quote(RUNNER_PYTHON)} {shlex.quote(self.runner_path)} "
             f"{shlex.quote(REMOTE_CONFIG_PATH)} {shlex.quote(REMOTE_TRAJECTORY_PATH)} "
             f"> {REMOTE_RUNNER_LOG_PATH} 2>&1"
         )
@@ -217,6 +220,10 @@ class OpenHandsAgent(BaseAgent):
                 f"{traj.get('n_tool_calls') or 0} tool call(s): "
                 f"{traj.get('error_message') or '<no error message>'}"
             )
+
+    def _extra_run_config(self, task_dir: Path) -> dict:
+        """Extra keys merged into the runner config (overridden by subclasses)."""
+        return {}
 
     async def _proxy_healthy(self, environment: BaseEnvironment) -> bool:
         result = await environment.exec(
