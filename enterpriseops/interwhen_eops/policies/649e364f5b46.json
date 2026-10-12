@@ -1,0 +1,1090 @@
+{
+  "variables": [
+    {
+      "name": "action_creates_case",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call creates a new HR case record."
+    },
+    {
+      "name": "action_case_service_id_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate case-creation call supplies a non-empty hr_service_id argument."
+    },
+    {
+      "name": "action_short_desc_length_ok",
+      "type": "bool",
+      "category": "action",
+      "description": "Every short description / title / brief note text supplied in the candidate call is between 30 and 120 characters inclusive."
+    },
+    {
+      "name": "action_short_desc_template_ok",
+      "type": "bool",
+      "category": "action",
+      "description": "The short_description supplied in a candidate case-creation call follows the template 'Service: ..., Subject: ..., Detail: ...'."
+    },
+    {
+      "name": "action_priority_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies a case priority value that is one of critical, high, moderate, low, planning (true also if priority is omitted)."
+    },
+    {
+      "name": "action_source_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies a case source value that is one of self-service, phone, email, chat, walk-in, virtual-agent (true also if source is omitted)."
+    },
+    {
+      "name": "action_case_status_draft_on_create",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate case-creation call either omits status or sets status = draft."
+    },
+    {
+      "name": "action_sets_status_closed",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an HR case status to 'closed'."
+    },
+    {
+      "name": "context_case_status_closed_complete",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful read of this specific case shows its current status is closed_complete."
+    },
+    {
+      "name": "action_sets_status_closed_complete",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an HR case status to closed_complete."
+    },
+    {
+      "name": "context_all_mandatory_tasks_complete",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result listing the hr_case_task records of this specific case shows all mandatory tasks have active = false or state = closed."
+    },
+    {
+      "name": "action_sets_status_work_in_progress",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an HR case status to work_in_progress."
+    },
+    {
+      "name": "action_assigned_to_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies a non-null assigned_to user for the case, or a prior successful read of this case shows assigned_to is already non-null."
+    },
+    {
+      "name": "context_case_status_canceled",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful read of this specific case shows its current status is canceled."
+    },
+    {
+      "name": "action_changes_case_status",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets or changes the status field of an existing HR case."
+    },
+    {
+      "name": "action_assigns_user_to_case_or_task",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets assigned_to (a specific user) on an HR case or case task."
+    },
+    {
+      "name": "context_assignee_is_active_group_member",
+      "type": "bool",
+      "category": "context",
+      "description": "Prior successful tool results show the user named in the candidate assigned_to is active and is a member of the assignment_group specified for that case/task."
+    },
+    {
+      "name": "action_creates_task",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call creates an hr_case_task record."
+    },
+    {
+      "name": "action_task_type_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The task type supplied in the candidate call is one of checklist, survey, hr service, mark when complete, url."
+    },
+    {
+      "name": "action_links_knowledge",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call links a knowledge article to an HR case."
+    },
+    {
+      "name": "context_article_published",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful retrieval of the specific article being linked shows state = published."
+    },
+    {
+      "name": "action_used_as_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The case_knowledge.used_as value supplied in the candidate call is one of suggested, applied, resolution."
+    },
+    {
+      "name": "action_approves_or_rejects",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an hr_approval record status to approved or rejected."
+    },
+    {
+      "name": "context_actor_role_manager_or_admin",
+      "type": "bool",
+      "category": "context",
+      "description": "The authenticated acting user's role is shown by the request context or a prior successful user lookup of that acting user to be hr_manager/manager or administrator."
+    },
+    {
+      "name": "action_sends_notification",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sends a notification."
+    },
+    {
+      "name": "action_notification_type_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The notification type supplied in the candidate call is one of report, update, alert, reminder, solution_proposal, other (true also if type is omitted)."
+    }
+  ],
+  "rules": [
+    {
+      "id": "case_requires_service_id",
+      "title": "Case creation requires hr_service_id",
+      "rationale": "New cases must reference an active HR service.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.1 Registering an HR Case",
+      "quote": "hr_service_id: Must reference an active service in the hr_service table.",
+      "remediation": "Look up the appropriate active hr_service and supply its ID when creating the case.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_case_service_id_present"
+      }
+    },
+    {
+      "id": "short_desc_length",
+      "title": "Enforce 30-120 character text limits",
+      "rationale": "Free-form text policy sets length bounds.",
+      "source": "HR Management Assistant Policy",
+      "reference": "8 Free Form Text Policies",
+      "quote": "Character Limits: Minimum 30 characters and maximum 120 characters for all short descriptions, titles, and brief notes.",
+      "remediation": "Rewrite the text so it is between 30 and 120 characters.",
+      "when": {
+        "op": "or",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_creates_case"
+          },
+          {
+            "op": "is_true",
+            "field": "action_creates_task"
+          }
+        ]
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_short_desc_length_ok"
+      }
+    },
+    {
+      "id": "short_desc_template",
+      "title": "Case short description must follow template",
+      "rationale": "Standardized description format.",
+      "source": "HR Management Assistant Policy",
+      "reference": "8 Free Form Text Policies",
+      "quote": "Case Short Description Format: Must clearly identify the request type and subject, using the template:",
+      "remediation": "Format the short description as 'Service: ..., Subject: ..., Detail: ...'.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_short_desc_template_ok"
+      }
+    },
+    {
+      "id": "priority_enum",
+      "title": "Priority must use allowed values",
+      "rationale": "Enumerated field values.",
+      "source": "HR Management Assistant Policy",
+      "reference": "7 Predefined Lists",
+      "quote": "hr_case.priority: critical, high, moderate, low, planning",
+      "remediation": "Use one of critical, high, moderate, low, planning, or omit to take the default moderate.",
+      "when": {
+        "op": "or",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_creates_case"
+          },
+          {
+            "op": "is_true",
+            "field": "action_changes_case_status"
+          }
+        ]
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_priority_valid"
+      }
+    },
+    {
+      "id": "source_enum",
+      "title": "Case source must use allowed values",
+      "rationale": "Enumerated source values on case registration.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.1 Registering an HR Case",
+      "quote": "source : self-service, phone, email, chat, walk-in, virtual-agent; [default: chat].",
+      "remediation": "Use one of self-service, phone, email, chat, walk-in, virtual-agent, or omit for the default chat.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_source_valid"
+      }
+    },
+    {
+      "id": "new_case_draft",
+      "title": "New cases start in draft",
+      "rationale": "Policy fixes default status for new cases.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.1 Registering an HR Case",
+      "quote": "Default Status: All new cases are set to status = draft.",
+      "remediation": "Create the case with status draft (or omit status) and transition it afterwards.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_case_status_draft_on_create"
+      }
+    },
+    {
+      "id": "closed_only_from_closed_complete",
+      "title": "Only closed_complete may move to closed",
+      "rationale": "No direct transition to closed from other statuses.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.3 Case Lifecycle Management",
+      "quote": "Closure Constraint: A case cannot transition directly from any status to closed.",
+      "remediation": "Move the case to closed_complete first, then to closed.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_status_closed"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_case_status_closed_complete"
+      }
+    },
+    {
+      "id": "closed_complete_requires_tasks",
+      "title": "Close complete only after mandatory tasks done",
+      "rationale": "Task dependency before completion.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.2 Case Assignment and Task Fulfillment",
+      "quote": "An HR case cannot move to status = closed_complete until all mandatory tasks (hr_case_task.active = false or hr_case_task.state = closed) are complete.",
+      "remediation": "Complete or close all mandatory case tasks before setting closed_complete.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_status_closed_complete"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_all_mandatory_tasks_complete"
+      }
+    },
+    {
+      "id": "wip_requires_assignee",
+      "title": "work_in_progress requires an assignee",
+      "rationale": "Lifecycle rule requires assigned_to non-null for this transition.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.3 Case Lifecycle Management",
+      "quote": "draft/ready \u2192 work_in_progress (assigned to is not null)",
+      "remediation": "Assign the case to an active user before moving it to work_in_progress.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_status_work_in_progress"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_assigned_to_present"
+      }
+    },
+    {
+      "id": "canceled_final",
+      "title": "No transitions out of canceled",
+      "rationale": "Canceled is terminal.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.3 Case Lifecycle Management",
+      "quote": "canceled is a final status; no further transitions are allowed.",
+      "remediation": "Do not change the status of a canceled case; open a new case instead.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_changes_case_status"
+          },
+          {
+            "op": "is_true",
+            "field": "context_case_status_canceled"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "assignee_group_member",
+      "title": "Assignee must be active and in the assignment group",
+      "rationale": "Assignment integrity constraint.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.2 Case Assignment and Task Fulfillment",
+      "quote": "The assigned_to user must be active and a member of the specified assignment_group (if not, add to the group before assignment).",
+      "remediation": "Verify the user is active and add them to the assignment group before assigning.",
+      "when": {
+        "op": "is_true",
+        "field": "action_assigns_user_to_case_or_task"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_assignee_is_active_group_member"
+      }
+    },
+    {
+      "id": "task_type_enum",
+      "title": "Task type must be an allowed value",
+      "rationale": "Enumerated task types.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.2 Case Assignment and Task Fulfillment",
+      "quote": "Task types are limited to: checklist, survey, hr service, mark when complete, url.",
+      "remediation": "Use checklist, survey, hr service, mark when complete, or url.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_task"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_task_type_valid"
+      }
+    },
+    {
+      "id": "link_published_only",
+      "title": "Only published articles may be linked",
+      "rationale": "State constraint on knowledge linking.",
+      "source": "HR Management Assistant Policy",
+      "reference": "4.2 Policy and Knowledge Linking",
+      "quote": "State Constraint: Only articles with knowledge.state = published are visible and linkable.",
+      "remediation": "Retrieve the article and link it only if its state is published.",
+      "when": {
+        "op": "is_true",
+        "field": "action_links_knowledge"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_article_published"
+      }
+    },
+    {
+      "id": "used_as_enum",
+      "title": "used_as must be an allowed value",
+      "rationale": "Enumerated linking type.",
+      "source": "HR Management Assistant Policy",
+      "reference": "7 Predefined Lists",
+      "quote": "case_knowledge.used_as: suggested, applied, resolution",
+      "remediation": "Use suggested, applied, or resolution.",
+      "when": {
+        "op": "is_true",
+        "field": "action_links_knowledge"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_used_as_valid"
+      }
+    },
+    {
+      "id": "approval_actor_role",
+      "title": "Only managers or administrators approve or reject",
+      "rationale": "Approval authority restriction.",
+      "source": "HR Management Assistant Policy",
+      "reference": "3.4 Approvals Management",
+      "quote": "Actor: Only users with role = manager or role = administrator may approve or reject records.",
+      "remediation": "Route the approval to an HR Manager or Administrator.",
+      "when": {
+        "op": "is_true",
+        "field": "action_approves_or_rejects"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_actor_role_manager_or_admin"
+      }
+    },
+    {
+      "id": "notification_type_enum",
+      "title": "Notification type must be an allowed value",
+      "rationale": "Enumerated notification types.",
+      "source": "HR Management Assistant Policy",
+      "reference": "7 Predefined Lists",
+      "quote": "notification type: report, update , alert, reminder, solution_proposal, other;",
+      "remediation": "Use report, update, alert, reminder, solution_proposal, or other.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sends_notification"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_notification_type_valid"
+      }
+    }
+  ],
+  "inventory": [
+    {
+      "id": "halt_on_violation",
+      "quote": "If a user request or internal process step violates any protocol listed in this document, you must halt the operation and provide a citation of the specific policy restriction before pausing.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Describes agent messaging behavior, not an observable tool-call restriction."
+    },
+    {
+      "id": "atomic",
+      "quote": "Perform one distinct operation at a time, unless using a pre-approved batch processing utility.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Not decidable from a single candidate call."
+    },
+    {
+      "id": "no_fabrication",
+      "quote": "Never assume or fabricate IDs, responses, or outcomes.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Diligence expectation; truth of an ID cannot be judged pre-action in general."
+    },
+    {
+      "id": "no_clarification",
+      "quote": "Do not ask for any information or confirmation from the user.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Concerns dialogue, not tool calls."
+    },
+    {
+      "id": "lookups",
+      "quote": "When identifiers such as names or IDs are missing, perform lookups, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Conditional guidance; reads must not be blocked."
+    },
+    {
+      "id": "roles_specialist",
+      "quote": "Cannot modify core user data (login or role), approval records, or system configuration tables.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Acting role rarely observable; approval authority enforced via approval_actor_role."
+    },
+    {
+      "id": "service_id",
+      "quote": "hr_service_id: Must reference an active service in the hr_service table.",
+      "status": "enforced",
+      "rule_ids": [
+        "case_requires_service_id"
+      ],
+      "reason": "Mandatory input on creation."
+    },
+    {
+      "id": "priority_enum_q",
+      "quote": "priority: critical, high, moderate, low, planning,[default : moderate].",
+      "status": "enforced",
+      "rule_ids": [
+        "priority_enum"
+      ],
+      "reason": "Value constraint."
+    },
+    {
+      "id": "source_enum_q",
+      "quote": "source : self-service, phone, email, chat, walk-in, virtual-agent; [default: chat].",
+      "status": "enforced",
+      "rule_ids": [
+        "source_enum"
+      ],
+      "reason": "Value constraint."
+    },
+    {
+      "id": "account_default",
+      "quote": "account: If not provided, [default: NA].",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Default value, not a restriction."
+    },
+    {
+      "id": "draft_default",
+      "quote": "Default Status: All new cases are set to status = draft.",
+      "status": "enforced",
+      "rule_ids": [
+        "new_case_draft"
+      ],
+      "reason": "Fixed initial state."
+    },
+    {
+      "id": "entitlement",
+      "quote": "Upon creation, the system must perform an entitlement check against the subject_person profile and run the associated hr_service.assignment_rule.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "System automation, not an agent pre-action condition."
+    },
+    {
+      "id": "assignee",
+      "quote": "The assigned_to user must be active and a member of the specified assignment_group (if not, add to the group before assignment).",
+      "status": "enforced",
+      "rule_ids": [
+        "assignee_group_member"
+      ],
+      "reason": "Observable precondition."
+    },
+    {
+      "id": "assign_alert",
+      "quote": "When a case is assigned to a user, an alert notification must be sent to that user with case status.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Post-action follow-up; cannot be a pre-action guard on the assignment itself."
+    },
+    {
+      "id": "task_types",
+      "quote": "Task types are limited to: checklist, survey, hr service, mark when complete, url.",
+      "status": "enforced",
+      "rule_ids": [
+        "task_type_enum"
+      ],
+      "reason": "Value constraint."
+    },
+    {
+      "id": "task_dep",
+      "quote": "An HR case cannot move to status = closed_complete until all mandatory tasks (hr_case_task.active = false or hr_case_task.state = closed) are complete.",
+      "status": "enforced",
+      "rule_ids": [
+        "closed_complete_requires_tasks"
+      ],
+      "reason": "Observable prerequisite."
+    },
+    {
+      "id": "wip_assigned",
+      "quote": "draft/ready \u2192 work_in_progress (assigned to is not null)",
+      "status": "enforced",
+      "rule_ids": [
+        "wip_requires_assignee"
+      ],
+      "reason": "Transition condition."
+    },
+    {
+      "id": "canceled_final_q",
+      "quote": "canceled is a final status; no further transitions are allowed.",
+      "status": "enforced",
+      "rule_ids": [
+        "canceled_final"
+      ],
+      "reason": "Prohibited transition."
+    },
+    {
+      "id": "closure",
+      "quote": "Closure Constraint: A case cannot transition directly from any status to closed.",
+      "status": "enforced",
+      "rule_ids": [
+        "closed_only_from_closed_complete"
+      ],
+      "reason": "Transition restriction."
+    },
+    {
+      "id": "approval_seq",
+      "quote": "The approval record status must transition in the sequence: requested \u2192 approved / rejected / canceled.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No approval-record tools/observable prior state declared here."
+    },
+    {
+      "id": "approval_actor",
+      "quote": "Actor: Only users with role = manager or role = administrator may approve or reject records.",
+      "status": "enforced",
+      "rule_ids": [
+        "approval_actor_role"
+      ],
+      "reason": "Authority restriction."
+    },
+    {
+      "id": "sla_pause",
+      "quote": "The SLA clock must be paused when the case status transitions to pending or awaiting_approval.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "System-side automation."
+    },
+    {
+      "id": "sla_breach",
+      "quote": "When an SLA is exceeded (hr_case_sla.breach_state = breached), the case escalation flag must automatically be set to true.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Requires SLA system state."
+    },
+    {
+      "id": "kb_published",
+      "quote": "State Constraint: Only articles with knowledge.state = published are visible and linkable.",
+      "status": "enforced",
+      "rule_ids": [
+        "link_published_only"
+      ],
+      "reason": "Observable precondition."
+    },
+    {
+      "id": "kb_used_as",
+      "quote": "case_knowledge.used_as: suggested, applied, resolution",
+      "status": "enforced",
+      "rule_ids": [
+        "used_as_enum"
+      ],
+      "reason": "Value constraint."
+    },
+    {
+      "id": "kb_visibility",
+      "quote": "visibility = internal: Accessible only by HR Specialist and HR Manager roles.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Depends on requester role and disclosure channel, not reliably observable."
+    },
+    {
+      "id": "kb_creation",
+      "quote": "a new knowledge article must be drafted and linked with used_as = resolution before the case can transition to closed",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Conditioned on 'novel or complex' resolution, which is not observable."
+    },
+    {
+      "id": "profile_update",
+      "quote": "Employees can update only limited fields on their own profile (address, phone). All other updates require an HR case or an approved hr_approval record.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No profile-update capability or observable actor role in this scope."
+    },
+    {
+      "id": "pii_disclosure",
+      "quote": "Do not disclose PII or PHI fields in any public channel (such as email or chat response), even if authorized.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Concerns message content rather than a declared tool argument."
+    },
+    {
+      "id": "pii_logging",
+      "quote": "Any successful read or write operation on an encrypted PII field must create a record in the security_audit log",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Post-action system logging."
+    },
+    {
+      "id": "prevalidation",
+      "quote": "Before executing any operation, validate the existence, status, and integrity of:",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "General validation umbrella; specific items enforced by the transition/assignment rules."
+    },
+    {
+      "id": "logging",
+      "quote": "Update sys_updated_on and updated_by fields automatically.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "System field maintenance."
+    },
+    {
+      "id": "text_limits",
+      "quote": "Character Limits: Minimum 30 characters and maximum 120 characters for all short descriptions, titles, and brief notes.",
+      "status": "enforced",
+      "rule_ids": [
+        "short_desc_length"
+      ],
+      "reason": "Length constraint."
+    },
+    {
+      "id": "desc_template",
+      "quote": "Case Short Description Format: Must clearly identify the request type and subject, using the template:",
+      "status": "enforced",
+      "rule_ids": [
+        "short_desc_template"
+      ],
+      "reason": "Format constraint."
+    },
+    {
+      "id": "notif_enum",
+      "quote": "notification type: report, update , alert, reminder, solution_proposal, other;",
+      "status": "enforced",
+      "rule_ids": [
+        "notification_type_enum"
+      ],
+      "reason": "Value constraint."
+    },
+    {
+      "id": "escalation_template",
+      "quote": "Escalation Reason Content: Must be concise and fact-based, using the template:",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No escalation-reason field in declared scope."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review a proposed HR tool call against the HR Management Assistant Policy. Check: mandatory case-creation inputs (hr_service_id), short description length 30-120 and 'Service:, Subject:, Detail:' template, enum validity for priority, source, task type, used_as and notification type, draft status for new cases, legal status transitions (no direct move to closed, no transitions out of canceled, work_in_progress needs an assignee, closed_complete needs all mandatory tasks closed), assignee active and in the assignment group, linking only published knowledge articles, and approval/rejection only by hr_manager or administrator. Do not block pure read/lookup calls. Judge only from the request, policy defaults and prior successful tool results.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "true if the call complies with the policy"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "policy issues found"
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "From the candidate tool call arguments and prior successful tool results only, set each fact to true, false, or null when evidence is missing. action_* facts describe the candidate call itself; context_* facts require a prior successful observation about the same specific case, task, user, group or article. Requester claims and supplied IDs do not establish active status, group membership, article state, case state or actor role. Failed or blocked calls establish only reported errors. Enum facts are true when the value supplied is in the allowed list or the field is omitted. Provide a short evidence string per fact naming the argument or prior tool result used; use an empty string when unknown.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "properties": {
+            "action_creates_case": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_service_id_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_short_desc_length_ok": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_short_desc_template_ok": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_priority_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_source_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_status_draft_on_create": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_status_closed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_case_status_closed_complete": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_status_closed_complete": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_all_mandatory_tasks_complete": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_status_work_in_progress": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_assigned_to_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_case_status_canceled": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_changes_case_status": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_assigns_user_to_case_or_task": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_is_active_group_member": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_creates_task": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_task_type_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_links_knowledge": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_article_published": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_used_as_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_approves_or_rejects": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_actor_role_manager_or_admin": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sends_notification": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_notification_type_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action_creates_case",
+            "action_case_service_id_present",
+            "action_short_desc_length_ok",
+            "action_short_desc_template_ok",
+            "action_priority_valid",
+            "action_source_valid",
+            "action_case_status_draft_on_create",
+            "action_sets_status_closed",
+            "context_case_status_closed_complete",
+            "action_sets_status_closed_complete",
+            "context_all_mandatory_tasks_complete",
+            "action_sets_status_work_in_progress",
+            "action_assigned_to_present",
+            "context_case_status_canceled",
+            "action_changes_case_status",
+            "action_assigns_user_to_case_or_task",
+            "context_assignee_is_active_group_member",
+            "action_creates_task",
+            "action_task_type_valid",
+            "action_links_knowledge",
+            "context_article_published",
+            "action_used_as_valid",
+            "action_approves_or_rejects",
+            "context_actor_role_manager_or_admin",
+            "action_sends_notification",
+            "action_notification_type_valid"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "action_creates_case": {
+              "type": "string"
+            },
+            "action_case_service_id_present": {
+              "type": "string"
+            },
+            "action_short_desc_length_ok": {
+              "type": "string"
+            },
+            "action_short_desc_template_ok": {
+              "type": "string"
+            },
+            "action_priority_valid": {
+              "type": "string"
+            },
+            "action_source_valid": {
+              "type": "string"
+            },
+            "action_case_status_draft_on_create": {
+              "type": "string"
+            },
+            "action_sets_status_closed": {
+              "type": "string"
+            },
+            "context_case_status_closed_complete": {
+              "type": "string"
+            },
+            "action_sets_status_closed_complete": {
+              "type": "string"
+            },
+            "context_all_mandatory_tasks_complete": {
+              "type": "string"
+            },
+            "action_sets_status_work_in_progress": {
+              "type": "string"
+            },
+            "action_assigned_to_present": {
+              "type": "string"
+            },
+            "context_case_status_canceled": {
+              "type": "string"
+            },
+            "action_changes_case_status": {
+              "type": "string"
+            },
+            "action_assigns_user_to_case_or_task": {
+              "type": "string"
+            },
+            "context_assignee_is_active_group_member": {
+              "type": "string"
+            },
+            "action_creates_task": {
+              "type": "string"
+            },
+            "action_task_type_valid": {
+              "type": "string"
+            },
+            "action_links_knowledge": {
+              "type": "string"
+            },
+            "context_article_published": {
+              "type": "string"
+            },
+            "action_used_as_valid": {
+              "type": "string"
+            },
+            "action_approves_or_rejects": {
+              "type": "string"
+            },
+            "context_actor_role_manager_or_admin": {
+              "type": "string"
+            },
+            "action_sends_notification": {
+              "type": "string"
+            },
+            "action_notification_type_valid": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "action_creates_case",
+            "action_case_service_id_present",
+            "action_short_desc_length_ok",
+            "action_short_desc_template_ok",
+            "action_priority_valid",
+            "action_source_valid",
+            "action_case_status_draft_on_create",
+            "action_sets_status_closed",
+            "context_case_status_closed_complete",
+            "action_sets_status_closed_complete",
+            "context_all_mandatory_tasks_complete",
+            "action_sets_status_work_in_progress",
+            "action_assigned_to_present",
+            "context_case_status_canceled",
+            "action_changes_case_status",
+            "action_assigns_user_to_case_or_task",
+            "context_assignee_is_active_group_member",
+            "action_creates_task",
+            "action_task_type_valid",
+            "action_links_knowledge",
+            "context_article_published",
+            "action_used_as_valid",
+            "action_approves_or_rejects",
+            "context_actor_role_manager_or_admin",
+            "action_sends_notification",
+            "action_notification_type_valid"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

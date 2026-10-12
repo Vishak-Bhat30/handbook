@@ -1,0 +1,1103 @@
+{
+  "variables": [
+    {
+      "name": "action_creates_incident",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call creates a new Incident record (e.g. create_incident)."
+    },
+    {
+      "name": "action_incident_mandatory_fields_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate incident-creation call supplies non-empty opened_by, caller_id, short_description, impact and urgency arguments."
+    },
+    {
+      "name": "action_incident_impact_urgency_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "Every impact/urgency value in the candidate call is one of high, medium, low."
+    },
+    {
+      "name": "action_incident_status_not_new",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate incident-creation call sets a status/state argument to a value other than 'new'."
+    },
+    {
+      "name": "action_sets_incident_resolved",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an incident's status to 'resolved'."
+    },
+    {
+      "name": "action_resolution_fields_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies non-empty resolution_code and resolution_notes arguments."
+    },
+    {
+      "name": "action_resolution_code_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The supplied resolution_code is one of fixed, workaround, not_reproducible, closed_by_caller."
+    },
+    {
+      "name": "action_resolution_notes_too_long",
+      "type": "bool",
+      "category": "action",
+      "description": "The supplied resolution_notes argument exceeds 2000 characters."
+    },
+    {
+      "name": "action_incident_transition_invalid",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call changes an incident status to a target not permitted from its known current status per the allowed transition list (new\u2192in_progress/on_hold/resolved; in_progress\u2192on_hold/resolved; on_hold\u2192in_progress; resolved\u2192closed/in_progress)."
+    },
+    {
+      "name": "action_incident_onhold_to_in_progress",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call moves an incident whose known current status is 'on_hold' to 'in_progress'."
+    },
+    {
+      "name": "context_on_hold_reason_logged",
+      "type": "bool",
+      "category": "context",
+      "description": "Prior successful tool results show an on_hold_reason recorded on that same incident before this candidate call."
+    },
+    {
+      "name": "action_assigns_incident",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets or changes assigned_to on an incident or service request."
+    },
+    {
+      "name": "context_assignee_active_agent_or_manager",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful user lookup shows the assigned_to user has active=true and role agent or manager."
+    },
+    {
+      "name": "context_assignee_in_assignment_group",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows the assigned_to user is a member of the assignment_group named in the candidate call."
+    },
+    {
+      "name": "action_links_ci_to_incident",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call links a configuration item to an incident."
+    },
+    {
+      "name": "context_ci_status_linkable",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful CI lookup shows that CI's status is in_use or maintenance."
+    },
+    {
+      "name": "action_creates_problem",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call creates a new Problem record."
+    },
+    {
+      "name": "action_problem_status_not_new",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate problem-creation call sets a status/state argument to a value other than 'new'."
+    },
+    {
+      "name": "action_sets_problem_closed",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets a problem's status to 'closed'."
+    },
+    {
+      "name": "context_problem_fix_change_implemented",
+      "type": "bool",
+      "category": "context",
+      "description": "Prior successful tool results show a linked change request of type normal or emergency for that problem whose permanent fix was implemented (status implemented/review/closed)."
+    },
+    {
+      "name": "context_actor_role_reporter",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful user lookup identifies the acting (requesting) user's role as 'reporter'."
+    },
+    {
+      "name": "action_targets_record_of_other_user",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call creates or updates an incident/request whose opened_by/caller is a user other than the acting requester."
+    },
+    {
+      "name": "action_targets_cmdb_or_work_notes",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call reads or modifies CMDB configuration items or internal work notes."
+    },
+    {
+      "name": "action_changes_record",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call creates or updates any record (state-changing call), as opposed to a read-only lookup."
+    },
+    {
+      "name": "context_acting_user_verified",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful user lookup in this trajectory returned the acting user's record including role and active status."
+    }
+  ],
+  "rules": [
+    {
+      "id": "incident_mandatory_fields",
+      "title": "Require incident mandatory inputs",
+      "rationale": "Incident creation must carry all mandatory fields.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.1 Incident Registration",
+      "quote": "**Mandatory Inputs:** `opened_by` (user submitting), `caller_id` (user affected), `short_description`, `impact`, and `urgency`.",
+      "remediation": "State which mandatory field is missing and supply opened_by, caller_id, short_description, impact and urgency.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_incident"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_incident_mandatory_fields_present"
+      }
+    },
+    {
+      "id": "incident_impact_urgency_enum",
+      "title": "Impact/urgency must use allowed values",
+      "rationale": "Enumerated fields constrain permitted values.",
+      "source": "ITSM Assistant Policy",
+      "reference": "9 Predefined Lists (Enumerations)",
+      "quote": "| **incident.impact** | `high`, `medium`, `low` |",
+      "remediation": "Use high, medium or low for impact and urgency.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_creates_incident"
+          },
+          {
+            "op": "is_false",
+            "field": "action_incident_impact_urgency_valid"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "incident_default_status_new",
+      "title": "New incidents must start in status new",
+      "rationale": "Policy fixes the default creation status.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.1 Incident Registration",
+      "quote": "**Default Status:** All new Incidents are set to `status = new`.",
+      "remediation": "Create the incident without overriding status, or set status to 'new'.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_creates_incident"
+          },
+          {
+            "op": "is_true",
+            "field": "action_incident_status_not_new"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "incident_resolution_fields",
+      "title": "Resolution requires code and notes",
+      "rationale": "Resolved transitions need mandatory resolution data.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Incident Lifecycle and Closure",
+      "quote": "An Incident cannot transition to `resolved` without mandatory fields: `resolution_code`, and `resolution_notes` (free-form text, max 2000 chars).",
+      "remediation": "Provide resolution_code and resolution_notes before resolving the incident.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_incident_resolved"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_resolution_fields_present"
+          },
+          {
+            "op": "is_true",
+            "field": "action_resolution_code_valid"
+          }
+        ]
+      }
+    },
+    {
+      "id": "resolution_notes_length",
+      "title": "Resolution notes max 2000 chars",
+      "rationale": "Field length is explicitly bounded.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Incident Lifecycle and Closure",
+      "quote": "`resolution_notes` (free-form text, max 2000 chars)",
+      "remediation": "Shorten resolution_notes to 2000 characters or fewer.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_sets_incident_resolved"
+          },
+          {
+            "op": "is_true",
+            "field": "action_resolution_notes_too_long"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "incident_transition_valid",
+      "title": "Forbid invalid incident status transitions",
+      "rationale": "Only listed transitions are legal.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Incident Lifecycle and Closure",
+      "quote": "**Valid Status Transitions:**",
+      "remediation": "Move the incident only along permitted transitions from its current status.",
+      "when": {
+        "op": "is_true",
+        "field": "action_incident_transition_invalid"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "on_hold_reason_before_resume",
+      "title": "Log on_hold_reason before resuming",
+      "rationale": "Resuming from on_hold requires a logged reason.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Incident Lifecycle and Closure",
+      "quote": "`on_hold` \u2192 `in_progress` (Must log `on_hold_reason` before transition)",
+      "remediation": "Record the on_hold_reason on the incident before moving it back to in_progress.",
+      "when": {
+        "op": "is_true",
+        "field": "action_incident_onhold_to_in_progress"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_on_hold_reason_logged"
+      }
+    },
+    {
+      "id": "assignment_constraints",
+      "title": "Assign only to active group-member agents/managers",
+      "rationale": "Assignment targets are constrained by role, status and group membership.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.2 Incident Assignment",
+      "quote": "`assigned_to` must be an **active** user with the `Agent` or `Manager` role and must be a member of the specified `assignment_group`.",
+      "remediation": "Look up the intended assignee and assign only an active agent/manager who belongs to the assignment group.",
+      "when": {
+        "op": "is_true",
+        "field": "action_assigns_incident"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "context_assignee_active_agent_or_manager"
+          },
+          {
+            "op": "is_true",
+            "field": "context_assignee_in_assignment_group"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci_link_status",
+      "title": "Link only in_use or maintenance CIs",
+      "rationale": "Retired/disposed CIs must not be linked to active incidents.",
+      "source": "ITSM Assistant Policy",
+      "reference": "5.1 Configuration Item (CI) Integrity",
+      "quote": "Only CIs with `status = in_use` or `status = maintenance` can be linked to active Incidents. Do not link CIs in `status = retired` or `status = disposed`.",
+      "remediation": "Verify the CI status first and link only CIs in in_use or maintenance.",
+      "when": {
+        "op": "is_true",
+        "field": "action_links_ci_to_incident"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_ci_status_linkable"
+      }
+    },
+    {
+      "id": "problem_default_status_new",
+      "title": "New problems must start in status new",
+      "rationale": "Policy fixes the default creation status for problems.",
+      "source": "ITSM Assistant Policy",
+      "reference": "4.2 Problem Management",
+      "quote": "**Default Status:** All new Problems are set to `status = new`.",
+      "remediation": "Create the problem without overriding status, or set status to 'new'.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_creates_problem"
+          },
+          {
+            "op": "is_true",
+            "field": "action_problem_status_not_new"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "problem_closure_requires_fix",
+      "title": "Close problems only after implemented change",
+      "rationale": "Closure requires a permanent fix via a linked normal/emergency change.",
+      "source": "ITSM Assistant Policy",
+      "reference": "4.2 Problem Management",
+      "quote": "A Problem transitions to `closed` only after the permanent fix has been successfully implemented via a linked `normal` or `emergency` Change Request.",
+      "remediation": "Implement the fix through a linked normal or emergency Change Request before closing the problem.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_problem_closed"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_problem_fix_change_implemented"
+      }
+    },
+    {
+      "id": "reporter_scope_other_records",
+      "title": "Reporters may not act on others' records",
+      "rationale": "Reporter scope is limited to their own submissions.",
+      "source": "ITSM Assistant Policy",
+      "reference": "2 Roles & Responsibilities and Access Scope",
+      "quote": "Cannot view or modify records opened by other users, CMDB, or internal work notes.",
+      "remediation": "Halt and explain that a reporter may only view and update their own submitted incidents/requests.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "context_actor_role_reporter"
+          },
+          {
+            "op": "is_true",
+            "field": "action_targets_record_of_other_user"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "reporter_scope_cmdb_worknotes",
+      "title": "Reporters may not access CMDB or work notes",
+      "rationale": "Reporter access scope excludes CMDB and internal work notes.",
+      "source": "ITSM Assistant Policy",
+      "reference": "2 Roles & Responsibilities and Access Scope",
+      "quote": "Cannot view or modify records opened by other users, CMDB, or internal work notes.",
+      "remediation": "Halt and explain that CMDB and internal work notes are outside the reporter's access scope.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "context_actor_role_reporter"
+          },
+          {
+            "op": "is_true",
+            "field": "action_targets_cmdb_or_work_notes"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "verify_user_before_changes",
+      "title": "Confirm the acting user before state changes",
+      "rationale": "Operations must be based on confirmed user roles.",
+      "source": "ITSM Assistant Policy",
+      "reference": "Mandate",
+      "quote": "First you must check the user information and operate exclusively based on **confirmed user roles**",
+      "remediation": "Look up the acting user's record to confirm role and active status before creating or updating records.",
+      "when": {
+        "op": "is_true",
+        "field": "action_changes_record"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_acting_user_verified"
+      }
+    }
+  ],
+  "inventory": [
+    {
+      "id": "halt_on_violation",
+      "quote": "you **must halt the operation** and provide the specific policy reason before pausing",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Describes response behavior on violation, enforced implicitly by blocking."
+    },
+    {
+      "id": "atomic",
+      "quote": "Perform **one validated operation at a time**, except when using approved batch endpoints.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Sequencing style not decidable from a single candidate call."
+    },
+    {
+      "id": "knowledge_scope",
+      "quote": "Do not disclose information that is outside the authenticated user's access scope.",
+      "status": "enforced",
+      "rule_ids": [
+        "reporter_scope_other_records",
+        "reporter_scope_cmdb_worknotes"
+      ],
+      "reason": "Scope restrictions encoded for the reporter role."
+    },
+    {
+      "id": "clarify",
+      "quote": "Do not ask for further information.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Conversational behavior, not a tool precondition."
+    },
+    {
+      "id": "mandatory_fields",
+      "quote": "Any request to create or update a record must validate all mandatory fields.",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_mandatory_fields",
+        "incident_resolution_fields"
+      ],
+      "reason": "Encoded for the field sets the policy enumerates."
+    },
+    {
+      "id": "no_fabrication",
+      "quote": "Never assume or fabricate IDs, responses, or outcomes \u2014 rely solely on verified API results.",
+      "status": "enforced",
+      "rule_ids": [
+        "assignment_constraints",
+        "ci_link_status",
+        "verify_user_before_changes"
+      ],
+      "reason": "Verification requirements encoded where a trace exists."
+    },
+    {
+      "id": "check_user",
+      "quote": "First you must check the user information and operate exclusively based on **confirmed user roles**",
+      "status": "enforced",
+      "rule_ids": [
+        "verify_user_before_changes"
+      ],
+      "reason": "Observable prerequisite lookup."
+    },
+    {
+      "id": "incident_mandatory",
+      "quote": "**Mandatory Inputs:** `opened_by` (user submitting), `caller_id` (user affected), `short_description`, `impact`, and `urgency`.",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_mandatory_fields"
+      ],
+      "reason": "Required inputs."
+    },
+    {
+      "id": "outage_classification",
+      "quote": "must be classified as high impact and high urgency",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Depends on free-text interpretation of the request."
+    },
+    {
+      "id": "priority_matrix",
+      "quote": "Priority (`critical`, `high`, `moderate`, `low`, `planning`) is determined automatically by the system based on a below pre-defined matrix of **Impact x Urgency**.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "System-computed field, not an agent obligation."
+    },
+    {
+      "id": "incident_default_state",
+      "quote": "**Default Status:** All new Incidents are set to `status = new`.",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_default_status_new"
+      ],
+      "reason": "Fixed creation value."
+    },
+    {
+      "id": "assignment",
+      "quote": "`assigned_to` must be an **active** user with the `Agent` or `Manager` role and must be a member of the specified `assignment_group`.",
+      "status": "enforced",
+      "rule_ids": [
+        "assignment_constraints"
+      ],
+      "reason": "Authority and membership constraint."
+    },
+    {
+      "id": "transitions",
+      "quote": "**Valid Status Transitions:**",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_transition_valid",
+        "on_hold_reason_before_resume"
+      ],
+      "reason": "Legal transition set."
+    },
+    {
+      "id": "resolution",
+      "quote": "An Incident cannot transition to `resolved` without mandatory fields: `resolution_code`, and `resolution_notes` (free-form text, max 2000 chars).",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_resolution_fields",
+        "resolution_notes_length"
+      ],
+      "reason": "Inputs and length bound."
+    },
+    {
+      "id": "closure_72h",
+      "quote": "The incidents that are in `resolved` status will transition to `closed` after 72 hours.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Elapsed-time system behavior not decidable pre-action."
+    },
+    {
+      "id": "change_origin",
+      "quote": "All changes must originate from a **Change Request** record.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No change tools/arguments defined to observe origination."
+    },
+    {
+      "id": "change_default",
+      "quote": "**Default Status:** All new Changes are set to `status = new`.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No change-creation capability in scope here."
+    },
+    {
+      "id": "change_types",
+      "quote": "**Change Types (Enumeration):** `standard` (pre-approved, low risk), `normal` (requires planning/approval), `emergency` (requires immediate CAB approval override).",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Enumeration without an observable change-creation action."
+    },
+    {
+      "id": "problem_trigger",
+      "quote": "A Problem must be created (`create_problem`) when a recurring incident pattern or a major incident is identified.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Trigger depends on judgment about patterns."
+    },
+    {
+      "id": "problem_linking",
+      "quote": "The Problem record **must** link all affected Incidents via the `incident_to_problem` related list.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Completeness of 'all affected' is not decidable pre-action."
+    },
+    {
+      "id": "problem_default",
+      "quote": "**Default Status:** All new Problems are set to `status = new`.",
+      "status": "enforced",
+      "rule_ids": [
+        "problem_default_status_new"
+      ],
+      "reason": "Fixed creation value."
+    },
+    {
+      "id": "workaround",
+      "quote": "If workaround/temporary solution found, update workaround field and set status=`fix_in_progress`.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Trigger depends on subjective discovery; status value not in enumeration."
+    },
+    {
+      "id": "problem_close",
+      "quote": "A Problem transitions to `closed` only after the permanent fix has been successfully implemented via a linked `normal` or `emergency` Change Request.",
+      "status": "enforced",
+      "rule_ids": [
+        "problem_closure_requires_fix"
+      ],
+      "reason": "Prerequisite with observable trace."
+    },
+    {
+      "id": "ci_table",
+      "quote": "All IT assets must be recorded in the `configuration_item` table.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Data-model statement."
+    },
+    {
+      "id": "ci_status",
+      "quote": "Only CIs with `status = in_use` or `status = maintenance` can be linked to active Incidents.",
+      "status": "enforced",
+      "rule_ids": [
+        "ci_link_status"
+      ],
+      "reason": "Explicit linking restriction."
+    },
+    {
+      "id": "ci_owner",
+      "quote": "All CIs must have a recorded `owner_id`.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No CI creation capability in scope."
+    },
+    {
+      "id": "sla",
+      "quote": "The SLA timer **must** be paused (`stage = paused`) when the Incident is in `stage = on_hold`",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Automatic system behavior; no agent-visible action."
+    },
+    {
+      "id": "breach",
+      "quote": "the `escalation` flag on the Incident **must** be set to true",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Depends on system SLA state not visible pre-action."
+    },
+    {
+      "id": "kb_published",
+      "quote": "Only articles in `knowledge.state = published` are searchable by the `Reporter` role.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No knowledge search tool in scope."
+    },
+    {
+      "id": "kb_search",
+      "quote": "When an Incident is created, a search for relevant knowledge must be performed, and matching articles linked as `used_as = suggested`.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Post-creation workflow outcome, not a pre-action guard."
+    },
+    {
+      "id": "use_tracking",
+      "quote": "All knowledge links must track `used_as` type: `suggested`, `applied`, or `resolution`.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No knowledge-link capability in scope."
+    },
+    {
+      "id": "user_active",
+      "quote": "Ensure any user being assigned to (`assigned_to`) or updated is `users.active = true`.",
+      "status": "enforced",
+      "rule_ids": [
+        "assignment_constraints"
+      ],
+      "reason": "Active-user requirement for assignment."
+    },
+    {
+      "id": "referential",
+      "quote": "Before closing any record, verify that all mandatory dependencies are satisfied.",
+      "status": "enforced",
+      "rule_ids": [
+        "problem_closure_requires_fix"
+      ],
+      "reason": "Encoded where dependencies are specified."
+    },
+    {
+      "id": "time_tracking",
+      "quote": "All work logs must include the timestamp (`created_on`) and the `user_id` performing the action.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No work-log capability in scope."
+    },
+    {
+      "id": "errors",
+      "quote": "**403 Forbidden:** Permission denied (user role lacks authority for the operation).",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Error-handling reference."
+    },
+    {
+      "id": "backoff",
+      "quote": "If exceeded, pause and retry using **Exponential Backoff**.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Retry behavior, not a pre-action restriction."
+    },
+    {
+      "id": "enums",
+      "quote": "| **incident.impact** | `high`, `medium`, `low` |",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_impact_urgency_enum",
+        "incident_resolution_fields"
+      ],
+      "reason": "Value-set constraints."
+    },
+    {
+      "id": "agent_caps",
+      "quote": "Cannot bypass approvals, or change system administration settings.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No approval-bypass or admin-setting tool in scope."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review each proposed ITSM tool call against the ITSM Assistant Policy. Confirm: mandatory incident fields are supplied; enumerated values (impact, urgency, status, resolution_code, CI status) are legal; creation defaults (incident/problem status 'new') are not overridden; incident status transitions follow the permitted list and on_hold\u2192in_progress has a logged on_hold_reason; assignees are active agents/managers in the stated assignment group, verified by lookup; linked CIs are in_use or maintenance; problems close only after a linked normal/emergency change implemented the fix; reporters act only on their own records and never on CMDB or work notes; the acting user's role was confirmed by lookup before state changes. Do not treat requester claims or supplied IDs as verification. Read-only lookups must not be blocked except for the explicit reporter scope restriction.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "true if the call complies with the policy"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "policy issues found"
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "Given the candidate tool call and the prior trajectory only, set each fact true/false, or null when evidence is absent. action_* facts describe the candidate call's arguments and target (the actor is the agent acting for the requester). context_* facts require evidence in prior SUCCESSFUL tool results: user lookups returning role/active, group membership, CI status, on_hold_reason recorded on that same incident, or a linked normal/emergency change implemented for that same problem. Do not infer from requester claims, supplied IDs, failed/blocked calls, or the candidate's own (unavailable) result. Results about a different user, incident, problem or CI never establish a context fact. Cite in evidence the tool name/argument or prior observation supporting each value; use an empty string when null.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "properties": {
+            "action_creates_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_mandatory_fields_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_impact_urgency_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_status_not_new": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_incident_resolved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_resolution_fields_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_resolution_code_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_resolution_notes_too_long": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_transition_invalid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_onhold_to_in_progress": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_on_hold_reason_logged": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_assigns_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_active_agent_or_manager": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_in_assignment_group": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_links_ci_to_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_ci_status_linkable": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_creates_problem": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_problem_status_not_new": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_problem_closed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_problem_fix_change_implemented": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_actor_role_reporter": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_targets_record_of_other_user": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_targets_cmdb_or_work_notes": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_changes_record": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_acting_user_verified": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action_creates_incident",
+            "action_incident_mandatory_fields_present",
+            "action_incident_impact_urgency_valid",
+            "action_incident_status_not_new",
+            "action_sets_incident_resolved",
+            "action_resolution_fields_present",
+            "action_resolution_code_valid",
+            "action_resolution_notes_too_long",
+            "action_incident_transition_invalid",
+            "action_incident_onhold_to_in_progress",
+            "context_on_hold_reason_logged",
+            "action_assigns_incident",
+            "context_assignee_active_agent_or_manager",
+            "context_assignee_in_assignment_group",
+            "action_links_ci_to_incident",
+            "context_ci_status_linkable",
+            "action_creates_problem",
+            "action_problem_status_not_new",
+            "action_sets_problem_closed",
+            "context_problem_fix_change_implemented",
+            "context_actor_role_reporter",
+            "action_targets_record_of_other_user",
+            "action_targets_cmdb_or_work_notes",
+            "action_changes_record",
+            "context_acting_user_verified"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "action_creates_incident": {
+              "type": "string"
+            },
+            "action_incident_mandatory_fields_present": {
+              "type": "string"
+            },
+            "action_incident_impact_urgency_valid": {
+              "type": "string"
+            },
+            "action_incident_status_not_new": {
+              "type": "string"
+            },
+            "action_sets_incident_resolved": {
+              "type": "string"
+            },
+            "action_resolution_fields_present": {
+              "type": "string"
+            },
+            "action_resolution_code_valid": {
+              "type": "string"
+            },
+            "action_resolution_notes_too_long": {
+              "type": "string"
+            },
+            "action_incident_transition_invalid": {
+              "type": "string"
+            },
+            "action_incident_onhold_to_in_progress": {
+              "type": "string"
+            },
+            "context_on_hold_reason_logged": {
+              "type": "string"
+            },
+            "action_assigns_incident": {
+              "type": "string"
+            },
+            "context_assignee_active_agent_or_manager": {
+              "type": "string"
+            },
+            "context_assignee_in_assignment_group": {
+              "type": "string"
+            },
+            "action_links_ci_to_incident": {
+              "type": "string"
+            },
+            "context_ci_status_linkable": {
+              "type": "string"
+            },
+            "action_creates_problem": {
+              "type": "string"
+            },
+            "action_problem_status_not_new": {
+              "type": "string"
+            },
+            "action_sets_problem_closed": {
+              "type": "string"
+            },
+            "context_problem_fix_change_implemented": {
+              "type": "string"
+            },
+            "context_actor_role_reporter": {
+              "type": "string"
+            },
+            "action_targets_record_of_other_user": {
+              "type": "string"
+            },
+            "action_targets_cmdb_or_work_notes": {
+              "type": "string"
+            },
+            "action_changes_record": {
+              "type": "string"
+            },
+            "context_acting_user_verified": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "action_creates_incident",
+            "action_incident_mandatory_fields_present",
+            "action_incident_impact_urgency_valid",
+            "action_incident_status_not_new",
+            "action_sets_incident_resolved",
+            "action_resolution_fields_present",
+            "action_resolution_code_valid",
+            "action_resolution_notes_too_long",
+            "action_incident_transition_invalid",
+            "action_incident_onhold_to_in_progress",
+            "context_on_hold_reason_logged",
+            "action_assigns_incident",
+            "context_assignee_active_agent_or_manager",
+            "context_assignee_in_assignment_group",
+            "action_links_ci_to_incident",
+            "context_ci_status_linkable",
+            "action_creates_problem",
+            "action_problem_status_not_new",
+            "action_sets_problem_closed",
+            "context_problem_fix_change_implemented",
+            "context_actor_role_reporter",
+            "action_targets_record_of_other_user",
+            "action_targets_cmdb_or_work_notes",
+            "action_changes_record",
+            "context_acting_user_verified"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

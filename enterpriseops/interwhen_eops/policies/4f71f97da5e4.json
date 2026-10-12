@@ -1,0 +1,965 @@
+{
+  "variables": [
+    {
+      "name": "action_creates_case",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call creates a new customer_case record."
+    },
+    {
+      "name": "action_changes_case_state",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets/updates the state field of an existing customer_case."
+    },
+    {
+      "name": "action_state_change_disallowed",
+      "type": "bool",
+      "category": "action",
+      "description": "True when the requested case state differs from the case's last observed state in prior tool results and the pair is NOT one of: new->in_progress/pending/resolved, in_progress->pending/resolved, pending->in_progress/resolved, resolved->closed, or any state->canceled. Unknown if the prior state was never observed."
+    },
+    {
+      "name": "action_sets_state_closed",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a case's state to 'closed'."
+    },
+    {
+      "name": "context_case_state_resolved",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows the target case's current state is 'resolved'."
+    },
+    {
+      "name": "action_sets_closed_on",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call's arguments include a closed_on timestamp value for the case being closed."
+    },
+    {
+      "name": "action_short_description_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate case-creation call includes a non-empty short_description argument."
+    },
+    {
+      "name": "action_sets_free_text_field",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies a free-form text value: case short_description, escalation_reason text, knowledge title, or knowledge content/body."
+    },
+    {
+      "name": "action_free_text_length_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "Every such free-form text value supplied in the candidate call is between 30 and 120 characters inclusive."
+    },
+    {
+      "name": "action_sets_enumerated_field",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies a value for a field listed in the policy's Predefined Lists (e.g. case state, priority, channel, escalation_reason, user role, group type, knowledge state/visibility, case_knowledge used_as, installed_product status, product lifecycle_state, contract/entitlement/SLA enums)."
+    },
+    {
+      "name": "action_enum_values_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "Every enumerated-field value in the candidate call is a member of the policy's allowed list for that field."
+    },
+    {
+      "name": "action_sets_escalation_true",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets escalation = true on a case."
+    },
+    {
+      "name": "action_escalation_reason_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The same candidate call supplies a non-empty escalation_reason value."
+    },
+    {
+      "name": "action_sets_two_level_priority_increase",
+      "type": "bool",
+      "category": "action",
+      "description": "The same candidate call sets priority two levels higher than the case's last observed priority on the ordered list low<moderate<high<critical (e.g. moderate->critical)."
+    },
+    {
+      "name": "action_assigns_user_to_case",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets assigned_to (a user) on a case."
+    },
+    {
+      "name": "context_assignee_role_agent_or_manager",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows the user named in assigned_to has role 'agent' or 'manager'."
+    },
+    {
+      "name": "context_assignee_active",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows the user named in assigned_to is active, or a prior successful call activated that user."
+    },
+    {
+      "name": "context_assignee_group_membership_satisfied",
+      "type": "bool",
+      "category": "context",
+      "description": "If the case has/receives an assignment_group_id, a prior successful tool result shows the assigned_to user is a member of that group, or a prior successful call added them to it. True by default when no assignment group is involved."
+    },
+    {
+      "name": "action_links_knowledge_to_case",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call creates a case_knowledge link between a knowledge article and a case."
+    },
+    {
+      "name": "context_knowledge_published",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows the knowledge article being linked has state 'published'."
+    },
+    {
+      "name": "action_attaches_installed_product",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an installed_product reference on a case."
+    },
+    {
+      "name": "context_installed_product_usable_status",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows that installed product's status is 'in_use' (not 'retired' or 'repair')."
+    },
+    {
+      "name": "context_installed_product_belongs_to_account",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows that installed product's account matches the reporting account of the case."
+    },
+    {
+      "name": "context_contact_account_verified",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result identifies the reporting contact and shows its association with the account used on the case."
+    },
+    {
+      "name": "context_active_entitlement_verified",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool result shows an entitlement for the case's account/product that is active and within contract validity."
+    }
+  ],
+  "rules": [
+    {
+      "id": "case_create_contact_account",
+      "title": "Verify contact and account before creating a case",
+      "rationale": "Case registration must start from a confirmed contact associated with an account.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 1. Registering a Customer Case",
+      "quote": "Begin by identifying the reporting **contact** and verifying association with an **account**.",
+      "remediation": "Look up the contact and its account association first, then create the case.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_contact_account_verified"
+      }
+    },
+    {
+      "id": "case_create_short_description",
+      "title": "Case creation requires a short description",
+      "rationale": "Issue description is a required input for case registration.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 1. Registering a Customer Case",
+      "quote": "Issue description (`short_description`)",
+      "remediation": "Include a short_description describing the issue when creating the case.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_short_description_present"
+      }
+    },
+    {
+      "id": "case_create_entitlement_verified",
+      "title": "Verify active entitlement before creating a case",
+      "rationale": "Entitlement for the product must be verified and actively running for all cases.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Knowledge Related Policies / 5. Entitlement Validation",
+      "quote": "For all cases the entitlement for the product should be verified and should be actively running.",
+      "remediation": "Retrieve and check the account/product entitlement (active, within contract validity) before creating the case.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_active_entitlement_verified"
+      }
+    },
+    {
+      "id": "free_text_length",
+      "title": "Free-form text must be 30-120 characters",
+      "rationale": "The policy fixes character limits for free-form text fields.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Free form text policies",
+      "quote": "Character limits: 30\u2013120 chars",
+      "remediation": "Rewrite the text so it is between 30 and 120 characters.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_free_text_field"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_free_text_length_valid"
+      }
+    },
+    {
+      "id": "enum_values",
+      "title": "Reject values outside predefined enumerations",
+      "rationale": "Only listed enumeration values are allowed for these fields.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Predefined Lists (Enumerations) - Enforcement",
+      "quote": "**Enforcement**: reject any value outside the list with `INVALID_ENUM_VALUE`.",
+      "remediation": "Use a value from the policy's allowed list for that field.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_enumerated_field"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_enum_values_valid"
+      }
+    },
+    {
+      "id": "state_transition_legal",
+      "title": "Forbid state transitions outside the lifecycle",
+      "rationale": "Only the listed state transitions are valid.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 4. Case Lifecycle Management",
+      "quote": "Valid state transitions:",
+      "remediation": "Move the case through an allowed transition path instead.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_changes_case_state"
+          },
+          {
+            "op": "is_true",
+            "field": "action_state_change_disallowed"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "no_direct_closure",
+      "title": "Close only from resolved",
+      "rationale": "Premature closure without resolution must be prevented.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 3. Working on a Case",
+      "quote": "Cases cannot be closed directly. They must first be moved to **resolved**, then to **closed**.",
+      "remediation": "Set the case to resolved first, then close it.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_state_closed"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_case_state_resolved"
+      }
+    },
+    {
+      "id": "closure_timestamp",
+      "title": "Capture closed_on when closing a case",
+      "rationale": "Closure must capture the closure timestamp.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "11. Validation, Error Handling & Logging",
+      "quote": "Capture timestamps (e.g., `closed_on` for case closure).",
+      "remediation": "Include a closed_on timestamp in the closing update.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_state_closed"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_sets_closed_on"
+      }
+    },
+    {
+      "id": "escalation_requirements",
+      "title": "Escalation requires reason and two-level priority increase",
+      "rationale": "Escalation is tracked on the case with a reason and a priority bump.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 8. Escalations",
+      "quote": "Escalation triggered a two-level priority increase on the case (e.g., Moderate \u2192 Critical ).",
+      "remediation": "Set escalation_reason and raise the case priority by two levels in the same escalation update.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_escalation_true"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_escalation_reason_present"
+          },
+          {
+            "op": "is_true",
+            "field": "action_sets_two_level_priority_increase"
+          }
+        ]
+      }
+    },
+    {
+      "id": "assignment_constraints",
+      "title": "Assignee must be an active agent/manager in the group",
+      "rationale": "Assignment is restricted to active agent/manager users who are members of the assignment group.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 2. Assigning a Case",
+      "quote": "**Assignment constraints**: `assigned_to` must reference a `user` with role `agent` or `manager` and (if used) member of `assignment_group_id`.",
+      "remediation": "Verify the user's role and active status, add them to the assignment group if needed, then assign.",
+      "when": {
+        "op": "is_true",
+        "field": "action_assigns_user_to_case"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "context_assignee_role_agent_or_manager"
+          },
+          {
+            "op": "is_true",
+            "field": "context_assignee_active"
+          },
+          {
+            "op": "is_true",
+            "field": "context_assignee_group_membership_satisfied"
+          }
+        ]
+      }
+    },
+    {
+      "id": "knowledge_published",
+      "title": "Link only published knowledge articles",
+      "rationale": "Only published articles may be linked to cases.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 7. Linking Knowledge Articles",
+      "quote": "Articles must be in state = **published**.",
+      "remediation": "Publish the article (or pick a published one) before linking it to the case.",
+      "when": {
+        "op": "is_true",
+        "field": "action_links_knowledge_to_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_knowledge_published"
+      }
+    },
+    {
+      "id": "installed_product_eligibility",
+      "title": "Installed product must be in use and owned by the account",
+      "rationale": "Only active/in-use installed products belonging to the reporting account may be attached.",
+      "source": "Customer Service Management administrator policy",
+      "reference": "Core Operations 6. Installed Product Management",
+      "quote": "Do not attach items in **retired / repair** status to new cases.",
+      "remediation": "Attach an in_use installed product that belongs to the reporting account.",
+      "when": {
+        "op": "is_true",
+        "field": "action_attaches_installed_product"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "context_installed_product_usable_status"
+          },
+          {
+            "op": "is_true",
+            "field": "context_installed_product_belongs_to_account"
+          }
+        ]
+      }
+    }
+  ],
+  "inventory": [
+    {
+      "id": "contact_account",
+      "quote": "Begin by identifying the reporting **contact** and verifying association with an **account**.",
+      "status": "enforced",
+      "rule_ids": [
+        "case_create_contact_account"
+      ],
+      "reason": "Observable prerequisite lookup before case creation."
+    },
+    {
+      "id": "case_inputs",
+      "quote": "Issue description (`short_description`)",
+      "status": "enforced",
+      "rule_ids": [
+        "case_create_short_description"
+      ],
+      "reason": "Required input on the creation call."
+    },
+    {
+      "id": "defaults",
+      "quote": "Priority (if not provided \u2192 default = **moderate**)",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Default-filling guidance, not a restriction blocking an action."
+    },
+    {
+      "id": "product_account_match",
+      "quote": "Verify the product or installed product belongs to the customer\u2019s account.",
+      "status": "enforced",
+      "rule_ids": [
+        "installed_product_eligibility"
+      ],
+      "reason": "Ownership check enforced for installed product attachment."
+    },
+    {
+      "id": "assignment",
+      "quote": "**Assignment constraints**: `assigned_to` must reference a `user` with role `agent` or `manager` and (if used) member of `assignment_group_id`.",
+      "status": "enforced",
+      "rule_ids": [
+        "assignment_constraints"
+      ],
+      "reason": "Role, activity and membership are observable from prior lookups."
+    },
+    {
+      "id": "lifecycle",
+      "quote": "Valid state transitions:",
+      "status": "enforced",
+      "rule_ids": [
+        "state_transition_legal"
+      ],
+      "reason": "Prohibition on transitions outside the listed table."
+    },
+    {
+      "id": "closure",
+      "quote": "Cases cannot be closed directly. They must first be moved to **resolved**, then to **closed**.",
+      "status": "enforced",
+      "rule_ids": [
+        "no_direct_closure"
+      ],
+      "reason": "Prior state observable."
+    },
+    {
+      "id": "timestamps",
+      "quote": "Capture timestamps (e.g., `closed_on` for case closure).",
+      "status": "enforced",
+      "rule_ids": [
+        "closure_timestamp"
+      ],
+      "reason": "Argument-level requirement on closure."
+    },
+    {
+      "id": "sys_updated",
+      "quote": "Update `sys_updated_on`.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Typically system-maintained; not reliably an observable candidate argument."
+    },
+    {
+      "id": "entitlement",
+      "quote": "For all cases the entitlement for the product should be verified and should be actively running.",
+      "status": "enforced",
+      "rule_ids": [
+        "case_create_entitlement_verified"
+      ],
+      "reason": "Verification leaves an observable lookup trace."
+    },
+    {
+      "id": "entitlement_details",
+      "quote": "`max_cases_per_month = 0` means **unlimited**; otherwise enforce limits.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Requires aggregate case counts and system state not reliably visible pre-action."
+    },
+    {
+      "id": "knowledge_state",
+      "quote": "Articles must be in state = **published**.",
+      "status": "enforced",
+      "rule_ids": [
+        "knowledge_published"
+      ],
+      "reason": "Article state observable from prior read."
+    },
+    {
+      "id": "knowledge_visibility",
+      "quote": "`internal` = agents only",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No reliable fact for the viewing actor's role in these tool calls."
+    },
+    {
+      "id": "used_as",
+      "quote": "Link articles to cases via `case_knowledge` (usage = suggested, applied, resolution).",
+      "status": "enforced",
+      "rule_ids": [
+        "enum_values"
+      ],
+      "reason": "Enumeration enforcement covers used_as values."
+    },
+    {
+      "id": "escalation",
+      "quote": "Escalation triggered a two-level priority increase on the case (e.g., Moderate \u2192 Critical ).",
+      "status": "enforced",
+      "rule_ids": [
+        "escalation_requirements"
+      ],
+      "reason": "Both reason and priority delta observable from arguments plus prior state."
+    },
+    {
+      "id": "escalation_notes",
+      "quote": "Ensure justification is logged in case notes.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Ordering relative to escalation update is not specified observably."
+    },
+    {
+      "id": "sla_escalated",
+      "quote": "For escalated cases, apply the appropriate \"no pause on pending\" Response SLA definition to ensure continuous tracking and faster response commitment.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "'Appropriate' SLA selection depends on system state and judgement."
+    },
+    {
+      "id": "sla_on_progress",
+      "quote": "When new case moves to work in progress appropriate SLA should be aligned to it.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Requires a later call; cannot be a pre-action guard on the state change."
+    },
+    {
+      "id": "installed_status",
+      "quote": "Do not attach items in **retired / repair** status to new cases.",
+      "status": "enforced",
+      "rule_ids": [
+        "installed_product_eligibility"
+      ],
+      "reason": "Status observable from prior installed-product read."
+    },
+    {
+      "id": "product_active",
+      "quote": "In lifecycle_state = **active**.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No distinct candidate-action fact available for product attachment in all tasks."
+    },
+    {
+      "id": "security",
+      "quote": "Users may only view or update cases they own, are assigned to, or are in the assigned group.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Acting user's identity/ownership relation is not reliably established by the request."
+    },
+    {
+      "id": "enum_enforce",
+      "quote": "**Enforcement**: reject any value outside the list with `INVALID_ENUM_VALUE`.",
+      "status": "enforced",
+      "rule_ids": [
+        "enum_values"
+      ],
+      "reason": "Argument values checkable against the lists."
+    },
+    {
+      "id": "text_limits",
+      "quote": "Character limits: 30\u2013120 chars",
+      "status": "enforced",
+      "rule_ids": [
+        "free_text_length"
+      ],
+      "reason": "Directly measurable on supplied text."
+    },
+    {
+      "id": "kb_search",
+      "quote": "When a new case is created and is asked to be investigated, then a knowledge base search should be performed.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Trigger depends on an investigation request; would not reliably gate a specific call."
+    },
+    {
+      "id": "kb_create_on_close",
+      "quote": "If no relevant knowledge is found and case is being closed, a new knowledge article should be created to capture the findings and resolution steps.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Requires a future call after closure; not a pre-action precondition."
+    },
+    {
+      "id": "one_op",
+      "quote": "Perform **one operation at a time**.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Agent process guidance, not an observable restriction on a single call."
+    },
+    {
+      "id": "no_ask",
+      "quote": "Do not ask for any information or confirmation from the user, if you cannot proceed ahead provide the reason for that before pausing.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Concerns messages, not tool calls."
+    },
+    {
+      "id": "agent_restriction",
+      "quote": "Cannot modify **user, group, or membership data**.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Depends on the acting role, which is not established by the request or tool arguments."
+    },
+    {
+      "id": "sla_pause",
+      "quote": "**SLA pause behavior**: Obey `sla_definition.pause_on_pending`; when case state is `pending`, pause applicable SLAs.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Depends on SLA records and downstream effects, not pre-action evidence."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review each proposed tool call against the Customer Service Management policy. Confirm: required case-creation inputs and verified contact/account/entitlement; enumeration values drawn only from the predefined lists; free-form text between 30 and 120 characters; state changes following the valid transition table with closure only from resolved and with closed_on captured; escalation accompanied by escalation_reason and a two-level priority increase; assignees being active agents/managers who are members of the assignment group; knowledge links only to published articles; installed products in_use and owned by the reporting account. Do not treat requester claims, supplied IDs or tool success as authorization. Never flag pure read/lookup calls. Report each concern as a short issue string citing the policy section.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "true if the call complies with the policy"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "policy concerns, empty if none"
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "From the candidate tool call and the prior trajectory only, set each fact to true, false, or null (unknown). Action facts describe the candidate call's arguments and target resource; context facts describe evidence established earlier by successful tool results about that same case, user, article, entitlement or installed product. Use null when no evidence exists (e.g. prior case state or priority was never observed, the article/installed product was never read). Requester statements, supplied identifiers and failed or blocked calls do not establish context facts; the candidate's own outcome is unavailable. Record in evidence a brief citation of the argument or prior observation used, or 'none' for null.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "properties": {
+            "action_creates_case": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_changes_case_state": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_state_change_disallowed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_state_closed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_case_state_resolved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_closed_on": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_short_description_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_free_text_field": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_free_text_length_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_enumerated_field": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_enum_values_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_escalation_true": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_escalation_reason_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_two_level_priority_increase": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_assigns_user_to_case": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_role_agent_or_manager": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_active": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_group_membership_satisfied": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_links_knowledge_to_case": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_knowledge_published": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_attaches_installed_product": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_installed_product_usable_status": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_installed_product_belongs_to_account": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_contact_account_verified": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_active_entitlement_verified": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action_creates_case",
+            "action_changes_case_state",
+            "action_state_change_disallowed",
+            "action_sets_state_closed",
+            "context_case_state_resolved",
+            "action_sets_closed_on",
+            "action_short_description_present",
+            "action_sets_free_text_field",
+            "action_free_text_length_valid",
+            "action_sets_enumerated_field",
+            "action_enum_values_valid",
+            "action_sets_escalation_true",
+            "action_escalation_reason_present",
+            "action_sets_two_level_priority_increase",
+            "action_assigns_user_to_case",
+            "context_assignee_role_agent_or_manager",
+            "context_assignee_active",
+            "context_assignee_group_membership_satisfied",
+            "action_links_knowledge_to_case",
+            "context_knowledge_published",
+            "action_attaches_installed_product",
+            "context_installed_product_usable_status",
+            "context_installed_product_belongs_to_account",
+            "context_contact_account_verified",
+            "context_active_entitlement_verified"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "action_creates_case": {
+              "type": "string"
+            },
+            "action_changes_case_state": {
+              "type": "string"
+            },
+            "action_state_change_disallowed": {
+              "type": "string"
+            },
+            "action_sets_state_closed": {
+              "type": "string"
+            },
+            "context_case_state_resolved": {
+              "type": "string"
+            },
+            "action_sets_closed_on": {
+              "type": "string"
+            },
+            "action_short_description_present": {
+              "type": "string"
+            },
+            "action_sets_free_text_field": {
+              "type": "string"
+            },
+            "action_free_text_length_valid": {
+              "type": "string"
+            },
+            "action_sets_enumerated_field": {
+              "type": "string"
+            },
+            "action_enum_values_valid": {
+              "type": "string"
+            },
+            "action_sets_escalation_true": {
+              "type": "string"
+            },
+            "action_escalation_reason_present": {
+              "type": "string"
+            },
+            "action_sets_two_level_priority_increase": {
+              "type": "string"
+            },
+            "action_assigns_user_to_case": {
+              "type": "string"
+            },
+            "context_assignee_role_agent_or_manager": {
+              "type": "string"
+            },
+            "context_assignee_active": {
+              "type": "string"
+            },
+            "context_assignee_group_membership_satisfied": {
+              "type": "string"
+            },
+            "action_links_knowledge_to_case": {
+              "type": "string"
+            },
+            "context_knowledge_published": {
+              "type": "string"
+            },
+            "action_attaches_installed_product": {
+              "type": "string"
+            },
+            "context_installed_product_usable_status": {
+              "type": "string"
+            },
+            "context_installed_product_belongs_to_account": {
+              "type": "string"
+            },
+            "context_contact_account_verified": {
+              "type": "string"
+            },
+            "context_active_entitlement_verified": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "action_creates_case",
+            "action_changes_case_state",
+            "action_state_change_disallowed",
+            "action_sets_state_closed",
+            "context_case_state_resolved",
+            "action_sets_closed_on",
+            "action_short_description_present",
+            "action_sets_free_text_field",
+            "action_free_text_length_valid",
+            "action_sets_enumerated_field",
+            "action_enum_values_valid",
+            "action_sets_escalation_true",
+            "action_escalation_reason_present",
+            "action_sets_two_level_priority_increase",
+            "action_assigns_user_to_case",
+            "context_assignee_role_agent_or_manager",
+            "context_assignee_active",
+            "context_assignee_group_membership_satisfied",
+            "action_links_knowledge_to_case",
+            "context_knowledge_published",
+            "action_attaches_installed_product",
+            "context_installed_product_usable_status",
+            "context_installed_product_belongs_to_account",
+            "context_contact_account_verified",
+            "context_active_entitlement_verified"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

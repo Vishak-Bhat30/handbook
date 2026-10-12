@@ -1,0 +1,1164 @@
+{
+  "variables": [
+    {
+      "name": "action_send_message",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate call transmits an email (e.g. send_message, send_draft)."
+    },
+    {
+      "name": "action_send_headers_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate send call's arguments contain all of To, From and Subject headers (in raw RFC 2822 content or structured payload headers)."
+    },
+    {
+      "name": "action_list_maxresults_out_of_range",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate list call supplies a maxResults argument whose value is below 1 or above 500."
+    },
+    {
+      "name": "action_batch_over_1000",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate batch_modify_messages/batch_delete_messages call supplies more than 1000 message IDs."
+    },
+    {
+      "name": "action_label_change_over_100",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate modify_message/modify_thread/batch_modify call supplies more than 100 label IDs in addLabelIds or in removeLabelIds."
+    },
+    {
+      "name": "action_modifies_system_label",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate call directly adds, removes, updates or deletes a system label (INBOX, SENT, DRAFT, SPAM, TRASH, UNREAD, STARRED, IMPORTANT, or a Category label) as the label object being changed or in addLabelIds/removeLabelIds."
+    },
+    {
+      "name": "action_label_name_write",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate create_label or update_label call supplies a label name argument."
+    },
+    {
+      "name": "action_label_name_length_invalid",
+      "type": "bool",
+      "category": "action",
+      "description": "The label name supplied in the candidate create_label/update_label call is empty or longer than 100 characters."
+    },
+    {
+      "name": "action_filter_forward_set",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate create_filter call specifies a forward email address in its action."
+    },
+    {
+      "name": "action_enables_auto_forwarding",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate update_auto_forwarding call sets enabled to true with an emailAddress."
+    },
+    {
+      "name": "context_target_forward_address_accepted",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful tool observation (e.g. list_forwarding_addresses or get of the address) shows the exact email address used in the candidate's forward/auto-forwarding argument exists in the user's forwarding addresses with verification status 'accepted'."
+    },
+    {
+      "name": "action_autoforward_disposition_invalid",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate update_auto_forwarding supplies a disposition value not in {leaveInInbox, archive, trash, markRead}."
+    },
+    {
+      "name": "action_imap_enum_invalid",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate update_imap_settings supplies expungeBehavior not in {archive, trash, deleteForever} or maxFolderSize not in {0,1000,2000,5000,10000}."
+    },
+    {
+      "name": "action_pop_enum_invalid",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate update_pop_settings supplies accessWindow not in {disabled, fromNowOn, allMail} or disposition not in {leaveInInbox, archive, trash, markRead}."
+    },
+    {
+      "name": "action_vacation_enable",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate update_vacation_settings sets enableAutoReply to true."
+    },
+    {
+      "name": "action_vacation_response_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate update_vacation_settings call supplies a non-empty responseSubject or responseBody."
+    },
+    {
+      "name": "action_vacation_starttime_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate update_vacation_settings call supplies a startTime value."
+    },
+    {
+      "name": "action_obliterate_cse_keypair",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate call permanently deletes a CSE key pair (email_obliterate_cse_keypair)."
+    },
+    {
+      "name": "context_keypair_disabled_30_days",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful observation (e.g. email_get_cse_keypair/email_list_cse_keypairs) shows the targeted key pair is in 'disabled' state and has been disabled for at least 30 days."
+    },
+    {
+      "name": "action_smime_insert",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate call uploads an S/MIME configuration (insert_smime_config)."
+    },
+    {
+      "name": "action_smime_pkcs12",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate S/MIME upload supplies the certificate in pkcs12 format."
+    },
+    {
+      "name": "action_send_as_smtpmsa",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate create_send_as_alias call includes an smtpMsa custom relay object."
+    },
+    {
+      "name": "action_smtpmsa_fields_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate smtpMsa object supplies host, port, and a securityMode value in {none, ssl, starttls}."
+    },
+    {
+      "name": "action_modifies_draft",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate call modifies or re-sends an existing draft (update_draft, send_draft, delete_draft targeting a draft)."
+    },
+    {
+      "name": "context_draft_already_sent",
+      "type": "bool",
+      "category": "context",
+      "description": "Prior trajectory shows the targeted draft ID was already successfully sent via send_draft."
+    },
+    {
+      "name": "action_creates_filter",
+      "type": "bool",
+      "category": "action",
+      "description": "Candidate call creates a filter (create_filter)."
+    },
+    {
+      "name": "context_filter_limit_reached",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful list_filters observation for this user shows 1000 or more existing filters."
+    }
+  ],
+  "rules": [
+    {
+      "id": "send_requires_headers",
+      "title": "Require To, From, Subject before sending",
+      "rationale": "Sending without mandatory headers produces invalid mail.",
+      "source": "Email Management Assistant Policy",
+      "reference": "3. Core Mail Operations / 6. Validation Must-Haves",
+      "quote": "Confirm required headers (`To`, `From`, `Subject`) are present before attempting to send.",
+      "remediation": "Include To, From and Subject in the raw or structured message before sending.",
+      "when": {
+        "op": "is_true",
+        "field": "action_send_message"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_send_headers_present"
+      }
+    },
+    {
+      "id": "list_max_results",
+      "title": "Cap list results at 500",
+      "rationale": "Hard list quota.",
+      "source": "Email Management Assistant Policy",
+      "reference": "6. Quota and Limits",
+      "quote": "**List Results:** Max 500 results per list operation (must paginate).",
+      "remediation": "Use maxResults between 1 and 500 and paginate.",
+      "when": {
+        "op": "is_true",
+        "field": "action_list_maxresults_out_of_range"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "batch_size_limit",
+      "title": "Cap batch size at 1000 messages",
+      "rationale": "Hard batch quota.",
+      "source": "Email Management Assistant Policy",
+      "reference": "6. Quota and Limits",
+      "quote": "**Batch Size:** Max 1,000 messages per batch modify/delete.",
+      "remediation": "Split the message IDs into batches of at most 1000.",
+      "when": {
+        "op": "is_true",
+        "field": "action_batch_over_1000"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "label_change_limit",
+      "title": "Cap label changes at 100 per operation",
+      "rationale": "Hard per-operation label limit.",
+      "source": "Email Management Assistant Policy",
+      "reference": "6. Quota and Limits",
+      "quote": "**Label Modification:** Max 100 labels added or removed per operation.",
+      "remediation": "Split label additions/removals into operations of at most 100 labels.",
+      "when": {
+        "op": "is_true",
+        "field": "action_label_change_over_100"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "system_labels_immutable",
+      "title": "Never modify or delete system labels",
+      "rationale": "System labels are immutable.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Label Management",
+      "quote": "**System Labels (Immutable):** `INBOX`, `SENT`, `DRAFT`, `SPAM`, `TRASH`, `UNREAD`, `STARRED`, `IMPORTANT`, and Categories.",
+      "remediation": "Target a custom label instead; system labels cannot be modified or deleted.",
+      "when": {
+        "op": "is_true",
+        "field": "action_modifies_system_label"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "label_name_length",
+      "title": "Label names must be 1-100 characters",
+      "rationale": "Custom label naming constraint.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Label Management",
+      "quote": "**Custom Labels:** Must have unique `name` (1-100 characters).",
+      "remediation": "Supply a label name of 1 to 100 characters.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_label_name_write"
+          },
+          {
+            "op": "is_true",
+            "field": "action_label_name_length_invalid"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "filter_forward_verified",
+      "title": "Filter forward address must be verified",
+      "rationale": "Forwarding may only target pre-verified addresses.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Filter Management",
+      "quote": "The `forward` email address specified in the filter action **must** be a pre-verified forwarding address in the user's settings.",
+      "remediation": "Verify the address is an accepted forwarding address before creating the filter.",
+      "when": {
+        "op": "is_true",
+        "field": "action_filter_forward_set"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_target_forward_address_accepted"
+      }
+    },
+    {
+      "id": "auto_forwarding_verified",
+      "title": "Auto-forwarding address must be verified",
+      "rationale": "Enabled forwarding requires a verified address.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Settings Configuration",
+      "quote": "`emailAddress` must be verified if enabled.",
+      "remediation": "Confirm the forwarding address has accepted status before enabling auto-forwarding.",
+      "when": {
+        "op": "is_true",
+        "field": "action_enables_auto_forwarding"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_target_forward_address_accepted"
+      }
+    },
+    {
+      "id": "auto_forwarding_disposition",
+      "title": "Use permitted auto-forwarding disposition",
+      "rationale": "Enumeration constraint.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Settings Configuration",
+      "quote": "`disposition`: `leaveInInbox`, `archive`, `trash`, `markRead`.",
+      "remediation": "Use leaveInInbox, archive, trash or markRead.",
+      "when": {
+        "op": "is_true",
+        "field": "action_autoforward_disposition_invalid"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "imap_enums",
+      "title": "Use permitted IMAP values",
+      "rationale": "Enumeration constraint.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Settings Configuration",
+      "quote": "`expungeBehavior`: `archive`, `trash`, `deleteForever`. `maxFolderSize`: `0`, `1000`, `2000`, `5000`, `10000`.",
+      "remediation": "Use only the listed expungeBehavior and maxFolderSize values.",
+      "when": {
+        "op": "is_true",
+        "field": "action_imap_enum_invalid"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "pop_enums",
+      "title": "Use permitted POP values",
+      "rationale": "Enumeration constraint.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Settings Configuration",
+      "quote": "`accessWindow`: `disabled`, `fromNowOn`, `allMail`. `disposition`: Same as Auto-Forwarding.",
+      "remediation": "Use only the listed accessWindow and disposition values.",
+      "when": {
+        "op": "is_true",
+        "field": "action_pop_enum_invalid"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "vacation_required_fields",
+      "title": "Vacation auto-reply needs content and startTime",
+      "rationale": "Required parameters when enabling auto-reply.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Settings Configuration",
+      "quote": "Requires `enableAutoReply`, `responseSubject` OR `responseBody`. `startTime` is mandatory if enabled.",
+      "remediation": "Supply responseSubject or responseBody and a startTime when enabling auto-reply.",
+      "when": {
+        "op": "is_true",
+        "field": "action_vacation_enable"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_vacation_response_present"
+          },
+          {
+            "op": "is_true",
+            "field": "action_vacation_starttime_present"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cse_obliterate_grace",
+      "title": "Obliterate CSE key pair only after 30 disabled days",
+      "rationale": "Mandatory data-protection grace period.",
+      "source": "Email Management Assistant Policy",
+      "reference": "5. CSE Key Pairs / Obliteration Policy",
+      "quote": "`email_obliterate_cse_keypair` (permanent deletion) is only permissible **after the key pair has been in the `disabled` state for a minimum of 30 days**.",
+      "remediation": "Disable the key pair and wait the 30-day grace period before obliterating.",
+      "when": {
+        "op": "is_true",
+        "field": "action_obliterate_cse_keypair"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_keypair_disabled_30_days"
+      }
+    },
+    {
+      "id": "smime_pkcs12",
+      "title": "S/MIME upload must be pkcs12",
+      "rationale": "Required certificate format.",
+      "source": "Email Management Assistant Policy",
+      "reference": "5. S/MIME Configurations",
+      "quote": "**Upload:** `insert_smime_config` requires the certificate in `pkcs12` format.",
+      "remediation": "Provide the certificate in pkcs12 format.",
+      "when": {
+        "op": "is_true",
+        "field": "action_smime_insert"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_smime_pkcs12"
+      }
+    },
+    {
+      "id": "smtpmsa_fields",
+      "title": "smtpMsa requires host, port, securityMode",
+      "rationale": "Required relay parameters and enum.",
+      "source": "Email Management Assistant Policy",
+      "reference": "4. Forwarding Addresses and Aliases",
+      "quote": "If using custom SMTP relay (`smtpMsa`), `host`, `port`, and `securityMode` (`none`, `ssl`, `starttls`) are required.",
+      "remediation": "Supply host, port and a securityMode of none, ssl or starttls.",
+      "when": {
+        "op": "is_true",
+        "field": "action_send_as_smtpmsa"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_smtpmsa_fields_valid"
+      }
+    },
+    {
+      "id": "no_modify_sent_draft",
+      "title": "Do not modify a sent draft",
+      "rationale": "The draft object no longer exists after sending.",
+      "source": "Email Management Assistant Policy",
+      "reference": "3. Core Mail Operations / Draft Workflow",
+      "quote": "Do not attempt to modify a draft after it has been sent.",
+      "remediation": "Create a new draft or message instead of modifying a sent draft.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_modifies_draft"
+          },
+          {
+            "op": "is_true",
+            "field": "context_draft_already_sent"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "filter_limit",
+      "title": "Do not exceed 1000 filters",
+      "rationale": "Hard filter quota.",
+      "source": "Email Management Assistant Policy",
+      "reference": "6. Quota and Limits",
+      "quote": "**Filter Limit:** Max 1,000 filters per user.",
+      "remediation": "Delete an existing filter before creating a new one.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_creates_filter"
+          },
+          {
+            "op": "is_true",
+            "field": "context_filter_limit_reached"
+          }
+        ]
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    }
+  ],
+  "inventory": [
+    {
+      "id": "policy_enforcement",
+      "quote": "Do not act on any request that violates this policy. Refuse and cite the relevant restriction.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Meta-instruction covered by individual rules."
+    },
+    {
+      "id": "atomic_ops",
+      "quote": "Perform **one distinct operation at a time** unless utilizing a specific batch endpoint.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Per-call granularity not observable as a pre-action predicate."
+    },
+    {
+      "id": "data_scope",
+      "quote": "Do not disclose information or settings not currently retrievable from the system.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Concerns message content, not tool arguments."
+    },
+    {
+      "id": "no_confirmation",
+      "quote": "Do not solicit confirmation or missing information from the user.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Conversational behavior, not a tool-call restriction."
+    },
+    {
+      "id": "lookups",
+      "quote": "When identifiers such as names or IDs are missing, perform lookups, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Conditional on missing identifiers; not decidable as a blocking guard."
+    },
+    {
+      "id": "no_fabrication",
+      "quote": "Never assume or fabricate IDs, responses, or outcomes \u2014 rely solely on verified API results.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Agent diligence; cannot be checked from arguments alone."
+    },
+    {
+      "id": "delegate_restriction",
+      "quote": "Cannot modify the delegator's settings, filters, or forwarding rules. Access requires `accepted` verification status.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Acting role (delegate vs primary user) is not observable from the candidate call."
+    },
+    {
+      "id": "primary_scope",
+      "quote": "Cannot access other users' mailboxes unless explicitly delegated.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Actor role and delegation state not reliably observable."
+    },
+    {
+      "id": "maxresults",
+      "quote": "`maxResults` (1-500)",
+      "status": "enforced",
+      "rule_ids": [
+        "list_max_results"
+      ],
+      "reason": "Value range constraint."
+    },
+    {
+      "id": "send_params",
+      "quote": "Headers `To`, `From`, `Subject` are mandatory.",
+      "status": "enforced",
+      "rule_ids": [
+        "send_requires_headers"
+      ],
+      "reason": "Required inputs for sending."
+    },
+    {
+      "id": "modify_limits",
+      "quote": "Max 100 labels can be added/removed per operation. System labels (`INBOX`, `SENT`, `DRAFT`) cannot be directly modified.",
+      "status": "enforced",
+      "rule_ids": [
+        "label_change_limit",
+        "system_labels_immutable"
+      ],
+      "reason": "Numeric and immutability constraints."
+    },
+    {
+      "id": "trash_pref",
+      "quote": "**Prefer `trash_message` for user safety.**",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Preference, not prohibition."
+    },
+    {
+      "id": "batch_limit",
+      "quote": "Messages IDs (Max 1,000 per call).",
+      "status": "enforced",
+      "rule_ids": [
+        "batch_size_limit"
+      ],
+      "reason": "Hard limit."
+    },
+    {
+      "id": "draft_sent",
+      "quote": "Do not attempt to modify a draft after it has been sent.",
+      "status": "enforced",
+      "rule_ids": [
+        "no_modify_sent_draft"
+      ],
+      "reason": "Observable from trajectory."
+    },
+    {
+      "id": "thread_uniform",
+      "quote": "Changes must apply uniformly.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Describes API behavior."
+    },
+    {
+      "id": "label_rules",
+      "quote": "**Custom Labels:** Must have unique `name` (1-100 characters).",
+      "status": "enforced",
+      "rule_ids": [
+        "label_name_length"
+      ],
+      "reason": "Length enforced; uniqueness requires system state."
+    },
+    {
+      "id": "label_delete",
+      "quote": "Cannot delete system labels.",
+      "status": "enforced",
+      "rule_ids": [
+        "system_labels_immutable"
+      ],
+      "reason": "Prohibition."
+    },
+    {
+      "id": "filter_limit_q",
+      "quote": "**Limit:** Maximum **1,000 filters** per user.",
+      "status": "enforced",
+      "rule_ids": [
+        "filter_limit"
+      ],
+      "reason": "Quota observable from prior list."
+    },
+    {
+      "id": "filter_criteria",
+      "quote": "**Creation:** Requires `criteria` (from, to, subject, query, size) and `action` (addLabelIds, removeLabelIds, forward).",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Schema-level requirement handled by the tool interface."
+    },
+    {
+      "id": "filter_forward",
+      "quote": "The `forward` email address specified in the filter action **must** be a pre-verified forwarding address in the user's settings.",
+      "status": "enforced",
+      "rule_ids": [
+        "filter_forward_verified"
+      ],
+      "reason": "Prerequisite with observable trace."
+    },
+    {
+      "id": "af_enum",
+      "quote": "`disposition`: `leaveInInbox`, `archive`, `trash`, `markRead`. `emailAddress` must be verified if enabled.",
+      "status": "enforced",
+      "rule_ids": [
+        "auto_forwarding_disposition",
+        "auto_forwarding_verified"
+      ],
+      "reason": "Enum and verification constraints."
+    },
+    {
+      "id": "imap_enum",
+      "quote": "`expungeBehavior`: `archive`, `trash`, `deleteForever`. `maxFolderSize`: `0`, `1000`, `2000`, `5000`, `10000`.",
+      "status": "enforced",
+      "rule_ids": [
+        "imap_enums"
+      ],
+      "reason": "Enum constraint."
+    },
+    {
+      "id": "pop_enum",
+      "quote": "`accessWindow`: `disabled`, `fromNowOn`, `allMail`. `disposition`: Same as Auto-Forwarding.",
+      "status": "enforced",
+      "rule_ids": [
+        "pop_enums"
+      ],
+      "reason": "Enum constraint."
+    },
+    {
+      "id": "vacation_req",
+      "quote": "Requires `enableAutoReply`, `responseSubject` OR `responseBody`. `startTime` is mandatory if enabled.",
+      "status": "enforced",
+      "rule_ids": [
+        "vacation_required_fields"
+      ],
+      "reason": "Required inputs."
+    },
+    {
+      "id": "fwd_pending",
+      "quote": "**Forwarding:** `create_forwarding_address` places the address in `pending` status. Must reach `accepted` status before use.",
+      "status": "enforced",
+      "rule_ids": [
+        "filter_forward_verified",
+        "auto_forwarding_verified"
+      ],
+      "reason": "Use requires accepted status."
+    },
+    {
+      "id": "smtp_msa",
+      "quote": "If using custom SMTP relay (`smtpMsa`), `host`, `port`, and `securityMode` (`none`, `ssl`, `starttls`) are required.",
+      "status": "enforced",
+      "rule_ids": [
+        "smtpmsa_fields"
+      ],
+      "reason": "Required inputs and enum."
+    },
+    {
+      "id": "alias_verify",
+      "quote": "Must verify non-primary addresses.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Verification occurs after creation; no pre-action trace."
+    },
+    {
+      "id": "cse_obliterate",
+      "quote": "This grace period is mandatory for data protection.",
+      "status": "enforced",
+      "rule_ids": [
+        "cse_obliterate_grace"
+      ],
+      "reason": "Temporal precondition."
+    },
+    {
+      "id": "cse_identity",
+      "quote": "**Identity:** `create_cse_identity` links the key pair(s) to the user's email address.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Descriptive."
+    },
+    {
+      "id": "smime_fmt",
+      "quote": "**Upload:** `insert_smime_config` requires the certificate in `pkcs12` format.",
+      "status": "enforced",
+      "rule_ids": [
+        "smime_pkcs12"
+      ],
+      "reason": "Format constraint."
+    },
+    {
+      "id": "smime_exp",
+      "quote": "Do not use expired certificates for sending.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Requires certificate expiry state tied to the send call; not reliably observable."
+    },
+    {
+      "id": "watch_renew",
+      "quote": "You must renew the watch before expiration to maintain continuous monitoring.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Depends on subscription timing state."
+    },
+    {
+      "id": "history_sync",
+      "quote": "Use `list_history` with the `startHistoryId` to efficiently track mailbox changes instead of polling.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Efficiency preference on a read."
+    },
+    {
+      "id": "attachment_limit",
+      "quote": "**Limit:** Respect file size limits (25MB total message size).",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Size not visible pre-action."
+    },
+    {
+      "id": "id_existence",
+      "quote": "Verify the existence of all IDs (Message, Thread, Label, Draft) before modification or deletion.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Broad; would block legitimate modifications where IDs came from the request, and conflicts with reuse of known values."
+    },
+    {
+      "id": "email_validation",
+      "quote": "Validate email addresses and ensure Base64url encoding for raw message data.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Encoding validity not decidable as a declared fact without content inspection assumptions."
+    },
+    {
+      "id": "quota_check",
+      "quote": "Validate that any action does not exceed hard quota limits.",
+      "status": "enforced",
+      "rule_ids": [
+        "list_max_results",
+        "batch_size_limit",
+        "label_change_limit",
+        "filter_limit"
+      ],
+      "reason": "Covered by specific quota rules."
+    },
+    {
+      "id": "errors",
+      "quote": "Return clear error messages, distinguishing between `Not Found` (404), `Permission Denied` (403), `Invalid Request` (400), and `Quota Exceeded` (429).",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Response style guidance."
+    },
+    {
+      "id": "backoff",
+      "quote": "In the event of a rate limit error (429), the assistant must cease calls and implement an **Exponential Backoff** retry strategy.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Retry timing not observable in a single candidate call."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review the proposed email tool call against the Email Management Assistant Policy. Check: required send headers; value ranges and enumerations for list maxResults, batch size, label counts, auto-forwarding/IMAP/POP/vacation settings and smtpMsa; immutability of system labels; label name length; accepted status of forwarding addresses used by filters or auto-forwarding; the 30-day disabled grace period before CSE key pair obliteration; pkcs12 format for S/MIME uploads; and never modifying a draft already sent. Never block read-only calls unless the policy explicitly restricts them. Base the decision only on the request, policy defaults, prior successful tool observations and the candidate arguments; missing evidence is not approval.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "true if the candidate call complies with the policy"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "policy violations found"
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "For the candidate tool call and the prior trajectory, set each fact to true, false, or null (unknown if no evidence). action_* facts describe only the candidate call's tool name and arguments. context_* facts require a prior successful tool observation about the same user and the same resource (same forwarding email address, same key pair ID, same draft ID, same user's filter list); results for other resources or purposes do not count. Requester claims and supplied identifiers establish only what was supplied, never verified status, acceptance, or elapsed time. Failed or blocked calls establish errors, not effects. The candidate's own result, hidden databases and future events are unavailable. Cite concrete evidence (argument names/values or the prior tool call and its returned field) for each fact.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "properties": {
+            "action_send_message": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_send_headers_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_list_maxresults_out_of_range": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_batch_over_1000": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_label_change_over_100": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_modifies_system_label": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_label_name_write": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_label_name_length_invalid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_filter_forward_set": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_enables_auto_forwarding": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_target_forward_address_accepted": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_autoforward_disposition_invalid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_imap_enum_invalid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_pop_enum_invalid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_vacation_enable": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_vacation_response_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_vacation_starttime_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_obliterate_cse_keypair": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_keypair_disabled_30_days": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_smime_insert": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_smime_pkcs12": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_send_as_smtpmsa": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_smtpmsa_fields_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_modifies_draft": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_draft_already_sent": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_creates_filter": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_filter_limit_reached": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action_send_message",
+            "action_send_headers_present",
+            "action_list_maxresults_out_of_range",
+            "action_batch_over_1000",
+            "action_label_change_over_100",
+            "action_modifies_system_label",
+            "action_label_name_write",
+            "action_label_name_length_invalid",
+            "action_filter_forward_set",
+            "action_enables_auto_forwarding",
+            "context_target_forward_address_accepted",
+            "action_autoforward_disposition_invalid",
+            "action_imap_enum_invalid",
+            "action_pop_enum_invalid",
+            "action_vacation_enable",
+            "action_vacation_response_present",
+            "action_vacation_starttime_present",
+            "action_obliterate_cse_keypair",
+            "context_keypair_disabled_30_days",
+            "action_smime_insert",
+            "action_smime_pkcs12",
+            "action_send_as_smtpmsa",
+            "action_smtpmsa_fields_valid",
+            "action_modifies_draft",
+            "context_draft_already_sent",
+            "action_creates_filter",
+            "context_filter_limit_reached"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "action_send_message": {
+              "type": "string"
+            },
+            "action_send_headers_present": {
+              "type": "string"
+            },
+            "action_list_maxresults_out_of_range": {
+              "type": "string"
+            },
+            "action_batch_over_1000": {
+              "type": "string"
+            },
+            "action_label_change_over_100": {
+              "type": "string"
+            },
+            "action_modifies_system_label": {
+              "type": "string"
+            },
+            "action_label_name_write": {
+              "type": "string"
+            },
+            "action_label_name_length_invalid": {
+              "type": "string"
+            },
+            "action_filter_forward_set": {
+              "type": "string"
+            },
+            "action_enables_auto_forwarding": {
+              "type": "string"
+            },
+            "context_target_forward_address_accepted": {
+              "type": "string"
+            },
+            "action_autoforward_disposition_invalid": {
+              "type": "string"
+            },
+            "action_imap_enum_invalid": {
+              "type": "string"
+            },
+            "action_pop_enum_invalid": {
+              "type": "string"
+            },
+            "action_vacation_enable": {
+              "type": "string"
+            },
+            "action_vacation_response_present": {
+              "type": "string"
+            },
+            "action_vacation_starttime_present": {
+              "type": "string"
+            },
+            "action_obliterate_cse_keypair": {
+              "type": "string"
+            },
+            "context_keypair_disabled_30_days": {
+              "type": "string"
+            },
+            "action_smime_insert": {
+              "type": "string"
+            },
+            "action_smime_pkcs12": {
+              "type": "string"
+            },
+            "action_send_as_smtpmsa": {
+              "type": "string"
+            },
+            "action_smtpmsa_fields_valid": {
+              "type": "string"
+            },
+            "action_modifies_draft": {
+              "type": "string"
+            },
+            "context_draft_already_sent": {
+              "type": "string"
+            },
+            "action_creates_filter": {
+              "type": "string"
+            },
+            "context_filter_limit_reached": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "action_send_message",
+            "action_send_headers_present",
+            "action_list_maxresults_out_of_range",
+            "action_batch_over_1000",
+            "action_label_change_over_100",
+            "action_modifies_system_label",
+            "action_label_name_write",
+            "action_label_name_length_invalid",
+            "action_filter_forward_set",
+            "action_enables_auto_forwarding",
+            "context_target_forward_address_accepted",
+            "action_autoforward_disposition_invalid",
+            "action_imap_enum_invalid",
+            "action_pop_enum_invalid",
+            "action_vacation_enable",
+            "action_vacation_response_present",
+            "action_vacation_starttime_present",
+            "action_obliterate_cse_keypair",
+            "context_keypair_disabled_30_days",
+            "action_smime_insert",
+            "action_smime_pkcs12",
+            "action_send_as_smtpmsa",
+            "action_smtpmsa_fields_valid",
+            "action_modifies_draft",
+            "context_draft_already_sent",
+            "action_creates_filter",
+            "context_filter_limit_reached"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

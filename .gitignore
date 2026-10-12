@@ -12,5 +12,8 @@ __pycache__/
 # Harbor run outputs
 jobs/
 
+# EnterpriseOps pipeline and evaluation outputs
+enterpriseops/runs/
+
 # OS junk
 .DS_Store

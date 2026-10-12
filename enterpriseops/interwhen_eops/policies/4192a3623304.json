@@ -1,0 +1,1656 @@
+{
+  "variables": [
+    {
+      "name": "action_updates_contract_price",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call updates a contract's price field (e.g. update_contract with contract_price supplied)."
+    },
+    {
+      "name": "action_contract_price_is_integer",
+      "type": "bool",
+      "category": "action",
+      "description": "The contract price value supplied in the candidate call is a whole number with no decimal component (rounded off)."
+    },
+    {
+      "name": "action_sets_user_role",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets or updates a user's role field."
+    },
+    {
+      "name": "action_user_role_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The role value supplied in the candidate call is exactly one of: admin, agent, manager, customer."
+    },
+    {
+      "name": "action_sets_contract_type",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets or updates a contract's contract_type field."
+    },
+    {
+      "name": "action_contract_type_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The contract_type value supplied in the candidate call is exactly one of: support, warranty, subscription."
+    },
+    {
+      "name": "action_sets_contract_status",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets or updates a contract's status field."
+    },
+    {
+      "name": "action_contract_status_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The contract status value supplied in the candidate call is exactly one of: active, suspended, expired."
+    },
+    {
+      "name": "action_sets_case_state",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets or updates a customer case's state field."
+    },
+    {
+      "name": "action_case_state_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The case state value supplied is exactly one of: new, in_progress, pending, resolved, closed, canceled."
+    },
+    {
+      "name": "action_sets_case_state_closed",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a customer case's state to closed."
+    },
+    {
+      "name": "context_case_currently_resolved",
+      "type": "bool",
+      "category": "context",
+      "description": "Prior successful tool observations in this trajectory show that the case targeted by the candidate call currently has state = resolved."
+    },
+    {
+      "name": "action_sets_case_priority",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets or updates a customer case's priority field."
+    },
+    {
+      "name": "action_case_priority_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The priority value supplied is exactly one of: critical, high, moderate, low."
+    },
+    {
+      "name": "action_sets_case_channel",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets or updates a customer case's channel (or an interaction channel) field."
+    },
+    {
+      "name": "action_channel_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The channel value supplied is exactly one of: web, email, phone, chat, social, alert, community."
+    },
+    {
+      "name": "action_sets_escalation_reason",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a case's escalation_reason field."
+    },
+    {
+      "name": "action_escalation_reason_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The escalation_reason value supplied is exactly one of: urgency, vip, impact, breach_risk, customer_request."
+    },
+    {
+      "name": "action_sets_knowledge_state",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a knowledge article's state field."
+    },
+    {
+      "name": "action_knowledge_state_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The knowledge state value supplied is exactly one of: draft, published, retired."
+    },
+    {
+      "name": "action_sets_knowledge_visibility",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a knowledge article's visibility field."
+    },
+    {
+      "name": "action_knowledge_visibility_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The visibility value supplied is exactly internal or external."
+    },
+    {
+      "name": "action_sets_case_knowledge_used_as",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets the used_as/usage value when linking a knowledge article to a case."
+    },
+    {
+      "name": "action_used_as_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The used_as value supplied is exactly one of: suggested, applied, resolution."
+    },
+    {
+      "name": "action_sets_location_city",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a location's city field."
+    },
+    {
+      "name": "action_location_city_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The city value supplied is exactly one of: new_york, london, mumbai, tokyo, sydney."
+    },
+    {
+      "name": "action_sets_location_country",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a location's country field."
+    },
+    {
+      "name": "action_location_country_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The country value supplied is exactly one of: usa, uk, india, japan, australia."
+    },
+    {
+      "name": "action_sets_account_type",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets an account's account_type field."
+    },
+    {
+      "name": "action_account_type_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The account_type value supplied is exactly one of: customer, partner, internal."
+    },
+    {
+      "name": "action_sets_group_type",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a user_group's type field."
+    },
+    {
+      "name": "action_group_type_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The user_group type value supplied is exactly one of: support, backoffice, field, vendor."
+    },
+    {
+      "name": "action_sets_product_lifecycle_state",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets a product's lifecycle_state field."
+    },
+    {
+      "name": "action_product_lifecycle_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The lifecycle_state value supplied is exactly active or retired."
+    },
+    {
+      "name": "action_sets_installed_product_status",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets an installed_product's status field."
+    },
+    {
+      "name": "action_installed_status_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The installed_product status value supplied is exactly one of: in_use, in_stock, repair, retired."
+    },
+    {
+      "name": "action_sets_entitlement_support_level",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets an entitlement's support_level field."
+    },
+    {
+      "name": "action_support_level_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The support_level value supplied is exactly one of: standard, premium, enterprise."
+    },
+    {
+      "name": "action_sets_entitlement_coverage_hours",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets an entitlement's coverage_hours field."
+    },
+    {
+      "name": "action_coverage_hours_in_enum",
+      "type": "bool",
+      "category": "action",
+      "description": "The coverage_hours value supplied is exactly one of: h8x5, h12x6, h24x7."
+    },
+    {
+      "name": "action_sets_free_form_text",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call supplies a free-form text field governed by the policy: case short_description, knowledge title, knowledge content/body, or escalation_reason text."
+    },
+    {
+      "name": "action_free_form_text_length_ok",
+      "type": "bool",
+      "category": "action",
+      "description": "Every such free-form text value supplied in the candidate call has length between 30 and 120 characters inclusive."
+    },
+    {
+      "name": "action_creates_case",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call creates a new customer case record."
+    },
+    {
+      "name": "action_case_has_short_description",
+      "type": "bool",
+      "category": "action",
+      "description": "The create-case call supplies a non-empty short_description argument."
+    },
+    {
+      "name": "action_case_has_channel",
+      "type": "bool",
+      "category": "action",
+      "description": "The create-case call supplies a channel argument."
+    },
+    {
+      "name": "action_case_has_contact",
+      "type": "bool",
+      "category": "action",
+      "description": "The create-case call supplies a contact identifier for the reporting contact."
+    },
+    {
+      "name": "context_contact_account_verified",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful lookup in this trajectory returned the reporting contact record used in the candidate call together with its account association."
+    },
+    {
+      "name": "action_case_state_argument_new_or_absent",
+      "type": "bool",
+      "category": "action",
+      "description": "The create-case call either omits state or sets it to new."
+    },
+    {
+      "name": "action_assigns_case_user",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call sets assigned_to on a customer case."
+    },
+    {
+      "name": "context_assignee_active_agent_or_manager",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful user lookup in this trajectory shows the user referenced by assigned_to is active and has role agent or manager."
+    },
+    {
+      "name": "action_links_knowledge_to_case",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call links a knowledge article to a case (case_knowledge record)."
+    },
+    {
+      "name": "context_knowledge_published",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful lookup in this trajectory shows the knowledge article being linked has state = published."
+    },
+    {
+      "name": "action_attaches_installed_product_to_case",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call attaches or sets an installed product on a customer case."
+    },
+    {
+      "name": "context_installed_product_in_use_and_account_matches",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful lookup shows that installed product has status in_use and belongs to the case's reporting account."
+    }
+  ],
+  "rules": [
+    {
+      "id": "contract_price_rounded",
+      "title": "Contract price must be a rounded whole number",
+      "rationale": "Policy requires decimal contract prices to be rounded.",
+      "source": "CSM Agent Policy",
+      "reference": "Contract price",
+      "quote": "For the contract price, ensure it is rounded off if any decimal values are present.",
+      "remediation": "Round the contract price to a whole number before updating the contract.",
+      "when": {
+        "op": "is_true",
+        "field": "action_updates_contract_price"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_contract_price_is_integer"
+      }
+    },
+    {
+      "id": "enum_user_role",
+      "title": "user.role must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "user.role: admin, agent, manager, customer",
+      "remediation": "Use one of admin, agent, manager, customer.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_user_role"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_user_role_in_enum"
+      }
+    },
+    {
+      "id": "enum_contract_type",
+      "title": "contract.contract_type must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "contract.contract_type: support, warranty, subscription",
+      "remediation": "Use support, warranty or subscription.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_contract_type"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_contract_type_in_enum"
+      }
+    },
+    {
+      "id": "enum_contract_status",
+      "title": "contract.status must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "contract.status: active, suspended, expired",
+      "remediation": "Use an allowed contract status value.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_contract_status"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_contract_status_in_enum"
+      }
+    },
+    {
+      "id": "enum_case_state",
+      "title": "customer_case.state must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "customer_case.state: new, in_progress, pending, resolved, closed, canceled",
+      "remediation": "Use one of the listed case states.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_case_state"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_case_state_in_enum"
+      }
+    },
+    {
+      "id": "enum_case_priority",
+      "title": "customer_case.priority must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "customer_case.priority: critical, high, moderate, low",
+      "remediation": "Use critical, high, moderate or low.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_case_priority"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_case_priority_in_enum"
+      }
+    },
+    {
+      "id": "enum_channel",
+      "title": "channel must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "customer_case.channel: web, email, phone, chat, social, alert, community",
+      "remediation": "Use one of the listed channel values.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_case_channel"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_channel_in_enum"
+      }
+    },
+    {
+      "id": "enum_escalation_reason",
+      "title": "escalation_reason must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "customer_case.escalation_reason: urgency, vip, impact, breach_risk, customer_request",
+      "remediation": "Use one of the listed escalation reasons.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_escalation_reason"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_escalation_reason_in_enum"
+      }
+    },
+    {
+      "id": "enum_knowledge_state",
+      "title": "knowledge.state must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "knowledge.state: draft, published, retired",
+      "remediation": "Use draft, published or retired.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_knowledge_state"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_knowledge_state_in_enum"
+      }
+    },
+    {
+      "id": "enum_knowledge_visibility",
+      "title": "knowledge.visibility must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "knowledge.visibility: internal, external",
+      "remediation": "Use internal or external.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_knowledge_visibility"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_knowledge_visibility_in_enum"
+      }
+    },
+    {
+      "id": "enum_used_as",
+      "title": "case_knowledge.used_as must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "case_knowledge.used_as: suggested, applied, resolution",
+      "remediation": "Use suggested, applied or resolution.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_case_knowledge_used_as"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_used_as_in_enum"
+      }
+    },
+    {
+      "id": "enum_location_city",
+      "title": "location.city must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "location.city: new_york, london, mumbai, tokyo, sydney",
+      "remediation": "Use one of the listed cities.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_location_city"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_location_city_in_enum"
+      }
+    },
+    {
+      "id": "enum_location_country",
+      "title": "location.country must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "location.country: usa, uk, india, japan, australia",
+      "remediation": "Use one of the listed countries.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_location_country"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_location_country_in_enum"
+      }
+    },
+    {
+      "id": "enum_account_type",
+      "title": "account.account_type must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "account.account_type: customer, partner, internal",
+      "remediation": "Use customer, partner or internal.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_account_type"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_account_type_in_enum"
+      }
+    },
+    {
+      "id": "enum_group_type",
+      "title": "user_group.type must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "user_group.type: support, backoffice, field, vendor",
+      "remediation": "Use support, backoffice, field or vendor.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_group_type"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_group_type_in_enum"
+      }
+    },
+    {
+      "id": "enum_product_lifecycle",
+      "title": "product.lifecycle_state must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "product.lifecycle_state: active, retired",
+      "remediation": "Use active or retired.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_product_lifecycle_state"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_product_lifecycle_in_enum"
+      }
+    },
+    {
+      "id": "enum_installed_product_status",
+      "title": "installed_product.status must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "installed_product.status: in_use, in_stock, repair, retired",
+      "remediation": "Use one of the listed installed product statuses.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_installed_product_status"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_installed_status_in_enum"
+      }
+    },
+    {
+      "id": "enum_support_level",
+      "title": "entitlement.support_level must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "entitlement.support_level: standard, premium, enterprise",
+      "remediation": "Use standard, premium or enterprise.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_entitlement_support_level"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_support_level_in_enum"
+      }
+    },
+    {
+      "id": "enum_coverage_hours",
+      "title": "entitlement.coverage_hours must use allowed values",
+      "rationale": "Enumerations are enforced.",
+      "source": "CSM Agent Policy",
+      "reference": "Predefined Lists (Enumerations)",
+      "quote": "entitlement.coverage_hours: h8x5, h12x6, h24x7",
+      "remediation": "Use h8x5, h12x6 or h24x7.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_entitlement_coverage_hours"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_coverage_hours_in_enum"
+      }
+    },
+    {
+      "id": "free_text_length",
+      "title": "Free-form text must be 30-120 characters",
+      "rationale": "Policy sets explicit character limits for these fields.",
+      "source": "CSM Agent Policy",
+      "reference": "Free form text policies",
+      "quote": "Character limits: 30\u2013120 chars",
+      "remediation": "Rewrite the text so it is between 30 and 120 characters.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_free_form_text"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "action_free_form_text_length_ok"
+      }
+    },
+    {
+      "id": "case_creation_inputs",
+      "title": "Case creation requires description, channel, contact and new state",
+      "rationale": "Policy lists required inputs and default state for new cases.",
+      "source": "CSM Agent Policy",
+      "reference": "Registering a Customer Case",
+      "quote": "Collect necessary inputs: Issue description (short_description) Product or installed product involved Contact channel (channel) Priority (if not provided \u2192 default = moderate) Default state = new.",
+      "remediation": "Supply short_description, channel and the identified reporting contact, and leave state as new.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_case_has_short_description"
+          },
+          {
+            "op": "is_true",
+            "field": "action_case_has_channel"
+          },
+          {
+            "op": "is_true",
+            "field": "action_case_has_contact"
+          },
+          {
+            "op": "is_true",
+            "field": "action_case_state_argument_new_or_absent"
+          }
+        ]
+      }
+    },
+    {
+      "id": "case_contact_account_verified",
+      "title": "Verify reporting contact's account before creating a case",
+      "rationale": "Case registration begins with identifying the contact and verifying account association.",
+      "source": "CSM Agent Policy",
+      "reference": "Registering a Customer Case",
+      "quote": "Begin by identifying the reporting contact and verifying association with an account.",
+      "remediation": "Look up the reporting contact and its account association first.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_contact_account_verified"
+      }
+    },
+    {
+      "id": "closure_requires_resolved",
+      "title": "Cases may be closed only from resolved",
+      "rationale": "Direct closure is prohibited; resolved must precede closed.",
+      "source": "CSM Agent Policy",
+      "reference": "Working on a Case",
+      "quote": "Cases cannot be closed directly. They must first be moved to resolved, then to closed.",
+      "remediation": "Move the case to resolved first, then close it.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_case_state_closed"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_case_currently_resolved"
+      }
+    },
+    {
+      "id": "assignee_role_and_active",
+      "title": "assigned_to must be an active agent or manager",
+      "rationale": "Assignment constraints restrict who may be assigned a case.",
+      "source": "CSM Agent Policy",
+      "reference": "Assigning a Case",
+      "quote": "assigned_to must reference a user with role agent or manager and (if used) member of assignment_group_id.",
+      "remediation": "Verify the user is active with role agent or manager before assigning.",
+      "when": {
+        "op": "is_true",
+        "field": "action_assigns_case_user"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_assignee_active_agent_or_manager"
+      }
+    },
+    {
+      "id": "knowledge_must_be_published",
+      "title": "Only published articles may be linked to cases",
+      "rationale": "Linking rules require published state.",
+      "source": "CSM Agent Policy",
+      "reference": "Linking Knowledge Articles",
+      "quote": "Articles must be in state = published.",
+      "remediation": "Publish the article or choose a published article before linking.",
+      "when": {
+        "op": "is_true",
+        "field": "action_links_knowledge_to_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_knowledge_published"
+      }
+    },
+    {
+      "id": "installed_product_constraints",
+      "title": "Installed products attached to cases must be in_use and belong to the account",
+      "rationale": "Installed product management restricts attachable assets.",
+      "source": "CSM Agent Policy",
+      "reference": "Installed Product Management",
+      "quote": "Installed products must: Be active / in_use. Belong to the reporting account.",
+      "remediation": "Verify the installed product is in_use and belongs to the reporting account.",
+      "when": {
+        "op": "is_true",
+        "field": "action_attaches_installed_product_to_case"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_installed_product_in_use_and_account_matches"
+      }
+    }
+  ],
+  "inventory": [
+    {
+      "id": "intro_context",
+      "quote": "You should always act based on confirmed user context, ing record relationships, and database integrity best practices.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "General diligence expectation."
+    },
+    {
+      "id": "one_op",
+      "quote": "Perform one operation at a time.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Orchestration style, not checkable per candidate call."
+    },
+    {
+      "id": "no_ask",
+      "quote": "Do not ask for any information or confirmation from the user, if you cannot proceed ahead provide the reason for that before pausing.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Concerns messages, not tool calls."
+    },
+    {
+      "id": "default_admin",
+      "quote": "By default, you should assume the roles and responsibilities of an admin to complete a particular request.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Explicit default role; removes actor-role gating for admin-capable operations."
+    },
+    {
+      "id": "roles",
+      "quote": "Has full access across all tables.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Role capability description; acting role defaults to admin."
+    },
+    {
+      "id": "case_inputs",
+      "quote": "Collect necessary inputs: Issue description (short_description) Product or installed product involved Contact channel (channel) Priority (if not provided \u2192 default = moderate) Default state = new.",
+      "status": "enforced",
+      "rule_ids": [
+        "case_creation_inputs"
+      ],
+      "reason": "Required inputs and default state."
+    },
+    {
+      "id": "contact_account",
+      "quote": "Begin by identifying the reporting contact and verifying association with an account.",
+      "status": "enforced",
+      "rule_ids": [
+        "case_contact_account_verified"
+      ],
+      "reason": "Observable prerequisite lookup."
+    },
+    {
+      "id": "product_owned",
+      "quote": "Verify the product or installed product belongs to the customer\u2019s account.",
+      "status": "enforced",
+      "rule_ids": [
+        "installed_product_constraints"
+      ],
+      "reason": "Covered for installed-product attachment scope."
+    },
+    {
+      "id": "assignment",
+      "quote": "assigned_to must reference a user with role agent or manager and (if used) member of assignment_group_id.",
+      "status": "enforced",
+      "rule_ids": [
+        "assignee_role_and_active"
+      ],
+      "reason": "Group membership portion not reliably observable; role/active enforced."
+    },
+    {
+      "id": "closure",
+      "quote": "Cases cannot be closed directly. They must first be moved to resolved, then to closed.",
+      "status": "enforced",
+      "rule_ids": [
+        "closure_requires_resolved"
+      ],
+      "reason": "Forbidden transition."
+    },
+    {
+      "id": "transitions",
+      "quote": "Valid state transitions: new \u2192 in_progress / pending / resolved in_progress \u2192 pending / resolved pending \u2192 in_progress / resolved resolved \u2192 closed / new canceled",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Prior state often not observable except for the closure case already enforced."
+    },
+    {
+      "id": "timestamps",
+      "quote": "All actions must: Update sys_updated_on.",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "System-generated fields, not candidate arguments."
+    },
+    {
+      "id": "entitlement",
+      "quote": "Before applying entitlement: Check it is active and within contract validity.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "No entitlement-applying action is defined with observable pre-action evidence here."
+    },
+    {
+      "id": "installed",
+      "quote": "Installed products must: Be active / in_use. Belong to the reporting account.",
+      "status": "enforced",
+      "rule_ids": [
+        "installed_product_constraints"
+      ],
+      "reason": "Observable precondition."
+    },
+    {
+      "id": "knowledge_published",
+      "quote": "Articles must be in state = published.",
+      "status": "enforced",
+      "rule_ids": [
+        "knowledge_must_be_published"
+      ],
+      "reason": "Observable precondition."
+    },
+    {
+      "id": "escalation",
+      "quote": "Record escalation = true on case. Capture escalation_reason.",
+      "status": "enforced",
+      "rule_ids": [
+        "enum_escalation_reason"
+      ],
+      "reason": "Value constraint enforced; justification logging is not pre-action observable."
+    },
+    {
+      "id": "security",
+      "quote": "Users may only view or update cases they own, are assigned to, or are in the assigned group.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Agent acts as admin by default; acting user's case relationship not observable."
+    },
+    {
+      "id": "enums",
+      "quote": "Enforcement: reject any value outside the list with INVALID_ENUM_VALUE.",
+      "status": "enforced",
+      "rule_ids": [
+        "enum_user_role",
+        "enum_contract_type",
+        "enum_contract_status",
+        "enum_case_state",
+        "enum_case_priority",
+        "enum_channel",
+        "enum_escalation_reason",
+        "enum_knowledge_state",
+        "enum_knowledge_visibility",
+        "enum_used_as",
+        "enum_location_city",
+        "enum_location_country",
+        "enum_account_type",
+        "enum_group_type",
+        "enum_product_lifecycle",
+        "enum_installed_product_status",
+        "enum_support_level",
+        "enum_coverage_hours"
+      ],
+      "reason": "All enumerations encoded."
+    },
+    {
+      "id": "kb_search",
+      "quote": "When a new case is created and is asked to be investigated, then a knowledge base search should be performed.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Depends on request wording and would block reads."
+    },
+    {
+      "id": "kb_create_close",
+      "quote": "If no relevant knowledge is found and case is being closed, a new knowledge article should be created to capture the findings and resolution steps.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Requires a later workflow outcome."
+    },
+    {
+      "id": "sla_align",
+      "quote": "When new case moves to work in progress appropriate SLA should be aligned to it.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Post-action follow-up, not a pre-action guard."
+    },
+    {
+      "id": "used_as_semantics",
+      "quote": "When the knowledge is found through automated search it should be linked as suggested.",
+      "status": "ambiguous",
+      "rule_ids": [],
+      "reason": "Provenance judgement; only enum enforced."
+    },
+    {
+      "id": "free_text",
+      "quote": "Character limits: 30\u2013120 chars",
+      "status": "enforced",
+      "rule_ids": [
+        "free_text_length"
+      ],
+      "reason": "Observable length constraint."
+    },
+    {
+      "id": "price_round",
+      "quote": "For the contract price, ensure it is rounded off if any decimal values are present.",
+      "status": "enforced",
+      "rule_ids": [
+        "contract_price_rounded"
+      ],
+      "reason": "Observable argument constraint."
+    },
+    {
+      "id": "sla_scope",
+      "quote": "Unless explicitly defined in entitlements or SLAs, no service level commitments are in scope.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Scope statement, not an action restriction."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review each proposed CSM tool call against the CSM Agent Policy. Confirm enumerated field values are within the allowed lists, free-form text fields are 30-120 characters, contract prices are whole numbers, case creation carries short_description, channel and a verified reporting contact with state new, closure occurs only from resolved, assignees are active agents or managers, linked knowledge is published, and attached installed products are in_use and owned by the reporting account. Do not block read-only lookups. Flag any requirement invented beyond the policy text.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "True if the call complies with the policy."
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Policy issues found."
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "From the candidate tool call arguments and the prior successful tool observations only, set each fact to true, false or null (unknown). action_* facts describe the candidate call's own arguments: if a field is absent, the corresponding 'sets' fact is false. context_* facts require explicit prior successful observations about the exact resource referenced by the candidate call (same contact, user, article, installed product or case); evidence about another record or another purpose does not count, and requester claims never count. Never use the candidate's result or any database you cannot see. Provide a short evidence string per fact naming the tool call or argument relied on, or 'no evidence'.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "properties": {
+            "action_updates_contract_price": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_contract_price_is_integer": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_user_role": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_user_role_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_contract_type": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_contract_type_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_contract_status": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_contract_status_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_case_state": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_state_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_case_state_closed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_case_currently_resolved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_case_priority": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_priority_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_case_channel": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_channel_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_escalation_reason": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_escalation_reason_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_knowledge_state": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_knowledge_state_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_knowledge_visibility": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_knowledge_visibility_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_case_knowledge_used_as": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_used_as_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_location_city": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_location_city_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_location_country": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_location_country_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_account_type": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_account_type_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_group_type": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_group_type_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_product_lifecycle_state": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_product_lifecycle_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_installed_product_status": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_installed_status_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_entitlement_support_level": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_support_level_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_entitlement_coverage_hours": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_coverage_hours_in_enum": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_free_form_text": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_free_form_text_length_ok": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_creates_case": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_has_short_description": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_has_channel": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_has_contact": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_contact_account_verified": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_case_state_argument_new_or_absent": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_assigns_case_user": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_active_agent_or_manager": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_links_knowledge_to_case": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_knowledge_published": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_attaches_installed_product_to_case": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_installed_product_in_use_and_account_matches": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action_updates_contract_price",
+            "action_contract_price_is_integer",
+            "action_sets_user_role",
+            "action_user_role_in_enum",
+            "action_sets_contract_type",
+            "action_contract_type_in_enum",
+            "action_sets_contract_status",
+            "action_contract_status_in_enum",
+            "action_sets_case_state",
+            "action_case_state_in_enum",
+            "action_sets_case_state_closed",
+            "context_case_currently_resolved",
+            "action_sets_case_priority",
+            "action_case_priority_in_enum",
+            "action_sets_case_channel",
+            "action_channel_in_enum",
+            "action_sets_escalation_reason",
+            "action_escalation_reason_in_enum",
+            "action_sets_knowledge_state",
+            "action_knowledge_state_in_enum",
+            "action_sets_knowledge_visibility",
+            "action_knowledge_visibility_in_enum",
+            "action_sets_case_knowledge_used_as",
+            "action_used_as_in_enum",
+            "action_sets_location_city",
+            "action_location_city_in_enum",
+            "action_sets_location_country",
+            "action_location_country_in_enum",
+            "action_sets_account_type",
+            "action_account_type_in_enum",
+            "action_sets_group_type",
+            "action_group_type_in_enum",
+            "action_sets_product_lifecycle_state",
+            "action_product_lifecycle_in_enum",
+            "action_sets_installed_product_status",
+            "action_installed_status_in_enum",
+            "action_sets_entitlement_support_level",
+            "action_support_level_in_enum",
+            "action_sets_entitlement_coverage_hours",
+            "action_coverage_hours_in_enum",
+            "action_sets_free_form_text",
+            "action_free_form_text_length_ok",
+            "action_creates_case",
+            "action_case_has_short_description",
+            "action_case_has_channel",
+            "action_case_has_contact",
+            "context_contact_account_verified",
+            "action_case_state_argument_new_or_absent",
+            "action_assigns_case_user",
+            "context_assignee_active_agent_or_manager",
+            "action_links_knowledge_to_case",
+            "context_knowledge_published",
+            "action_attaches_installed_product_to_case",
+            "context_installed_product_in_use_and_account_matches"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "action_updates_contract_price": {
+              "type": "string"
+            },
+            "action_contract_price_is_integer": {
+              "type": "string"
+            },
+            "action_sets_user_role": {
+              "type": "string"
+            },
+            "action_user_role_in_enum": {
+              "type": "string"
+            },
+            "action_sets_contract_type": {
+              "type": "string"
+            },
+            "action_contract_type_in_enum": {
+              "type": "string"
+            },
+            "action_sets_contract_status": {
+              "type": "string"
+            },
+            "action_contract_status_in_enum": {
+              "type": "string"
+            },
+            "action_sets_case_state": {
+              "type": "string"
+            },
+            "action_case_state_in_enum": {
+              "type": "string"
+            },
+            "action_sets_case_state_closed": {
+              "type": "string"
+            },
+            "context_case_currently_resolved": {
+              "type": "string"
+            },
+            "action_sets_case_priority": {
+              "type": "string"
+            },
+            "action_case_priority_in_enum": {
+              "type": "string"
+            },
+            "action_sets_case_channel": {
+              "type": "string"
+            },
+            "action_channel_in_enum": {
+              "type": "string"
+            },
+            "action_sets_escalation_reason": {
+              "type": "string"
+            },
+            "action_escalation_reason_in_enum": {
+              "type": "string"
+            },
+            "action_sets_knowledge_state": {
+              "type": "string"
+            },
+            "action_knowledge_state_in_enum": {
+              "type": "string"
+            },
+            "action_sets_knowledge_visibility": {
+              "type": "string"
+            },
+            "action_knowledge_visibility_in_enum": {
+              "type": "string"
+            },
+            "action_sets_case_knowledge_used_as": {
+              "type": "string"
+            },
+            "action_used_as_in_enum": {
+              "type": "string"
+            },
+            "action_sets_location_city": {
+              "type": "string"
+            },
+            "action_location_city_in_enum": {
+              "type": "string"
+            },
+            "action_sets_location_country": {
+              "type": "string"
+            },
+            "action_location_country_in_enum": {
+              "type": "string"
+            },
+            "action_sets_account_type": {
+              "type": "string"
+            },
+            "action_account_type_in_enum": {
+              "type": "string"
+            },
+            "action_sets_group_type": {
+              "type": "string"
+            },
+            "action_group_type_in_enum": {
+              "type": "string"
+            },
+            "action_sets_product_lifecycle_state": {
+              "type": "string"
+            },
+            "action_product_lifecycle_in_enum": {
+              "type": "string"
+            },
+            "action_sets_installed_product_status": {
+              "type": "string"
+            },
+            "action_installed_status_in_enum": {
+              "type": "string"
+            },
+            "action_sets_entitlement_support_level": {
+              "type": "string"
+            },
+            "action_support_level_in_enum": {
+              "type": "string"
+            },
+            "action_sets_entitlement_coverage_hours": {
+              "type": "string"
+            },
+            "action_coverage_hours_in_enum": {
+              "type": "string"
+            },
+            "action_sets_free_form_text": {
+              "type": "string"
+            },
+            "action_free_form_text_length_ok": {
+              "type": "string"
+            },
+            "action_creates_case": {
+              "type": "string"
+            },
+            "action_case_has_short_description": {
+              "type": "string"
+            },
+            "action_case_has_channel": {
+              "type": "string"
+            },
+            "action_case_has_contact": {
+              "type": "string"
+            },
+            "context_contact_account_verified": {
+              "type": "string"
+            },
+            "action_case_state_argument_new_or_absent": {
+              "type": "string"
+            },
+            "action_assigns_case_user": {
+              "type": "string"
+            },
+            "context_assignee_active_agent_or_manager": {
+              "type": "string"
+            },
+            "action_links_knowledge_to_case": {
+              "type": "string"
+            },
+            "context_knowledge_published": {
+              "type": "string"
+            },
+            "action_attaches_installed_product_to_case": {
+              "type": "string"
+            },
+            "context_installed_product_in_use_and_account_matches": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "action_updates_contract_price",
+            "action_contract_price_is_integer",
+            "action_sets_user_role",
+            "action_user_role_in_enum",
+            "action_sets_contract_type",
+            "action_contract_type_in_enum",
+            "action_sets_contract_status",
+            "action_contract_status_in_enum",
+            "action_sets_case_state",
+            "action_case_state_in_enum",
+            "action_sets_case_state_closed",
+            "context_case_currently_resolved",
+            "action_sets_case_priority",
+            "action_case_priority_in_enum",
+            "action_sets_case_channel",
+            "action_channel_in_enum",
+            "action_sets_escalation_reason",
+            "action_escalation_reason_in_enum",
+            "action_sets_knowledge_state",
+            "action_knowledge_state_in_enum",
+            "action_sets_knowledge_visibility",
+            "action_knowledge_visibility_in_enum",
+            "action_sets_case_knowledge_used_as",
+            "action_used_as_in_enum",
+            "action_sets_location_city",
+            "action_location_city_in_enum",
+            "action_sets_location_country",
+            "action_location_country_in_enum",
+            "action_sets_account_type",
+            "action_account_type_in_enum",
+            "action_sets_group_type",
+            "action_group_type_in_enum",
+            "action_sets_product_lifecycle_state",
+            "action_product_lifecycle_in_enum",
+            "action_sets_installed_product_status",
+            "action_installed_status_in_enum",
+            "action_sets_entitlement_support_level",
+            "action_support_level_in_enum",
+            "action_sets_entitlement_coverage_hours",
+            "action_coverage_hours_in_enum",
+            "action_sets_free_form_text",
+            "action_free_form_text_length_ok",
+            "action_creates_case",
+            "action_case_has_short_description",
+            "action_case_has_channel",
+            "action_case_has_contact",
+            "context_contact_account_verified",
+            "action_case_state_argument_new_or_absent",
+            "action_assigns_case_user",
+            "context_assignee_active_agent_or_manager",
+            "action_links_knowledge_to_case",
+            "context_knowledge_published",
+            "action_attaches_installed_product_to_case",
+            "context_installed_product_in_use_and_account_matches"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "variables": [],
+  "rules": [],
+  "inventory": [
+    {
+      "id": "role_scope",
+      "quote": "You are an integrated automation agent for a hybrid environment managing both Google Drive and ServiceNow Human Resources (HR).",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Role/environment description only; it states no obligation, prohibition, precondition, value constraint or actor restriction, so there is nothing to encode as a pre-tool guard."
+    },
+    {
+      "id": "full_permissions",
+      "quote": "You have full administrative permissions to manage users, cases, topic, survey, skill, service, organization, and meetings in a safe and authorized capacity.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Grant of broad authority rather than a restriction. The qualifier 'in a safe and authorized capacity' expresses care/diligence with no observable pre-action trace; encoding it would block every action, which the contract forbids."
+    },
+    {
+      "id": "no_confirmation",
+      "quote": "Do not ask for confirmation before taking action.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Constrains conversational behavior toward the user, not a property of a candidate tool call. It removes an approval step rather than imposing one, so there is no enforceable pre-action obligation."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review the proposed rule set against this policy text only. The policy consists of three sentences: a role description, a grant of full administrative permissions over Google Drive and ServiceNow HR objects qualified by 'in a safe and authorized capacity', and an instruction not to ask for confirmation. It states no preconditions, required lookups, approvals, ownership or actor-role restrictions, value constraints, state-transition limits, or argument requirements. Approve an empty rule set unless you can cite a verbatim policy span stating an observable pre-action restriction that was omitted. Flag: (a) any rule whose quote is not verbatim in the policy; (b) any rule whose obligation derives from tool names, domain conventions, ServiceNow/Drive best practice, or training examples rather than policy text; (c) any rule that would block a read-only call; (d) any rule encoding the unobservable 'safe and authorized' diligence qualifier, which would block every action; (e) any rule that inverts 'Do not ask for confirmation' into a confirmation/approval requirement; (f) any genuine normative clause from the policy omitted from the inventory. Verify each inventory entry's quote occurs verbatim in the policy and that its status (non_normative for all three clauses) is justified.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "True if the rule set and inventory faithfully and completely represent this policy."
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "One specific problem: unsupported rule, invented precondition, blocked read, misquote, or omitted obligation."
+          },
+          "description": "Specific problems found; empty if approved."
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "This policy declares no variables, because it contains no observable pre-action restriction (its only qualifiers are an unobservable diligence expectation and a conversational instruction). Therefore extract nothing: return an empty object for 'facts' and an empty object for 'evidence'. Do not invent facts from tool names, tool arguments, candidate results, hidden system state, prior reviewer text, or benchmark expectations. Do not infer actor role, ownership, approval or lookup status; no such predicate is declared. Missing evidence remains unknown (null), but since no fact names exist, both objects must simply be empty.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false,
+          "description": "No declared facts; must be empty."
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false,
+          "description": "No evidence entries; must be empty."
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

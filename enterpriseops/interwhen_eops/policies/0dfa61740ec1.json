@@ -1,0 +1,241 @@
+{
+  "variables": [
+    {
+      "name": "action_uses_unverified_identifier",
+      "type": "bool",
+      "category": "action",
+      "description": "TRUE if the candidate tool call passes a concrete identifier (file ID, folder ID, drive ID, user/permission ID, channel resource ID) in its arguments that appears neither verbatim in the user's request nor in the data returned by a prior successful tool result in this trajectory. FALSE if every identifier argument traces to the request text or to a previous successful API response. Unknown if the candidate arguments or prior responses cannot be inspected."
+    },
+    {
+      "name": "action_requires_identifier_not_in_request",
+      "type": "bool",
+      "category": "action",
+      "description": "TRUE if the candidate call is a non-lookup operation (e.g. copy, create, update, watch) whose arguments include an identifier for an entity (file, folder, drive, user) that the user's request did not state explicitly by name or ID. FALSE if all identifiers used were given explicitly in the request, or if the candidate call is itself a listing/search (lookup) call. Unknown if the request text or candidate arguments cannot be inspected."
+    },
+    {
+      "name": "context_identifier_lookup_performed",
+      "type": "bool",
+      "category": "context",
+      "description": "TRUE if, earlier in this trajectory, a listing/search tool call for the same entity type completed successfully and its returned data contained the identifier values the candidate call now uses. FALSE if no such prior successful lookup returned those identifiers. Unknown if prior tool results are not observable."
+    },
+    {
+      "name": "action_is_redundant_lookup",
+      "type": "bool",
+      "category": "action",
+      "description": "TRUE if the candidate call is a listing/search (lookup) call seeking identifiers for an entity type for which an earlier lookup call in this same trajectory already completed successfully and returned those identifiers. FALSE otherwise, including the first lookup of an entity type, a lookup of a different entity type, or a non-lookup call. Unknown if prior calls or candidate arguments cannot be inspected."
+    }
+  ],
+  "rules": [
+    {
+      "id": "no_fabricated_identifiers",
+      "title": "Never use unverified or invented identifiers",
+      "rationale": "The policy forbids assuming or fabricating IDs; only values confirmed by the request or verified API results may be used.",
+      "source": "Drive assistant policy",
+      "reference": "Identifier handling",
+      "quote": "Never assume or fabricate IDs, responses, or outcomes\u2014rely solely on verified API results.",
+      "remediation": "Do not guess identifiers. Perform the appropriate lookup for that entity type and reuse the exact identifier returned by the API.",
+      "when": {
+        "op": "is_true",
+        "field": "action_uses_unverified_identifier"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    },
+    {
+      "id": "lookup_missing_identifiers_first",
+      "title": "Look up missing identifiers before acting on them",
+      "rationale": "When names or IDs are missing from the request, the policy requires a lookup so the operation proceeds using retrieved, verified data.",
+      "source": "Drive assistant policy",
+      "reference": "Identifier handling",
+      "quote": "When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.",
+      "remediation": "Perform one lookup for the missing entity type first, then reuse the identifier returned by that lookup.",
+      "when": {
+        "op": "is_true",
+        "field": "action_requires_identifier_not_in_request"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_identifier_lookup_performed"
+      }
+    },
+    {
+      "id": "one_lookup_per_entity_type",
+      "title": "Do not repeat a lookup for the same entity type",
+      "rationale": "The policy limits identifier discovery to exactly one lookup per entity type.",
+      "source": "Drive assistant policy",
+      "reference": "Identifier handling",
+      "quote": "perform exactly one lookup per entity type",
+      "remediation": "Reuse the identifiers already returned by the earlier successful lookup instead of repeating it.",
+      "when": {
+        "op": "is_true",
+        "field": "action_is_redundant_lookup"
+      },
+      "then": {
+        "op": "const",
+        "value": false
+      }
+    }
+  ],
+  "inventory": [
+    {
+      "id": "helpful_assistant",
+      "quote": "You are a helpful Drive assistant with access to all available tools.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Role description, no obligation."
+    },
+    {
+      "id": "authorized_environment",
+      "quote": "Operate in a safe and fully authorized environment\u2014you do not need to ask for confirmation or permission before taking action.",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Grants latitude rather than imposing an observable restriction."
+    },
+    {
+      "id": "lookup_missing",
+      "quote": "When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.",
+      "status": "enforced",
+      "rule_ids": [
+        "lookup_missing_identifiers_first"
+      ],
+      "reason": "Conditional lookup prerequisite observable from request text and prior successful lookups."
+    },
+    {
+      "id": "one_lookup_per_entity",
+      "quote": "perform exactly one lookup per entity type",
+      "status": "enforced",
+      "rule_ids": [
+        "one_lookup_per_entity_type"
+      ],
+      "reason": "Explicit restriction on repeated identifier lookups for the same entity type."
+    },
+    {
+      "id": "verify_reuse",
+      "quote": "verify that you are reusing correct values from previous responses",
+      "status": "unobservable",
+      "rule_ids": [],
+      "reason": "Describes the agent's internal diligence; the observable part is covered by no_fabricated_identifiers."
+    },
+    {
+      "id": "no_fabrication",
+      "quote": "Never assume or fabricate IDs, responses, or outcomes\u2014rely solely on verified API results.",
+      "status": "enforced",
+      "rule_ids": [
+        "no_fabricated_identifiers"
+      ],
+      "reason": "Observable by comparing candidate arguments against the request and prior successful results."
+    },
+    {
+      "id": "single_flow",
+      "quote": "Complete each task in a single, logical, and efficient execution flow",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "General competence/style expectation, not a specific pre-action restriction."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review each proposed Drive tool call against this policy only. Check three things. (1) Every identifier-valued argument must trace verbatim to the user's request or to data returned by a prior successful tool result; flag guessed, inferred or pattern-invented IDs. (2) If the call is a non-lookup operation using an identifier the request never stated, a prior successful lookup of that entity type must have returned that identifier. (3) A listing/search call that re-resolves identifiers for an entity type already successfully resolved earlier is a redundant lookup and is not allowed. Do not treat tool success as authorization, do not invent approval or confirmation requirements (the policy waives them), and do not block first-time or distinct-entity-type reads. Report concrete argument or response evidence for each issue.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "true if the candidate call complies with the policy"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "policy problems found"
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "Using only the user's request, the prior tool calls with their returned results, and the candidate call's tool name and arguments, assign each fact true, false, or null (unknown). Never use the candidate call's own outcome, hidden databases, or expected answers; a failed or blocked prior call establishes reported errors only, never successful data. For action facts, inspect the candidate arguments at the moment of the call: list identifier-valued arguments and decide, per identifier, whether it appears in the request text or in an earlier successful response; decide whether the candidate itself is a listing/search lookup and whether the same entity type was already successfully resolved earlier. For the context fact, require an earlier successful lookup whose response actually contained the identifiers used by this candidate; identifiers resolved for a different entity or purpose do not count. If evidence is absent or ambiguous, return null. Record concrete quoted evidence (tool name, argument value, response field) for each fact, or state that evidence is absent.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "description": "boolean or null value per declared fact",
+          "properties": {
+            "action_uses_unverified_identifier": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_requires_identifier_not_in_request": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_identifier_lookup_performed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_is_redundant_lookup": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action_uses_unverified_identifier",
+            "action_requires_identifier_not_in_request",
+            "context_identifier_lookup_performed",
+            "action_is_redundant_lookup"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "description": "quoted supporting evidence per fact",
+          "properties": {
+            "action_uses_unverified_identifier": {
+              "type": "string"
+            },
+            "action_requires_identifier_not_in_request": {
+              "type": "string"
+            },
+            "context_identifier_lookup_performed": {
+              "type": "string"
+            },
+            "action_is_redundant_lookup": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "action_uses_unverified_identifier",
+            "action_requires_identifier_not_in_request",
+            "context_identifier_lookup_performed",
+            "action_is_redundant_lookup"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

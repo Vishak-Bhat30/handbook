@@ -1,0 +1,1292 @@
+{
+  "variables": [
+    {
+      "name": "action_creates_incident",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate tool call creates a new incident record (e.g. create_incident)."
+    },
+    {
+      "name": "action_incident_caller_id_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The incident-creation candidate call includes a non-empty caller_id argument."
+    },
+    {
+      "name": "action_incident_category_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The incident-creation candidate call includes a non-empty category argument."
+    },
+    {
+      "name": "action_incident_short_description_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The incident-creation candidate call includes a non-empty short_description argument."
+    },
+    {
+      "name": "action_incident_created_state_new",
+      "type": "bool",
+      "category": "action",
+      "description": "The incident-creation candidate call either omits state or sets state to 'new'."
+    },
+    {
+      "name": "action_incident_enums_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "Every incident field supplied in the candidate call that has an enumeration (impact: high/medium/low; urgency: high/medium/low; state: new/in_progress/on_hold/resolved/closed; on_hold_reason: Awaiting Change/Awaiting Caller/Awaiting Problem; resolution_code: fixed/workaround/not_reproducible/closed_by_caller; priority: critical/high/moderate/low/planning) uses an allowed value."
+    },
+    {
+      "name": "action_sets_incident_state_resolved",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an incident's state to 'resolved'."
+    },
+    {
+      "name": "action_resolution_code_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies a non-empty resolution_code argument."
+    },
+    {
+      "name": "action_resolution_notes_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call supplies non-empty resolution_notes."
+    },
+    {
+      "name": "action_resolution_notes_within_limit",
+      "type": "bool",
+      "category": "action",
+      "description": "The resolution_notes supplied in the candidate call are at most 2000 characters."
+    },
+    {
+      "name": "action_sets_incident_state",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call changes an existing incident's state field to any value."
+    },
+    {
+      "name": "action_state_transition_allowed",
+      "type": "bool",
+      "category": "action",
+      "description": "The incident state change in the candidate call matches an allowed transition given the incident's last observed state: new\u2192in_progress/on_hold/resolved, in_progress\u2192on_hold/resolved, on_hold\u2192in_progress, resolved\u2192closed."
+    },
+    {
+      "name": "action_sets_state_in_progress_from_on_hold",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an incident whose last observed state is 'on_hold' to 'in_progress'."
+    },
+    {
+      "name": "action_sets_incident_state_closed",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an incident's state to 'closed'."
+    },
+    {
+      "name": "action_assigns_incident_assignee",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets or changes an incident's assigned_to field."
+    },
+    {
+      "name": "action_links_ci_to_incident",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call links a configuration item to an incident (e.g. sets cmdb_ci/ci_id on an incident that is not closed)."
+    },
+    {
+      "name": "action_registers_configuration_item",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call creates/registers a configuration item record."
+    },
+    {
+      "name": "action_ci_owner_id_present",
+      "type": "bool",
+      "category": "action",
+      "description": "The CI registration candidate call supplies a non-empty owner_id."
+    },
+    {
+      "name": "action_links_knowledge_to_incident",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call links a knowledge article to an incident."
+    },
+    {
+      "name": "action_kb_use_valid",
+      "type": "bool",
+      "category": "action",
+      "description": "The knowledge-link candidate call supplies a kb_use value that is one of suggested, applied, resolution."
+    },
+    {
+      "name": "action_sets_sla_stage_paused",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call sets an incident SLA record's stage to 'paused'."
+    },
+    {
+      "name": "action_modifies_incident",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call creates or updates an incident record (any state-changing incident write)."
+    },
+    {
+      "name": "action_state_changing",
+      "type": "bool",
+      "category": "action",
+      "description": "The candidate call writes data (creates, updates, links, registers, or sends notification) rather than only reading."
+    },
+    {
+      "name": "context_requesting_user_verified",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful user lookup (get_user, get_user_using_email, get_user_using_name, list_users) returned the requesting user's record, including role and active status, earlier in this trajectory."
+    },
+    {
+      "name": "context_assignee_active_agent_or_manager",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful user lookup returned the specific user named in the candidate's assigned_to with active=true and role agent or manager."
+    },
+    {
+      "name": "context_assignee_in_assignment_group",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful observation shows that the candidate's assigned_to user is a member of the assignment_group used for that incident."
+    },
+    {
+      "name": "context_on_hold_reason_logged",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful call recorded an on_hold_reason on the target incident before this transition out of on_hold."
+    },
+    {
+      "name": "context_target_incident_state_resolved",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful read of the target incident shows its current state is 'resolved'."
+    },
+    {
+      "name": "context_target_incident_resolved_72h",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful read shows the target incident has been in 'resolved' state for at least 72 hours (resolved_at timestamp at least 72 hours before now)."
+    },
+    {
+      "name": "context_ci_status_in_use_or_maintenance",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful CI read shows the configuration item being linked has status in_use or maintenance."
+    },
+    {
+      "name": "context_actor_role_reporter",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful user lookup shows the requesting (acting) user's role is 'reporter'."
+    },
+    {
+      "name": "context_actor_is_caller_of_target_incident",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful read shows the target incident's caller_id equals the requesting (acting) user's id."
+    },
+    {
+      "name": "context_incident_on_hold_with_valid_reason",
+      "type": "bool",
+      "category": "context",
+      "description": "A prior successful read shows the incident linked to the target SLA is in state on_hold with on_hold_reason one of Awaiting Change, Awaiting Caller, Awaiting Problem."
+    }
+  ],
+  "rules": [
+    {
+      "id": "verify_user_before_write",
+      "title": "Verify user information before state-changing operations",
+      "rationale": "The assistant must operate on confirmed user roles rather than assumed identity.",
+      "source": "ITSM Assistant Policy",
+      "reference": "Role / Mandate",
+      "quote": "First you must check the user information and operate exclusively based on **confirmed user roles**",
+      "remediation": "Look up the requesting user (get_user / get_user_using_email / get_user_using_name) before performing write operations.",
+      "when": {
+        "op": "is_true",
+        "field": "action_state_changing"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_requesting_user_verified"
+      }
+    },
+    {
+      "id": "incident_mandatory_fields",
+      "title": "Incident creation requires mandatory inputs",
+      "rationale": "Mandatory fields must be validated on create.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.1 Incident Registration",
+      "quote": "**Mandatory Inputs:** `caller_id` (user affected), `channel` (if not provided \u2192 default = chat), `category`, `short_description`",
+      "remediation": "State which mandatory field is missing and supply caller_id, category and short_description from verified data.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_incident"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "is_false",
+              "field": "action_incident_caller_id_present"
+            }
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "is_false",
+              "field": "action_incident_category_present"
+            }
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "is_false",
+              "field": "action_incident_short_description_present"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "incident_default_state_new",
+      "title": "New incidents start in state new",
+      "rationale": "Policy fixes the initial incident state.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.1 Default State",
+      "quote": "**Default State:** All new Incidents are set to `state = new`.",
+      "remediation": "Omit state or set state='new' when creating an incident.",
+      "when": {
+        "op": "is_true",
+        "field": "action_creates_incident"
+      },
+      "then": {
+        "op": "not",
+        "arg": {
+          "op": "is_false",
+          "field": "action_incident_created_state_new"
+        }
+      }
+    },
+    {
+      "id": "incident_enum_values",
+      "title": "Use only allowed incident field values",
+      "rationale": "Enumerated fields have fixed allowed values.",
+      "source": "ITSM Assistant Policy",
+      "reference": "9. Predefined Lists (Enumerations)",
+      "quote": "| **incident.state** | `new`, `in_progress`, `on_hold`, `resolved`, `closed` |",
+      "remediation": "Supply only enumerated values for impact, urgency, state, on_hold_reason, resolution_code and priority.",
+      "when": {
+        "op": "is_true",
+        "field": "action_modifies_incident"
+      },
+      "then": {
+        "op": "not",
+        "arg": {
+          "op": "is_false",
+          "field": "action_incident_enums_valid"
+        }
+      }
+    },
+    {
+      "id": "resolution_requires_fields",
+      "title": "Resolution requires resolution_code and notes",
+      "rationale": "An incident cannot be resolved without resolution data.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Resolution Requirement",
+      "quote": "An Incident cannot transition to `resolved` without mandatory fields: `resolution_code`, and `resolution_notes` (free-form text, max 2000 chars).",
+      "remediation": "Provide resolution_code and resolution_notes (max 2000 characters) with the resolve update.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_incident_state_resolved"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "is_false",
+              "field": "action_resolution_code_present"
+            }
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "is_false",
+              "field": "action_resolution_notes_present"
+            }
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "is_false",
+              "field": "action_resolution_notes_within_limit"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "valid_state_transitions",
+      "title": "Only allowed incident state transitions",
+      "rationale": "Lifecycle transitions are explicitly enumerated.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Valid State Transitions",
+      "quote": "* `new` \u2192 `in_progress` / `on_hold` / `resolved`",
+      "remediation": "Move the incident through an allowed transition path from its current state.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_incident_state"
+      },
+      "then": {
+        "op": "not",
+        "arg": {
+          "op": "is_false",
+          "field": "action_state_transition_allowed"
+        }
+      }
+    },
+    {
+      "id": "on_hold_reason_before_resume",
+      "title": "Log on_hold_reason before leaving on_hold",
+      "rationale": "Policy requires the reason be logged before the transition.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Valid State Transitions",
+      "quote": "`on_hold` \u2192 `in_progress` (Must log `on_hold_reason` before transition)",
+      "remediation": "Record the on_hold_reason on the incident before setting state to in_progress.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_state_in_progress_from_on_hold"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_on_hold_reason_logged"
+      }
+    },
+    {
+      "id": "closure_after_72h_resolved",
+      "title": "Close only resolved incidents after 72 hours",
+      "rationale": "Closure policy defines when resolved incidents may close.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.3 Closure Policy",
+      "quote": "The incidents that are in `resolved` states will transition to `closed` after 72 hours.",
+      "remediation": "Verify the incident is resolved and 72 hours have elapsed before closing it.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_incident_state_closed"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "context_target_incident_state_resolved"
+          },
+          {
+            "op": "is_true",
+            "field": "context_target_incident_resolved_72h"
+          }
+        ]
+      }
+    },
+    {
+      "id": "assignee_constraints",
+      "title": "Assign only active Agents/Managers in the group",
+      "rationale": "Assignment constraints protect routing integrity.",
+      "source": "ITSM Assistant Policy",
+      "reference": "3.2 Incident Assignment",
+      "quote": "`assigned_to` must be an **active** user with the `Agent` or `Manager` role and must be a member of the specified `assignment_group`.",
+      "remediation": "Look up the assignee and confirm active status, agent/manager role and group membership before assigning.",
+      "when": {
+        "op": "is_true",
+        "field": "action_assigns_incident_assignee"
+      },
+      "then": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "context_assignee_active_agent_or_manager"
+          },
+          {
+            "op": "is_true",
+            "field": "context_assignee_in_assignment_group"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci_link_status",
+      "title": "Link only in_use or maintenance CIs",
+      "rationale": "Retired/disposed CIs must not be linked to active incidents.",
+      "source": "ITSM Assistant Policy",
+      "reference": "5.1 CI Status",
+      "quote": "Only CIs with `status = in_use` or `status = maintenance` can be linked to active Incidents.",
+      "remediation": "Read the CI status first and link only CIs in in_use or maintenance.",
+      "when": {
+        "op": "is_true",
+        "field": "action_links_ci_to_incident"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_ci_status_in_use_or_maintenance"
+      }
+    },
+    {
+      "id": "ci_owner_required",
+      "title": "CIs must record an owner_id",
+      "rationale": "CMDB integrity requires ownership.",
+      "source": "ITSM Assistant Policy",
+      "reference": "5.1 CI Owner",
+      "quote": "All CIs must have a recorded `owner_id`.",
+      "remediation": "Supply a verified owner_id when registering a configuration item.",
+      "when": {
+        "op": "is_true",
+        "field": "action_registers_configuration_item"
+      },
+      "then": {
+        "op": "not",
+        "arg": {
+          "op": "is_false",
+          "field": "action_ci_owner_id_present"
+        }
+      }
+    },
+    {
+      "id": "kb_use_type",
+      "title": "Knowledge links must carry a valid kb_use type",
+      "rationale": "Use tracking enumerates valid link types.",
+      "source": "ITSM Assistant Policy",
+      "reference": "7. Use Tracking",
+      "quote": "All knowledge links must track `kb_use` type: `suggested` (suggested for resolution), `applied` (applied during resolution), or `resolution` (used as resolution).",
+      "remediation": "Set kb_use to suggested, applied or resolution per the linking rules.",
+      "when": {
+        "op": "is_true",
+        "field": "action_links_knowledge_to_incident"
+      },
+      "then": {
+        "op": "not",
+        "arg": {
+          "op": "is_false",
+          "field": "action_kb_use_valid"
+        }
+      }
+    },
+    {
+      "id": "sla_pause_conditions",
+      "title": "Pause SLA only for on_hold with valid reason",
+      "rationale": "SLA pause is tied to incident state and reason.",
+      "source": "ITSM Assistant Policy",
+      "reference": "6. SLA Pause",
+      "quote": "The SLA timer **must** be paused (`stage = paused`) when the Incident is in `state = on_hold` and the `on_hold_reason` is one of the following enumerations: `Awaiting Change`, `Awaiting Caller`, or `Awaiting Problem`.",
+      "remediation": "Confirm the incident is on_hold with an enumerated on_hold_reason before pausing its SLA.",
+      "when": {
+        "op": "is_true",
+        "field": "action_sets_sla_stage_paused"
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_incident_on_hold_with_valid_reason"
+      }
+    },
+    {
+      "id": "reporter_own_records_only",
+      "title": "Reporters may modify only their own incidents",
+      "rationale": "Reporters cannot modify records opened by other users.",
+      "source": "ITSM Assistant Policy",
+      "reference": "2. Roles & Responsibilities",
+      "quote": "Cannot view or modify records opened by other users, CMDB, or internal work notes.",
+      "remediation": "A reporter may only update incidents where they are the caller; escalate to an agent or manager otherwise.",
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "is_true",
+            "field": "action_modifies_incident"
+          },
+          {
+            "op": "is_true",
+            "field": "context_actor_role_reporter"
+          }
+        ]
+      },
+      "then": {
+        "op": "is_true",
+        "field": "context_actor_is_caller_of_target_incident"
+      }
+    }
+  ],
+  "inventory": [
+    {
+      "id": "check_user",
+      "quote": "First you must check the user information and operate exclusively based on **confirmed user roles**",
+      "status": "enforced",
+      "rule_ids": [
+        "verify_user_before_write"
+      ],
+      "reason": "Requires a prior user lookup before acting."
+    },
+    {
+      "id": "halt_on_violation",
+      "quote": "If a user request violates any rule herein, you **must halt the operation** and provide the specific policy reason before pausing.",
+      "status": "non_normative",
+      "reason": "Describes assistant messaging behavior, not an observable tool precondition.",
+      "rule_ids": []
+    },
+    {
+      "id": "atomic",
+      "quote": "Perform **one validated operation at a time**, except when using approved batch endpoints.",
+      "status": "ambiguous",
+      "reason": "No observable per-call predicate distinguishes batching compliance.",
+      "rule_ids": []
+    },
+    {
+      "id": "knowledge_scope",
+      "quote": "Do not disclose information that is outside the authenticated user's access scope.",
+      "status": "enforced",
+      "rule_ids": [
+        "reporter_own_records_only"
+      ],
+      "reason": "Scope restriction on reporter records encoded; broader disclosure control is conversational."
+    },
+    {
+      "id": "no_clarification",
+      "quote": "Do not ask for further information. If the request is ambiguous, return the list and state the ambiguity.",
+      "status": "non_normative",
+      "reason": "Dialogue behavior, not a tool guard.",
+      "rule_ids": []
+    },
+    {
+      "id": "mandatory_fields",
+      "quote": "Any request to create or update a record must validate all mandatory fields.",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_mandatory_fields",
+        "resolution_requires_fields",
+        "ci_owner_required"
+      ],
+      "reason": "Encoded for the mandatory fields the policy names."
+    },
+    {
+      "id": "no_fabrication",
+      "quote": "Never assume or fabricate IDs, responses, or outcomes \u2014 rely solely on verified API results.",
+      "status": "unobservable",
+      "reason": "Requires knowing whether a value came from a verified source beyond fact scope except where captured by verification rules.",
+      "rule_ids": []
+    },
+    {
+      "id": "lookups",
+      "quote": "When identifiers such as names or IDs are missing, perform lookups",
+      "status": "enforced",
+      "rule_ids": [
+        "verify_user_before_write",
+        "assignee_constraints"
+      ],
+      "reason": "Conditional lookup captured through verification facts."
+    },
+    {
+      "id": "role_matrix",
+      "quote": "Full CRUD on operational tables (`incident`, `problem`, `change`, `knowledge`); READ access to all the tables.",
+      "status": "non_normative",
+      "reason": "Grants capability; no restriction on the encoded tools beyond reporter limits.",
+      "rule_ids": []
+    },
+    {
+      "id": "reporter_limits",
+      "quote": "Cannot view or modify records opened by other users, CMDB, or internal work notes.",
+      "status": "enforced",
+      "rule_ids": [
+        "reporter_own_records_only"
+      ],
+      "reason": "Role-scoped restriction encoded for incident writes."
+    },
+    {
+      "id": "incident_mandatory",
+      "quote": "**Mandatory Inputs:** `caller_id` (user affected), `channel` (if not provided \u2192 default = chat), `category`, `short_description`",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_mandatory_fields"
+      ],
+      "reason": "Defaulted fields need no rule."
+    },
+    {
+      "id": "priority_matrix",
+      "quote": "Priority (`critical`, `high`, `moderate`, `low`, `planning`) is determined automatically by the system based on the below pre-defined matrix of **Impact x Urgency**.",
+      "status": "non_normative",
+      "reason": "System-computed value.",
+      "rule_ids": []
+    },
+    {
+      "id": "default_state",
+      "quote": "**Default State:** All new Incidents are set to `state = new`.",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_default_state_new"
+      ],
+      "reason": "Initial state constraint."
+    },
+    {
+      "id": "assignment",
+      "quote": "`assigned_to` must be an **active** user with the `Agent` or `Manager` role and must be a member of the specified `assignment_group`.",
+      "status": "enforced",
+      "rule_ids": [
+        "assignee_constraints"
+      ],
+      "reason": "Observable from prior lookups."
+    },
+    {
+      "id": "transitions",
+      "quote": "* `new` \u2192 `in_progress` / `on_hold` / `resolved`",
+      "status": "enforced",
+      "rule_ids": [
+        "valid_state_transitions"
+      ],
+      "reason": "Legal transitions enumerated."
+    },
+    {
+      "id": "on_hold_reason",
+      "quote": "`on_hold` \u2192 `in_progress` (Must log `on_hold_reason` before transition)",
+      "status": "enforced",
+      "rule_ids": [
+        "on_hold_reason_before_resume"
+      ],
+      "reason": "Ordering requirement with trace."
+    },
+    {
+      "id": "resolution_req",
+      "quote": "An Incident cannot transition to `resolved` without mandatory fields: `resolution_code`, and `resolution_notes` (free-form text, max 2000 chars).",
+      "status": "enforced",
+      "rule_ids": [
+        "resolution_requires_fields"
+      ],
+      "reason": "Inputs and length constraint."
+    },
+    {
+      "id": "closure",
+      "quote": "The incidents that are in `resolved` states will transition to `closed` after 72 hours.",
+      "status": "enforced",
+      "rule_ids": [
+        "closure_after_72h_resolved"
+      ],
+      "reason": "Precondition on closure."
+    },
+    {
+      "id": "change_origin",
+      "quote": "All changes must originate from a **Change Request** record.",
+      "status": "ambiguous",
+      "reason": "No change tools exposed; no observable candidate action.",
+      "rule_ids": []
+    },
+    {
+      "id": "change_default",
+      "quote": "**Default Status:** All new Changes are set to `status = new`.",
+      "status": "ambiguous",
+      "reason": "No change-creation capability in scope.",
+      "rule_ids": []
+    },
+    {
+      "id": "change_types",
+      "quote": "**Change Types (Enumeration):** `standard` (pre-approved, low risk), `normal` (requires planning/approval), `emergency` (requires immediate CAB approval override).",
+      "status": "ambiguous",
+      "reason": "No change tool to constrain.",
+      "rule_ids": []
+    },
+    {
+      "id": "problem_trigger",
+      "quote": "A Problem must be created (`create_problem`) when a recurring incident pattern or a major incident is identified.",
+      "status": "unobservable",
+      "reason": "Requires judgment about patterns; no problem tool.",
+      "rule_ids": []
+    },
+    {
+      "id": "problem_link",
+      "quote": "The Problem record **must** link all affected Incidents via the `incident_to_problem` related list.",
+      "status": "ambiguous",
+      "reason": "Completion obligation without problem tooling.",
+      "rule_ids": []
+    },
+    {
+      "id": "problem_workaround",
+      "quote": "If workaround/temporary solution found, update workaround field and set status=`fix_in_progress`.",
+      "status": "ambiguous",
+      "reason": "No problem tool in scope.",
+      "rule_ids": []
+    },
+    {
+      "id": "problem_close",
+      "quote": "A Problem transitions to `closed` only after the permanent fix has been successfully implemented via a linked `normal` or `emergency` Change Request.",
+      "status": "ambiguous",
+      "reason": "No problem/change tooling to guard.",
+      "rule_ids": []
+    },
+    {
+      "id": "ci_table",
+      "quote": "All IT assets must be recorded in the `configuration_item` table.",
+      "status": "non_normative",
+      "reason": "States storage location.",
+      "rule_ids": []
+    },
+    {
+      "id": "ci_status",
+      "quote": "Only CIs with `status = in_use` or `status = maintenance` can be linked to active Incidents.",
+      "status": "enforced",
+      "rule_ids": [
+        "ci_link_status"
+      ],
+      "reason": "Linking restriction."
+    },
+    {
+      "id": "ci_owner",
+      "quote": "All CIs must have a recorded `owner_id`.",
+      "status": "enforced",
+      "rule_ids": [
+        "ci_owner_required"
+      ],
+      "reason": "Mandatory field on registration."
+    },
+    {
+      "id": "sla_align",
+      "quote": "SLAs are automatically aligned based on `priority` linked to the incident.",
+      "status": "non_normative",
+      "reason": "System behavior.",
+      "rule_ids": []
+    },
+    {
+      "id": "sla_metric",
+      "quote": "Metrics tracked are limited to `target_mins`.",
+      "status": "non_normative",
+      "reason": "Descriptive.",
+      "rule_ids": []
+    },
+    {
+      "id": "sla_pause",
+      "quote": "The SLA timer **must** be paused (`stage = paused`) when the Incident is in `state = on_hold` and the `on_hold_reason` is one of the following enumerations: `Awaiting Change`, `Awaiting Caller`, or `Awaiting Problem`.",
+      "status": "enforced",
+      "rule_ids": [
+        "sla_pause_conditions"
+      ],
+      "reason": "Conditions on pausing encoded as a guard."
+    },
+    {
+      "id": "sla_breach",
+      "quote": "If the SLA exceeds its duration (`stage = breached`), the `escalation` flag on the Incident **must** be set to true",
+      "status": "unobservable",
+      "reason": "Requires system breach state and a downstream outcome.",
+      "rule_ids": []
+    },
+    {
+      "id": "kb_published",
+      "quote": "Only articles in `knowledge.state = published` are searchable by the `Reporter` role.",
+      "status": "ambiguous",
+      "reason": "Describes search visibility; read restriction not enforceable without blocking reads.",
+      "rule_ids": []
+    },
+    {
+      "id": "kb_search",
+      "quote": "When an Incident is created, a search for relevant knowledge must be performed, and matching articles should be linked.",
+      "status": "ambiguous",
+      "reason": "Post-creation workflow outcome, not a pre-action guard.",
+      "rule_ids": []
+    },
+    {
+      "id": "kb_draft",
+      "quote": "the **Agent** must be prompted to create and link a new knowledge draft before final closure",
+      "status": "unobservable",
+      "reason": "Depends on resolution content judgment and prompting behavior.",
+      "rule_ids": []
+    },
+    {
+      "id": "kb_use",
+      "quote": "All knowledge links must track `kb_use` type: `suggested` (suggested for resolution), `applied` (applied during resolution), or `resolution` (used as resolution).",
+      "status": "enforced",
+      "rule_ids": [
+        "kb_use_type"
+      ],
+      "reason": "Value set constraint."
+    },
+    {
+      "id": "kb_use_selection",
+      "quote": "When the knowledge is found through automated search it should be linked as suggested.",
+      "status": "ambiguous",
+      "reason": "Depends on discovery provenance not reliably observable.",
+      "rule_ids": []
+    },
+    {
+      "id": "user_active",
+      "quote": "Ensure any user being assigned to (`assigned_to`) or updated is `users.active = true`.",
+      "status": "enforced",
+      "rule_ids": [
+        "assignee_constraints"
+      ],
+      "reason": "Active check on assignee."
+    },
+    {
+      "id": "referential",
+      "quote": "Before closing any record, verify that all mandatory dependencies are satisfied.",
+      "status": "enforced",
+      "rule_ids": [
+        "closure_after_72h_resolved"
+      ],
+      "reason": "Closure prerequisites encoded for incidents."
+    },
+    {
+      "id": "time_tracking",
+      "quote": "All work logs must include the timestamp (`created_on`) and the `user_id` performing the action.",
+      "status": "ambiguous",
+      "reason": "No work-note tool exposed.",
+      "rule_ids": []
+    },
+    {
+      "id": "errors",
+      "quote": "**403 Forbidden:** Permission denied (user role lacks authority for the operation).",
+      "status": "non_normative",
+      "reason": "Error taxonomy.",
+      "rule_ids": []
+    },
+    {
+      "id": "backoff",
+      "quote": "If exceeded, pause and retry using **Exponential Backoff**.",
+      "status": "non_normative",
+      "reason": "Retry guidance.",
+      "rule_ids": []
+    },
+    {
+      "id": "enums",
+      "quote": "| **incident.state** | `new`, `in_progress`, `on_hold`, `resolved`, `closed` |",
+      "status": "enforced",
+      "rule_ids": [
+        "incident_enum_values"
+      ],
+      "reason": "Allowed value sets for incident fields."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review the candidate tool call against ITSM policy rules. Confirm: mandatory incident inputs present on creation and state defaulting to new; enumerated values valid; resolution fields present and notes <=2000 chars; state transitions limited to the policy lifecycle; on_hold_reason logged before resuming; closure only for resolved incidents after 72 hours; assignees active agents/managers in the assignment group; CIs linked only when in_use or maintenance; CI registration carries owner_id; knowledge links carry a valid kb_use; SLA paused only for on_hold incidents with an enumerated reason; reporters write only their own incidents; user information verified before writes. Never block read-only calls. Base judgment only on the request, policy defaults, prior successful observations and candidate arguments.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "true if the candidate call complies with all applicable rules"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "policy issues found"
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "For the candidate tool call and prior trajectory, assign each fact true, false or null (unknown). Action facts describe only the candidate call's arguments and target. Context facts require evidence from prior successful tool results in this trajectory about the same actor, incident, SLA, CI or user named in the candidate; evidence about a different record does not count. Failed or blocked calls prove only reported errors. Do not guess hidden database state, candidate results, or future events; use null when evidence is absent. For each fact give a short evidence string citing the call or observation (or 'no evidence').",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "properties": {
+            "action_creates_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_caller_id_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_category_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_short_description_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_created_state_new": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_incident_enums_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_incident_state_resolved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_resolution_code_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_resolution_notes_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_resolution_notes_within_limit": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_incident_state": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_state_transition_allowed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_state_in_progress_from_on_hold": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_incident_state_closed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_assigns_incident_assignee": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_links_ci_to_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_registers_configuration_item": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_ci_owner_id_present": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_links_knowledge_to_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_kb_use_valid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_sets_sla_stage_paused": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_modifies_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "action_state_changing": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_requesting_user_verified": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_active_agent_or_manager": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_assignee_in_assignment_group": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_on_hold_reason_logged": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_target_incident_state_resolved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_target_incident_resolved_72h": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_ci_status_in_use_or_maintenance": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_actor_role_reporter": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_actor_is_caller_of_target_incident": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "context_incident_on_hold_with_valid_reason": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action_creates_incident",
+            "action_incident_caller_id_present",
+            "action_incident_category_present",
+            "action_incident_short_description_present",
+            "action_incident_created_state_new",
+            "action_incident_enums_valid",
+            "action_sets_incident_state_resolved",
+            "action_resolution_code_present",
+            "action_resolution_notes_present",
+            "action_resolution_notes_within_limit",
+            "action_sets_incident_state",
+            "action_state_transition_allowed",
+            "action_sets_state_in_progress_from_on_hold",
+            "action_sets_incident_state_closed",
+            "action_assigns_incident_assignee",
+            "action_links_ci_to_incident",
+            "action_registers_configuration_item",
+            "action_ci_owner_id_present",
+            "action_links_knowledge_to_incident",
+            "action_kb_use_valid",
+            "action_sets_sla_stage_paused",
+            "action_modifies_incident",
+            "action_state_changing",
+            "context_requesting_user_verified",
+            "context_assignee_active_agent_or_manager",
+            "context_assignee_in_assignment_group",
+            "context_on_hold_reason_logged",
+            "context_target_incident_state_resolved",
+            "context_target_incident_resolved_72h",
+            "context_ci_status_in_use_or_maintenance",
+            "context_actor_role_reporter",
+            "context_actor_is_caller_of_target_incident",
+            "context_incident_on_hold_with_valid_reason"
+          ],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "action_creates_incident": {
+              "type": "string"
+            },
+            "action_incident_caller_id_present": {
+              "type": "string"
+            },
+            "action_incident_category_present": {
+              "type": "string"
+            },
+            "action_incident_short_description_present": {
+              "type": "string"
+            },
+            "action_incident_created_state_new": {
+              "type": "string"
+            },
+            "action_incident_enums_valid": {
+              "type": "string"
+            },
+            "action_sets_incident_state_resolved": {
+              "type": "string"
+            },
+            "action_resolution_code_present": {
+              "type": "string"
+            },
+            "action_resolution_notes_present": {
+              "type": "string"
+            },
+            "action_resolution_notes_within_limit": {
+              "type": "string"
+            },
+            "action_sets_incident_state": {
+              "type": "string"
+            },
+            "action_state_transition_allowed": {
+              "type": "string"
+            },
+            "action_sets_state_in_progress_from_on_hold": {
+              "type": "string"
+            },
+            "action_sets_incident_state_closed": {
+              "type": "string"
+            },
+            "action_assigns_incident_assignee": {
+              "type": "string"
+            },
+            "action_links_ci_to_incident": {
+              "type": "string"
+            },
+            "action_registers_configuration_item": {
+              "type": "string"
+            },
+            "action_ci_owner_id_present": {
+              "type": "string"
+            },
+            "action_links_knowledge_to_incident": {
+              "type": "string"
+            },
+            "action_kb_use_valid": {
+              "type": "string"
+            },
+            "action_sets_sla_stage_paused": {
+              "type": "string"
+            },
+            "action_modifies_incident": {
+              "type": "string"
+            },
+            "action_state_changing": {
+              "type": "string"
+            },
+            "context_requesting_user_verified": {
+              "type": "string"
+            },
+            "context_assignee_active_agent_or_manager": {
+              "type": "string"
+            },
+            "context_assignee_in_assignment_group": {
+              "type": "string"
+            },
+            "context_on_hold_reason_logged": {
+              "type": "string"
+            },
+            "context_target_incident_state_resolved": {
+              "type": "string"
+            },
+            "context_target_incident_resolved_72h": {
+              "type": "string"
+            },
+            "context_ci_status_in_use_or_maintenance": {
+              "type": "string"
+            },
+            "context_actor_role_reporter": {
+              "type": "string"
+            },
+            "context_actor_is_caller_of_target_incident": {
+              "type": "string"
+            },
+            "context_incident_on_hold_with_valid_reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "action_creates_incident",
+            "action_incident_caller_id_present",
+            "action_incident_category_present",
+            "action_incident_short_description_present",
+            "action_incident_created_state_new",
+            "action_incident_enums_valid",
+            "action_sets_incident_state_resolved",
+            "action_resolution_code_present",
+            "action_resolution_notes_present",
+            "action_resolution_notes_within_limit",
+            "action_sets_incident_state",
+            "action_state_transition_allowed",
+            "action_sets_state_in_progress_from_on_hold",
+            "action_sets_incident_state_closed",
+            "action_assigns_incident_assignee",
+            "action_links_ci_to_incident",
+            "action_registers_configuration_item",
+            "action_ci_owner_id_present",
+            "action_links_knowledge_to_incident",
+            "action_kb_use_valid",
+            "action_sets_sla_stage_paused",
+            "action_modifies_incident",
+            "action_state_changing",
+            "context_requesting_user_verified",
+            "context_assignee_active_agent_or_manager",
+            "context_assignee_in_assignment_group",
+            "context_on_hold_reason_logged",
+            "context_target_incident_state_resolved",
+            "context_target_incident_resolved_72h",
+            "context_ci_status_in_use_or_maintenance",
+            "context_actor_role_reporter",
+            "context_actor_is_caller_of_target_incident",
+            "context_incident_on_hold_with_valid_reason"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "variables": [],
+  "rules": [],
+  "inventory": [
+    {
+      "id": "general_assistant_role",
+      "quote": "You are a highly capable and intelligent AI assistant designed to help users by executing tasks...",
+      "status": "non_normative",
+      "rule_ids": [],
+      "reason": "Persona/competence statement only. It specifies no required argument, permitted value set, state transition, actor authority or ownership scope, prerequisite leaving an observable trace, prohibition, or approval requirement. Nothing in a candidate tool call could falsify it, so no decidable pre-action rule can be derived. The policy contains no other clauses; tool names (e.g. calendar read/write capabilities) describe capabilities and confer no restrictions, and a rule based on them would be invented authority. Empty variables and rules are therefore the faithful encoding."
+    }
+  ],
+  "reviewer_format": {
+    "instructions": "Review the proposed rule set against the target policy only. The policy supplied is a generic assistant persona statement with no normative clauses, so an empty rule set is correct unless the reviewer can quote a verbatim policy span stating an observable restriction (required argument, permitted value set, legal/forbidden state transition, actor authority or ownership scope, required prior step leaving a trace, prohibition, or approval requirement). Reject any rule whose quote is not verbatim in the policy; any rule derived only from tool names such as calendar create/list/patch capabilities; any rule that blocks a pure read; any rule expressing agent diligence, helpfulness or general competence; and any rule requiring system state, candidate results, or task outcomes unavailable before the call. Also reject invented facts, invented authority, and obligations relocated into 'when' to make violations vacuous. Confirm the inventory accounts for the whole policy text and that each inventory quote occurs verbatim. Report each problem as a short issue string; return no issues if the empty rule set is faithful and complete.",
+    "decision_key": "approved",
+    "issues_key": "issues",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "description": "True if the rule set faithfully and completely encodes the policy's observable obligations."
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "One short description per defect found."
+        }
+      },
+      "required": [
+        "approved",
+        "issues"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "extractor_format": {
+    "instructions": "Extract boolean fact values for the declared variables from the candidate tool call arguments and the prior trajectory only. No variables are declared for this policy, so both the facts object and the evidence object must be returned empty ({}). Add no keys. Never infer values from the candidate call's result, from hidden system or database state, or from expected task outcomes; a requester's claim or a supplied identifier establishes only what was supplied, not existence, ownership, role, permission or approval. A tool call that failed or was blocked establishes only the reported error, and a success wrapper may contain a business error. Any fact without supporting evidence must be null, and its evidence string must state that no evidence was observed.",
+    "facts_key": "facts",
+    "evidence_key": "evidence",
+    "response_schema": {
+      "type": "object",
+      "properties": {
+        "facts": {
+          "type": "object",
+          "description": "Boolean or null value per declared variable; none are declared, so this object is empty.",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "description": "Evidence string per declared variable; none are declared, so this object is empty.",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "facts",
+        "evidence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
