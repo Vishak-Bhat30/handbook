@@ -1,363 +1,387 @@
-"""Verifiers for task logistics_gear_sytems_inc_0807b5a6 (quarantine release requests, SOP 14.7).
+"""Verifiers for logistics_gear_sytems_inc_0807b5a6 (Gear Systems Meridian - quarantine release requests, 04/23/2026).
 
-Built from the task's own SOP only:
-  * 14.7.1 / 21.1 item 3 - who may authorize a release (safety-critical: Theo Brandt, by email)
-  * 14.7.2 steps 1-9 - the release procedure (evidence PDF, inventory, receiving log, NCR log,
-    calendar partial-release note, Slack putaway post)
-  * 14.8 - the Coordinator never closes an NCR on their own judgment
-Release requests are read from today's mail; authority, SKUs and quantities are matched in Python.
+Seed facts: two release requests arrived today.
+- Email 0041, Theo Brandt (Quality Manager): COC reviewed, release FG-91144-A1, 200 units, REC-20260414-001 (heat
+  HT-2026-1803 = Q-HOLD row). Safety-critical release by Theo's written email -> authorized (Sec 14.7.1, 21.1 #3).
+  The other two lines of the receipt (AX-04827-B2 x44, AX-05512-C1 x96) stay on hold -> partial release.
+- Email 0042, Darnell Hooks (Receiving Supervisor): release BG-33044-A1, 144 units, REC-20260414-002. Safety-critical
+  -> needs Theo's email; Darnell's authorization is insufficient -> not actionable.
 """
 
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
-from functools import cached_property
 
-from .. import common, workbooks
-from ..actions import Action
-from ..framework import Context, Finding, Rule, registry
-from ..gear import World, blank, norm, num
+from interwhen_sop.kit import (COMM_KINDS, WRITE_KINDS, Comm, World, blank, comm_rules, nh, no_placeholders, norm,
+                               num, pre_rule, same, state_rule, strict_writes, world)
 
-TASK_RULES: list[Rule] = []
-rule = registry(TASK_RULES)
+INV, RCV, NCR = r"inventory_master\.xlsx$", r"receiving_log\.xlsx$", r"ncr_log\.xlsx$"
+FG, BG, AX = "FG-91144-A1", "BG-33044-A1", ("AX-04827-B2", "AX-05512-C1")
+REC1, REC2 = "REC-20260414-001", "REC-20260414-002"
+TODAY = "04/23/2026"
+FG_ON_HAND = 285  # 85 active + 200 released
+FG_BINS = r"A-09-0[13]"  # active stock row A-09-01; packing slip noted A-09-03 (receiving log note)
+RELEASE_FILE = r"(^|/)quarantine_releases/REC-20260414-001_release\.pdf$"
 
-TODAY = "2026-04-23"  # task system prompt: "April, 23, 2026, 9:00 AM CST"
-SKU = re.compile(r"\b[A-Z]{2}-\d{5}-[A-Z]\d\b")
-INV, RCV, NCR = "inventory_master.xlsx", "receiving_log.xlsx", "ncr_log.xlsx"
-
-
-@dataclass
-class Request:
-    email_id: str
-    sender: str
-    sender_name: str
-    skus: list[str]
-    authorized: bool
-    reason: str
-
-
-class Facts(World):
-    @cached_property
-    def inv(self) -> list[dict]:
-        return self.rows(INV, "SKU", "initial")
-
-    @cached_property
-    def qhold(self) -> dict[str, dict]:
-        return {r["SKU"]: r for r in self.inv if "Q-HOLD" in (r.get("Location", "") + r.get("Warehouse_Zone", "")).upper()}
-
-    def active(self, sku: str, which: str = "initial") -> dict | None:
-        rows = self.inv if which == "initial" else self.rows(INV, "SKU")
-        return next((r for r in rows if r.get("SKU") == sku
-                     and "Q-HOLD" not in (r.get("Location", "") + r.get("Warehouse_Zone", "")).upper()), None)
-
-    def safety_critical(self, sku: str) -> bool:
-        row = self.active(sku) or self.qhold.get(sku) or {}
-        return str(row.get("Safety_Critical", "Y")).upper() != "N"  # 21.5: when in doubt, safety-critical
-
-    def receipt_of(self, sku: str) -> str:
-        r = self.qhold.get(sku, {})
-        m = re.search(r"REC-\d{8}-\d{3}", f"{r.get('Last_Receipt_ID', '')} {r.get('Quarantine_Reason', '')}")
-        return m.group(0) if m else ""
-
-    def contact(self, role: str):
-        return next((c for c in self.ctx.sop.contacts if role in c.role.lower()), None)
-
-    @cached_property
-    def requests(self) -> list[Request]:
-        quality = self.contact("quality manager")
-        out = []
-        for e in self.seed_emails:
-            if not str(e.get("date", "")).startswith(TODAY) or e.get("folder") != "INBOX":
-                continue
-            text = f"{e.get('subject', '')}\n\n{e.get('body_text', '')}"
-            grant = re.compile(r"authori[sz]ed to release|release authori[sz]ation", re.I)
-            paras = [p for p in re.split(r"\n\s*\n", text) if grant.search(p)]
-            skus = [s for s in dict.fromkeys(SKU.findall("\n".join(paras))) if s in self.qhold]
-            if not skus:
-                continue
-            sender = str(e.get("from_addr", "")).lower()
-            c = self.ctx.sop.contact_by_email(sender)
-            name = c.name if c and c.name else sender
-            sc = any(self.safety_critical(s) for s in skus)
-            if sc:
-                ok = bool(quality and sender == quality.email.lower())
-                why = (f"{', '.join(skus)} is safety-critical: Section 14.7.1 requires Theo Brandt's (Quality "
-                       f"Manager) written email approval; this request is from {name}")
-            else:
-                ok = True
-                why = ""
-            out.append(Request(str(e.get("email_id")), sender, name, skus, ok, why))
-        return out
-
-    @property
-    def authorized_skus(self) -> dict[str, Request]:
-        return {s: r for r in self.requests if r.authorized for s in r.skus}
-
-    @property
-    def refused_skus(self) -> dict[str, Request]:
-        ok = self.authorized_skus
-        return {s: r for r in self.requests if not r.authorized for s in r.skus if s not in ok}
-
-    def ncr_skus(self, receipt: str) -> list[str]:
-        """Every quarantined SKU tracked under the same receipt/NCR (for partial-release notes)."""
-        return [s for s in self.qhold if self.receipt_of(s) == receipt]
+R_AUTH = [("14.7.1", "Quarantine Type Release Authorization Required", "14.7.1 release authority"),
+          ("21.1", "3. Do not release safety-critical material from quarantine", "21.1 #3"),
+          ("21.4", "20. Do not move material out of Q-HOLD", "21.4 #20")]
+R_FILE = [("14.7.2", "1. Confirm the written authorization is in hand", "14.7.2 step 1"),
+          ("5.4", "• Quarantine release authorizations", "5.4")]
+R_INV = [("14.7.2", "3. Delete the Q-HOLD row entirely", "14.7.2 step 3"),
+         ("14.7.2", "4. On the active stock row for the released SKU", "14.7.2 step 4"),
+         ("14.7.2", "5. For safety-critical parts: on the active stock row", "14.7.2 step 5")]
+R_RCV = [("14.7.2", "6. Update the original row(s) in receiving_log.xlsx", "14.7.2 step 6")]
+R_POST = [("14.7.2", "9. Authorize physical putaway via Slack post", "14.7.2 step 9"),
+          ("14.7.2", "QUARANTINE RELEASED: [Original Receipt_ID]", "14.7.2 post format")]
+R_CAL = [("14.7.2", "8. If there are any re-inspection calendar events", "14.7.2 step 8"),
+         ("14.7.2", "Partial release [Date]", "14.7.2 partial release note")]
+R_NCR = [("14.8", "3. Awaiting closure decision", "14.8"),
+         ("14.8", "• Any quarantined material has been released or returned", "14.8 closure conditions")]
+R_RO = [("5.1", "• supplier_master.xlsx", "5.1"),
+        ("5.3", "• Read-only for the Coordinator", "5.3"),
+        ("5.3", "• Read/write for the Coordinator", "5.3")]
+R_ROWS = [("13.3", "2. Locate the row for the SKU at the Quarantine Cage location", "13.3 step 2"),
+          ("21.2", "6. Do not edit or overwrite a posted receiving log row", "21.2 #6"),
+          ("14.7.2", "6. Update the original row(s) in receiving_log.xlsx", "14.7.2 step 6")]
+R_DEL = [("21.2", "7. Do not delete records of any kind", "21.2 #7"),
+         ("18.5.2", "• Do not delete any email without supervisor approval", "18.5.2"),
+         ("21.3", "13. Do not delete or move a Slack post", "21.3 #13")]
+R_PH = [("23", "This section contains every email template", "23")]
 
 
-def facts(ctx: Context) -> Facts:
-    return ctx.memo("f0807", lambda: Facts(ctx))
+# ---- workbook helpers ----------------------------------------------------------------------------
+
+def _k(v) -> str:
+    n = num(v)
+    return str(int(n)) if n is not None and n == int(n) else norm(v)
 
 
-def _skus_in(action: Action) -> set[str]:
-    blob = f"{action.subject}\n{action.text}\n{action.code}"
-    if action.kind in ("calendar_update", "calendar_delete"):
-        # Only the SKU being released; "Remaining on Q-HOLD" lists SKUs that stay quarantined.
-        return set(re.findall(rf"({SKU.pattern})\s+released", blob))
-    if action.kind == "slack_post":
-        return set(re.findall(rf"SKU\s+({SKU.pattern})", blob))
-    # Notes/comments saying which SKUs *remain* on hold are not a release of those SKUs.
-    kept = re.sub(r"[^\n.;|]*\b(remain|still on|stay|unreleased|not released)[^\n.;|]*", " ", blob, flags=re.I)
-    return set(SKU.findall(kept))
+def _get(row: dict | None, col: str) -> str:
+    v = (row or {}).get(col, "")
+    return "" if str(v) in ("None", "nan") else str(v).strip()
 
 
-def _is_release_action(action: Action) -> bool:
-    blob = f"{action.subject}\n{action.text}\n{action.code}"
-    if action.kind == "slack_post" and "QUARANTINE RELEASED" in blob.upper():
-        return True
-    if action.kind == "workbook_write" and set(action.files_written) & {INV, RCV}:
-        return bool(re.search(r"q-?hold|quarantin|putaway|release|on_hand", blob, re.I))
-    return action.kind in ("calendar_update", "calendar_delete") and bool(re.search(r"releas|COMPLETED", blob, re.I))
-
-
-@rule("release.requires_authorization", "pre", [("14.7.1", "The Coordinator may release a quarantine only"),
-                                                 ("21.1", "3. Do not release safety-critical material")])
-def requires_authorization(ctx: Context, action: Action) -> list[Finding]:
-    if not _is_release_action(action):
-        return []
-    f = facts(ctx)
-    bad = sorted(s for s in _skus_in(action) & set(f.qhold) if s not in f.authorized_skus)
-    if not bad:
-        return []
-    reasons = [f.refused_skus[s].reason for s in bad if s in f.refused_skus]
-    return [Finding("release.requires_authorization", [
-        ctx.cite("14.7.1", "Quarantine Type Release Authorization Required", "14.7.1 authority table"),
-        ctx.cite("21.1", "3. Do not release safety-critical material", "21.1 item 3")],
-        f"This call releases or prepares the release of {', '.join(bad)} from Q-HOLD without valid written "
-        "authorization. " + (" ".join(reasons) or "No authorization email from the required owner exists."),
-        ["Leave this material (inventory Q-HOLD row, receiving log row, NCR, calendar) untouched; it is not "
-         "actionable until the authorized owner approves in writing.",
-         "Process only the release requests that carry the authority required by Section 14.7.1."])]
-
-
-@rule("release.deletes_only_qhold_rows", "pre", [("21.2", "7. Do not delete records"),
-                                                 ("14.7.2", "3. Delete the Q-HOLD row entirely")])
-def deletes(ctx: Context, action: Action) -> list[Finding]:
-    """21.2 item 7 forbids deletion except the Q-HOLD row removal that 14.7.2 step 3 prescribes."""
-    if not action.deletes:
-        return []
-    only_rows = not re.search(r"os\.remove|unlink|rmtree|(^|[\s;&|])rm\s", action.text)
-    if INV in action.files_written and only_rows and re.search(r"q-?hold", action.code, re.I):
-        return []
-    return [Finding("release.deletes_only_qhold_rows", [ctx.cite("21.2", "7. Do not delete records", "21.2 item 7")],
-                    "This call deletes records other than the Q-HOLD inventory row that Section 14.7.2 step 3 "
-                    "removes on release.", ["Do not delete emails, files or other workbook rows."])]
-
-
-def _release_post_problems(f: Facts, text: str) -> list[str]:
-    m = re.search(r"QUARANTINE RELEASED:\s*(REC-\d{8}-\d{3}),\s*SKU\s+(\S+?),\s*qty\s+([\d,]+)\s+released from "
-                  r"Q-?\s?HOLD to\s+(\S+?)\.\s*Authorization:\s*([^,]+),\s*([^.]+?)\.\s*Dock Crew: please move "
-                  r"when convenient", text, re.I)
-    if not m:
-        return ["The post must follow Section 14.7.2 step 9 exactly: 'QUARANTINE RELEASED: [Original Receipt_ID], "
-                "SKU [SKU], qty [N] released from Q-HOLD to [Location]. Authorization: [Name], [Date]. Dock Crew: "
-                "please move when convenient.'"]
-    rec, sku, qty, _loc, name, _date = m.groups()
+def _changed_cols(cur: dict, init: dict) -> list[str]:
+    """Columns whose value changed (number-tolerant; formula cells and the row index ignored)."""
     out = []
-    if sku not in f.qhold:
-        return [f"{sku} has no Q-HOLD row in inventory_master.xlsx."]
-    if rec != f.receipt_of(sku):
-        out.append(f"[Original Receipt_ID] for {sku} is {f.receipt_of(sku)} (got {rec}).")
-    want = num(f.qhold[sku].get("On_Hand_Qty"))
-    if want is not None and num(qty) != want:
-        out.append(f"qty must be the quantity released from Q-HOLD, {int(want)} (got {qty}).")
-    req = f.authorized_skus.get(sku)
-    if req and norm(req.sender_name).split()[-1] not in norm(name):
-        out.append(f"Authorization must name the person who approved the release in writing ({req.sender_name}).")
+    for col, want in init.items():
+        if col == "__row__" or str(want).startswith("="):
+            continue
+        if not same(cur.get(col, ""), None if blank(want) else want):
+            out.append(col)
     return out
 
 
-@rule("release.slack_post_format", "pre", [("14.7.2", "9. Authorize physical putaway via Slack post")])
-def slack_post(ctx: Context, action: Action) -> list[Finding]:
-    if action.kind != "slack_post" or "QUARANTINE RELEASED" not in action.text.upper():
-        return []
-    f = facts(ctx)
-    probs = _release_post_problems(f, action.text)
-    if not f.is_channel(action.channel, "receiving-dock"):
-        probs.append("The release post belongs in #receiving-dock.")
-    if not probs:
-        return []
-    return [Finding("release.slack_post_format", [ctx.cite("14.7.2", "9. Authorize physical putaway", "14.7.2 step 9"),
-                                                  ctx.cite("14.7.2", "QUARANTINE RELEASED:", "14.7.2 post format")],
-                    " ".join(probs), ["Rewrite the post with the exact Section 14.7.2 step 9 wording and values."])]
+def _unmatched(init: list[dict], cur: list[dict]) -> tuple[list[dict], list[dict]]:
+    """(initial rows with no unchanged counterpart, current rows left over) - multiset match."""
+    left, missing = list(cur), []
+    for r in init:
+        m = next((c for c in left if not _changed_cols(c, r)), None)
+        if m is None:
+            missing.append(r)
+        else:
+            left.remove(m)
+    return missing, left
 
 
-def _partial_note_problems(f: Facts, text: str) -> list[str]:
-    m = re.search(r"Partial release\s+([^:]+):\s*(\S+)\s+released\s*\(([\d,]+)\s+units to\s+([^)]+)\)\.\s*"
-                  r"Remaining on Q-?HOLD:\s*(.+)", text, re.I | re.S)
-    if not m:
-        return ["The note must read 'Partial release [Date]: [SKU] released ([N] units to [Location]). Remaining "
-                "on Q-HOLD: [each unreleased SKU from the same NCR with its quarantined quantity]'."]
-    _date, sku, qty, _loc, remaining = m.groups()
-    out = []
-    if sku in f.qhold and num(qty) != num(f.qhold[sku].get("On_Hand_Qty")):
-        out.append(f"{sku} released quantity is {f.qhold[sku].get('On_Hand_Qty')} (got {qty}).")
-    for other in f.ncr_skus(f.receipt_of(sku)):
-        if other == sku or other in f.authorized_skus:
+def _is_qhold(r: dict) -> bool:
+    return "q-hold" in (norm(_get(r, "Warehouse_Zone")), norm(_get(r, "Location")))
+
+
+def _inv(w: World, which: str = "current") -> list[dict]:
+    return w.rows(INV, r"^SKU$", which)
+
+
+def _date_is(v: str, *mmddyyyy: str) -> bool:
+    v = nh(v)
+    for d in mmddyyyy:
+        m, dd, y = d.split("/")
+        if v.startswith(d) or v.startswith(f"{y}-{m}-{dd}"):
+            return True
+    return False
+
+
+# ---- completion: FG release end state --------------------------------------------------------------
+
+def _fg_inventory(ctx):
+    w = world(ctx)
+    if not w.book(INV)[0]:
+        return
+    rows = [r for r in _inv(w) if norm(_get(r, "SKU")) == norm(FG)]
+    hold = [r for r in rows if _is_qhold(r)]
+    active = [r for r in rows if not _is_qhold(r)]
+    yield (not hold, f"inventory_master.xlsx still has the {FG} Q-HOLD row ({REC1}). All 200 units are released, "
+                     "so delete that Q-HOLD row entirely (after copying its heat number to the active row).", R_INV)
+    total = sum(num(_get(r, "On_Hand_Qty")) or 0 for r in active)
+    yield (abs(total - FG_ON_HAND) < 0.01,
+           f"{FG} active stock On_Hand_Qty must be {FG_ON_HAND} (85 on hand + 200 released) on the existing "
+           f"active row (Location A-09-01); found {total:g}.", R_INV)
+    bad_q = [r for r in active if (num(_get(r, "Quarantine_Qty")) or 0) != 0 or not blank(_get(r, "Quarantine_Reason"))]
+    yield (not bad_q, f"On the {FG} active stock row set Quarantine_Qty to 0 and clear Quarantine_Reason.", R_INV)
+    heats = " ".join(_get(r, "Heat_Numbers_On_Hand") for r in active).upper()
+    yield ("HT-2026-1803" in heats and "HT-2026-0218" in heats,
+           f"{FG} active row Heat_Numbers_On_Hand must keep HT-2026-0218 and append HT-2026-1803 "
+           "(comma-separated: \"HT-2026-0218, HT-2026-1803\"); heat numbers are append-only.", R_INV)
+    ok_last = any(norm(_get(r, "Last_Receipt_ID")) == norm(REC1)
+                  and _date_is(_get(r, "Last_Receipt_Date"), "04/14/2026", TODAY) for r in active)
+    yield (ok_last, f"{FG} active row: set Last_Receipt_ID to {REC1} and Last_Receipt_Date to the released "
+                    "receipt's date 04/14/2026.", R_INV)
+
+
+def _fg_receiving_log(ctx):
+    w = world(ctx)
+    if not w.book(RCV)[0]:
+        return
+    row = next((r for r in w.rows(RCV, r"^Receipt_ID$")
+                if norm(_get(r, "Receipt_ID")) == norm(REC1) and norm(_get(r, "SKU")) == norm(FG)), None)
+    if row is None:
+        yield (False, f"receiving_log.xlsx row {REC1} line 003 ({FG}) is missing; update it in place, do not remove it.",
+               R_RCV)
+        return
+    want = {"Status": "Putaway Complete", "Disposition": "ACCEPTED",
+            "Documentation_Status": "COC Received and Verified", "Documentation_Action": "ACCEPTED"}
+    wrong = [f"{c} = \"{v}\" (now \"{_get(row, c)}\")" for c, v in want.items() if norm(_get(row, c)) != norm(v)]
+    t = nh(_get(row, "Putaway_Auth_Time"))
+    if not re.fullmatch(r"(04/23/2026 \d{1,2}:\d{2}( CST)?|2026-04-23[ T]\d{1,2}:\d{2}(:\d{2})?)", t):
+        wrong.append(f"Putaway_Auth_Time = current timestamp \"{TODAY} HH:MM CST\" (now \"{t}\")")
+    loc = nh(_get(row, "Putaway_Location"))
+    if not re.fullmatch(FG_BINS, loc, re.I):
+        wrong.append(f"Putaway_Location = the FG-91144-A1 warehouse bin (active stock row A-09-01; the packing "
+                     f"slip noted A-09-03) instead of \"{loc}\"")
+    yield (not wrong, f"receiving_log.xlsx {REC1} line 003 ({FG}) must be updated in place for the release: "
+                      + "; ".join(wrong) + ".", R_RCV)
+
+
+def _release_record(ctx):
+    w = world(ctx)
+    yield (any(re.search(RELEASE_FILE, f.replace("\\", "/"), re.I) for f in w.files()),
+           "Save Theo Brandt's release authorization email (0041) as "
+           "quarantine_releases/REC-20260414-001_release.pdf in the workspace.", R_FILE)
+
+
+# ---- completion: nothing else released / changed ------------------------------------------------------
+
+def _unauthorized(ctx):
+    w = world(ctx)
+    held = {norm(BG)} | {norm(s) for s in AX}
+    if w.book(INV)[0]:
+        missing, extra = _unmatched([r for r in _inv(w, "initial") if norm(_get(r, "SKU")) in held],
+                                    [r for r in _inv(w) if norm(_get(r, "SKU")) in held])
+        names = sorted({f"{_get(r, 'SKU')} @ {_get(r, 'Location')}" for r in missing + extra})
+        yield (not names,
+               f"Only {FG} has a valid release (Theo Brandt's email 0041). Restore the inventory_master.xlsx rows for "
+               f"{', '.join(names)}: {BG} needs Theo's written email (Darnell Hooks cannot release safety-critical "
+               f"parts) and the AX lines of {REC1} stay on Q-HOLD.", R_AUTH)
+    if w.book(RCV)[0]:
+        def held_row(r):
+            return norm(_get(r, "Receipt_ID")) in (norm(REC1), norm(REC2)) and norm(_get(r, "SKU")) in held
+        missing, extra = _unmatched([r for r in w.rows(RCV, r"^Receipt_ID$", "initial") if held_row(r)],
+                                    [r for r in w.rows(RCV, r"^Receipt_ID$") if held_row(r)])
+        names = sorted({f"{_get(r, 'Receipt_ID')} {_get(r, 'SKU')}" for r in missing + extra})
+        yield (not names, "receiving_log.xlsx rows for lines that remain on quarantine hold must not be updated "
+                          f"(restore: {', '.join(names)}).", R_AUTH + R_RCV)
+    other = [f for f in w.files() if re.search(r"quarantine_releases/.*REC-20260414-002", f.replace("\\", "/"), re.I)]
+    yield (not other, f"Remove the release record {other[:1]}: {BG} ({REC2}) has no valid release authorization "
+                      "(Theo Brandt email required).", R_AUTH)
+
+
+def _ncr_open(ctx):
+    w = world(ctx)
+    if not w.book(NCR)[0]:
+        return
+    for n in ("NCR-MER-2026-0247", "NCR-MER-2026-0248"):
+        st = _get(w.find(NCR, r"^NCR_Number$", "NCR_Number", n), "Status")
+        yield (not re.search(r"resolv|clos", st, re.I),
+               f"ncr_log.xlsx {n} Status must not be \"{st}\": the Coordinator never marks an NCR Resolved/Closed on "
+               "their own judgement, and NCR-0247 still has AX lines on hold. Restore Status \"Open\".", R_NCR)
+
+
+READONLY = {"open_pos": r"^PO_Number$", "supplier_master": r"^Supplier_ID$", "dock_schedule": r"^Appointment_ID$"}
+
+
+def _readonly(ctx):
+    w = world(ctx)
+    for name, header in READONLY.items():
+        rx = rf"{name}\.xlsx$"
+        if not w.book(rx)[0] or not w.book(rx, "initial")[0]:
             continue
-        q = str(int(num(f.qhold[other].get("On_Hand_Qty")) or 0))
-        if other not in remaining or not re.search(rf"{re.escape(other)}\D{{0,25}}{q}\b", remaining):
-            out.append(f"'Remaining on Q-HOLD' must list {other} with its quarantined quantity {q}.")
+        missing, extra = _unmatched(w.rows(rx, header, "initial"), w.rows(rx, header))
+        yield (not missing and not extra, f"{name}.xlsx must not be changed by a quarantine release (read-only for the "
+                                          "Coordinator / not part of this task); restore its original rows.", R_RO)
+
+
+def _rows(ctx):
+    w = world(ctx)
+    held = {norm(BG), norm(FG)} | {norm(s) for s in AX}
+
+    def other(rows, keyfn):
+        return [r for r in rows if not keyfn(r)]
+
+    if w.book(INV)[0]:
+        missing, extra = _unmatched(other(_inv(w, "initial"), lambda r: norm(_get(r, "SKU")) in held),
+                                    other(_inv(w), lambda r: norm(_get(r, "SKU")) in held))
+        fg_active = [r for r in _inv(w) if norm(_get(r, "SKU")) == norm(FG) and not _is_qhold(r)]
+        msg = []
+        if missing:
+            msg.append("rows unrelated to the release were changed/removed (" +
+                       ", ".join(f"{_get(r, 'SKU')} @ {_get(r, 'Location')}" for r in missing[:4]) + ")")
+        if [r for r in extra if not _is_qhold(r)] or len(fg_active) > 1:
+            msg.append("do not add rows - only Q-HOLD rows may be created by the Coordinator; release "
+                       f"{FG} onto its existing active stock row A-09-01")
+        yield (not msg, "inventory_master.xlsx: " + "; ".join(msg) + ".", R_ROWS)
+    if w.book(RCV)[0]:
+        def rel(r):
+            return norm(_get(r, "Receipt_ID")) in (norm(REC1), norm(REC2)) and norm(_get(r, "SKU")) in held
+        missing, extra = _unmatched(other(w.rows(RCV, r"^Receipt_ID$", "initial"), rel),
+                                    other(w.rows(RCV, r"^Receipt_ID$"), rel))
+        fg_rows = [r for r in w.rows(RCV, r"^Receipt_ID$") if norm(_get(r, "SKU")) == norm(FG)
+                   and norm(_get(r, "Receipt_ID")).startswith(norm(REC1))]
+        yield (not missing and not extra and len(fg_rows) <= 1,
+               f"receiving_log.xlsx: only the released line ({REC1} line 003, {FG}) is updated in place; restore "
+               "other rows and remove added rows (" +
+               ", ".join(_get(r, "Receipt_ID") for r in (missing + extra)[:4]) + ").", R_ROWS)
+    if w.book(NCR)[0]:
+        def ours(r):
+            return norm(_get(r, "NCR_Number")) in (norm("NCR-MER-2026-0247"), norm("NCR-MER-2026-0248"))
+        missing, extra = _unmatched(other(w.rows(NCR, r"^NCR_Number$", "initial"), ours),
+                                    other(w.rows(NCR, r"^NCR_Number$"), ours))
+        yield (not missing and not extra, "ncr_log.xlsx: no NCR is issued or changed by these release requests; "
+                                          "restore/remove: " +
+               ", ".join(_get(r, "NCR_Number") for r in (missing + extra)[:4]) + ".", R_ROWS)
+
+
+# ---- calendar: partial release annotation -------------------------------------------------------------
+
+NOTE = (f"Partial release 04/23/2026: {FG} released (200 units to A-09-01). Remaining on Q-HOLD: "
+        "AX-04827-B2 (44 units), AX-05512-C1 (96 units).")
+
+
+def _event_id(a) -> str:
+    return str(a.args.get("event_id") or a.args.get("eventId") or a.args.get("id") or "")
+
+
+def _ncr_events(w: World) -> dict[str, dict]:
+    """Seed events about NCR-0247 / REC-20260414-001 that still involve the unreleased AX SKUs."""
+    out = {}
+    for e in w.seed_events:
+        txt = f"{e.get('summary', '')}\n{e.get('description', '')}"
+        if re.search(r"NCR-MER-2026-0247|REC-20260414-001", txt) and re.search(r"AX-0(4827-B2|5512-C1)", txt):
+            out[str(e.get("id"))] = e
     return out
 
 
-@rule("release.calendar_partial_note", "pre", [("14.7.2", "8. If there are any re-inspection calendar events")])
-def calendar_note(ctx: Context, action: Action) -> list[Finding]:
-    if action.kind not in ("calendar_update", "calendar_delete"):
-        return []
-    f = facts(ctx)
-    blob = f"{action.subject}\n{action.text}"
-    probs = []
-    if "partial release" in blob.lower():
-        probs += _partial_note_problems(f, blob)
-    ev = next((e for e in f.seed_events if e.get("id") == action.args.get("event_id")), None)
-    unreleased = [s for s in f.qhold if s not in f.authorized_skus]
-    ev_text = f"{(ev or {}).get('summary', '')} {(ev or {}).get('description', '')}"
-    if ev and any(s in ev_text for s in unreleased) and (action.kind == "calendar_delete" or "[COMPLETED]" in blob):
-        probs.append("This event also tracks SKUs that stay on Q-HOLD; it must not be deleted or marked "
-                     "[COMPLETED] (append the partial-release note to its description instead).")
-    if not probs:
-        return []
-    return [Finding("release.calendar_partial_note", [
-        ctx.cite("14.7.2", "8. If there are any re-inspection calendar events", "14.7.2 step 8"),
-        ctx.cite("14.7.2", "Partial release [Date]", "14.7.2 partial-release note")], " ".join(probs),
-        ["Keep the existing description and append the Section 14.7.2 partial-release note."])]
+def _note_missing(desc: str) -> list[str]:
+    d = nh(desc)
+    need = [(r"Partial release 04/23/2026:", "\"Partial release 04/23/2026:\""),
+            (rf"{FG} released \(200 units to {FG_BINS}\)", f"\"{FG} released (200 units to A-09-01).\""),
+            (r"Remaining on Q-HOLD:", "\"Remaining on Q-HOLD:\""),
+            (r"AX-04827-B2\D{0,25}\b44\b", "AX-04827-B2 with its quarantined quantity 44"),
+            (r"AX-05512-C1\D{0,25}\b96\b", "AX-05512-C1 with its quarantined quantity 96")]
+    return [h for rx, h in need if not re.search(rx, d, re.I)]
 
 
-def _completion(ctx: Context) -> list[str]:
-    f = facts(ctx)
-    probs: list[str] = []
-    inv_now = f.rows(INV, "SKU")
-    rcv_init, rcv_now = f.rows(RCV, "Receipt_ID", "initial"), f.rows(RCV, "Receipt_ID")
-    ncr_now = {r["NCR_Number"]: r for r in f.rows(NCR, "NCR_Number")}
-    posts = [e.action.text for e in f.posts_in("receiving-dock")]
-    cal = [e.action for e in ctx.state.executed if e.action.kind == "calendar_update"]
-    for sku, req in f.authorized_skus.items():
-        rec = f.receipt_of(sku)
-        q = f.qhold[sku]
-        qty = num(q.get("On_Hand_Qty")) or 0
-        if any(r.get("SKU") == sku and "Q-HOLD" in (r.get("Location", "") + r.get("Warehouse_Zone", "")).upper()
-               for r in inv_now):
-            probs.append(f"inventory_master.xlsx still has the Q-HOLD row for {sku} (14.7.2 step 3: delete it on "
-                         "full release).")
-        a0, a1 = f.active(sku), f.active(sku, "current")
-        if a0 and a1:
-            if num(a1.get("On_Hand_Qty")) != (num(a0.get("On_Hand_Qty")) or 0) + qty:
-                probs.append(f"{sku} active row On_Hand_Qty should be {int((num(a0.get('On_Hand_Qty')) or 0) + qty)} "
-                             f"(was {a0.get('On_Hand_Qty')} + {int(qty)} released); got {a1.get('On_Hand_Qty')}.")
-            if num(a1.get("Quarantine_Qty")) not in (None, 0.0) or not blank(a1.get("Quarantine_Reason")):
-                probs.append(f"{sku} active row: clear Quarantine_Qty to 0 and clear Quarantine_Reason (step 4).")
-            if a1.get("Last_Receipt_ID") != rec:
-                probs.append(f"{sku} active row Last_Receipt_ID must be the released receipt {rec} (step 4).")
-            heats = [h.strip() for h in str(q.get("Heat_Numbers_On_Hand", "")).split(",") if h.strip()]
-            old = [h.strip() for h in str(a0.get("Heat_Numbers_On_Hand", "")).split(",") if h.strip()]
-            have = str(a1.get("Heat_Numbers_On_Hand", ""))
-            if f.safety_critical(sku) and any(h not in have for h in heats + old):
-                probs.append(f"{sku} active row Heat_Numbers_On_Hand must keep {', '.join(old)} and append "
-                             f"{', '.join(heats)} (comma-separated, step 5).")
-        rows = [r for r in rcv_now if r.get("Receipt_ID") == rec and r.get("SKU") == sku]
-        for r in rows:
-            bad = []
-            if norm(r.get("Status")) != "putaway complete":
-                bad.append("Status 'Putaway Complete'")
-            if blank(r.get("Putaway_Auth_Time")) or "04/23/2026" not in str(r.get("Putaway_Auth_Time")):
-                bad.append("Putaway_Auth_Time = current timestamp")
-            if blank(r.get("Putaway_Location")) or "Q-HOLD" in str(r.get("Putaway_Location")).upper():
-                bad.append("Putaway_Location = the assigned warehouse bin")
-            if "coc received and verified" not in norm(r.get("Documentation_Status")):
-                bad.append("Documentation_Status 'COC Received and Verified'")
-            if norm(r.get("Disposition")) != "accepted":
-                bad.append("Disposition 'ACCEPTED'")
-            if bad:
-                probs.append(f"receiving_log.xlsx {rec} {sku}: set " + ", ".join(bad) + " (14.7.2 step 6).")
-        others = [s for s in f.ncr_skus(rec) if s not in f.authorized_skus]
-        for r0 in rcv_init:
-            if r0.get("Receipt_ID") == rec and r0.get("SKU") in others:
-                r1 = next((r for r in rcv_now if r.get("Receipt_ID") == rec and r.get("SKU") == r0.get("SKU")), None)
-                if r1 != r0:
-                    probs.append(f"receiving_log.xlsx row {rec} {r0.get('SKU')} is still on hold and must not be "
-                                 "updated (14.7.2 step 6: 'Do not update rows for lines that remain on quarantine hold').")
-        for n, r in ncr_now.items():
-            if rec in str(r.get("Receipt_ID", "")) and others and norm(r.get("Status")) in ("resolved", "closed",
-                                                                                         "closed - no issue"):
-                probs.append(f"{n} still covers quarantined {', '.join(others)}; the Coordinator never closes or "
-                             "resolves an NCR on their own judgment (14.8) - leave its Status open.")
-        if not any(not _release_post_problems(f, p) and sku in p for p in posts):
-            probs.append(f"No correct 'QUARANTINE RELEASED: {rec}, SKU {sku}, ...' post in #receiving-dock (step 9).")
-        if not f.has_file(rf"quarantine_releases/{re.escape(rec)}_release\.pdf$"):
-            probs.append(f"Save the written authorization as quarantine_releases/{rec}_release.pdf in /workdir "
-                         "(14.7.2 step 1).")
-        if others and not any("partial release" in u.text.lower() and sku in u.text for u in cal):
-            probs.append(f"This is a partial release ({', '.join(others)} remain on Q-HOLD under the same receipt): "
-                         "append the 'Partial release ...' note to the description of the calendar event that tracks "
-                         "this quarantine (14.7.2 step 8).")
-    for sku, req in f.refused_skus.items():
-        q0 = f.qhold[sku]
-        q1 = next((r for r in inv_now if r.get("SKU") == sku
-                   and "Q-HOLD" in (r.get("Location", "") + r.get("Warehouse_Zone", "")).upper()), None)
-        if q1 != q0:
-            probs.append(f"{sku} was not validly authorized ({req.reason}) but its Q-HOLD row was changed; restore "
-                         f"it (On_Hand_Qty {q0.get('On_Hand_Qty')}, Quarantine_Qty {q0.get('Quarantine_Qty')}).")
-        rec = f.receipt_of(sku)
-        for r0 in rcv_init:
-            if r0.get("Receipt_ID") == rec and r0.get("SKU") == sku:
-                r1 = next((r for r in rcv_now if r.get("Receipt_ID") == rec and r.get("SKU") == sku), None)
-                if r1 != r0:
-                    probs.append(f"receiving_log.xlsx row {rec} {sku} was changed although its release is not "
-                                 "authorized; restore the original values.")
-    return probs
+def _cal_guard(ctx, a):
+    if a.kind not in ("calendar_delete", "calendar_update"):
+        return None
+    ev = _ncr_events(world(ctx)).get(_event_id(a))
+    if not ev:
+        return None
+    if a.kind == "calendar_delete":
+        return (f"Event {_event_id(a)} (\"{ev.get('summary')}\") tracks NCR-MER-2026-0247 SKUs that remain on Q-HOLD "
+                "(AX-04827-B2, AX-05512-C1); do not delete it. For this partial release append the note to its "
+                f"description instead: {NOTE}")
+    if "[completed]" in str(a.args.get("summary") or "").lower():
+        return ("Do not mark this event [COMPLETED]: AX-04827-B2 and AX-05512-C1 of NCR-MER-2026-0247 are still on "
+                f"Q-HOLD. Append the partial release note to the description instead: {NOTE}")
+    desc = a.args.get("description")
+    orig = nh(ev.get("description") or "")
+    if desc is not None and orig and orig[:60] not in nh(desc):
+        return ("Append the partial release note to the EXISTING event description (keep the original text and add "
+                f"the note after it): {NOTE}")
+    return None
 
 
-@rule("release.completion", "completion", [("14.7.2", "1. Confirm the written authorization is in hand"),
-                                           ("14.7.2", "6. Update the original row(s)")])
-def completion(ctx: Context) -> list[Finding]:
-    f = facts(ctx)
-    if not f.requests:
-        return []
-    probs = _completion(ctx)
-    if not probs:
-        return []
-    return [Finding("release.completion", [
-        ctx.cite("14.7.1", "Quarantine Type Release Authorization Required", "14.7.1"),
-        ctx.cite("14.7.2", "1. Confirm the written authorization", "14.7.2 steps 1-9")],
-        "Quarantine release processing is incomplete or incorrect: " + " ".join(probs[:8]),
-        ["Fix each listed item, then finish."])]
+def _cal_note(ctx):
+    w = world(ctx)
+    evs = _ncr_events(w)
+    ok = any(_event_id(a) in evs and not _note_missing(str(a.args.get("description") or ""))
+             for a in w.calls("calendar_update"))
+    yield (ok, f"Partial quarantine release ({FG} only; the AX lines of NCR-MER-2026-0247 stay on hold): update the "
+               "NCR-MER-2026-0247 calendar event (evt-012 \"NCR DEADLINE | NCR-MER-2026-0247 ...\") by appending to "
+               f"its existing description: {NOTE}", R_CAL)
 
 
-@rule("records.only_released_rows_removed", "completion", [("21.2", "7. Do not delete records"),
-                                                          ("14.7.2", "3. Delete the Q-HOLD row entirely")])
-def integrity(ctx: Context) -> list[Finding]:
-    allowed = len(facts(ctx).authorized_skus)
-    issues = []
-    for msg in workbooks.integrity_issues():
-        m = re.match(r"inventory_master\.xlsx/.+ lost (\d+) row", msg)
-        if m and int(m.group(1)) <= allowed:
-            continue
-        issues.append(msg)
-    if not issues:
-        return []
-    return [Finding("records.only_released_rows_removed", [ctx.cite("21.2", "7. Do not delete records", "21.2 item 7")],
-                    "Workbook records were removed beyond the Q-HOLD rows of authorized releases: " + "; ".join(issues),
-                    ["Restore the removed rows; records may never be deleted (only the released Q-HOLD row)."])]
+# ---- pre: deletes / read-only -----------------------------------------------------------------------
+
+INITIAL_FILES = ("dock_schedule.xlsx", "inventory_master.xlsx", "ncr_log.xlsx", "open_pos.xlsx", "receiving_log.xlsx",
+                 "supplier_master.xlsx", "Gear_Systems_Logistics_SOP.pdf")
 
 
-RULES = common.without("records.no_deletion", "records.posted_rows_unchanged") + TASK_RULES
+def _no_delete(ctx, a):
+    if a.kind == "email_delete":
+        return "Do not delete emails: the receiving inbox is a retained record (Sec 18.5.2, 21.2 #7)."
+    if a.tool.startswith("slack__") and "delete" in a.tool:
+        return "Do not delete Slack posts; post a correction reply instead (Sec 21.3 #13)."
+    if a.kind == "file_delete":
+        txt = a.text or str(a.args)
+        hit = [f for f in INITIAL_FILES if re.search(rf"(?:/workdir/|^|[\s'\"(]){re.escape(f)}", txt, re.M)]
+        if hit:
+            return f"Do not delete records ({', '.join(hit)}); records are never deleted (Sec 21.2 #7)."
+    return None
+
+
+def _supplier_master(ctx, a):
+    if a.kind in WRITE_KINDS and any(re.search(r"supplier_master\.xlsx$", f, re.I) for f in strict_writes(a)):
+        return "supplier_master.xlsx is owned by Procurement and read-only for the Coordinator (Sec 5.1, 5.3)."
+    return None
+
+
+# ---- messages ------------------------------------------------------------------------------------------
+
+POST = (f"QUARANTINE RELEASED: {REC1}, SKU {FG}, qty 200 released from Q-HOLD to A-09-01. "
+        f"Authorization: Theo Brandt, {TODAY}. Dock Crew: please move when convenient.")
+
+
+def _released(a, rx: str) -> bool:
+    return (a.kind in COMM_KINDS and bool(re.search(r"QUARANTINE\s+RELEASED", a.text, re.I))
+            and bool(re.search(rx, a.text, re.I)))
+
+
+def _specs(ctx) -> list[Comm]:
+    return [
+        Comm("fg_release_post", "slack_post", lambda a: _released(a, FG), f"QUARANTINE RELEASED post for {FG}",
+             R_POST, channel="receiving-dock",
+             body=[(rf"QUARANTINE RELEASED:\s*{REC1}", f"\"QUARANTINE RELEASED: {REC1}\""),
+                   (rf"SKU\s*{FG}", f"\"SKU {FG}\""),
+                   (r"qty\s*200\b", "\"qty 200\""),
+                   (rf"released from Q-HOLD to\s*{FG_BINS}", "\"released from Q-HOLD to A-09-01\""),
+                   (rf"Authorization:\s*Theo Brandt,?\s*{TODAY}", f"\"Authorization: Theo Brandt, {TODAY}\""),
+                   (r"Dock Crew: please move when convenient", "\"Dock Crew: please move when convenient.\"")],
+             exact_hint=POST),
+        Comm("bg_release", "slack_post", lambda a: _released(a, rf"SKU\s*{BG}|{REC2}"), f"release of {BG}", R_AUTH,
+             forbidden=f"{BG} is safety-critical: releasing it requires Theo Brandt's written email approval "
+                       "(Sec 14.7.1, 21.1 #3). Darnell Hooks' email 0042 is not a valid release authorization, so "
+                       "the 144 units stay on Q-HOLD."),
+        Comm("ax_release", "slack_post", lambda a: _released(a, r"SKU\s*AX-0(4827-B2|5512-C1)"),
+             f"release of the AX lines of {REC1}", R_AUTH,
+             forbidden="Only FG-91144-A1 was authorized for release by Theo Brandt; AX-04827-B2 and AX-05512-C1 stay "
+                       "on Q-HOLD (no COC / no release authorization)."),
+    ]
+
+
+RULES = (
+    state_rule("gear.fg_inventory", _fg_inventory, "Update inventory_master.xlsx per Sec 14.7.2 steps 3-5.")
+    + state_rule("gear.fg_receiving_log", _fg_receiving_log, "Update the receiving log row per Sec 14.7.2 step 6.")
+    + state_rule("gear.release_record", _release_record, "Save the authorization PDF per Sec 14.7.2 step 1.")
+    + comm_rules("gear.comms", _specs)
+    + state_rule("gear.partial_release_note", _cal_note, "Append the partial release note to the event description.")
+    + pre_rule("gear.calendar_guard", _cal_guard, R_CAL, "Keep the event and append the partial release note.")
+    + state_rule("gear.no_unauthorized_release", _unauthorized, "Leave BG-33044-A1 and the AX lines on Q-HOLD.")
+    + state_rule("gear.ncr_not_closed", _ncr_open, "Leave the NCR status for the closer (Theo Brandt).")
+    + state_rule("gear.readonly_books", _readonly, "Restore the original workbook content.")
+    + pre_rule("gear.supplier_master_readonly", _supplier_master, R_RO, "Do not write supplier_master.xlsx.")
+    + state_rule("gear.no_unrequested_rows", _rows, "Restore rows not covered by the release.")
+    + pre_rule("gear.no_delete", _no_delete, R_DEL, "Keep the record; do not delete it.")
+    + no_placeholders(R_PH)
+)

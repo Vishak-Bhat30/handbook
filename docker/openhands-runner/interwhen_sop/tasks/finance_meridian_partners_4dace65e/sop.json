@@ -1,0 +1,2706 @@
+{
+ "source_pdf": "tasks/finance_meridian_partners_4dace65e/environment/initial_workspace/SOP.docx",
+ "toc": [
+  {
+   "section": "1.0",
+   "title": "| Initial release | R. Whitfield | D. Nakamura, CFO | Jan 15, 2025"
+  },
+  {
+   "section": "1",
+   "title": "Purpose & Scope"
+  },
+  {
+   "section": "2",
+   "title": "Definitions & Vocabulary"
+  },
+  {
+   "section": "3",
+   "title": "Tools, Systems & File Locations"
+  },
+  {
+   "section": "3.1",
+   "title": "Systems"
+  },
+  {
+   "section": "3.2",
+   "title": "Key Files"
+  },
+  {
+   "section": "3.3",
+   "title": "Slack Channels"
+  },
+  {
+   "section": "4",
+   "title": "Invoice Intake & Initial Classification"
+  },
+  {
+   "section": "4.1",
+   "title": "Required Invoice Fields"
+  },
+  {
+   "section": "4.2",
+   "title": "Returning Incomplete Invoices"
+  },
+  {
+   "section": "4.3",
+   "title": "Invoice Classification"
+  },
+  {
+   "section": "5",
+   "title": "Invoice Processing & Matching"
+  },
+  {
+   "section": "5.1",
+   "title": "Three-Way Match (PO Invoices)"
+  },
+  {
+   "section": "5.1.1",
+   "title": "Matching Tolerances"
+  },
+  {
+   "section": "5.2",
+   "title": "Duplicate Invoice Detection"
+  },
+  {
+   "section": "5.3",
+   "title": "Non-PO Invoice Processing"
+  },
+  {
+   "section": "5.4",
+   "title": "Recurring Invoice Processing"
+  },
+  {
+   "section": "6",
+   "title": "Exception Handling"
+  },
+  {
+   "section": "6.1",
+   "title": "Price Variance Exceptions"
+  },
+  {
+   "section": "6.2",
+   "title": "Quantity Discrepancy Exceptions"
+  },
+  {
+   "section": "6.3",
+   "title": "Recurring Invoice Amount Variance"
+  },
+  {
+   "section": "7",
+   "title": "Payment Approval & Authorization"
+  },
+  {
+   "section": "7.1",
+   "title": "Payment Authorization Matrix"
+  },
+  {
+   "section": "7.2",
+   "title": "Early Payment Discounts"
+  },
+  {
+   "section": "8",
+   "title": "Credit Memo Processing"
+  },
+  {
+   "section": "8.1",
+   "title": "Matching Credit Memos"
+  },
+  {
+   "section": "9",
+   "title": "Employee Expense Reimbursement"
+  },
+  {
+   "section": "9.1",
+   "title": "Validation Checklist"
+  },
+  {
+   "section": "1",
+   "title": "| Employee name and employee ID are present | Return to employee"
+  },
+  {
+   "section": "10",
+   "title": "Intercompany Transactions"
+  },
+  {
+   "section": "11",
+   "title": "Month-End Close Procedures"
+  },
+  {
+   "section": "11.1",
+   "title": "Close Checklist"
+  },
+  {
+   "section": "12",
+   "title": "Vendor Management"
+  },
+  {
+   "section": "12.1",
+   "title": "New Vendor Setup"
+  },
+  {
+   "section": "12.2",
+   "title": "Vendor Deactivation"
+  },
+  {
+   "section": "12.3",
+   "title": "Vendor Statement Reconciliation"
+  },
+  {
+   "section": "13",
+   "title": "Escalation Procedures"
+  },
+  {
+   "section": "13.1",
+   "title": "Escalation Triggers & Routing"
+  },
+  {
+   "section": "13.2",
+   "title": "Bank Account Change Verification"
+  },
+  {
+   "section": "13.3",
+   "title": "Escalation Message Formats"
+  },
+  {
+   "section": "14",
+   "title": "1099 Vendor Management & Year-End Reporting"
+  },
+  {
+   "section": "14.1",
+   "title": "1099 Classification Rules"
+  },
+  {
+   "section": "14.2",
+   "title": "Year-End 1099 Process"
+  },
+  {
+   "section": "15",
+   "title": "Payment Batch Processing"
+  },
+  {
+   "section": "15.1",
+   "title": "Batch Schedule"
+  },
+  {
+   "section": "15.2",
+   "title": "Pre-Batch Checklist"
+  },
+  {
+   "section": "15.3",
+   "title": "Payment Method Rules"
+  },
+  {
+   "section": "16",
+   "title": "Audit & Compliance"
+  },
+  {
+   "section": "16.1",
+   "title": "Document Retention"
+  },
+  {
+   "section": "16.2",
+   "title": "Audit Hold (AUDIT Status)"
+  }
+ ],
+ "paragraphs": [
+  {
+   "id": "P0001",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "heading",
+   "text": "MERIDIAN PARTNERS, LLC"
+  },
+  {
+   "id": "P0002",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "Management Consulting"
+  },
+  {
+   "id": "P0003",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "Standard Operating Procedure"
+  },
+  {
+   "id": "P0004",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "Accounts Payable – Invoice Processing & Vendor Payments"
+  },
+  {
+   "id": "P0005",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "SOP-FIN-AP-004"
+  },
+  {
+   "id": "P0006",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "Department: Finance & Accounting Effective Date: January 15, 2025 Document Owner: Rachel Whitfield, Controller"
+  },
+  {
+   "id": "P0007",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "heading",
+   "text": "Revision History"
+  },
+  {
+   "id": "P0008",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Rev. | Description | Author | Approved By | Date"
+  },
+  {
+   "id": "P0009",
+   "section": "1.0",
+   "section_title": "| Initial release | R. Whitfield | D. Nakamura, CFO | Jan 15, 2025",
+   "page": 0,
+   "kind": "heading",
+   "text": "1.0 | Initial release | R. Whitfield | D. Nakamura, CFO | Jan 15, 2025"
+  },
+  {
+   "id": "P0010",
+   "section": "1.0",
+   "section_title": "| Initial release | R. Whitfield | D. Nakamura, CFO | Jan 15, 2025",
+   "page": 0,
+   "kind": "table_row",
+   "text": "1.1 | Added credit memo procedures | R. Whitfield | D. Nakamura, CFO | Mar 03, 2025"
+  },
+  {
+   "id": "P0011",
+   "section": "1.0",
+   "section_title": "| Initial release | R. Whitfield | D. Nakamura, CFO | Jan 15, 2025",
+   "page": 0,
+   "kind": "table_row",
+   "text": "1.2 | Updated escalation channels; added 1099 rules | T. Okonkwo | R. Whitfield | Apr 22, 2025"
+  },
+  {
+   "id": "P0012",
+   "section": "1",
+   "section_title": "Purpose & Scope",
+   "page": 0,
+   "kind": "heading",
+   "text": "1. Purpose & Scope"
+  },
+  {
+   "id": "P0013",
+   "section": "1",
+   "section_title": "Purpose & Scope",
+   "page": 0,
+   "kind": "text",
+   "text": "This document defines the end-to-end procedures for processing vendor invoices, approving expenditures, issuing payments, and maintaining vendor records at Meridian Partners, LLC. All Accounts Payable (AP) staff, approving managers, and the Controller must follow this SOP without deviation. Any process not explicitly addressed here must be escalated per Section 13."
+  },
+  {
+   "id": "P0014",
+   "section": "1",
+   "section_title": "Purpose & Scope",
+   "page": 0,
+   "kind": "text",
+   "text": "Scope: All non-payroll disbursements including vendor invoices, contractor payments, employee expense reimbursements, intercompany transfers, and credit memo processing. This SOP does not cover payroll, benefits administration, or capital expenditure approvals (see SOPFIN-CAPEX-002)."
+  },
+  {
+   "id": "P0015",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "heading",
+   "text": "2. Definitions & Vocabulary"
+  },
+  {
+   "id": "P0016",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Term | Definition"
+  },
+  {
+   "id": "P0017",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Three-Way Match | Verification that the Purchase Order (PO), Goods Receipt (GR), and Vendor Invoice all agree on quantity, unit price, and total amount within defined tolerances."
+  },
+  {
+   "id": "P0018",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PO (Purchase Order) | A formal authorization to purchase goods or services, recorded on the PO Register sheet of ap_ledger.xlsx with a unique PO number (format: PO-YYYY-NNNNN)."
+  },
+  {
+   "id": "P0019",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "GR (Goods Receipt) | Confirmation that ordered goods or services have been received, entered by the requesting department."
+  },
+  {
+   "id": "P0020",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Non-PO Invoice | An invoice for goods or services that were procured without a purchase order. Requires retroactive approval per Section 5.3."
+  },
+  {
+   "id": "P0021",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Invoice Variance | The difference between the invoiced amount and the PO/GR amount, expressed as a percentage: ((Invoice Amount - PO Amount) / PO Amount) * 100."
+  },
+  {
+   "id": "P0022",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Payment Terms | The agreed-upon timeframe for payment. Common terms: Net 30 (payment due 30 days from invoice date), Net 45, 2/10 Net 30 (2% discount if paid within 10 days)."
+  },
+  {
+   "id": "P0023",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "GL Code | General Ledger account code for expense classification, format: NNNN-NNN-NNNN (Entity-Department-Account). Common codes: 6100-xxx-xxxx (Professional Services), 6200-xxx-xxxx (Office Supplies), 6300-xxx-xxxx (Travel & Entertainment), 6400-xxx-xxxx (Software & Subscriptions), 6500-xxx-xxxx (Facilities & Maintenance), 1500-000-9100 (Intercompany Clearing)."
+  },
+  {
+   "id": "P0024",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Batch Run | A scheduled payment processing cycle. Meridian runs payment batches every Tuesday and Thursday at 2:00 PM EST."
+  },
+  {
+   "id": "P0025",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Hold Status | An invoice flagged to prevent payment. Hold codes: MATCH (matching discrepancy), APPR (pending approval), DUPL (suspected duplicate), DISP (vendor dispute), AUDIT (under review)."
+  },
+  {
+   "id": "P0026",
+   "section": "2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Vendor Master | The central record for each vendor, maintained in vendor_master.xlsx. Contains tax ID, payment terms, banking details, and 1099 classification."
+  },
+  {
+   "id": "P0027",
+   "section": "3",
+   "section_title": "Tools, Systems & File Locations",
+   "page": 0,
+   "kind": "heading",
+   "text": "3. Tools, Systems & File Locations"
+  },
+  {
+   "id": "P0028",
+   "section": "3",
+   "section_title": "Tools, Systems & File Locations",
+   "page": 0,
+   "kind": "text",
+   "text": "All AP staff must use the following systems and file paths. Do not create ad hoc spreadsheets or store files outside the designated locations."
+  },
+  {
+   "id": "P0029",
+   "section": "3.1",
+   "section_title": "Systems",
+   "page": 0,
+   "kind": "heading",
+   "text": "3.1 Systems"
+  },
+  {
+   "id": "P0030",
+   "section": "3.1",
+   "section_title": "Systems",
+   "page": 0,
+   "kind": "table_row",
+   "text": "System | Purpose | Access"
+  },
+  {
+   "id": "P0031",
+   "section": "3.1",
+   "section_title": "Systems",
+   "page": 0,
+   "kind": "table_row",
+   "text": "AP Ledger Workbook (ap_ledger.xlsx) | Central AP workbook with sheets: Invoice Register, PO Register, Payment Queue, GL Postings | ap_ledger.xlsx"
+  },
+  {
+   "id": "P0032",
+   "section": "3.1",
+   "section_title": "Systems",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Email | Vendor communications, approval requests, payment confirmations | ap@meridianpartners.com (shared inbox)"
+  },
+  {
+   "id": "P0033",
+   "section": "3.1",
+   "section_title": "Systems",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Slack | Internal escalations, urgent notifications, team coordination | See Section 3.3 for channel list"
+  },
+  {
+   "id": "P0034",
+   "section": "3.1",
+   "section_title": "Systems",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Calendar | Payment batch scheduling, month-end close deadlines, vendor meetings | Shared AP calendar: ap-calendar@meridianpartners.com"
+  },
+  {
+   "id": "P0035",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "heading",
+   "text": "3.2 Key Files"
+  },
+  {
+   "id": "P0036",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Path | Contents"
+  },
+  {
+   "id": "P0037",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Folder: Scanned_Invoices/YYYY-MM-DD/ | Scanned invoice images (PDF), named: INV-[InvoiceNumber].pdf"
+  },
+  {
+   "id": "P0038",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Match_log_2026_Q[#].xlsx | Three-way match worksheets"
+  },
+  {
+   "id": "P0039",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Vendor_master.xlsx | The single source of truth for vendor records"
+  },
+  {
+   "id": "P0040",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Folder: Payment_Batches/YYYY-MM-DD/ | Payment batch files: batch_YYYY-MM-DD.xlsx"
+  },
+  {
+   "id": "P0041",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Folder: Exceptions/YYYY-MM-DD/ | Exception reports, hold documentation, and the exceptions tracker: exceptions_tracker_YYYY.xlsx"
+  },
+  {
+   "id": "P0042",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Folder: Month_End/YYYY-MM/ | Accrual worksheets, reconciliation reports, close checklists"
+  },
+  {
+   "id": "P0043",
+   "section": "3.2",
+   "section_title": "Key Files",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Folder: 1099/YYYY/ | 1099 preparation files and vendor W-9 forms"
+  },
+  {
+   "id": "P0044",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "heading",
+   "text": "3.3 Slack Channels"
+  },
+  {
+   "id": "P0045",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "text",
+   "text": "Use the following Slack channels for all AP communications. Do not use direct messages for issues that require an audit trail."
+  },
+  {
+   "id": "P0046",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Channel | Purpose | Who Posts"
+  },
+  {
+   "id": "P0047",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "table_row",
+   "text": "#ap-exceptions | Invoice matching exceptions, price variances, quantity discrepancies | AP Staff"
+  },
+  {
+   "id": "P0048",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "table_row",
+   "text": "#ap-approvals | Approval requests for non-PO invoices and over-threshold items | AP Staff"
+  },
+  {
+   "id": "P0049",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "table_row",
+   "text": "#ap-escalations | Escalations to Controller: fraud suspicion, vendor disputes > $5,000, legal threats | AP Staff, AP Manager"
+  },
+  {
+   "id": "P0050",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "table_row",
+   "text": "#ap-payments | Payment batch confirmations, payment failures, banking issues | AP Manager"
+  },
+  {
+   "id": "P0051",
+   "section": "3.3",
+   "section_title": "Slack Channels",
+   "page": 0,
+   "kind": "table_row",
+   "text": "#finance-month-end | Month-end close status, accrual postings, reconciliation completion | All Finance Staff"
+  },
+  {
+   "id": "P0052",
+   "section": "4",
+   "section_title": "Invoice Intake & Initial Classification",
+   "page": 0,
+   "kind": "heading",
+   "text": "4. Invoice Intake & Initial Classification"
+  },
+  {
+   "id": "P0053",
+   "section": "4",
+   "section_title": "Invoice Intake & Initial Classification",
+   "page": 0,
+   "kind": "text",
+   "text": "All invoices arrive through one of three channels: email (ap@meridianpartners.com), physical mail (scanned by Office Admin), or the vendor portal. Regardless of source, every invoice must be logged and classified within 24 business hours of receipt."
+  },
+  {
+   "id": "P0054",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "heading",
+   "text": "4.1 Required Invoice Fields"
+  },
+  {
+   "id": "P0055",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "text",
+   "text": "Before processing, verify the invoice contains all of the following. If any field is missing, the invoice is Incomplete and must be returned to the vendor."
+  },
+  {
+   "id": "P0056",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Required Field | Example | If Missing"
+  },
+  {
+   "id": "P0057",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Vendor name and full address | Apex Office Supply, 100 Commerce Dr, Atlanta GA 30301 | Return to vendor"
+  },
+  {
+   "id": "P0058",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Invoice number | INV-2025-08841 | Return to vendor"
+  },
+  {
+   "id": "P0059",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Invoice date | 03/15/2025 | Return to vendor"
+  },
+  {
+   "id": "P0060",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PO number (if applicable) | PO-2025-01234 | Classify as Non-PO; proceed to Section 5.3"
+  },
+  {
+   "id": "P0061",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Line item(s) with description, qty, unit price if applicable | Copy Paper, Qty 50, $4.99/ream | Return to vendor"
+  },
+  {
+   "id": "P0062",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Total amount due | $249.50 | Return to vendor"
+  },
+  {
+   "id": "P0063",
+   "section": "4.1",
+   "section_title": "Required Invoice Fields",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Payment terms | Net 30 | Default to vendor master terms; if no vendor master entry, use Net 30"
+  },
+  {
+   "id": "P0064",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "heading",
+   "text": "4.2 Returning Incomplete Invoices"
+  },
+  {
+   "id": "P0065",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "When an invoice is missing required fields, send the following email to the vendor within the same business day:"
+  },
+  {
+   "id": "P0066",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "To: [vendor contact email from vendor_master.xlsx]"
+  },
+  {
+   "id": "P0067",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "Subject: Meridian Partners - Incomplete Invoice [INVOICE NUMBER]"
+  },
+  {
+   "id": "P0068",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "Body (use verbatim):"
+  },
+  {
+   "id": "P0069",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "\"Dear [Vendor Contact First Name],"
+  },
+  {
+   "id": "P0070",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "We received invoice [INVOICE NUMBER] dated [INVOICE DATE]. Unfortunately, we are unable to process this invoice because the following required information is missing: [Vendor Name / Street Number / Street Name / City / State / Zip Code / Invoice Number / Invoice Date / Item / Item description / Item qty / Item unit price / Total amount due] ."
+  },
+  {
+   "id": "P0071",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "Please resubmit a corrected invoice to ap@meridianpartners.com at your earliest convenience. We will process payment promptly upon receipt of a complete invoice."
+  },
+  {
+   "id": "P0072",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "Thank you,"
+  },
+  {
+   "id": "P0073",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "Meridian Partners Accounts Payable\""
+  },
+  {
+   "id": "P0074",
+   "section": "4.2",
+   "section_title": "Returning Incomplete Invoices",
+   "page": 0,
+   "kind": "text",
+   "text": "Do NOT enter incomplete invoices into the Invoice Register. Do NOT place them on hold. They must be returned before entry."
+  },
+  {
+   "id": "P0075",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "heading",
+   "text": "4.3 Invoice Classification"
+  },
+  {
+   "id": "P0076",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "text",
+   "text": "After verifying completeness, classify each invoice into exactly one category:"
+  },
+  {
+   "id": "P0077",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Category | Criteria | Next Step"
+  },
+  {
+   "id": "P0078",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PO Invoice | Invoice references a valid PO number that exists on the PO Register sheet of ap_ledger.xlsx | Section 5.1 (Three-Way Match)"
+  },
+  {
+   "id": "P0079",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Non-PO Invoice | No PO number referenced, OR the PO number does not exist on the PO Register sheet of ap_ledger.xlsx, and invoice does not fit in any other category. | Section 5.3 (Retroactive Approval)"
+  },
+  {
+   "id": "P0080",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Recurring Invoice | Invoice matches an active recurring vendor agreement (check recurring_agreements.xlsx) | Section 5.4 (Recurring Processing)"
+  },
+  {
+   "id": "P0081",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Credit Memo | Document has a negative total or is explicitly labeled as a credit memo/credit note | Section 8 (Credit Memo Processing)"
+  },
+  {
+   "id": "P0082",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Employee Expense | Reimbursement request from a Meridian employee with attached receipts | Section 9 (Expense Reimbursement)"
+  },
+  {
+   "id": "P0083",
+   "section": "4.3",
+   "section_title": "Invoice Classification",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Intercompany | Invoice from a Meridian subsidiary or affiliated entity (vendor ID starts with \"IC-\") | Section 10 (Intercompany)"
+  },
+  {
+   "id": "P0084",
+   "section": "5",
+   "section_title": "Invoice Processing & Matching",
+   "page": 0,
+   "kind": "heading",
+   "text": "5. Invoice Processing & Matching"
+  },
+  {
+   "id": "P0085",
+   "section": "5.1",
+   "section_title": "Three-Way Match (PO Invoices)",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.1 Three-Way Match (PO Invoices)"
+  },
+  {
+   "id": "P0086",
+   "section": "5.1",
+   "section_title": "Three-Way Match (PO Invoices)",
+   "page": 0,
+   "kind": "text",
+   "text": "For every PO invoice, the AP clerk must verify agreement between three documents: the Purchase Order, the Goods Receipt, and the Invoice. Open the match log for the current quarter (POMatching/matchlogYYYYQN.xlsx) and record each match attempt."
+  },
+  {
+   "id": "P0087",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.1.1 Matching Tolerances"
+  },
+  {
+   "id": "P0088",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "text",
+   "text": "The following tolerances determine whether a match passes or requires exception handling:"
+  },
+  {
+   "id": "P0089",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Check | Tolerance | If Within Tolerance | If Outside Tolerance"
+  },
+  {
+   "id": "P0090",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Unit Price Variance | ±5% OR ±$25, whichever is GREATER | Auto-approve; no further action | Place on MATCH hold; proceed to Section 6.1"
+  },
+  {
+   "id": "P0091",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Quantity Variance | Exact match required (zero tolerance) | Proceed to price check | Place on MATCH hold; proceed to Section 6.2"
+  },
+  {
+   "id": "P0092",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Total Invoice Amount | ±$50 AND ±2% | Auto-approve; post to GL | Place on MATCH hold; proceed to Section 6"
+  },
+  {
+   "id": "P0093",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Tax Amount | ±$5 | Accept invoice tax amount | Flag for AP Manager review. The AP Manager will determine the correct tax amount and update the invoice before approval."
+  },
+  {
+   "id": "P0094",
+   "section": "5.1.1",
+   "section_title": "Matching Tolerances",
+   "page": 0,
+   "kind": "text",
+   "text": "If the match passes, enter the invoice in the Payment Queue in apledger.xlsx as Approved. If the match does not pass for any reason, enter it into the Invoice Register in apledger.xlsx."
+  },
+  {
+   "id": "P0095",
+   "section": "5.2",
+   "section_title": "Duplicate Invoice Detection",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.2 Duplicate Invoice Detection"
+  },
+  {
+   "id": "P0096",
+   "section": "5.2",
+   "section_title": "Duplicate Invoice Detection",
+   "page": 0,
+   "kind": "text",
+   "text": "Before entering any invoice into the Invoice Register, check for duplicates using ALL THREE of the following criteria. An invoice is a duplicate if it matches on all three:"
+  },
+  {
+   "id": "P0097",
+   "section": "5.2",
+   "section_title": "Duplicate Invoice Detection",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Same vendor ID, AND 2. Same invoice number (case-insensitive, ignore leading zeros), AND"
+  },
+  {
+   "id": "P0098",
+   "section": "5.2",
+   "section_title": "Duplicate Invoice Detection",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Same invoice total amount (exact match to the penny)"
+  },
+  {
+   "id": "P0099",
+   "section": "5.2",
+   "section_title": "Duplicate Invoice Detection",
+   "page": 0,
+   "kind": "text",
+   "text": "If a duplicate is detected: Do NOT enter the invoice. Do NOT return it to the vendor. Place the physical/digital copy in Exceptions/ with filename DUPL-[VendorID]-[InvoiceNumber].pdf. Post a notification to #ap-exceptions with the following exact format:"
+  },
+  {
+   "id": "P0100",
+   "section": "5.2",
+   "section_title": "Duplicate Invoice Detection",
+   "page": 0,
+   "kind": "text",
+   "text": "DUPLICATE DETECTED: [VENDOR NAME], [VENDOR ID], Invoice [INVOICE NUMBER], Amount $[AMOUNT], Original Entry Date [DATE OF FIRST ENTRY]"
+  },
+  {
+   "id": "P0101",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.3 Non-PO Invoice Processing"
+  },
+  {
+   "id": "P0102",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Invoices without a valid PO require retroactive approval before payment. The approval path depends on the invoice amount:"
+  },
+  {
+   "id": "P0103",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Invoice Amount | Required Approver | Approval Method | Max Response Time"
+  },
+  {
+   "id": "P0104",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "$0.01 – $500.00 | Department Manager (budget owner for the GL code) | Email reply | 3 business days"
+  },
+  {
+   "id": "P0105",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "$500.01 – $5,000.00 | Department Manager AND AP Manager (Tanya Okonkwo) | Email reply from both | 3 business days"
+  },
+  {
+   "id": "P0106",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "$5,000.01 – $25,000.00 | Department Manager AND Controller (Rachel Whitfield) | Email reply from both | 5 business days"
+  },
+  {
+   "id": "P0107",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Over $25,000.00 | Department Manager AND Controller AND CFO (David Nakamura) | Email reply from all three | 5 business days"
+  },
+  {
+   "id": "P0108",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Approval Request Email Format:"
+  },
+  {
+   "id": "P0109",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "To: [required approver(s)]"
+  },
+  {
+   "id": "P0110",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "CC: ap@meridianpartners.com"
+  },
+  {
+   "id": "P0111",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Subject: AP APPROVAL REQUIRED: [VENDOR NAME] - $[AMOUNT] - Invoice [INVOICE NUMBER]"
+  },
+  {
+   "id": "P0112",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Body: \"A non-PO invoice requires your approval before payment can be processed. Vendor: [VENDOR NAME] ([VENDOR ID]). Invoice: [INVOICE NUMBER], dated [INVOICE DATE]. Amount: $[AMOUNT]. GL Code: [GL CODE]. Please reply APPROVED or REJECTED. If no response is received within 5 business days, the invoice will be placed on APPR hold and the vendor will be notified of the delay.\""
+  },
+  {
+   "id": "P0113",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "If approval is not received within the allowed timeframe: Place the invoice on APPR hold by updating its Status column in the Invoice Register. Send a courtesy email to the vendor using this template:"
+  },
+  {
+   "id": "P0114",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Subject: Status Update - Invoice [INVOICE NUMBER]"
+  },
+  {
+   "id": "P0115",
+   "section": "5.3",
+   "section_title": "Non-PO Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Body: \"Dear [Vendor Contact First Name], Invoice [INVOICE NUMBER] for $[AMOUNT] is currently pending internal approval. We expect to process payment within 5 additional business days. We apologize for the delay. Meridian Partners Accounts Payable\""
+  },
+  {
+   "id": "P0116",
+   "section": "5.4",
+   "section_title": "Recurring Invoice Processing",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.4 Recurring Invoice Processing"
+  },
+  {
+   "id": "P0117",
+   "section": "5.4",
+   "section_title": "Recurring Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Some vendors have standing agreements for recurring services (e.g., monthly IT support, quarterly cleaning). These are listed in recurring_agreements.xlsx with the following columns: Vendor Name, Vendor ID, Service Description, Expected Amount, Tolerance (%), Frequency, GL Code, Approving Manager, Agreement Expiration Date."
+  },
+  {
+   "id": "P0118",
+   "section": "5.4",
+   "section_title": "Recurring Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "For recurring invoices:"
+  },
+  {
+   "id": "P0119",
+   "section": "5.4",
+   "section_title": "Recurring Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 1: Verify the agreement has not expired. If the Agreement Expiration Date is in the past, STOP. Do not process. Place on APPR hold and email the Approving Manager listed in the agreement to request renewal or confirmation."
+  },
+  {
+   "id": "P0120",
+   "section": "5.4",
+   "section_title": "Recurring Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 2: Compare the invoice amount to the Expected Amount. If the variance exceeds the Tolerance percentage, treat as an exception (Section 6.3)."
+  },
+  {
+   "id": "P0121",
+   "section": "5.4",
+   "section_title": "Recurring Invoice Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 3: If within tolerance and not expired, approve and enter in the Payment Queue in ap_ledger.xlsx with the GL Code from the agreement. No additional approval is needed."
+  },
+  {
+   "id": "P0122",
+   "section": "6",
+   "section_title": "Exception Handling",
+   "page": 0,
+   "kind": "heading",
+   "text": "6. Exception Handling"
+  },
+  {
+   "id": "P0123",
+   "section": "6",
+   "section_title": "Exception Handling",
+   "page": 0,
+   "kind": "text",
+   "text": "Exceptions are invoices that cannot be processed through the standard matching or approval workflows. Every exception must be documented and resolved within 10 business days. Unresolved exceptions older than 10 business days are automatically escalated to the Controller."
+  },
+  {
+   "id": "P0124",
+   "section": "6.1",
+   "section_title": "Price Variance Exceptions",
+   "page": 0,
+   "kind": "heading",
+   "text": "6.1 Price Variance Exceptions"
+  },
+  {
+   "id": "P0125",
+   "section": "6.1",
+   "section_title": "Price Variance Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "When unit price variance exceeds the tolerance defined in Section 5.1.1, or when a known price change causes a total invoice amount variance outside tolerance:"
+  },
+  {
+   "id": "P0126",
+   "section": "6.1",
+   "section_title": "Price Variance Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 1: Check if the vendor has emailed a price increase notification in the last 90 days."
+  },
+  {
+   "id": "P0127",
+   "section": "6.1",
+   "section_title": "Price Variance Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 2a – Price increase notification found: If the invoiced price matches the notified new price, recalculate the expected PO total using the new unit price for the affected line item(s) and re-evaluate the total invoice amount check against this updated baseline. If the recalculated total matches the invoice total within the tolerances defined in Section 5.1.1, enter the invoice in the Payment Queue as Approved. If the recalculated total still does not match the invoice total within tolerance, apply Step 2b instead."
+  },
+  {
+   "id": "P0128",
+   "section": "6.1",
+   "section_title": "Price Variance Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 2b – No price increase notification: Email the vendor requesting clarification. Use this exact subject line: \"Meridian Partners - Price Discrepancy on Invoice [INVOICE NUMBER]\". In the body, state the PO price, the invoiced price, and the variance percentage. Request a corrected invoice or written justification within 5 business days."
+  },
+  {
+   "id": "P0129",
+   "section": "6.1",
+   "section_title": "Price Variance Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 3: Post to #ap-exceptions: PRICE VARIANCE: [VENDOR NAME], [VENDOR ID], Invoice [INVOICE NUMBER], PO Price $[PO PRICE], Invoice Price $[INV PRICE], Variance [X]%"
+  },
+  {
+   "id": "P0130",
+   "section": "6.2",
+   "section_title": "Quantity Discrepancy Exceptions",
+   "page": 0,
+   "kind": "heading",
+   "text": "6.2 Quantity Discrepancy Exceptions"
+  },
+  {
+   "id": "P0131",
+   "section": "6.2",
+   "section_title": "Quantity Discrepancy Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "When the invoiced quantity does not exactly match the Goods Receipt quantity:"
+  },
+  {
+   "id": "P0132",
+   "section": "6.2",
+   "section_title": "Quantity Discrepancy Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "If Invoice Qty > GR Qty: Place on MATCH hold. Email the requesting department to confirm whether additional items were received but not logged. If confirmed received, have them update the GR Qty column on the PO Register sheet of ap_ledger.xlsx first, then re-match. If not received, email the vendor requesting a corrected invoice for the actual quantity delivered."
+  },
+  {
+   "id": "P0133",
+   "section": "6.2",
+   "section_title": "Quantity Discrepancy Exceptions",
+   "page": 0,
+   "kind": "text",
+   "text": "If Invoice Qty < GR Qty: This is a partial invoice. Process and pay the invoiced quantity. Add a note in the match log: \"Partial invoice – [X] units received, [Y] units invoiced. Remaining [Z] units expected on future invoice.\" Do NOT hold the invoice."
+  },
+  {
+   "id": "P0134",
+   "section": "6.3",
+   "section_title": "Recurring Invoice Amount Variance",
+   "page": 0,
+   "kind": "heading",
+   "text": "6.3 Recurring Invoice Amount Variance"
+  },
+  {
+   "id": "P0135",
+   "section": "6.3",
+   "section_title": "Recurring Invoice Amount Variance",
+   "page": 0,
+   "kind": "text",
+   "text": "When a recurring invoice exceeds the tolerance specified in the recurring agreement:"
+  },
+  {
+   "id": "P0136",
+   "section": "6.3",
+   "section_title": "Recurring Invoice Amount Variance",
+   "page": 0,
+   "kind": "text",
+   "text": "If variance is positive (vendor charged MORE than expected): Place on MATCH hold. Email the Approving Manager listed in recurring_agreements.xlsx with subject: \"Recurring Invoice Variance – [VENDOR NAME] – [MONTH/YEAR]\". Include the expected amount, actual amount, and variance. Await approval or rejection within 3 business days."
+  },
+  {
+   "id": "P0137",
+   "section": "6.3",
+   "section_title": "Recurring Invoice Amount Variance",
+   "page": 0,
+   "kind": "text",
+   "text": "If variance is negative (vendor charged LESS than expected): Process normally. No hold required. No approval needed. Log the variance in the match log with a note."
+  },
+  {
+   "id": "P0138",
+   "section": "7",
+   "section_title": "Payment Approval & Authorization",
+   "page": 0,
+   "kind": "heading",
+   "text": "7. Payment Approval & Authorization"
+  },
+  {
+   "id": "P0139",
+   "section": "7",
+   "section_title": "Payment Approval & Authorization",
+   "page": 0,
+   "kind": "text",
+   "text": "After an invoice has been processed, it enters the payment posting. Additional authorization is required based on the payment amount."
+  },
+  {
+   "id": "P0140",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "heading",
+   "text": "7.1 Payment Authorization Matrix"
+  },
+  {
+   "id": "P0141",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Payment Amount | Required Signoff | Method | Notes"
+  },
+  {
+   "id": "P0142",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "$0.01 – $2,500 | AP Clerk (self-approve after match; post confirmation to #ap-approvals) | Slack confirmation in #ap-approvals | Batch processed"
+  },
+  {
+   "id": "P0143",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "$2,500.01 – $10,000 | AP Manager (Tanya Okonkwo) | Slack confirmation in #ap-approvals | Batch processed"
+  },
+  {
+   "id": "P0144",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "$10,000.01 – $50,000 | AP Manager AND Controller (Rachel Whitfield) | Slack confirmation from both in #ap-approvals | Batch processed"
+  },
+  {
+   "id": "P0145",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Over $50,000 | Controller AND CFO (David Nakamura) | Slack confirmation in #ap-approvals + email confirmation from CFO | Manual wire transfer only"
+  },
+  {
+   "id": "P0146",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "text",
+   "text": "Critical: Payments over $50,000 must NEVER be included in the standard Tuesday/Thursday batch run. They are processed as individual manual wire transfers after receiving email confirmation from the CFO. The email confirmation must contain the exact phrase \"APPROVED FOR PAYMENT\" in the body."
+  },
+  {
+   "id": "P0147",
+   "section": "7.1",
+   "section_title": "Payment Authorization Matrix",
+   "page": 0,
+   "kind": "text",
+   "text": "The Slack confirmation message should follow this structure: “[PAYMENT AUTHORIZATION REQUIRED / SELF-APPROVED]: [Vendor Name] | Invoice [Invoice Number] | Amount [Invoice Total Amount] | [3-way match / Non-PO / Recurring Invoice] [| Tanya Okonkwo / Tanya Okonkwo and Rachel Whitfield / Rachel Whitfield and David Nakamura]"
+  },
+  {
+   "id": "P0148",
+   "section": "7.2",
+   "section_title": "Early Payment Discounts",
+   "page": 0,
+   "kind": "heading",
+   "text": "7.2 Early Payment Discounts"
+  },
+  {
+   "id": "P0149",
+   "section": "7.2",
+   "section_title": "Early Payment Discounts",
+   "page": 0,
+   "kind": "text",
+   "text": "If a vendor offers early payment terms (e.g., 2/10 Net 30), the AP clerk must evaluate whether to take the discount:"
+  },
+  {
+   "id": "P0150",
+   "section": "7.2",
+   "section_title": "Early Payment Discounts",
+   "page": 0,
+   "kind": "text",
+   "text": "Rule: Always take the early payment discount if the discount amount is $100 or greater. For discounts under $100, process at standard terms. To take a discount, the payment must be included in the next available batch run. If the next batch run falls after the discount deadline, request an off-cycle payment by posting to #ap-payments with format:"
+  },
+  {
+   "id": "P0151",
+   "section": "7.2",
+   "section_title": "Early Payment Discounts",
+   "page": 0,
+   "kind": "text",
+   "text": "OFF-CYCLE REQUEST: [VENDOR NAME], Invoice [INVOICE NUMBER], Discount $[AMOUNT], Deadline [DATE]"
+  },
+  {
+   "id": "P0152",
+   "section": "7.2",
+   "section_title": "Early Payment Discounts",
+   "page": 0,
+   "kind": "text",
+   "text": "The AP Manager will approve or deny off-cycle requests within 4 business hours."
+  },
+  {
+   "id": "P0153",
+   "section": "8",
+   "section_title": "Credit Memo Processing",
+   "page": 0,
+   "kind": "heading",
+   "text": "8. Credit Memo Processing"
+  },
+  {
+   "id": "P0154",
+   "section": "8",
+   "section_title": "Credit Memo Processing",
+   "page": 0,
+   "kind": "text",
+   "text": "Credit memos reduce the amount owed to a vendor. They must be matched against the original invoice before applying."
+  },
+  {
+   "id": "P0155",
+   "section": "8.1",
+   "section_title": "Matching Credit Memos",
+   "page": 0,
+   "kind": "heading",
+   "text": "8.1 Matching Credit Memos"
+  },
+  {
+   "id": "P0156",
+   "section": "8.1",
+   "section_title": "Matching Credit Memos",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 1: Identify the original invoice referenced in the credit memo. If no original invoice is referenced, email the vendor: \"Dear [Vendor Contact Name], We received credit memo [CM NUMBER] dated [CM DATE] for $[AMOUNT]. We are unable to apply this credit without a reference to the original invoice. Please provide the original invoice number so we can process this credit. Meridian Partners Accounts Payable\""
+  },
+  {
+   "id": "P0157",
+   "section": "8.1",
+   "section_title": "Matching Credit Memos",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 2: Verify the credit amount does not exceed the original invoice amount. If it does, place on DISP hold and email the vendor requesting clarification."
+  },
+  {
+   "id": "P0158",
+   "section": "8.1",
+   "section_title": "Matching Credit Memos",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 3: Apply the credit against the original invoice in the Invoice Register. If the original invoice has already been paid, record the credit on the vendor’s row in vendor_master.xlsx."
+  },
+  {
+   "id": "P0159",
+   "section": "8.1",
+   "section_title": "Matching Credit Memos",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 4: If the credit memo results in a net vendor overpayment of $500 or more, post to #apexceptions: VENDOR OVERPAYMENT: [VENDOR NAME], [VENDOR ID], Overpayment Amount $[AMOUNT], Original Invoice [INV NUMBER]. The AP Manager will determine whether to request a refund check from the vendor or apply as future credit."
+  },
+  {
+   "id": "P0160",
+   "section": "9",
+   "section_title": "Employee Expense Reimbursement",
+   "page": 0,
+   "kind": "heading",
+   "text": "9. Employee Expense Reimbursement"
+  },
+  {
+   "id": "P0161",
+   "section": "9",
+   "section_title": "Employee Expense Reimbursement",
+   "page": 0,
+   "kind": "text",
+   "text": "Employee expense reimbursements are submitted via email to ap@meridianpartners.com with the expense report spreadsheet and all supporting receipts attached."
+  },
+  {
+   "id": "P0162",
+   "section": "9.1",
+   "section_title": "Validation Checklist",
+   "page": 0,
+   "kind": "heading",
+   "text": "9.1 Validation Checklist"
+  },
+  {
+   "id": "P0163",
+   "section": "9.1",
+   "section_title": "Validation Checklist",
+   "page": 0,
+   "kind": "text",
+   "text": "Every expense report must be evaluated against the following checks. If checks 1, 2, 3, 6, or 8 fail, return the entire report to the employee for correction. For checks 4, 5, and 7, apply the adjustment described in the Failure Action column and continue processing the remainder of the report."
+  },
+  {
+   "id": "P0164",
+   "section": "9.1",
+   "section_title": "Validation Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "# | Check | Failure Action"
+  },
+  {
+   "id": "P0165",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "heading",
+   "text": "1 | Employee name and employee ID are present | Return to employee"
+  },
+  {
+   "id": "P0166",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "table_row",
+   "text": "2 | Manager approval signature or email approval is attached | Return to employee; do NOT seek approval on their behalf"
+  },
+  {
+   "id": "P0167",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "table_row",
+   "text": "3 | Every line item has a corresponding receipt image | Return to employee for missing receipts"
+  },
+  {
+   "id": "P0168",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "table_row",
+   "text": "4 | No single meal expense exceeds $75 per person | Reimburse up to $75 per person; reject the overage. Notify employee of the policy."
+  },
+  {
+   "id": "P0169",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "table_row",
+   "text": "5 | No alcohol charges (Meridian does not reimburse alcohol) | Deduct alcohol amount from total. Process remainder."
+  },
+  {
+   "id": "P0170",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "table_row",
+   "text": "6 | Travel dates match the approved travel request in the calendar (if applicable) | Return to employee for explanation of date discrepancy"
+  },
+  {
+   "id": "P0171",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "table_row",
+   "text": "7 | Mileage reimbursement uses the current IRS rate | Recalculate at the correct rate. Do not reject the entire report."
+  },
+  {
+   "id": "P0172",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "table_row",
+   "text": "8 | Report submitted within 60 days of expense date | Reject. Expenses older than 60 days cannot be reimbursed per company policy."
+  },
+  {
+   "id": "P0173",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "text",
+   "text": "Expense Return Email Format:"
+  },
+  {
+   "id": "P0174",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "text",
+   "text": "Subject: Expense Report Returned – [EMPLOYEE NAME] – [DATE OF REPORT]"
+  },
+  {
+   "id": "P0175",
+   "section": "1",
+   "section_title": "| Employee name and employee ID are present | Return to employee",
+   "page": 0,
+   "kind": "text",
+   "text": "Body: \"Dear [Employee Name], Your expense report dated [DATE] has been returned for the following reason(s): [NUMBERED LIST OF ISSUES]. Please correct and resubmit to ap@meridianpartners.com. Meridian Partners Accounts Payable\""
+  },
+  {
+   "id": "P0176",
+   "section": "10",
+   "section_title": "Intercompany Transactions",
+   "page": 0,
+   "kind": "heading",
+   "text": "10. Intercompany Transactions"
+  },
+  {
+   "id": "P0177",
+   "section": "10",
+   "section_title": "Intercompany Transactions",
+   "page": 0,
+   "kind": "text",
+   "text": "Meridian Partners has three operating entities: Meridian Partners LLC (entity code 1000), Meridian Advisory Group (entity code 2000), and Meridian Digital Solutions (entity code 3000). Intercompany invoices are identified by vendor IDs starting with \"IC-\"."
+  },
+  {
+   "id": "P0178",
+   "section": "10",
+   "section_title": "Intercompany Transactions",
+   "page": 0,
+   "kind": "text",
+   "text": "Intercompany invoices must NEVER be included in external payment batch runs. They are settled monthly via journal entry during month-end close (Section 11). When you encounter an intercompany invoice, enter it in the Invoice Register with the correct GL coding (use the intercompany clearing account 1500-000-9100) and set its Status to IC-HOLD. Do NOT release it for payment."
+  },
+  {
+   "id": "P0179",
+   "section": "10",
+   "section_title": "Intercompany Transactions",
+   "page": 0,
+   "kind": "text",
+   "text": "GL Coding for Intercompany: The first four digits of the GL code must be the RECEIVING entity’s code (the entity being charged), not the invoicing entity’s code. For example, if Meridian Advisory Group (2000) invoices Meridian Partners LLC (1000) for consulting services, the GL code on the payable side is 1000-[Dept]-[Account], NOT 2000-[Dept]-[Account]."
+  },
+  {
+   "id": "P0180",
+   "section": "11",
+   "section_title": "Month-End Close Procedures",
+   "page": 0,
+   "kind": "heading",
+   "text": "11. Month-End Close Procedures"
+  },
+  {
+   "id": "P0181",
+   "section": "11",
+   "section_title": "Month-End Close Procedures",
+   "page": 0,
+   "kind": "text",
+   "text": "The AP month-end close must be completed by the 5th business day of the following month. The AP Manager posts status updates to #finance-month-end at the completion of each step."
+  },
+  {
+   "id": "P0182",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "heading",
+   "text": "11.1 Close Checklist"
+  },
+  {
+   "id": "P0183",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "text",
+   "text": "Complete the following steps in order. Do not proceed to the next step until the current step is complete."
+  },
+  {
+   "id": "P0184",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "# | Task | Owner | Slack Notification"
+  },
+  {
+   "id": "P0185",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "1 | Process all invoices received on or before the last business day of the month | AP Clerks | None"
+  },
+  {
+   "id": "P0186",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "2 | Generate the AP Aging Report by filtering the Invoice Register by due date and save to Month_End/YYYY-MM/aging_report.xlsx | AP Manager | None"
+  },
+  {
+   "id": "P0187",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "3 | Resolve or document all invoices on hold > 30 days. For each, add a row to Exceptions/exceptions_tracker_YYYY.xlsx with current status and expected resolution date. | AP Clerks | None"
+  },
+  {
+   "id": "P0188",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "4 | Prepare accrual journal entries for goods/services received but not yet invoiced. Save worksheet to Month_End/YYYY-MM/accruals.xlsx | AP Manager | Post to #finance-month-end: AP ACCRUALS POSTED: [MONTH] [YEAR], Total Accrual Amount: $[AMOUNT], Number of Entries: [N]"
+  },
+  {
+   "id": "P0189",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "5 | Reconcile AP subledger to GL. Variance must be $0.00. If variance exists, document each discrepancy in Month_End/YYYY-MM/recon_variances.xlsx with columns: GL Account, Subledger Balance, GL Balance, Difference, Cause (e.g., unposted invoice, timing difference, duplicate entry), and Corrective Action Taken. Post all correcting journal entries before proceeding. | AP Manager | Post to #finance-month-end: AP RECONCILIATION COMPLETE: [MONTH] [YEAR], Variance: $0.00"
+  },
+  {
+   "id": "P0190",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "6 | Process intercompany settlement journal entries (clear the 1500-000-9100 account) | AP Manager | Post to #finance-month-end: INTERCOMPANY SETTLED: [MONTH] [YEAR], Net Settlement: $[AMOUNT]"
+  },
+  {
+   "id": "P0191",
+   "section": "11.1",
+   "section_title": "Close Checklist",
+   "page": 0,
+   "kind": "table_row",
+   "text": "7 | Email the Controller a summary: Subject: \"AP Close Complete – [MONTH] [YEAR]\". Body must include: total invoices processed, total dollar amount, number of open holds, accrual total, and intercompany settlement amount. | AP Manager | Post to #finance-month-end: AP CLOSE COMPLETE: [MONTH] [YEAR]"
+  },
+  {
+   "id": "P0192",
+   "section": "12",
+   "section_title": "Vendor Management",
+   "page": 0,
+   "kind": "heading",
+   "text": "12. Vendor Management"
+  },
+  {
+   "id": "P0193",
+   "section": "12.1",
+   "section_title": "New Vendor Setup",
+   "page": 0,
+   "kind": "heading",
+   "text": "12.1 New Vendor Setup"
+  },
+  {
+   "id": "P0194",
+   "section": "12.1",
+   "section_title": "New Vendor Setup",
+   "page": 0,
+   "kind": "text",
+   "text": "No invoice may be processed for a vendor that does not exist in vendor_master.xlsx. To add a new vendor:"
+  },
+  {
+   "id": "P0195",
+   "section": "12.1",
+   "section_title": "New Vendor Setup",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 1: Collect a completed W-9 form (for US vendors) or W-8BEN (for foreign vendors). Store in 1099/YYYY/W9_[VendorName].pdf."
+  },
+  {
+   "id": "P0196",
+   "section": "12.1",
+   "section_title": "New Vendor Setup",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 2: Verify the vendor’s tax ID (EIN or SSN) is not already in vendor_master.xlsx under a different name. If a matching tax ID exists, do NOT create a new record. Instead, post to #apescalations: DUPLICATE VENDOR SUSPECTED: [NEW VENDOR NAME] matches Tax ID of existing vendor [EXISTING VENDOR NAME], [VENDOR ID]."
+  },
+  {
+   "id": "P0197",
+   "section": "12.1",
+   "section_title": "New Vendor Setup",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 3: Add a new row to vendor_master.xlsx with all required fields: Vendor ID (autogenerated), Vendor Name, Tax ID, Address, Contact Name, Contact Email, Payment Terms, Bank Name, Bank Routing, Bank Account, 1099 Reportable (Yes/No), 1099 Type (NEC, MISC, or N/A), Status (Active), Created Date."
+  },
+  {
+   "id": "P0198",
+   "section": "12.1",
+   "section_title": "New Vendor Setup",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 4: Post to #ap-approvals: NEW VENDOR ADDED: [VENDOR NAME], [VENDOR ID], 1099 Reportable: [YES/NO]. The AP Manager must acknowledge within 1 business day."
+  },
+  {
+   "id": "P0199",
+   "section": "12.2",
+   "section_title": "Vendor Deactivation",
+   "page": 0,
+   "kind": "heading",
+   "text": "12.2 Vendor Deactivation"
+  },
+  {
+   "id": "P0200",
+   "section": "12.2",
+   "section_title": "Vendor Deactivation",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor should be deactivated (not deleted) if there have been no transactions in the past 18 months. During month-end close, the AP Manager runs a report of inactive vendors and updates their Status to \"Inactive\" in vendor_master.xlsx. Inactive vendors cannot receive payments. If an invoice arrives for an inactive vendor, the AP clerk must first reactivate the vendor (change Status back to \"Active\" and update the reactivation date) before processing."
+  },
+  {
+   "id": "P0201",
+   "section": "12.3",
+   "section_title": "Vendor Statement Reconciliation",
+   "page": 0,
+   "kind": "heading",
+   "text": "12.3 Vendor Statement Reconciliation"
+  },
+  {
+   "id": "P0202",
+   "section": "12.3",
+   "section_title": "Vendor Statement Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "When a vendor sends a statement of account, the AP clerk must reconcile it against AP records within 5 business days. Compare each line on the vendor statement to the Invoice Register and Payment Queue sheets in ap_ledger.xlsx. Any discrepancy must be documented in an email to the vendor with subject: \"Meridian Partners – Statement Reconciliation – [VENDOR NAME] – [STATEMENT DATE]\"."
+  },
+  {
+   "id": "P0203",
+   "section": "12.3",
+   "section_title": "Vendor Statement Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "If the reconciliation reveals that Meridian owes an additional amount not yet invoiced: Request an invoice from the vendor. Do NOT create a payment without an invoice."
+  },
+  {
+   "id": "P0204",
+   "section": "12.3",
+   "section_title": "Vendor Statement Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "If the reconciliation reveals that the vendor’s statement shows a smaller balance than Meridian’s records: Investigate for potential duplicate payments. Search the Payment Queue sheet in ap_ledger.xlsx for duplicate payment entries. If a duplicate payment is confirmed, post to #ap-escalations: DUPLICATE PAYMENT FOUND: [VENDOR NAME], [VENDOR ID], Overpayment $[AMOUNT], Payment Ref [PAYMENT REF NUMBERS]. Request a refund from the vendor."
+  },
+  {
+   "id": "P0205",
+   "section": "13",
+   "section_title": "Escalation Procedures",
+   "page": 0,
+   "kind": "heading",
+   "text": "13. Escalation Procedures"
+  },
+  {
+   "id": "P0206",
+   "section": "13",
+   "section_title": "Escalation Procedures",
+   "page": 0,
+   "kind": "text",
+   "text": "Escalations must be posted to the correct Slack channel using the exact format specified. Do not email escalations unless Slack is unavailable (system outage)."
+  },
+  {
+   "id": "P0207",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "heading",
+   "text": "13.1 Escalation Triggers & Routing"
+  },
+  {
+   "id": "P0208",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Trigger | Channel | Notify | Response Expected"
+  },
+  {
+   "id": "P0209",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Suspected fraud (fake invoice, fictitious vendor, altered amounts) | #ap-escalations | Controller + CFO | Immediate (same day)"
+  },
+  {
+   "id": "P0210",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Vendor legal threat or lawsuit notice | #ap-escalations | Controller + Legal | Immediate (same day)"
+  },
+  {
+   "id": "P0211",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Vendor dispute over $5,000 | #ap-escalations | AP Manager + Controller | 1 business day"
+  },
+  {
+   "id": "P0212",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Payment failure (ACH reject, wire bounce) | #ap-payments | AP Manager | 4 business hours"
+  },
+  {
+   "id": "P0213",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Invoice on hold > 10 business days, unresolved | #ap-escalations | Controller | 1 business day"
+  },
+  {
+   "id": "P0214",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Vendor requests payment method change (new bank account) | #ap-escalations | AP Manager + Controller | Do NOT update until verified (see 13.2)"
+  },
+  {
+   "id": "P0215",
+   "section": "13.1",
+   "section_title": "Escalation Triggers & Routing",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Month-end close delayed past 5th business day | #finance-month-end | Controller | Immediate"
+  },
+  {
+   "id": "P0216",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "heading",
+   "text": "13.2 Bank Account Change Verification"
+  },
+  {
+   "id": "P0217",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "text",
+   "text": "- This is the highest risk fraud scenario in Accounts Payable. When a vendor requests a change to their bank account information (routing number, account number, or bank name), follow this procedure exactly:"
+  },
+  {
+   "id": "P0218",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 1: Do NOT update vendor_master.xlsx. Do NOT process any payments to the new account."
+  },
+  {
+   "id": "P0219",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 2: Post to #ap-escalations: BANK CHANGE REQUEST: [VENDOR NAME], [VENDOR ID], Requested by [NAME FROM EMAIL], Email [SENDER EMAIL ADDRESS]"
+  },
+  {
+   "id": "P0220",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 3: Call the vendor using ONLY the phone number in vendormaster.xlsx if one is listed (do NOT use the phone number provided in the change request email unless no phone number is listed in vendormaster.xlsx). Verify the request verbally with an authorized contact."
+  },
+  {
+   "id": "P0221",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 4: If verbally confirmed, request the vendor send a bank verification letter on their official letterhead, OR provide a voided check. Store the verification document in VendorMaster/bankchanges/[VendorID]_[Date].pdf."
+  },
+  {
+   "id": "P0222",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "text",
+   "text": "Step 5: Only after receiving written verification AND verbal confirmation may the AP Manager (not the AP Clerk) update vendor_master.xlsx. The AP Clerk may never update bank details."
+  },
+  {
+   "id": "P0223",
+   "section": "13.2",
+   "section_title": "Bank Account Change Verification",
+   "page": 0,
+   "kind": "text",
+   "text": "If verbal verification fails (wrong phone number, contact denies the request, or you cannot reach anyone): Post to #ap-escalations: POTENTIAL BEC FRAUD: [VENDOR NAME], [VENDOR ID], [DETAILS]. Do NOT respond to the email. Do NOT update any records. The Controller will handle all communication."
+  },
+  {
+   "id": "P0224",
+   "section": "13.3",
+   "section_title": "Escalation Message Formats",
+   "page": 0,
+   "kind": "heading",
+   "text": "13.3 Escalation Message Formats"
+  },
+  {
+   "id": "P0225",
+   "section": "13.3",
+   "section_title": "Escalation Message Formats",
+   "page": 0,
+   "kind": "text",
+   "text": "All escalation Slack messages must follow these exact formats. Do not add greetings, sign-offs, or additional commentary."
+  },
+  {
+   "id": "P0226",
+   "section": "13.3",
+   "section_title": "Escalation Message Formats",
+   "page": 0,
+   "kind": "text",
+   "text": "Fraud Suspicion: FRAUD ALERT: [VENDOR NAME], [VENDOR ID], Invoice [INVOICE NUMBER], Reason: [BRIEF DESCRIPTION]"
+  },
+  {
+   "id": "P0227",
+   "section": "13.3",
+   "section_title": "Escalation Message Formats",
+   "page": 0,
+   "kind": "text",
+   "text": "Legal Threat: LEGAL THREAT: [VENDOR NAME], [VENDOR ID], Invoice [INVOICE NUMBER], Received [DATE]. Do NOT reply to vendor."
+  },
+  {
+   "id": "P0228",
+   "section": "13.3",
+   "section_title": "Escalation Message Formats",
+   "page": 0,
+   "kind": "text",
+   "text": "Vendor Dispute: VENDOR DISPUTE: [VENDOR NAME], [VENDOR ID], Amount in Dispute: $[AMOUNT], Invoices: [INVOICE NUMBERS]"
+  },
+  {
+   "id": "P0229",
+   "section": "13.3",
+   "section_title": "Escalation Message Formats",
+   "page": 0,
+   "kind": "text",
+   "text": "Payment Failure: PAYMENT FAILURE: [VENDOR NAME], [VENDOR ID], Batch [BATCH DATE], Amount $[AMOUNT], Error: [ERROR CODE/MESSAGE]"
+  },
+  {
+   "id": "P0230",
+   "section": "13.3",
+   "section_title": "Escalation Message Formats",
+   "page": 0,
+   "kind": "text",
+   "text": "For legal threats, do NOT reply to the vendor email. Do NOT acknowledge receipt. The Controller or Legal will handle all communication. Any response from AP could constitute an admission or waiver."
+  },
+  {
+   "id": "P0231",
+   "section": "14",
+   "section_title": "1099 Vendor Management & Year-End Reporting",
+   "page": 0,
+   "kind": "heading",
+   "text": "14. 1099 Vendor Management & Year-End Reporting"
+  },
+  {
+   "id": "P0232",
+   "section": "14",
+   "section_title": "1099 Vendor Management & Year-End Reporting",
+   "page": 0,
+   "kind": "text",
+   "text": "Meridian Partners is required to file 1099 forms for vendors meeting IRS reporting thresholds. Accurate 1099 classification is critical to avoid penalties."
+  },
+  {
+   "id": "P0233",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "heading",
+   "text": "14.1 1099 Classification Rules"
+  },
+  {
+   "id": "P0234",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "text",
+   "text": "When setting up a new vendor or reviewing existing records, determine 1099 reportability based on the W-9:"
+  },
+  {
+   "id": "P0235",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Entity Type (from W-9) | 1099 Reportable? | 1099 Type | Threshold (Annual)"
+  },
+  {
+   "id": "P0236",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Individual / Sole Proprietor | Yes | 1099-NEC | $600"
+  },
+  {
+   "id": "P0237",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Single-Member LLC | Yes | 1099-NEC | $600"
+  },
+  {
+   "id": "P0238",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Partnership / Multi-Member LLC | Yes | 1099-NEC | $600"
+  },
+  {
+   "id": "P0239",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "C-Corporation | No (except legal services) | N/A (or 1099-NEC for legal) | $600 for legal services"
+  },
+  {
+   "id": "P0240",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "S-Corporation | No (except legal services) | N/A (or 1099-NEC for legal) | $600 for legal services"
+  },
+  {
+   "id": "P0241",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Tax-Exempt Organization | No | N/A"
+  },
+  {
+   "id": "P0242",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "text",
+   "text": "Payments to attorneys and law firms are ALWAYS 1099-reportable regardless of entity type. If the vendor’s W-9 indicates legal services AND the entity is a C-Corp or S-Corp, the vendor is still 1099-reportable."
+  },
+  {
+   "id": "P0243",
+   "section": "14.1",
+   "section_title": "1099 Classification Rules",
+   "page": 0,
+   "kind": "text",
+   "text": "1099 Type classification: Use 1099-NEC for payments for services (consulting, freelance work, legal services, contractor labor). Use 1099-MISC only for rent payments to a landlord (e.g., office lease payments). If the payment does not fall into either category, use N/A. When in doubt, default to 1099-NEC for service payments."
+  },
+  {
+   "id": "P0244",
+   "section": "14.2",
+   "section_title": "Year-End 1099 Process",
+   "page": 0,
+   "kind": "heading",
+   "text": "14.2 Year-End 1099 Process"
+  },
+  {
+   "id": "P0245",
+   "section": "14.2",
+   "section_title": "Year-End 1099 Process",
+   "page": 0,
+   "kind": "text",
+   "text": "By January 15 of each year, the AP Manager must:"
+  },
+  {
+   "id": "P0246",
+   "section": "14.2",
+   "section_title": "Year-End 1099 Process",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Generate the 1099 Report by filtering vendormaster.xlsx for 1099-reportable vendors and cross-referencing their total payments from the Payment Queue sheet in apledger.xlsx for the prior calendar year."
+  },
+  {
+   "id": "P0247",
+   "section": "14.2",
+   "section_title": "Year-End 1099 Process",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Cross-reference every vendor on the report against vendor_master.xlsx to verify 1099 classification and tax ID accuracy."
+  },
+  {
+   "id": "P0248",
+   "section": "14.2",
+   "section_title": "Year-End 1099 Process",
+   "page": 0,
+   "kind": "bullet",
+   "text": "For any vendor missing a W-9, send this email: Subject: \"Meridian Partners – W-9 Required for 1099 Filing\". Body: \"Dear [Vendor Contact Name], Our records indicate we do not have a current W-9 on file for [Vendor Name]. Federal tax regulations require us to obtain this form before we can issue your 1099 for the [YEAR] tax year. Please complete and return the attached W-9 form to ap@meridianpartners.com by January 25. If we do not receive your W-9 by this date, we may be required to apply backup withholding of 24% on future payments. Meridian Partners Accounts Payable\""
+  },
+  {
+   "id": "P0249",
+   "section": "14.2",
+   "section_title": "Year-End 1099 Process",
+   "page": 0,
+   "kind": "bullet",
+   "text": "1099 forms must be filed with the IRS by January 31 and mailed to vendors by January 31."
+  },
+  {
+   "id": "P0250",
+   "section": "15",
+   "section_title": "Payment Batch Processing",
+   "page": 0,
+   "kind": "heading",
+   "text": "15. Payment Batch Processing"
+  },
+  {
+   "id": "P0251",
+   "section": "15.1",
+   "section_title": "Batch Schedule",
+   "page": 0,
+   "kind": "heading",
+   "text": "15.1 Batch Schedule"
+  },
+  {
+   "id": "P0252",
+   "section": "15.1",
+   "section_title": "Batch Schedule",
+   "page": 0,
+   "kind": "text",
+   "text": "Meridian Partners processes payments in batch on Tuesdays and Thursdays at 2:00 PM EST. The AP Manager is responsible for initiating each batch run. If a batch day falls on a holiday, the batch is processed on the next business day."
+  },
+  {
+   "id": "P0253",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "heading",
+   "text": "15.2 Pre-Batch Checklist"
+  },
+  {
+   "id": "P0254",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "text",
+   "text": "Before initiating a batch, the AP Manager must verify:"
+  },
+  {
+   "id": "P0255",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "bullet",
+   "text": "All invoices in the batch have passed three-way match OR have documented approval (for non-PO invoices)."
+  },
+  {
+   "id": "P0256",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "bullet",
+   "text": "No invoices in the batch have an active hold status (MATCH, APPR, DUPL, DISP, or AUDIT)."
+  },
+  {
+   "id": "P0257",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "bullet",
+   "text": "No payments over $50,000 are included (these require individual wire processing)."
+  },
+  {
+   "id": "P0258",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "bullet",
+   "text": "No intercompany invoices (vendor ID starting with IC-) are included."
+  },
+  {
+   "id": "P0259",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "bullet",
+   "text": "No payments to vendors with Status = \"Inactive\" in vendor_master.xlsx."
+  },
+  {
+   "id": "P0260",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "text",
+   "text": "After the batch is processed, save the batch file to PaymentBatches/batchYYYY-MM-DD.xlsx and post to #ap-payments:"
+  },
+  {
+   "id": "P0261",
+   "section": "15.2",
+   "section_title": "Pre-Batch Checklist",
+   "page": 0,
+   "kind": "text",
+   "text": "BATCH COMPLETE: [DATE], Payments: [N], Total Amount: $[AMOUNT], Method: ACH [N1] / Check [N2] / Wire [N3]"
+  },
+  {
+   "id": "P0262",
+   "section": "15.3",
+   "section_title": "Payment Method Rules",
+   "page": 0,
+   "kind": "heading",
+   "text": "15.3 Payment Method Rules"
+  },
+  {
+   "id": "P0263",
+   "section": "15.3",
+   "section_title": "Payment Method Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Method | When Used | Amount Range | Special Requirements"
+  },
+  {
+   "id": "P0264",
+   "section": "15.3",
+   "section_title": "Payment Method Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "ACH | Default for all domestic vendors with bank info on file | Any amount under $50,000 | Vendor must have bank details in vendor_master.xlsx"
+  },
+  {
+   "id": "P0265",
+   "section": "15.3",
+   "section_title": "Payment Method Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Check | Vendors without bank info, or by vendor request | Any amount under $50,000 | Mailed to address in vendor_master.xlsx. Two signatures required for checks over $10,000."
+  },
+  {
+   "id": "P0266",
+   "section": "15.3",
+   "section_title": "Payment Method Rules",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Wire Transfer | Payments over $50,000, international vendors, urgent payments | Over $50,000 (or any international) | CFO email confirmation required. Must include reference: WIRE-[VendorID]-[InvoiceNumber]"
+  },
+  {
+   "id": "P0267",
+   "section": "16",
+   "section_title": "Audit & Compliance",
+   "page": 0,
+   "kind": "heading",
+   "text": "16. Audit & Compliance"
+  },
+  {
+   "id": "P0268",
+   "section": "16",
+   "section_title": "Audit & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "All AP transactions are subject to internal and external audit. Maintain documentation sufficient to recreate any transaction from invoice receipt through payment."
+  },
+  {
+   "id": "P0269",
+   "section": "16.1",
+   "section_title": "Document Retention",
+   "page": 0,
+   "kind": "heading",
+   "text": "16.1 Document Retention"
+  },
+  {
+   "id": "P0270",
+   "section": "16.1",
+   "section_title": "Document Retention",
+   "page": 0,
+   "kind": "text",
+   "text": "Retain all AP records (invoices, POs, approvals, payment confirmations, vendor correspondence) for 7 years from the date of transaction. Records for the current year and prior year must be available electronically. Older records may be archived."
+  },
+  {
+   "id": "P0271",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "16.2 Audit Hold (AUDIT Status)"
+  },
+  {
+   "id": "P0272",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "If Internal Audit or the Controller places an invoice on AUDIT hold, the following rules apply:"
+  },
+  {
+   "id": "P0273",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Do NOT process payment under any circumstances, even if the vendor threatens legal action. 2. Do NOT contact the vendor about the hold. 3. Do NOT modify any records related to the invoice. 4. Direct all inquiries about the invoice to the Controller. 5. Post to #ap-escalations: AUDIT HOLD APPLIED: [VENDOR NAME], [VENDOR ID], Invoice [INVOICE NUMBER], Applied by [NAME]"
+  },
+  {
+   "id": "P0274",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "Only the Controller or CFO may release an AUDIT hold."
+  },
+  {
+   "id": "P0275",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Appendix B: Challenging Process Scenarios"
+  },
+  {
+   "id": "P0276",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "The following scenarios describe complex situations that AP staff may encounter. Each requires careful reading and application of multiple SOP sections simultaneously."
+  },
+  {
+   "id": "P0277",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 1: Non-PO Invoice with Amount Tier Boundary"
+  },
+  {
+   "id": "P0278",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor submits an invoice for exactly $500.00 (no PO). The AP clerk must recognize this falls in the $0.01–$500.00 tier (requiring only the Department Manager), NOT the $500.01– $5,000.00 tier. The boundary is inclusive on the low end and exclusive on the high end."
+  },
+  {
+   "id": "P0279",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 2: Duplicate Invoice with Different Formatting"
+  },
+  {
+   "id": "P0280",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "Vendor submits invoice \"INV-00234\" and later resubmits \"INV-234\". The duplicate check must ignore leading zeros and catch this. However, if the amounts differ, it is NOT a duplicate—all three criteria must match."
+  },
+  {
+   "id": "P0281",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 3: Price Variance with OR vs AND Tolerance"
+  },
+  {
+   "id": "P0282",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "An invoice has a unit price variance of 4% ($30 difference). The unit price tolerance is ±5% OR ±$25. Since $30 > $25 but 4% < 5%, the OR condition means this PASSES (only one threshold needs to be met). The total invoice tolerance uses AND logic—both must be met."
+  },
+  {
+   "id": "P0283",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 4: Bank Account Change from Spoofed Email"
+  },
+  {
+   "id": "P0284",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor’s ‘CFO’ emails requesting a bank account change. The AP clerk must NOT update the account, must verify using ONLY the phone number in vendor_master.xlsx (not the one in the email), and must post to #ap-escalations before taking any action."
+  },
+  {
+   "id": "P0285",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 5: Expired Recurring Agreement"
+  },
+  {
+   "id": "P0286",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A monthly invoice arrives from a vendor whose recurring agreement expired last month. Even though the invoice looks normal and the amount is within tolerance, the AP clerk must STOP, place on hold, and request renewal confirmation before processing."
+  },
+  {
+   "id": "P0287",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 6: Legal Threat from Vendor"
+  },
+  {
+   "id": "P0288",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor sends a letter threatening legal action over unpaid invoices. The AP clerk must NOT reply to the vendor, must post to #ap-escalations using the LEGAL THREAT format, and must NOT acknowledge receipt or make any promises."
+  },
+  {
+   "id": "P0289",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 7: Intercompany Invoice in Payment Batch"
+  },
+  {
+   "id": "P0290",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "During pre-batch review, the AP Manager discovers an invoice with vendor ID IC-2000 in the batch queue. This must be removed—intercompany invoices are settled via journal entry during month-end, never through payment batches."
+  },
+  {
+   "id": "P0291",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 8: 1099 Classification for Law Firm Organized as S-Corp"
+  },
+  {
+   "id": "P0292",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A law firm’s W-9 shows S-Corporation status. Normally S-Corps are exempt from 1099 reporting, but legal services are the exception—this vendor IS 1099-reportable regardless of corporate structure."
+  },
+  {
+   "id": "P0293",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 9: Expense Report with Mixed Valid/Invalid Items"
+  },
+  {
+   "id": "P0294",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "An employee submits an expense report with a $90 dinner for 1 person (exceeds $75 limit), a $15 bar tab (alcohol—not reimbursable), and valid hotel charges. The clerk must not reject the entire report: reimburse $75 for the dinner, deduct the alcohol, and process the hotel at full amount."
+  },
+  {
+   "id": "P0295",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 10: Credit Memo Exceeding Original Invoice"
+  },
+  {
+   "id": "P0296",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor issues a credit memo for $2,000 against an original invoice of $1,500. The credit amount exceeds the original, so it must be placed on DISP hold and the vendor must be contacted for clarification—not processed at the lower amount."
+  },
+  {
+   "id": "P0297",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 11: Partial Invoice vs Quantity Discrepancy"
+  },
+  {
+   "id": "P0298",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "An invoice shows quantity 8 but the Goods Receipt shows quantity 10. Since Invoice Qty < GR Qty, this is a partial invoice and should be processed normally with a note—NOT held."
+  },
+  {
+   "id": "P0299",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 12: Payment Over $50,000 on Batch Day"
+  },
+  {
+   "id": "P0300",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A fully approved $75,000 invoice is ready for payment on a Tuesday batch day. Despite being approved, it cannot go in the batch—it must be processed as a manual wire transfer with CFO email confirmation containing ‘APPROVED FOR PAYMENT.’"
+  },
+  {
+   "id": "P0301",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 13: Early Payment Discount Below $100 Threshold"
+  },
+  {
+   "id": "P0302",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor offers 2/10 Net 30 on a $4,000 invoice (discount = $80). Since the discount ($80) is below the $100 threshold, the AP clerk should process at standard Net 30 terms and NOT take the discount."
+  },
+  {
+   "id": "P0303",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 14: New Vendor with Tax ID Matching Existing Vendor"
+  },
+  {
+   "id": "P0304",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor submits a W-9 with a tax ID that already exists in vendor_master.xlsx under a different name. The AP clerk must NOT create a new record. Must post to #ap-escalations as a suspected duplicate vendor."
+  },
+  {
+   "id": "P0305",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 15: Negative Recurring Variance (Vendor Charged Less)"
+  },
+  {
+   "id": "P0306",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "A vendor’s recurring invoice comes in 15% below the expected amount, exceeding the tolerance. Because the variance is negative (vendor charged less), it is processed normally with no hold—only positive variances trigger the exception workflow."
+  },
+  {
+   "id": "P0307",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 16: Invoice for Inactive Vendor"
+  },
+  {
+   "id": "P0308",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "An invoice arrives for a vendor marked \"Inactive\" in vendor_master.xlsx. The AP clerk must first reactivate the vendor (change status to Active, update reactivation date) before processing the invoice. The invoice cannot be entered while the vendor is inactive."
+  },
+  {
+   "id": "P0309",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 17: Missing W-9 at Year-End with Backup Withholding Implications"
+  },
+  {
+   "id": "P0310",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "During 1099 year-end processing, a vendor who was paid $15,000 has no W-9 on file. The AP Manager must send the W-9 request email with the backup withholding warning. If the W-9 is not received by January 25, backup withholding of 24% must be applied to future payments."
+  },
+  {
+   "id": "P0311",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "heading",
+   "text": "Scenario 18: Audit Hold with Vendor Legal Pressure"
+  },
+  {
+   "id": "P0312",
+   "section": "16.2",
+   "section_title": "Audit Hold (AUDIT Status)",
+   "page": 0,
+   "kind": "text",
+   "text": "An invoice is on AUDIT hold. The vendor contacts AP threatening to sue if payment is not made immediately. The AP clerk must NOT process payment (regardless of the threat), must NOT contact the vendor about the hold, and must direct all inquiries to the Controller. The legal threat itself must also be escalated via #ap-escalations."
+  }
+ ],
+ "templates": {},
+ "contacts": [],
+ "holidays": []
+}

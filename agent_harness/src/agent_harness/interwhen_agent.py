@@ -34,6 +34,8 @@ class InterwhenOpenHandsAgent(OpenHandsAgent):
         self.slm_url = kwargs.pop("slm_url", None) or os.environ.get(
             "INTERWHEN_SLM_URL", "http://172.17.0.1:8000/v1")
         self.max_completion_denials = int(kwargs.pop("max_completion_denials", 3))
+        self.max_stale_denials = int(kwargs.pop("max_stale_denials", 1000))
+        self.checklist = str(kwargs.pop("checklist", "0")).lower() in ("1", "true", "yes")
         super().__init__(*args, **kwargs)
 
     @staticmethod
@@ -51,4 +53,5 @@ class InterwhenOpenHandsAgent(OpenHandsAgent):
 
     def _extra_run_config(self, task_dir: Path) -> dict:
         return {"interwhen": {"task": task_dir.name, "slmUrl": self.slm_url,
-                              "maxCompletionDenials": self.max_completion_denials}}
+                              "maxCompletionDenials": self.max_completion_denials,
+                              "maxStaleDenials": self.max_stale_denials, "checklist": self.checklist}}

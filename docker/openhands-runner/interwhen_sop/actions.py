@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 import ast
+import json
 import re
 from dataclasses import dataclass, field
 from typing import Any
 
 READ_VERBS = ("get", "list", "search", "read", "find", "query", "lookup", "fetch", "view", "describe")
-EMAIL_SEND = {"google_mail__send_email", "google_mail__reply_to_email", "google_mail__forward_email",
-              "google_mail__send_draft"}
+EMAIL_SEND = {"google_mail__send_email", "google_mail__reply_to_email", "google_mail__reply_email",
+              "google_mail__forward_email", "google_mail__send_draft"}
+EMAIL_DRAFT = {"google_mail__save_draft", "google_mail__create_draft", "google_mail__update_draft"}
 SLACK_CHANNEL_POST = {"slack__post_message", "slack__reply_to_thread"}
 SLACK_DM = {"slack__send_dm", "slack__send_mpim"}
 CAL_CREATE = {"google_calendar__create_event"}
@@ -22,12 +24,16 @@ CODE_TOOLS = {"syntara__executePython": "code", "syntara__executeBash": "command
 FILE_WRITE = {"syntara__writeFile", "syntara__editFile", "syntara__appendFile"}
 FILE_DELETE = {"syntara__deleteFile", "syntara__removeFile"}
 CONTROL = {"think", "finish"}
+JIRA_WRITE = {"jira__create_issue": "jira_create", "jira__add_comment": "jira_comment",
+              "jira__update_issue": "jira_update", "jira__transition_issue": "jira_transition",
+              "jira__link_issues": "jira_link", "jira__delete_issue": "jira_delete"}
 
 XLSX = re.compile(r"[\w.-]+\.xlsx")
 WRITE_MARKERS = re.compile(
     r"\.save\(|to_excel\(|\.write_text\(|\.write_bytes\(|open\([^)]*,\s*['\"][wax]b?\+?['\"]|"
     r"shutil\.(?:copy|move)|os\.rename|\.delete_rows\(|\.insert_rows\(|\.append\(\s*\[",
 )
+FOLDER_OPS = re.compile(r"(?:^|[;&|\s])(?:unzip|mkdir)\s|\.extractall\(|os\.makedirs\(")
 DELETE_MARKERS = re.compile(
     r"os\.remove\(|os\.unlink\(|\.unlink\(|shutil\.rmtree\(|\.delete_rows\(|(?:^|[;&|\s])rm\s+-?\w*\s*\S*/?workdir"
     r"|(?:^|[;&|\s])rm\s+\S+\.(?:xlsx|pdf|json|txt)",
@@ -47,6 +53,7 @@ class Action:
     files_written: list[str] = field(default_factory=list)
     deletes: bool = False
     code: str = ""
+    labels: list[str] = field(default_factory=list)
 
     @property
     def is_write(self) -> bool:
@@ -54,7 +61,7 @@ class Action:
 
     @property
     def is_communication(self) -> bool:
-        return self.kind in ("email_send", "slack_post", "slack_dm", "calendar_create", "calendar_update")
+        return self.kind in ("email_send", "email_draft", "slack_post", "slack_dm", "calendar_create", "calendar_update")
 
 
 def _split_addrs(value: Any) -> list[str]:
@@ -146,6 +153,35 @@ def _shell_write_targets(command: str) -> list[str]:
     return sorted({t.split("/")[-1] for t in targets if t and not t.startswith("/dev/") and "&" not in t})
 
 
+def _jira(name: str, args: dict[str, Any]) -> Action:
+    """Jira writes: ``channel`` = target issue key (or project for creates), ``subject`` = summary,
+    ``text`` = description/comment, ``recipients`` = [assignee], ``code`` = transition id."""
+    kind = JIRA_WRITE[name]
+
+    def as_dict(v) -> dict:
+        if isinstance(v, str):
+            try:
+                v = json.loads(v)
+            except ValueError:
+                return {}
+        return v if isinstance(v, dict) else {}
+    merged = {**as_dict(args.get("additional_fields")), **as_dict(args.get("fields"))}
+    assignee = args.get("assignee") or merged.get("assignee") or ""
+    if isinstance(assignee, dict):
+        assignee = assignee.get("accountId") or assignee.get("name") or assignee.get("emailAddress") or ""
+    text = args.get("comment") or args.get("body") or args.get("description") or merged.get("description") or ""
+    if not isinstance(text, str):
+        text = str(text)
+    labels = merged.get("labels") or args.get("labels") or []
+    return Action(name, args, kind, text=text,
+                  subject=str(args.get("summary") if kind == "jira_create" else merged.get("summary") or ""),
+                  channel=str(args.get("project_key") if kind == "jira_create" else
+                              args.get("issue_key") or args.get("inward_issue") or ""),
+                  recipients=[str(assignee)] if assignee else [],
+                  labels=[str(x) for x in labels] if isinstance(labels, list) else [str(labels)],
+                  code=str(args.get("transition_id") or args.get("transition") or merged.get("status") or ""))
+
+
 def classify(tool: str, args: dict[str, Any] | None) -> Action:
     args = dict(args or {})
     name = tool or ""
@@ -153,9 +189,9 @@ def classify(tool: str, args: dict[str, Any] | None) -> Action:
 
     if name in CONTROL:
         return Action(name, args, "control", text=str(args.get("message", "")))
-    if name in EMAIL_SEND:
+    if name in EMAIL_SEND | EMAIL_DRAFT:
         return Action(
-            name, args, "email_send",
+            name, args, "email_send" if name in EMAIL_SEND else "email_draft",
             text=str(args.get("body") or args.get("body_text") or ""),
             subject=str(args.get("subject") or ""),
             recipients=_split_addrs(args.get("to") or args.get("to_addr")),
@@ -197,6 +233,8 @@ def classify(tool: str, args: dict[str, Any] | None) -> Action:
         kind = "workbook_write" if files else ("file_delete" if deletes else "read")
         if deletes and kind == "read":
             kind = "file_delete"
+        if kind == "read" and FOLDER_OPS.search(raw):
+            kind = "file_write"
         return Action(name, args, kind, text=raw, files_written=files, deletes=deletes, code=code or raw)
     if name in FILE_WRITE:
         path = str(args.get("file_path") or args.get("path") or "")
@@ -204,6 +242,8 @@ def classify(tool: str, args: dict[str, Any] | None) -> Action:
                       files_written=[path.split("/")[-1]] if path else [])
     if name in FILE_DELETE:
         return Action(name, args, "file_delete", deletes=True)
+    if name in JIRA_WRITE:
+        return _jira(name, args)
     if short.startswith(READ_VERBS) or short in ("whoami",):
         return Action(name, args, "read")
     return Action(name, args, "other_write", text=str(args))

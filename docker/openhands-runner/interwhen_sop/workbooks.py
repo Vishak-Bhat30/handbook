@@ -13,13 +13,17 @@ DUMP_SCRIPT = r"""
 import json, sys, glob, os
 import openpyxl
 out = {}
-for path in sorted(glob.glob(os.path.join(sys.argv[1], "*.xlsx"))):
+root = sys.argv[1]
+for path in sorted(glob.glob(os.path.join(root, "**", "*.xlsx"), recursive=True)):
+    rel = os.path.relpath(path, root)
+    if "__MACOSX" in rel or os.path.basename(rel).startswith(("~$", "._")):
+        continue
     try:
         wb = openpyxl.load_workbook(path)
     except Exception as exc:
-        out[os.path.basename(path)] = {"__error__": str(exc)}
+        out[rel] = {"__error__": str(exc)}
         continue
-    out[os.path.basename(path)] = {
+    out[rel] = {
         ws.title: [["" if v is None else str(v) for v in row] for row in ws.iter_rows(values_only=True)]
         for ws in wb.worksheets
     }

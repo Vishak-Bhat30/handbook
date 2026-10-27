@@ -1,0 +1,3671 @@
+{
+ "task": "finance_sunshine_set_b581c493",
+ "paragraphs": [
+  {
+   "id": "P0001",
+   "section": "0",
+   "kind": "heading",
+   "text": "Sunshine & Set Automo.ve",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0002",
+   "section": "0",
+   "kind": "heading",
+   "text": "Accoun&ng Department Standard Opera&ng Procedure",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0003",
+   "section": "0",
+   "kind": "text",
+   "text": "Florida New and Used Vehicle Dealership",
+   "verdict": "context",
+   "reason": "document subtitle",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0004",
+   "section": "0",
+   "kind": "table_row",
+   "text": "Field | Detail",
+   "verdict": "context",
+   "reason": "front matter table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0005",
+   "section": "0",
+   "kind": "table_row",
+   "text": "Document Owner | Elena Brooks, Controller",
+   "verdict": "context",
+   "reason": "front matter table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0006",
+   "section": "0",
+   "kind": "table_row",
+   "text": "Eﬀec6ve Date | April 11, 2026",
+   "verdict": "context",
+   "reason": "front matter table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0007",
+   "section": "0",
+   "kind": "table_row",
+   "text": "Review Cycle | Annual and upon process or system change",
+   "verdict": "context",
+   "reason": "front matter table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0008",
+   "section": "1",
+   "kind": "heading",
+   "text": "1. Purpose and Scope",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0009",
+   "section": "1",
+   "kind": "text",
+   "text": "reconciles, communicates, and closes financial ac=vity for new and used vehicle sales, F&I ac=vity, service and parts opera=ons, vendor payables, cash management, and month-end repor=ng.",
+   "verdict": "context",
+   "reason": "purpose statement fragment",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0010",
+   "section": "1",
+   "kind": "text",
+   "text": "jackets, contracts, inventory data, funding paperwork, =tle packets, vendor invoices, payroll inputs, and approval support.",
+   "verdict": "context",
+   "reason": "purpose statement fragment",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0011",
+   "section": "1",
+   "kind": "text",
+   "text": "must always be processed using the dealership's current approved forms, lender instruc=ons, and management guidance. When a process conflicts with a current form, lender requirement, or legal direc=ve, employees must escalate to the Controller before comple=ng the transac=on.",
+   "verdict": "not_applicable",
+   "reason": "no conflict between a process and a form/lender requirement/legal directive in the seed",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0012",
+   "section": "1.1",
+   "kind": "heading",
+   "text": "1.1 Tools",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0013",
+   "section": "1.1",
+   "kind": "text",
+   "text": "All accoun=ng work is performed using the following tools. Do not use any soRware or service not listed here without Controller approval.",
+   "verdict": "not_observable",
+   "reason": "tool/software usage outside the provided tools is not visible",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0014",
+   "section": "1.1",
+   "kind": "text",
+   "text": "the deal log — primary record for deal pos6ng, inventory cost, customer statements, journal detail, and schedules",
+   "verdict": "data",
+   "reason": "tool description (deal log)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0015",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Spreadsheets — working schedules, control sheets, funding logs, commission 6e-outs, receivable aging, bank reconcilia6ons, and month-end rollforwards",
+   "verdict": "data",
+   "reason": "tool description",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0016",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Document imaging packages, and signed approvals",
+   "verdict": "data",
+   "reason": "tool description",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0017",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Word processing — SOPs, memos, training guides, correc6ve-ac6on no6ces, and formal process documenta6on",
+   "verdict": "data",
+   "reason": "tool description",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0018",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Presenta7ons — month-end review decks, KPI summaries, training materials, and leadership presenta6ons",
+   "verdict": "data",
+   "reason": "tool description",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0019",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Calendar audit mee6ngs",
+   "verdict": "data",
+   "reason": "tool description",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0020",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Email — formal approvals, vendor communica6on, lender correspondence, excep6on no6ces, and customer or DMV support",
+   "verdict": "data",
+   "reason": "channel usage description (email)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0021",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Slack — day-to-day internal communica6on, rapid escala6ons, deal status ques6ons, excep6on handling, and cross-department coordina6on",
+   "verdict": "data",
+   "reason": "channel usage description (Slack)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0022",
+   "section": "1.1",
+   "kind": "text",
+   "text": "Chart of Accounts and Department Coding Guide — GL account assignments, department codes, and expense classifica6on rules (maintained by Elena Brooks, updated annually in January)",
+   "verdict": "data",
+   "reason": "tool description",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0023",
+   "section": "1.2",
+   "kind": "heading",
+   "text": "1.2 Team Directory",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0024",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Name | Posi7on | Email | Slack | Primary Responsibility",
+   "verdict": "data",
+   "reason": "team directory header",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0025",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Elena Brooks | Controller | elena.brooks@suns hineandsetauto.co m | @elena.brooks | Final accoun6ng authority, close sign-oﬀ, policy interpreta6on, lender and audit escala6on",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0026",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Marcus Hale | Assistant Controller | marcus.hale@suns hineandsetauto.co m | @marcus.hale | Bank rec review, journal approvals, schedule cleanup, process coverage",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0027",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Talia Nguyen | Oﬃce Manager | talia.nguyen@suns hineandsetauto.co m | @talia.nguyen | Oﬃce workﬂow, supplies, dealership administra6on",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0028",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Jasmine Patel | Senior Deal Pos6ng Specialist | jasmine.patel@sun shineandsetauto.co m | @jasmine.patel | New/used deal pos6ng, gross review, CIT follow- up",
+   "verdict": "data",
+   "reason": "directory row (acting user)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0029",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Noah Alvarez | Funding & Contracts Clerk | noah.alvarez@suns hineandsetauto.co m | @noah.alvarez | Bank contracts, lender packages, s6p tracking, funding queues",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0030",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Priya BenneI | Titles & Billing Clerk | priya.benneI@sun shineandsetauto.co m | @priya.benneI | Title packet processing, DMV support, lienholder and payoﬀ coordina6on",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0031",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Caleb Foster | Accounts Payable Clerk | caleb.foster@suns hineandsetauto.co m | @caleb.foster | Vendor invoices, statement reconcilia6on, check and ACH runs",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0032",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Renee Lawson | Cashier / Receivables Clerk | renee.lawson@sun shineandsetauto.co m | @renee.lawson | Daily cash, deposits, customer refunds, receivable support",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0033",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Darius Kim | Inventory Accountant | darius.kim@sunshi neandsetauto.com | @darius.kim | Floorplan, new/used inventory schedules, trade payoﬀs, aging review",
+   "verdict": "data",
+   "reason": "directory row (Darius Kim = inventory / ACV owner)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0034",
+   "section": "1.2",
+   "kind": "table_row",
+   "text": "Leah Morgan | Payroll & Commissions Analyst | leah.morgan@suns hineandsetauto.co m | @leah.morgan | Commissions, payroll inputs, deduc6ons, pay plan support",
+   "verdict": "data",
+   "reason": "directory row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0035",
+   "section": "1.2",
+   "kind": "text",
+   "text": "Backup Authority: In the absence of Elena Brooks (vaca=on, illness, or unavailability exceeding 4 hours), Marcus Hale assumes Controller authority for all approvals and decisions. If Marcus Hale is also unavailable, escalate to Derrick Soto (General Manager) for interim approval. Elena Brooks must be no=fied of any major decisions made in her absence upon her return.",
+   "verdict": "not_applicable",
+   "reason": "Elena Brooks not reported absent; no backup-authority decision arises",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0036",
+   "section": "1.3",
+   "kind": "heading",
+   "text": "1.3 Cross-Department Contacts",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0037",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Name | Posi7on | Department | Email | Slack",
+   "verdict": "data",
+   "reason": "contacts header",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0038",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Derrick Soto | General Manager | Sales Leadership | derrick.soto@suns hineandsetauto.co m | @derrick.soto",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0039",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Olivia Mercer | Sales Manager | New Vehicles | olivia.mercer@sun shineandsetauto.co m | @olivia.mercer",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0040",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Trent Holloway | Used Car Manager | Used Vehicles | trent.holloway@su nshineandsetauto.c om | @trent.holloway",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0041",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Soﬁa Ramirez | F&I Director | Finance & Insurance | soﬁa.ramirez@sun shineandsetauto.co m | @soﬁa.ramirez",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0042",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Grant Ellis | Service Director | Service | grant.ellis@sunshi neandsetauto.com | @grant.ellis",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0043",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Maya Chen | Parts Manager | Parts | maya.chen@sunshi neandsetauto.com | @maya.chen",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0044",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Hannah Price | HR Manager | Human Resources | hannah.price@sun shineandsetauto.co m | @hannah.price",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0045",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Evan Ross | IT & Systems Administrator | Technology | evan.ross@sunshin eandsetauto.com | @evan.ross",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0046",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Avery Knight | Marke6ng Manager | Marke6ng | avery.knight@suns hineandsetauto.co m | @avery.knight",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0047",
+   "section": "1.3",
+   "kind": "table_row",
+   "text": "Lila Owens | Recep6on & Customer Care Lead | Front Oﬃce | lila.owens@sunshi neandsetauto.com | @lila.owens",
+   "verdict": "data",
+   "reason": "contact row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0048",
+   "section": "1.4",
+   "kind": "heading",
+   "text": "1.4 Slack Channels",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0049",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "Channel | Use Cases | Primary Contacts",
+   "verdict": "data",
+   "reason": "channel table header",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0050",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-deal-pos6ng | Missing deal jacket items, gross discrepancies, VIN correc6ons, trade informa6on, missing signatures | Jasmine Patel; Olivia Mercer; Trent Holloway; Soﬁa Ramirez",
+   "verdict": "data",
+   "reason": "channel row (#acct-deal-posting)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0051",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-contracts-funding | Contract in transit, lender s6pula6ons, funding delays, reserve ques6ons, CIT aging | Noah Alvarez; Soﬁa Ramirez",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0052",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-6tles-billing | Title packets, payoﬀ leIers, insurance cards, lien informa6on, customer registra6on follow-up | Priya BenneI; Soﬁa Ramirez",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0053",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-cash-desk | Payment receipts, deposits, refund approvals, payoﬀ checks | Renee Lawson; Talia Nguyen",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0054",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-ap | Vendor invoice ques6ons, PO support, statement discrepancies, check status | Caleb Foster; Grant Ellis; Maya Chen",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0055",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-inventory | Vehicle in-stock 6ming, ﬂoorplan, aging, pack adjustments, recon costs, wholesales | Darius Kim; Olivia Mercer; Trent Holloway",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0056",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-payroll-commissions | Commission sheets, payroll correc6ons, draw ques6ons, PTO coding | Leah Morgan; Hannah Price",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0057",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-month-end-close | Close checklist, schedule review, approvals, late entries, excep6on tracking | Elena Brooks; Marcus Hale",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0058",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-chargebacks | Reserve statements, product cancella6ons, chargeback pos6ngs, payroll oﬀsets | Soﬁa Ramirez; Hannah Price; Caleb Foster",
+   "verdict": "data",
+   "reason": "channel row (#acct-chargebacks)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0059",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-ﬂoorplan | Floor plan statement variances, curtailments, lender audits, soldnot-paid units | Darius Kim; Olivia Mercer; Trent Holloway; Marcus Hale",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0060",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#acct-trade-payoﬀs | Trade payoﬀ leIers, nega6ve equity issues, lien release followup, 6tle delays | Priya BenneI; Soﬁa Ramirez; Noah Alvarez",
+   "verdict": "data",
+   "reason": "channel row (#acct-trade-payoffs)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0061",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#help-it-systems | System outages, scanner issues, permissions, printer problems | Evan Ross",
+   "verdict": "data",
+   "reason": "channel row",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0062",
+   "section": "1.4",
+   "kind": "table_row",
+   "text": "#leadership-escala6ons | Urgent issues needing execu6ve awareness or same-day decision | Elena Brooks; Derrick Soto",
+   "verdict": "data",
+   "reason": "channel row (#leadership-escalations)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0063",
+   "section": "1.5",
+   "kind": "heading",
+   "text": "1.5 Communica=on Rules",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0064",
+   "section": "1.5",
+   "kind": "text",
+   "text": "Use the correct Slack channel for rou=ne internal ques=ons. Tag the responsible person and include deal number, customer last name, VIN or stock number, and the exact missing item. Use email when sending or reques=ng formal approvals, outside-vendor responses, lender support, or customer-facing documents. Escalate by phone or direct Slack message immediately for sameday deliveries, cash differences, bank cutoff risk, customer refunds, =tle release delays, or fraud concerns.",
+   "verdict": "verifiable",
+   "reason": "correct channel + tags + deal/customer/stock enforced through the template posts (pre: channel/content; completion via messages_sent); the phone-or-DM same-day escalation is not enforced (phone alternative not observable)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.payoff.messages",
+    "b581.chargeback.messages"
+   ]
+  },
+  {
+   "id": "P0065",
+   "section": "1.5",
+   "kind": "text",
+   "text": "and redirect the sender to the appropriate department contact. For emails, do this by replying to the sender with Template H and addi=onally, forwarding the received email to the appropriate person. For internal messaging requests (e.g. Slack), do this by forwarding the message to the appropriate person. Do not take ac=on on the underlying request.",
+   "verdict": "verifiable",
+   "reason": "Trent's ACV/book-cost request is inventory (Darius Kim): Template H reply to Trent + forward email-004 to Darius; no action on the request (figures / ACV inquiry blocked)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.redirect.messages",
+    "b581.redirect.messages_sent"
+   ]
+  },
+  {
+   "id": "P0066",
+   "section": "2",
+   "kind": "heading",
+   "text": "2. Deal Processing",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0067",
+   "section": "2",
+   "kind": "text",
+   "text": "This sec=on covers the full lifecycle of a vehicle deal from jacket intake through pos=ng, funding, =tle work, and trade-in payoff.",
+   "verdict": "context",
+   "reason": "section intro",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0068",
+   "section": "2.1",
+   "kind": "heading",
+   "text": "2.1 Deal Jacket Intake and Pos=ng",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0069",
+   "section": "2.1",
+   "kind": "text",
+   "text": "Collect completed deal jackets from Sales/F&I according to the dealership handoff schedule. Confirm required contents: buyer's order, signed retail contract or lease paperwork, trade documents, payoff informa=on, proof of insurance, =tle forms as applicable, lender s=pula=ons, menu, and delivery checklist.",
+   "verdict": "not_applicable",
+   "reason": "no deal jacket intake in this inbox",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0070",
+   "section": "2.1",
+   "kind": "text",
+   "text": "Compile the deal jacket into a single PDF document. Ensure all pages are properly ordered and that signatures and key pages are present and readable.",
+   "verdict": "not_applicable",
+   "reason": "no deal jacket to compile",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0071",
+   "section": "2.1",
+   "kind": "text",
+   "text": "Record the deal in the deal log. Validate selling price, trade allowance, ACV, doc fee, taxes, tag/=tle es=mates, product income, lender reserve, and payoff entries. When selec=ng or correc=ng GL accounts, always reference the dealership's approved Chart of Accounts and Department Coding Guide before pos=ng.",
+   "verdict": "not_applicable",
+   "reason": "no new deal recording; 4481 must not be posted yet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0072",
+   "section": "2.1",
+   "kind": "text",
+   "text": "dealpos=ng before final pos=ng. Update the deal log with deal number, stock number, vehicle type, funding status, =tle status, and pos=ng date.",
+   "verdict": "not_applicable",
+   "reason": "final posting of 4481 not allowed until variance resolved",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0073",
+   "section": "2.1",
+   "kind": "text",
+   "text": "If the posted deal gross differs from the approved desk recap by $50 or less, the clerk may correct and post with a note in the deal log. If the variance is between $51 and $500, the clerk must get wrihen approval from Jasmine Patel via Slack before pos=ng. If the variance exceeds $500, escalate to Marcus Hale via #acct-deal-pos=ng and do not post un=l resolved. Marcus Hale may resolve by: (a) approving the posted amount if the desk recap was in error, documen=ng the decision in the deal log; (b) reques=ng Sales/F&I correc=on per the email template below; or (c) approving a journal entry to reconcile the difference. For any deal with total gross exceeding $5,000, all variances regardless of amount must be escalated to Marcus Hale via #acct-dealpos=ng for review before pos=ng; the dollar-amount thresholds above do not apply to high-gross deals. Use the following template:",
+   "verdict": "verifiable",
+   "reason": "4481 total gross $9,200 > $5,000 -> variance $350 must go to Marcus in #acct-deal-posting; deal stays unposted (end state)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent",
+    "b581.deal4481_not_posted"
+   ]
+  },
+  {
+   "id": "P0074",
+   "section": "2.1",
+   "kind": "text",
+   "text": "Deal #[number] / [Customer Last Name] – gross variance. Approved: $[amount] | Posted: $[amount] | Variance: $[amount]. Delivery: [HH:MM AM/PM]. @marcus.hale please review before pos=ng.",
+   "verdict": "verifiable",
+   "reason": "exact template, filled from deal log (approved 9200, posted 9550, variance 350, delivery 2:30 PM)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0075",
+   "section": "2.1",
+   "kind": "text",
+   "text": "When approved by Marcus, use the following template to close the issue:",
+   "verdict": "verifiable",
+   "reason": "Marcus has not approved; premature variance-resolved message is blocked",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages"
+   ]
+  },
+  {
+   "id": "P0076",
+   "section": "2.1",
+   "kind": "text",
+   "text": "Deal #[number] / [Customer Last Name] — variance resolved. Cleared for pos=ng per @marcus.hale approval.",
+   "verdict": "verifiable",
+   "reason": "template only after Marcus approval (forbidden until approval seen in Slack)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages"
+   ]
+  },
+  {
+   "id": "P0077",
+   "section": "2.1",
+   "kind": "text",
+   "text": "When a high-gross deal variance (total gross exceeding $5,000) coincides with a same-day scheduled customer delivery, the variance must also be posted in #leadership-escala=ons tagging @derrick.soto with the deal number, customer last name, variance amount, and scheduled delivery =me. Use the following template:",
+   "verdict": "verifiable",
+   "reason": "4481 high-gross variance + delivery today 2:30 PM -> #leadership-escalations post tagging @derrick.soto",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0078",
+   "section": "2.1",
+   "kind": "text",
+   "text": "ESCALATION — Deal #[number] / [Customer Last Name] | Variance: $[amount] | Delivery: [HH:MM AM/PM]. @derrick.soto",
+   "verdict": "verifiable",
+   "reason": "exact ESCALATION template",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0079",
+   "section": "2.1",
+   "kind": "text",
+   "text": "discovery and no later than 12:00 PM on the day of delivery.",
+   "verdict": "not_observable",
+   "reason": "timing (12:00 PM deadline) not visible in tool calls",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0080",
+   "section": "2.1",
+   "kind": "text",
+   "text": "When a deal gross variance requires Sales or F&I correc=on, send an email using Template A (see Appendix A). Send Template A regardless of whether the Sales or F&I party has already communicated informally. The formal email record is required to finalize the deal.",
+   "verdict": "verifiable",
+   "reason": "Template A email to Sofia Ramirez (F&I) for 4481 even though she wrote informally",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0081",
+   "section": "2.2",
+   "kind": "heading",
+   "text": "2.2 Funding and Contracts in Transit",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0082",
+   "section": "2.2",
+   "kind": "text",
+   "text": "ARer pos=ng, route funding documents to the Funding & Contracts Clerk. Review lender s=pula=ons and log missing items in the funding tracker. Send lender packages by secure email based on lender instruc=ons. Document package sent date, expected funding date, reserve es=mate, and current excep=on status.",
+   "verdict": "not_applicable",
+   "reason": "funding routing is Noah's; no package to route",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0083",
+   "section": "2.2",
+   "kind": "text",
+   "text": "Use #acct-contracts-funding to request missing s=ps from F&I and include bank name, deal number, and funding deadline.",
+   "verdict": "not_applicable",
+   "reason": "no missing stip request needed from Jasmine (Noah already posted for 4462)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0084",
+   "section": "2.2",
+   "kind": "text",
+   "text": "Unfunded deals require daily status updates in the funding tracker by Noah Alvarez. At 5 calendar days, Noah Alvarez escalates in wri=ng to Marcus Hale with a summary of outstanding s=ps and next steps. At 10 calendar days, Marcus Hale escalates to Elena Brooks. EXCEPTION: Any unfunded deal with a contract value exceeding $25,000 escalates directly to Marcus Hale at 3 calendar days; Noah Alvarez con=nues daily funding tracker updates on all unfunded deals, including those escalated to Marcus. CIT (Contract in Transit) deals with lender reserve exceeding $2,000 must be flagged in #acct-contracts-funding on day 1.",
+   "verdict": "not_applicable",
+   "reason": "4462 at day 4 with $18.5k contract (Noah's 5-day escalation, not due); no reserve > $2,000 CIT",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0085",
+   "section": "2.2",
+   "kind": "text",
+   "text": "When submiung a lender funding package, send a cover email using Template B (see Appendix A).",
+   "verdict": "not_applicable",
+   "reason": "no lender funding package submitted",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0086",
+   "section": "2.2",
+   "kind": "text",
+   "text": "Set a Calendar reminder for the expected funding date on every submihed package. If no funding confirma=on is received by that date, the reminder triggers the daily follow-up process described above.",
+   "verdict": "not_applicable",
+   "reason": "no package submitted by the acting user",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0087",
+   "section": "2.3",
+   "kind": "heading",
+   "text": "2.3 Titles and Registra=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0088",
+   "section": "2.3",
+   "kind": "text",
+   "text": "Separate =tle work from funding work as soon as the deal is posted so both processes can move in parallel. Confirm trade =tle, payoff lender, lien release needs, odometer statement, purchaser informa=on, proof of insurance, and registra=on instruc=ons. Note: Title documenta=on packages should be prepared by day 2 of deal pos=ng but held for DMV or state submission un=l funding confirma=on is received or un=l day 5, whichever comes first. If a deal is rejected aRer payoff is sent, immediately contact the lienholder to verify =tle and lien status.",
+   "verdict": "not_applicable",
+   "reason": "no title work in scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0089",
+   "section": "2.3",
+   "kind": "text",
+   "text": "signatures, duplicate =tle needs, and registra=on ques=ons. When state forms, taxes, or registra=on requirements appear unclear, stop and escalate to Priya Benneh and Elena Brooks before submission.",
+   "verdict": "not_applicable",
+   "reason": "no unclear state forms",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0090",
+   "section": "2.3",
+   "kind": "text",
+   "text": "lienholder address, and whether the =tle is electronic or paper. Missing or stale payoff lehers must be refreshed before the payoff is released.",
+   "verdict": "not_applicable",
+   "reason": "no payoff being released",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0091",
+   "section": "2.3",
+   "kind": "text",
+   "text": "lender payoff leher, customer ID when required, tracking method, and a PDF copy of the check",
+   "verdict": "not_applicable",
+   "reason": "no payoff check to issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0092",
+   "section": "2.3",
+   "kind": "text",
+   "text": "lienholder, quoted payoff, actual remihance amount, sent date, tracking number, lien release due date, and =tle receipt status.",
+   "verdict": "not_applicable",
+   "reason": "no new payoff to log (4477 already in the payoff control log)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0093",
+   "section": "2.3",
+   "kind": "text",
+   "text": "If the actual payoff amount differs from the es=mated payoff on the deal jacket by $25 or less, process as a minor adjustment and note in the deal log. If the difference is between $26 and $200, get wrihen approval from Jasmine Patel via Slack before adjus=ng the deal. If the difference exceeds $200, escalate to Marcus Hale before processing — the deal gross must be recalculated. Marcus Hale must respond within 1 business day. If no response is received within 1 business day, immediately escalate to Elena Brooks regardless of the good-through date status. Nega=ve equity shortages exceeding $500 must be flagged to Elena Brooks on the same day. All payoff checks must be mailed or wired within 2 business days of deal pos=ng. If a payoff variance exceeding $200 requires Marcus Hale review, the payoff deadline extends to 3 business days from deal pos=ng.",
+   "verdict": "verifiable",
+   "reason": "4477 payoff quoted 12,610 vs actual 12,875 ($265 > $200): escalation to Marcus is covered by the required payoff-error post tagging @marcus.hale; variance wording itself not enforced",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.payoff.messages",
+    "b581.payoff.messages_sent"
+   ]
+  },
+  {
+   "id": "P0094",
+   "section": "2.3",
+   "kind": "text",
+   "text": "escalate to Priya Benneh and Marcus Hale the same day. Post to #acct-trade-payoffs using the following template:",
+   "verdict": "verifiable",
+   "reason": "Wells Fargo applied the 4477 payoff to the wrong account -> same-day post in #acct-trade-payoffs tagging Priya and Marcus",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.payoff.messages",
+    "b581.payoff.messages_sent"
+   ]
+  },
+  {
+   "id": "P0095",
+   "section": "2.3",
+   "kind": "text",
+   "text": "Payoff error — [Lender Name] Ref [reference number] / Deal #[number] / [Customer Last Name]. Payment applied to wrong account. @priya.benneh @marcus.hale – same day resolu=on required.",
+   "verdict": "verifiable",
+   "reason": "exact payoff-error template (Wells Fargo [Dealer Services], Ref WFB-2026-DPO-88491 or REF#90181034, Deal #4477 / Morales)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.payoff.messages",
+    "b581.payoff.messages_sent"
+   ]
+  },
+  {
+   "id": "P0096",
+   "section": "2.3",
+   "kind": "text",
+   "text": "have direct correspondence with external lenders. Upon receiving an email from an external lender, do not reply, and instead forward the email to Priya Benneh.",
+   "verdict": "verifiable",
+   "reason": "email-001 from Wells Fargo: no reply/email to wellsfargo.com (blocked), forward to Priya Bennett required",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.payoff.messages",
+    "b581.payoff.messages_sent"
+   ]
+  },
+  {
+   "id": "P0097",
+   "section": "3",
+   "kind": "heading",
+   "text": "3. Cash, Banking, and Receivables",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0098",
+   "section": "3.1",
+   "kind": "heading",
+   "text": "3.1 Daily Cash Applica=on and Deposits",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0099",
+   "section": "3.1",
+   "kind": "text",
+   "text": "Post customer payments, down payments, service receipts, and miscellaneous deposits in the approved cash applica=on workflow. Count physical checks and cash with dual verifica=on whenever required by policy. Prepare bank deposits daily and save deposit support to the workspace.",
+   "verdict": "not_applicable",
+   "reason": "no cash application",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0100",
+   "section": "3.1",
+   "kind": "text",
+   "text": "Match deposit totals to the cashiering log, receipts, and bank batch totals. Record any shortages, overages, chargebacks, or returned items on the excep=on log and no=fy Renee Lawson immediately. Refunds require documented approval and support before release. Maintain a document packet for every refund.",
+   "verdict": "not_applicable",
+   "reason": "no deposits",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0101",
+   "section": "3.1",
+   "kind": "text",
+   "text": "The daily bank deposit must match the total of all cash, check, and credit card receipts recorded in the cashier log. If the deposit differs from the cashier log by $10 or less, record as a rounding adjustment. If the difference is between $11 and $100, inves=gate the same day and document the cause in the cash excep=on log. If the difference exceeds $100, escalate to Renee Lawson immediately and do not close the daily cash report un=l resolved. Any cash over/short exceeding $250 in a single day requires no=fica=on to Elena Brooks.",
+   "verdict": "not_applicable",
+   "reason": "no deposit reconciliation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0102",
+   "section": "3.2",
+   "kind": "heading",
+   "text": "3.2 Credit Card SeGlement",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0103",
+   "section": "3.2",
+   "kind": "text",
+   "text": "Batch-sehle credit card terminals daily by 5:00 PM. Compare the terminal batch total to the cashier log credit card subtotal before sehlement. If the terminal batch and the cashier log differ by more than $5, do not sehle — inves=gate the discrepancy first. ARer sehlement, save the batch report as a PDF with the naming conven=on YYYYMMDD_CC_Batch_[TerminalID]. Credit card chargebacks received from the processor must be logged in the cash excep=on tracker the same day, matched to the original transac=on, and inves=gated within 2 business days. Chargebacks exceeding $500 must be reported to Marcus Hale.",
+   "verdict": "not_applicable",
+   "reason": "no card settlement",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0104",
+   "section": "3.3",
+   "kind": "heading",
+   "text": "3.3 Returned Checks and NSF Items",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0105",
+   "section": "3.3",
+   "kind": "text",
+   "text": "closed account, reverse the original payment entry in the deal log and record the returned item in the cash excep=on log with the original deposit date, return date, customer name, deal number, check amount, and bank return reason code.",
+   "verdict": "not_applicable",
+   "reason": "no returned checks",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0106",
+   "section": "3.3",
+   "kind": "text",
+   "text": "No=fy the customer by email within 1 business day of the return no=ce. If the customer does not respond within 3 business days, escalate to the Sales Manager who handled the deal. Returned checks exceeding $1,000 must be reported to Marcus Hale and Elena Brooks on the day of receipt. A returned check fee of $35 applies per the dealership's posted fee schedule and must be added to the customer's receivable balance. Do not release =tle work, registra=on documents, or lien release paperwork for any deal with an outstanding returned check un=l the balance is resolved.",
+   "verdict": "not_applicable",
+   "reason": "no returned checks",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0107",
+   "section": "3.4",
+   "kind": "heading",
+   "text": "3.4 Customer Refunds",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0108",
+   "section": "3.4",
+   "kind": "text",
+   "text": "All refunds require a completed refund request including deal number, customer name, refund amount, reason, original payment method, and suppor=ng documenta=on. Refunds under $500 require Marcus Hale email approval. Refunds between $500 and $2,500 require Elena Brooks email approval. Refunds exceeding $2,500 require Elena Brooks signature on the printed refund request form.",
+   "verdict": "not_applicable",
+   "reason": "no refunds",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0109",
+   "section": "3.4",
+   "kind": "text",
+   "text": "Refunds must be issued by the same method as the original payment when possible — check refunds for check payments, credit card reversal for card payments. If the original payment method",
+   "verdict": "not_applicable",
+   "reason": "no refunds",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0110",
+   "section": "3.4",
+   "kind": "text",
+   "text": "cannot be used, document the reason and get Controller approval for an alterna=ve method. Prepare a refund packet containing the refund request, approval email or signed form, original payment receipt, and any suppor=ng deal documents. Save to the deal folder.",
+   "verdict": "not_applicable",
+   "reason": "no refunds",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0111",
+   "section": "3.4",
+   "kind": "text",
+   "text": "When reques=ng refund approval, send an email using Template C (see Appendix A).",
+   "verdict": "not_applicable",
+   "reason": "no refund approval request",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0112",
+   "section": "3.5",
+   "kind": "heading",
+   "text": "3.5 PeGy Cash and Safe Controls",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0113",
+   "section": "3.5",
+   "kind": "text",
+   "text": "The pehy cash fund is maintained at $500. Replenish when the balance falls below $100: the person coun=ng pehy cash no=fies Talia Nguyen, who requests a replenishment check from Accounts Payable in the amount needed to restore the fund to $500; a journal entry is posted moving funds from the opera=ng bank account to pehy cash, and replenishment must be completed within 1 business day of no=fica=on. Every pehy cash disbursement requires a signed pehy cash voucher with date, amount, recipient, purpose, and GL account code. Vouchers must be approved by Talia Nguyen for amounts under $50 and by Marcus Hale for amounts $50 and above.",
+   "verdict": "not_applicable",
+   "reason": "no petty cash activity",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0114",
+   "section": "3.5",
+   "kind": "text",
+   "text": "Count the pehy cash fund weekly. The physical count plus outstanding vouchers must equal $500. Any shortage must be documented and reported to Marcus Hale the same day. The office safe must remain locked when not in ac=ve use. Only Elena Brooks, Marcus Hale, Talia Nguyen, and Renee Lawson have safe access. Safe contents — including undeposited checks, blank check stock, =tles awai=ng release, and pehy cash — must be logged on the safe inventory sheet and verified at each opening.",
+   "verdict": "not_applicable",
+   "reason": "no petty cash / safe activity",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0115",
+   "section": "4",
+   "kind": "heading",
+   "text": "4. Accounts Payable",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0116",
+   "section": "4.1",
+   "kind": "heading",
+   "text": "4.1 Invoice Receipt and Entry",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0117",
+   "section": "4.1",
+   "kind": "text",
+   "text": "invoice date, amount, PO or approval support, department coding, and tax treatment. Use the approved Chart of Accounts and Department Coding Guide to confirm the correct expense account and department before entry.",
+   "verdict": "not_applicable",
+   "reason": "no invoices",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0118",
+   "section": "4.1",
+   "kind": "text",
+   "text": "Route incomplete invoices to #acct-ap and tag the department owner. Enter approved invoices into the AP queue, ahach PDF support, and file to the vendor folder in the workspace. Reconcile vendor statements weekly and resolve open items before check run. Prepare check and ACH proposals and submit to the Controller or Assistant Controller for review.",
+   "verdict": "not_applicable",
+   "reason": "no invoices",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0119",
+   "section": "4.1",
+   "kind": "text",
+   "text": "Invoices under $500 may be approved by the clerk with department manager email confirma=on. Invoices between $500 and $5,000 require Marcus Hale approval. Invoices exceeding $5,000 require Elena Brooks approval. All invoices must be matched to a purchase order or service",
+   "verdict": "not_applicable",
+   "reason": "no invoices",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0120",
+   "section": "4.1",
+   "kind": "text",
+   "text": "un=l a PO is created or an excep=on is approved.",
+   "verdict": "not_applicable",
+   "reason": "no invoices",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0121",
+   "section": "4.1",
+   "kind": "text",
+   "text": "Before entering any invoice, check for duplicates by comparing vendor name, invoice number, invoice date, and amount against the AP queue and recent payment history. If a poten=al duplicate is found, do not enter the invoice. Flag it in #acct-ap with the original invoice reference and hold for Caleb Foster to confirm whether it is a true duplicate or a separate charge.",
+   "verdict": "not_applicable",
+   "reason": "no invoices",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0122",
+   "section": "4.2",
+   "kind": "heading",
+   "text": "4.2 Payment Runs and Terms",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0123",
+   "section": "4.2",
+   "kind": "text",
+   "text": "Vendor payment runs are processed every Tuesday and Friday. Caleb Foster prepares the check and ACH proposal by end of day Monday (for Tuesday runs) and end of day Thursday (for Friday runs). Marcus Hale reviews and approves the proposal before checks are printed or ACH files are submihed.",
+   "verdict": "not_applicable",
+   "reason": "no payment run",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0124",
+   "section": "4.2",
+   "kind": "text",
+   "text": "Emergency payments outside the regular cycle require Elena Brooks wrihen approval via email. The emergency payment request must include the vendor name, invoice number, amount, reason for urgency, and consequences of delayed payment.",
+   "verdict": "not_applicable",
+   "reason": "no emergency payment",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0125",
+   "section": "4.2",
+   "kind": "text",
+   "text": "For vendors offering early payment discounts (such as 2/10 net 30), flag the discount terms in the AP queue at invoice entry. If the discount value exceeds $100, no=fy Marcus Hale so the invoice can be priori=zed for the next available payment run. Track captured and missed discounts in the AP discount log. Missed discounts on invoices where payment was made aRer the discount window must be documented with the reason for delay.",
+   "verdict": "not_applicable",
+   "reason": "no discounts",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0126",
+   "section": "4.2",
+   "kind": "text",
+   "text": "Standard payment terms by vendor type unless otherwise contracted:",
+   "verdict": "data",
+   "reason": "payment terms table intro",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0127",
+   "section": "4.2",
+   "kind": "text",
+   "text": "Parts and accessories vendors: Net 30",
+   "verdict": "data",
+   "reason": "payment terms",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0128",
+   "section": "4.2",
+   "kind": "text",
+   "text": "Service subcontractors and body shop vendors: Net 15",
+   "verdict": "data",
+   "reason": "payment terms",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0129",
+   "section": "4.2",
+   "kind": "text",
+   "text": "U6lity and recurring facility charges: Due on receipt, auto-pay where approved",
+   "verdict": "data",
+   "reason": "payment terms",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0130",
+   "section": "4.2",
+   "kind": "text",
+   "text": "Adver6sing and marke6ng: Net 30",
+   "verdict": "data",
+   "reason": "payment terms",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0131",
+   "section": "4.2",
+   "kind": "text",
+   "text": "One-6me or new vendors: Payment on delivery un6l credit terms are established",
+   "verdict": "data",
+   "reason": "payment terms",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0132",
+   "section": "4.3",
+   "kind": "heading",
+   "text": "4.3 New Vendor Setup and W-9 Requirements",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0133",
+   "section": "4.3",
+   "kind": "text",
+   "text": "No payment may be issued to a vendor not already set up in the AP vendor master. To add a new vendor, collect a completed IRS Form W-9 (or W-8BEN for foreign vendors), a signed vendor informa=on form with legal name, remihance address, payment method preference, and banking details if ACH. Verify that the vendor's tax iden=fica=on number (TIN) on the W-9 matches the legal name.",
+   "verdict": "not_applicable",
+   "reason": "no vendor setup",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0134",
+   "section": "4.3",
+   "kind": "text",
+   "text": "New vendor setup requests must be submihed to Caleb Foster with all suppor=ng documents ahached as a single PDF. Marcus Hale must approve all new vendor addi=ons before the first payment. Vendor master changes — including address, bank account, or contact updates —",
+   "verdict": "not_applicable",
+   "reason": "no vendor setup",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0135",
+   "section": "4.3",
+   "kind": "text",
+   "text": "bank account changes based solely on phone calls or unsigned correspondence.",
+   "verdict": "not_applicable",
+   "reason": "no vendor changes",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0136",
+   "section": "4.4",
+   "kind": "heading",
+   "text": "4.4 1099 Repor=ng",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0137",
+   "section": "4.4",
+   "kind": "text",
+   "text": "and ahorneys regardless of en=ty type) must be flagged in the vendor master at setup. The 1099 flag must match the en=ty type on the vendor's W-9.",
+   "verdict": "not_applicable",
+   "reason": "no 1099 work",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0138",
+   "section": "4.4",
+   "kind": "text",
+   "text": "Throughout the year, verify that any vendor paid $600 or more in aggregate for services, rent, or other 1099-reportable categories is properly flagged. Caleb Foster prepares a preliminary 1099 report by December 15 each year. Elena Brooks reviews the report and approves the final 1099 filing. Forms must be mailed to vendors by January 31 and filed with the IRS by the applicable deadline. Missing W-9s must be requested from vendors by November 15. Vendors who do not respond by December 31 are subject to backup withholding at 24% on future payments un=l a valid W-9 is received.",
+   "verdict": "not_applicable",
+   "reason": "no 1099 work",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0139",
+   "section": "4.5",
+   "kind": "heading",
+   "text": "4.5 Vendor Payment Disputes",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0140",
+   "section": "4.5",
+   "kind": "text",
+   "text": "When a vendor reports a payment discrepancy (short payment, duplicate payment, missing payment, or misapplied credit), pull the vendor's full payment history and open invoice list from the AP workbook before responding. Compare the vendor's statement line by line to the dealership's records. Iden=fy whether the discrepancy is caused by =ming (check in transit), a missed credit memo, a duplicate entry, or an actual payment error.",
+   "verdict": "not_applicable",
+   "reason": "no vendor dispute",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0141",
+   "section": "4.5",
+   "kind": "text",
+   "text": "When responding to a vendor dispute, send an email using Template D (see Appendix A).",
+   "verdict": "not_applicable",
+   "reason": "no vendor dispute",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0142",
+   "section": "4.5",
+   "kind": "text",
+   "text": "If the inves=ga=on reveals a duplicate payment, Caleb Foster must request a refund or credit from the vendor within 2 business days and document the duplicate in the AP excep=on log. Duplicate payments exceeding $1,000 must be reported to Marcus Hale.",
+   "verdict": "not_applicable",
+   "reason": "no duplicate payment",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0143",
+   "section": "4.5",
+   "kind": "text",
+   "text": "When reques=ng a W-9 from a vendor, send an email using Template E (see Appendix A).",
+   "verdict": "not_applicable",
+   "reason": "no W-9 request",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0144",
+   "section": "5",
+   "kind": "heading",
+   "text": "5. Inventory and Floorplan",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0145",
+   "section": "5.1",
+   "kind": "heading",
+   "text": "5.1 Vehicle Inventory",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0146",
+   "section": "5.1",
+   "kind": "text",
+   "text": "Reconcile new and used vehicle inventory daily or at minimum each business day aRer pos=ng ac=vity. Verify that every stocked unit has cost support, recon charges, pack treatment, and status in the inventory schedule. Match purchases, trades, dealer trades, wholesales, and write-downs to suppor=ng documents. Use #acct-inventory to resolve in-stock date changes, recon pos=ngs, usedcar cost adjustments, and missing VIN data.",
+   "verdict": "not_applicable",
+   "reason": "inventory reconciliation is Darius Kim's; Trent's ACV request is redirected (P0065)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0147",
+   "section": "5.2",
+   "kind": "heading",
+   "text": "5.2 Pack Calcula=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0148",
+   "section": "5.2",
+   "kind": "text",
+   "text": "New vehicle pack is a fixed $500 per unit added to inventory cost at the =me of stock-in. Used vehicle pack is $750 per unit. Pack is included in the vehicle's book cost for gross profit calcula=on and is credited to the dealership's pack reserve account. Do not adjust pack amounts without Elena Brooks approval. If a used vehicle is acquired at auc=on with a purchase price under $5,000, pack is reduced to $400. Dealer trade units carry the same pack as a standard new or used unit based on vehicle type.",
+   "verdict": "not_applicable",
+   "reason": "no pack adjustment by the acting user",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0149",
+   "section": "5.3",
+   "kind": "heading",
+   "text": "5.3 Recondi=oning Cost Capitaliza=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0150",
+   "section": "5.3",
+   "kind": "text",
+   "text": "All recondi=oning charges (mechanical repair, body work, detail, =res, and accessories installed before retail lis=ng) are capitalized to the vehicle's inventory cost. Recon invoices must be matched to a stock number and posted to the inventory schedule within 2 business days of comple=on. Individual recon charges exceeding $2,000 on a used vehicle require Trent Holloway approval before the work is performed. Total recondi=oning cost on any single used vehicle must not exceed $5,000 without Marcus Hale wrihen approval. If total recon plus ACV plus pack exceeds the expected retail asking price, escalate to Elena Brooks before pos=ng addi=onal charges — the vehicle may need to be wholesaled.",
+   "verdict": "not_applicable",
+   "reason": "no recon posting by the acting user",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0151",
+   "section": "5.4",
+   "kind": "heading",
+   "text": "5.4 Wholesale and Auc=on Accoun=ng",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0152",
+   "section": "5.4",
+   "kind": "text",
+   "text": "When a vehicle is approved for wholesale disposal, the Used Car Manager submits a wholesale authoriza=on form with stock number, VIN, book cost (ACV + pack + recon), minimum acceptable bid, and auc=on loca=on. Prior to formal authoriza=on, the Used Car Manager must post an ACV inquiry to #acct-inventory using the following format:",
+   "verdict": "not_observable",
+   "reason": "the ACV inquiry / wholesale authorization is the Used Car Manager's own action",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0153",
+   "section": "5.4",
+   "kind": "text",
+   "text": "ACV inquiry — Stock [number] ([year make model]). Pre-wholesale evalua=on. @darius.kim",
+   "verdict": "data",
+   "reason": "ACV inquiry format (Trent's obligation)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0154",
+   "section": "5.4",
+   "kind": "text",
+   "text": "Record the wholesale in the inventory schedule on the date the vehicle leaves the lot.",
+   "verdict": "not_applicable",
+   "reason": "no wholesale recorded",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0155",
+   "section": "5.4",
+   "kind": "text",
+   "text": "ARer the auc=on, record the gross proceeds, auc=on fees, transporta=on charges, and net sehlement. Calculate the wholesale gain or loss as net sehlement minus total book cost. Wholesale losses exceeding $2,500 on a single unit must be flagged to Marcus Hale. Aggregate wholesale losses exceeding $10,000 in a calendar month must be reported to Elena Brooks with a summary of all units, causes, and aging at =me of disposal.",
+   "verdict": "not_applicable",
+   "reason": "no auction results",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0156",
+   "section": "5.5",
+   "kind": "heading",
+   "text": "5.5 Dealer Trades",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0157",
+   "section": "5.5",
+   "kind": "text",
+   "text": "Dealer trade vehicles are recorded at the agreed trade value between dealerships. The sending dealership issues an invoice; the receiving dealership records the unit at invoice cost plus transporta=on plus applicable pack. Both sides of a dealer trade must be posted on the same business day. If the dealership is both sending and receiving a unit in the same trade, net sehlement is calculated and recorded. Unpaid dealer trade receivables aged beyond 10 business days must be escalated to Marcus Hale. If a dealer trade unit is financed on the floorplan, add it",
+   "verdict": "not_applicable",
+   "reason": "no dealer trade",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0158",
+   "section": "5.5",
+   "kind": "text",
+   "text": "credit and is not floored, note \"Non-Floored\" in the inventory schedule and exclude it from the floorplan worksheet.",
+   "verdict": "not_applicable",
+   "reason": "no dealer trade",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0159",
+   "section": "5.6",
+   "kind": "heading",
+   "text": "5.6 Floorplan Reconcilia=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0160",
+   "section": "5.6",
+   "kind": "text",
+   "text": "date, principal balance, curtailment due date, payoff status, and physical lot status.",
+   "verdict": "not_applicable",
+   "reason": "no floorplan reconciliation by acting user",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0161",
+   "section": "5.6",
+   "kind": "text",
+   "text": "statements each business day. Inves=gate units showing on statement but not on inventory, inventory but not on statement, or sold units s=ll accruing interest. For newly acquired units, confirm funding amount, book cost, fees, and stocking date.",
+   "verdict": "not_applicable",
+   "reason": "no floorplan reconciliation by acting user",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0162",
+   "section": "5.6",
+   "kind": "text",
+   "text": "The daily floorplan balance in the inventory tracker must match the lender statement within $100. Variances between $100 and $1,000 must be inves=gated and documented in the floorplan excep=on log within 2 business days. Variances exceeding $1,000 must be escalated to Darius Kim the same day. If Darius Kim’s inves=ga=on reveals a missing or misiden=fied vehicle, a soldnotpaid unit, or out-of-trust exposure, Darius Kim immediately escalates to Marcus Hale and Elena Brooks. Vehicles on floorplan exceeding 60 days must be flagged in the aging report. Vehicles exceeding 90 days require Marcus Hale review for poten=al curtailment risk. Sold units must be paid off the floorplan within 3 business days of delivery — late payoffs incur interest charges that must be tracked and reported to Elena Brooks monthly.",
+   "verdict": "not_applicable",
+   "reason": "no floorplan variance given to acting user",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0163",
+   "section": "5.6",
+   "kind": "text",
+   "text": "credits. Coordinate with Noah Alvarez if the deal is pending funding and with Darius Kim if unit cost, status, or VIN details do not agree.",
+   "verdict": "not_applicable",
+   "reason": "no floorplan payoff",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0164",
+   "section": "5.6",
+   "kind": "text",
+   "text": "Any poten=al out-of-trust exposure, aged curtailment, or lender audit excep=on must be called to Marcus Hale and Elena Brooks immediately aRer the Slack no=fica=on is sent. An aged curtailment means any curtailment s=ll unpaid 3 calendar days aRer its stated due date.",
+   "verdict": "not_applicable",
+   "reason": "no out-of-trust exposure",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0165",
+   "section": "6",
+   "kind": "heading",
+   "text": "6. Chargebacks and Product Cancella&ons",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0166",
+   "section": "6",
+   "kind": "text",
+   "text": "Track all chargebacks including warranty cancella=ons, GAP cancella=ons, reserve adjustments, product remits, reinsurance correc=ons, and aRer-sale product reversals in the chargeback tracker the same day no=ce is received.",
+   "verdict": "verifiable",
+   "reason": "CB-2608 already tracked; tracker rows must stay (no duplicate/new CB rows, existing entries intact)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.logs_intact"
+   ]
+  },
+  {
+   "id": "P0167",
+   "section": "6",
+   "kind": "text",
+   "text": "Match each chargeback to the original deal number, contract date, product type, customer name, F&I manager, and accoun=ng period. Save backup from the lender, product administrator, or cancella=on form as a document packet in Accoun=ng/Chargebacks/YYYY-MM.",
+   "verdict": "verifiable",
+   "reason": "Meridian GAP notice is the product-administrator backup -> save a document packet under Accounting/Chargebacks/2026-04 (03 also accepted)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.cb_backup"
+   ]
+  },
+  {
+   "id": "P0168",
+   "section": "6",
+   "kind": "text",
+   "text": "commission, F&I commission, or tax treatment. A chargeback is considered “disputed” if: (1) the",
+   "verdict": "not_applicable",
+   "reason": "no dispute indicator: amount/contract/customer/F&I match deal 4451 and tracker; no reserve statement",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0169",
+   "section": "6",
+   "kind": "text",
+   "text": "reserve statement, or (3) verifica=on reveals a discrepancy with the original deal pos=ng. Route all disputed chargebacks to Sofia Ramirez and Marcus Hale for review before pos=ng any offseung entry.",
+   "verdict": "not_applicable",
+   "reason": "CB-2608 not disputed on the seed data",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0170",
+   "section": "6",
+   "kind": "text",
+   "text": "Chargebacks under $250 with no dispute flag and no commission impact may be posted by the clerk aRer verifica=on against the original deal. Chargebacks between $250 and $1,000 require Jasmine Patel approval. Chargebacks between $1,000 and $5,000 require Marcus Hale approval. Chargebacks exceeding $5,000 require Elena Brooks approval. Approvers must respond within 1 business day of submission. Product cancella=on chargebacks with customer refund components must be processed within 3 business days of receipt. If an approver is unavailable and the 3-day refund deadline is at risk, escalate to the next level immediately.",
+   "verdict": "verifiable",
+   "reason": "$1,600 is in the $1,000-$5,000 band -> 'Marcus Hale approval required' in the chargeback notice",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.chargeback.messages",
+    "b581.chargeback.messages_sent"
+   ]
+  },
+  {
+   "id": "P0171",
+   "section": "6",
+   "kind": "text",
+   "text": "Post approved chargebacks to the correct general ledger account and update the chargeback tracker with source, amount, effec=ve date, recovered amount, and open status. Use the approved Chart of Accounts and Department Coding Guide before selec=ng any GL account.",
+   "verdict": "not_observable",
+   "reason": "GL posting has no tool; tracker status wording after the notice is not defined by the SOP (not enforced)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0172",
+   "section": "6",
+   "kind": "text",
+   "text": "When a posted chargeback affects a previously paid salesperson or F&I manager commission—as indicated by the commission impact notation in the chargeback tracker—initiate the chargeback offset process under §7.2 on the same business day the chargeback is posted to the general ledger.",
+   "verdict": "not_observable",
+   "reason": "offset is triggered by the GL posting (no GL tool) and handled in a commission control workbook that is not in the workspace",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0173",
+   "section": "6",
+   "kind": "text",
+   "text": "Use #acct-chargebacks for questions involving product providers, reserve statements, canceled contracts, and payroll offsets. Tag Sofia Ramirez for F&I ownership, Hannah Price for payroll impact, and Caleb Foster when a vendor statement or remittance detail is missing. When posting a chargeback notice to #acct-chargebacks use the following format:",
+   "verdict": "verifiable",
+   "reason": "CB notice post in #acct-chargebacks tagging Sofia, Hannah (commission impact) and Marcus",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.chargeback.messages",
+    "b581.chargeback.messages_sent"
+   ]
+  },
+  {
+   "id": "P0174",
+   "section": "6",
+   "kind": "text",
+   "text": "Chargeback received — CB Ref [CB reference] / [Customer Last Name] / $[amount]. @sofia.ramirez @hannah.price @marcus.hale — [approval level] approval required.",
+   "verdict": "verifiable",
+   "reason": "exact chargeback notice template CB-2608 / Castellano / $1,600.00",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.chargeback.messages",
+    "b581.chargeback.messages_sent"
+   ]
+  },
+  {
+   "id": "P0175",
+   "section": "6",
+   "kind": "text",
+   "text": "Escalate aging or high-dollar chargebacks older than 15 days to Elena Brooks with a summary pulled from Excel and supporting PDFs combined into one clean file for review. A high-dollar chargeback means any single chargeback or related grouped chargeback totaling $2,500 or more. When escalating an aging or high-dollar chargeback, send an email using Template F (see Appendix A).",
+   "verdict": "not_applicable",
+   "reason": "CB-2608 is $1,600 (< $2,500) and 2 days old; no other open chargebacks",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0176",
+   "section": "7",
+   "kind": "heading",
+   "text": "7. Payroll and Commissions",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0177",
+   "section": "7.1",
+   "kind": "heading",
+   "text": "7.1 Commission Calcula=on and Veriﬁca=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0178",
+   "section": "7.1",
+   "kind": "text",
+   "text": "1st and 16th of each month (or the next business day if either falls on a weekend or holiday). Each commission sheet must show deal number, customer name, vehicle, delivery date, front gross, back gross, total gross, commission rate, and calculated commission for every deal in the pay period.",
+   "verdict": "not_applicable",
+   "reason": "no commission sheet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0179",
+   "section": "7.1",
+   "kind": "text",
+   "text": "Tie commission sheets to posted deals in the deal log. Verify that the delivery date, deal gross, and product income on the commission sheet match the posted figures. If any deal on the commission sheet has not been posted, do not include it in the payroll submission — flag it in #acct-payrollcommissions and return the sheet to the submiung manager.",
+   "verdict": "not_applicable",
+   "reason": "no commission sheet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0180",
+   "section": "7.1",
+   "kind": "text",
+   "text": "Commission structures vary by role and pay plan. Accoun=ng does not interpret or modify pay plans — it verifies that the commission sheet math is correct and that the underlying deal data supports the amounts claimed. The standard structures referenced in commission sheets are:",
+   "verdict": "not_applicable",
+   "reason": "no commission sheet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0181",
+   "section": "7.1",
+   "kind": "text",
+   "text": "Flat per-unit: unit count matches posted deliveries for the period.",
+   "verdict": "not_applicable",
+   "reason": "no commission sheet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0182",
+   "section": "7.1",
+   "kind": "text",
+   "text": "Percentage of gross: A percentage of front-end gross, back-end gross, or total gross. Verify the gross figure used matches the deal log and that the percentage applied matches the employee's current pay plan on file.",
+   "verdict": "not_applicable",
+   "reason": "no commission sheet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0183",
+   "section": "7.1",
+   "kind": "text",
+   "text": "Graduated/7ered: Commission rate increases ajer volume thresholds (e.g., 8+ units). Verify cumula6ve unit count for the month and confirm the correct 6er rate was applied to each deal.",
+   "verdict": "not_applicable",
+   "reason": "no commission sheet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0184",
+   "section": "7.1",
+   "kind": "text",
+   "text": "Draw against commission: earned commissions. If earned commissions exceed the draw, the employee receives the excess. If earned commissions are less than the draw, the shormall carries forward. Track draw balances in the commission control workbook.",
+   "verdict": "not_applicable",
+   "reason": "no draws",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0185",
+   "section": "7.2",
+   "kind": "heading",
+   "text": "7.2 Chargeback Oﬀsets",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0186",
+   "section": "7.2",
+   "kind": "text",
+   "text": "When a product cancella=on, reserve adjustment, or deal unwind generates a chargeback that affects a previously paid commission, the chargeback must be offset against the employee's next commission payment. Record the chargeback offset in the commission control workbook with the original deal number, original commission paid, chargeback amount, chargeback date, and the pay period in which the offset will be applied.",
+   "verdict": "not_applicable",
+   "reason": "commission control workbook not in workspace; offset recording is payroll's",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0187",
+   "section": "7.2",
+   "kind": "text",
+   "text": "Chargeback offsets under $250 may be applied automa=cally aRer verifica=on. Offsets between $250 and $1,000 require Leah Morgan confirma=on. Offsets exceeding $1,000 require Marcus Hale approval and the employee must be no=fied in wri=ng (email from Leah Morgan or Hannah Price) before the offset is applied. If an offset would reduce an employee's net pay below the applicable minimum wage for hours worked, escalate to Hannah Price and Elena Brooks before processing.",
+   "verdict": "not_observable",
+   "reason": "offset approvals/notices are Leah Morgan / Marcus / HR actions",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0188",
+   "section": "7.3",
+   "kind": "heading",
+   "text": "7.3 Spiﬀs, Bonuses, and Adjustments",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0189",
+   "section": "7.3",
+   "kind": "text",
+   "text": "submihed on a separate bonus authoriza=on form signed by the department manager and approved by Derrick Soto (for sales) or the relevant department head. Bonus authoriza=ons must be received by Leah Morgan at least 2 business days before the payroll submission deadline. Bonuses exceeding $2,500 require Elena Brooks approval.",
+   "verdict": "not_applicable",
+   "reason": "no bonuses",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0190",
+   "section": "7.3",
+   "kind": "text",
+   "text": "Payroll adjustments for prior-period correc=ons (missed commissions, incorrect rates, or recalculated deals) must include the original pay period, original amount, corrected amount, variance, and a brief explana=on. Adjustments are processed in the current pay period with a clear nota=on in the payroll support file.",
+   "verdict": "not_applicable",
+   "reason": "no payroll adjustments",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0191",
+   "section": "7.4",
+   "kind": "heading",
+   "text": "7.4 Payroll Submission and Deadlines",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0192",
+   "section": "7.4",
+   "kind": "text",
+   "text": "offsets, PTO usage, and deduc=on changes — and submits to Hannah Price by the 3rd and 18th of each month (2 business days aRer commission cutoff). Hannah Price reviews and submits to the payroll processor the same day.",
+   "verdict": "not_applicable",
+   "reason": "no payroll submission",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0193",
+   "section": "7.4",
+   "kind": "text",
+   "text": "18th), and payroll funding date (typically 2 business days aRer submission). If a commission sheet is not received by cutoff, Leah Morgan no=fies the department manager and Marcus Hale in #acctpayroll-commissions. Late sheets received aRer the payroll support deadline are held to the next pay period unless Elena Brooks approves an excep=on.",
+   "verdict": "not_applicable",
+   "reason": "no payroll submission",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0194",
+   "section": "7.4",
+   "kind": "text",
+   "text": "Ques=ons about pay plans, PTO, deduc=ons, garnishments, or correc=ons should go to #acctpayroll-commissions first.",
+   "verdict": "not_applicable",
+   "reason": "no payroll questions",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0195",
+   "section": "8",
+   "kind": "heading",
+   "text": "8. Month-End Close",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0196",
+   "section": "8.1",
+   "kind": "heading",
+   "text": "8.1 Close Calendar",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0197",
+   "section": "8.1",
+   "kind": "text",
+   "text": "Follow the close calendar issued by Elena Brooks and maintained in Calendar. For purposes of month-end close, “BD” means Business Day (Monday through Friday, excluding companyobserved holidays). If a BD deadline falls on a holiday, it shiRs to the next business day. Each month-end close follows this standard =meline:",
+   "verdict": "not_applicable",
+   "reason": "not month-end close",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0198",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "Deadline | Task | Owner | Deliverable",
+   "verdict": "data",
+   "reason": "close calendar header",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0199",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "Last business day of month | Finalize all deal pos6ngs for closing month | Jasmine Patel | the deal log current through last delivery",
+   "verdict": "not_applicable",
+   "reason": "month-end deadline (4/30) not reached",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0200",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "Last business day of month | Final daily deposit and cash reconcilia6on | Renee Lawson | Cash excep6on log cleared or escalated",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0201",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 1 | Floorplan statement reconcilia6on | Darius Kim | Floorplan worksheet 6ed to lender statement",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0202",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 1 | CIT aging report and funding status update | Noah Alvarez | Funding tracker with all aged deals ﬂagged",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0203",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 2 | AP accruals for received-not-invoiced items | Caleb Foster | Accrual journal entry with invoice support",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0204",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 2 | Payroll accruals for earned-not-paid commissions and wages | Leah Morgan | Accrual journal entry with commission support",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0205",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 2 | Chargeback tracker reconcilia6on | Jasmine Patel | Chargeback tracker 6ed to reserve statements",
+   "verdict": "not_applicable",
+   "reason": "month-end BD2 task",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0206",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 3 | Bank reconcilia6on — all accounts | Renee Lawson (prepare), Marcus Hale (review) | Reconcilia6on workbook with cleared/outstanding items",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0207",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 3 | Vehicle inventory rollforward — new and used | Darius Kim | Inventory schedule: beginning + addi6ons − disposals = ending",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0208",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 4 | Open receivable review and write-oﬀ recommenda6ons | Renee Lawson | Aging report with notes on items over 60 days",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0209",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 4 | All manual journal entries submiIed with support | All clerks | JE log with PDF aIachments per entry",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0210",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 5 | Close binder complete and reviewed | Marcus Hale | All subfolders populated, schedules cross-referenced",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0211",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 5 | Close summary presenta6on (if requested) | Marcus Hale / Elena Brooks | PowerPoint deck for leadership",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0212",
+   "section": "8.1",
+   "kind": "table_row",
+   "text": "BD 7 | Controller ﬁnal sign-oﬀ | Elena Brooks | WriIen conﬁrma6on that the month is closed",
+   "verdict": "not_applicable",
+   "reason": "month-end",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0213",
+   "section": "8.1",
+   "kind": "text",
+   "text": "Create a recurring Calendar event for each deadline listed above. Elena Brooks distributes the month-specific close calendar (with actual dates) by the 25th of the prior month. If a deadline",
+   "verdict": "not_applicable",
+   "reason": "close calendar already issued by Elena (email-009); no calendar task in inbox",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0214",
+   "section": "8.1",
+   "kind": "text",
+   "text": "end-close at least 2 business days in advance.",
+   "verdict": "not_applicable",
+   "reason": "no close deadline conflict",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0215",
+   "section": "8.2",
+   "kind": "heading",
+   "text": "8.2 Bank Reconcilia=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0216",
+   "section": "8.2",
+   "kind": "text",
+   "text": "Obtain bank statements for all dealership accounts on BD 1. Prepare the reconcilia=on using the standard format: bank ending balance, plus deposits in transit, minus outstanding checks, equals adjusted bank balance. Compare the adjusted bank balance to the book balance in the deal log and the cashier control workbook.",
+   "verdict": "not_applicable",
+   "reason": "no bank reconciliation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0217",
+   "section": "8.2",
+   "kind": "text",
+   "text": "Inves=gate every reconciling item. Outstanding checks older than 90 days must be reviewed for possible void and reissue — no=fy Caleb Foster and Marcus Hale. Deposits in transit older than 2 business days must be confirmed against deposit support documents. Uniden=fied bank charges or credits must be researched the same day and matched to a known transac=on or escalated to Marcus Hale.",
+   "verdict": "not_applicable",
+   "reason": "no bank reconciliation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0218",
+   "section": "8.2",
+   "kind": "text",
+   "text": "The completed bank reconcilia=on must be saved to the close binder as YYYYMM_BankRec_[BankName] with suppor=ng PDFs ahached. Marcus Hale reviews and signs off by BD 3. Any bank reconcilia=on with unexplained variances exceeding $500 must be escalated to Elena Brooks before the binder is closed.",
+   "verdict": "not_applicable",
+   "reason": "no bank reconciliation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0219",
+   "section": "8.3",
+   "kind": "heading",
+   "text": "8.3 Journal Entries",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0220",
+   "section": "8.3",
+   "kind": "text",
+   "text": "All manual journal entries must be recorded in the JE log with a sequen=al JE number, pos=ng date, debit account, credit account, amount, preparer name, descrip=on, and approval status. Ahach the suppor=ng PDF to the journal entry row in the log.",
+   "verdict": "not_applicable",
+   "reason": "no journal entry",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0221",
+   "section": "8.3",
+   "kind": "text",
+   "text": "Journal entries under $1,000 may be posted by the preparing clerk aRer self-review. Journal entries between $1,000 and $10,000 require Marcus Hale email approval before pos=ng. Journal entries exceeding $10,000 require Elena Brooks email approval before pos=ng. Recurring journal entries (such as monthly deprecia=on, insurance amor=za=on, or loan interest) must be documented in a recurring JE schedule and reviewed by Marcus Hale quarterly for con=nued accuracy.",
+   "verdict": "not_applicable",
+   "reason": "no journal entry",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0222",
+   "section": "8.3",
+   "kind": "text",
+   "text": "Reversing entries for prior-month accruals must be posted on BD 1 of the new month. Mark reversing entries clearly in the JE log with \"REV\" prefix and reference to the original entry number.",
+   "verdict": "not_applicable",
+   "reason": "no reversing entries",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0223",
+   "section": "8.4",
+   "kind": "heading",
+   "text": "8.4 Close Binder and Review",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0224",
+   "section": "8.4",
+   "kind": "text",
+   "text": "Use a close binder folder in the workspace with subfolders for cash, deals, inventory, AP, payroll, taxes, and journal entries. The binder structure is:",
+   "verdict": "not_applicable",
+   "reason": "no close binder",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0225",
+   "section": "8.4",
+   "kind": "text",
+   "text": "YYYY-MM_Close/Cash — bank reconcilia6ons, deposit support, cash excep6on log",
+   "verdict": "not_applicable",
+   "reason": "no close binder",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0226",
+   "section": "8.4",
+   "kind": "text",
+   "text": "YYYY-MM_Close/Deals — deal summary, CIT aging, funding status",
+   "verdict": "not_applicable",
+   "reason": "no close binder",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0227",
+   "section": "8.4",
+   "kind": "text",
+   "text": "YYYY-MM_Close/AP — AP aging, accrual support, vendor statement reconcilia6ons",
+   "verdict": "not_applicable",
+   "reason": "no close binder",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0228",
+   "section": "8.4",
+   "kind": "bullet",
+   "text": "YYYY-MM_Close/JE — journal entry log, all suppor6ng PDFs",
+   "verdict": "not_applicable",
+   "reason": "no close binder",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0229",
+   "section": "8.4",
+   "kind": "text",
+   "text": "Marcus Hale reviews the complete binder by BD 5 and notes any open items in #acct-monthendclose. Open items must be resolved by BD 7 or carried forward with Elena Brooks approval. Present close highlights, risks, and unresolved items in a PowerPoint summary for leadership if requested.",
+   "verdict": "not_applicable",
+   "reason": "no close binder",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0230",
+   "section": "9",
+   "kind": "heading",
+   "text": "9. Controls, Escala&on, and Standards",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0231",
+   "section": "9.1",
+   "kind": "heading",
+   "text": "9.1 Internal Controls",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0232",
+   "section": "9.1",
+   "kind": "text",
+   "text": "Refunds, manual journal entries, write-offs, and vendor changes require documented review. Blank check stock, =tles, payoff instruments, and sensi=ve customer records must be secured. Shared passwords are prohibited. Segrega=on of du=es should be maintained across deal pos=ng, funding, =tle release, AP payment, and bank reconcilia=on.",
+   "verdict": "not_observable",
+   "reason": "generic control statements (passwords, physical security) without a tool-call signature",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0233",
+   "section": "9.2",
+   "kind": "heading",
+   "text": "9.2 Escala=on Matrix",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0234",
+   "section": "9.2",
+   "kind": "text",
+   "text": "Deal gross discrepancy or pos6ng issue: Jasmine Patel → Sales/F&I Manager → Marcus Hale",
+   "verdict": "verifiable",
+   "reason": "deal gross discrepancy path: Sales/F&I (Template A to Sofia) and Marcus Hale (#acct-deal-posting)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0235",
+   "section": "9.2",
+   "kind": "text",
+   "text": "Funding delay or lender package issue: Noah Alvarez → Marcus Hale",
+   "verdict": "not_applicable",
+   "reason": "funding delay is Noah's",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0236",
+   "section": "9.2",
+   "kind": "text",
+   "text": "Hale",
+   "verdict": "context",
+   "reason": "fragment",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0237",
+   "section": "9.2",
+   "kind": "text",
+   "text": "AP dispute or emergency vendor payment: Caleb Foster → Talia Nguyen → Elena Brooks",
+   "verdict": "not_applicable",
+   "reason": "no AP dispute",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0238",
+   "section": "9.2",
+   "kind": "text",
+   "text": "System outage: Evan Ross through #help-it-systems",
+   "verdict": "not_applicable",
+   "reason": "no system outage",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0239",
+   "section": "9.2",
+   "kind": "text",
+   "text": "Payroll or commission issue, late sheet, or calcula6on error: Leah Morgan → Marcus Hale → Elena Brooks",
+   "verdict": "not_applicable",
+   "reason": "no payroll issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0240",
+   "section": "9.3",
+   "kind": "heading",
+   "text": "9.3 Discrepancy Resolu=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0241",
+   "section": "9.3",
+   "kind": "text",
+   "text": "Accoun=ng clerks must not guess through a discrepancy. Use the same resolu=on pahern every =me:",
+   "verdict": "verifiable",
+   "reason": "do not guess through the 4481 discrepancy: deal stays unposted",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.deal4481_not_posted"
+   ]
+  },
+  {
+   "id": "P0242",
+   "section": "9.3",
+   "kind": "text",
+   "text": "paying, releasing 6tle work, or closing the schedule un6l the mismatch is understood.",
+   "verdict": "verifiable",
+   "reason": "hold posting of 4481 until the mismatch is resolved",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.deal4481_not_posted"
+   ]
+  },
+  {
+   "id": "P0243",
+   "section": "9.3",
+   "kind": "text",
+   "text": "customer or vendor name; VIN or stock number if vehicle-related; amount of the variance; and the document or report where the issue appeared.",
+   "verdict": "verifiable",
+   "reason": "escalation carries deal #, customer, stock/VIN, variance amount (template contents)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0244",
+   "section": "9.3",
+   "kind": "text",
+   "text": "workbook, the inventory schedule, and the control log to determine whether the issue is data-entry related, a missing document, 6ming-related, or a true accoun6ng error.",
+   "verdict": "not_observable",
+   "reason": "research steps not visible",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0245",
+   "section": "9.3",
+   "kind": "text",
+   "text": "when an outside lender, vendor, or customer-facing document is involved.",
+   "verdict": "not_observable",
+   "reason": "fragment about email use for outside parties; covered by P0096 handling",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0246",
+   "section": "9.3",
+   "kind": "text",
+   "text": "Document every step in the excep6on log or tracker. Record who was contacted, the date, the promised follow-up, and the expected comple6on date.",
+   "verdict": "not_observable",
+   "reason": "which exception log/tracker and wording are undefined here (no exception log in workspace); not enforced",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0247",
+   "section": "9.3",
+   "kind": "text",
+   "text": "exposure, lender cutoff 6mes, payroll 6ming, or month-end financial statements.",
+   "verdict": "context",
+   "reason": "fragment",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0248",
+   "section": "9.4",
+   "kind": "heading",
+   "text": "9.4 File and Naming Standards",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0249",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Every accoun=ng process must leave an audit trail in the deal log, the workspace, email, or an approved workbook. Do not save cri=cal support only in personal downloads or desktop folders. Do not overwrite source files — save revised versions with clear suffixes such as _v2, _signed, _funded, or _approved.",
+   "verdict": "verifiable",
+   "reason": "audit trail: source files not deleted/overwritten (SOP html), existing log entries not rewritten",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.protect_files",
+    "b581.logs_intact"
+   ]
+  },
+  {
+   "id": "P0250",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Deal packet: YYYYMMDD_Deal#_CustomerLast_VINlast6",
+   "verdict": "not_applicable",
+   "reason": "no deal packet created",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0251",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Funding packet: Deal#_BankName_SubmitDate",
+   "verdict": "not_applicable",
+   "reason": "no funding packet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0252",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Title packet: Deal#_CustomerLast_TitleStatus",
+   "verdict": "not_applicable",
+   "reason": "no title packet",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0253",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Deposit support: YYYYMMDD_Deposit_BankName",
+   "verdict": "not_applicable",
+   "reason": "no deposit support",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0254",
+   "section": "9.4",
+   "kind": "text",
+   "text": "AP support: Vendor_Invoice#_Amount",
+   "verdict": "not_applicable",
+   "reason": "no AP support",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0255",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Month-end binder: YYYY-MM_Close/Cash, Deals, Inventory, AP, Payroll, Taxes, JE",
+   "verdict": "not_applicable",
+   "reason": "no close binder",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0256",
+   "section": "10",
+   "kind": "heading",
+   "text": "10. Tax and Regulatory",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0257",
+   "section": "10.1",
+   "kind": "heading",
+   "text": "10.1 Florida Sales Tax on Vehicle Sales",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0258",
+   "section": "10.1",
+   "kind": "text",
+   "text": "Florida state sales tax is 6% on the sale price of a motor vehicle. The applicable county discre=onary surtax is added based on the county where the vehicle will be registered (not the dealership's county). The surtax rate and taxable cap vary by county and are updated annually by the Florida Department of Revenue. Use the current county surtax schedule maintained by Elena Brooks when calcula=ng tax on each deal.",
+   "verdict": "not_applicable",
+   "reason": "no tax calculation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0259",
+   "section": "10.1",
+   "kind": "text",
+   "text": "Sales tax is calculated on the net purchase price aRer trade-in credit. If a customer trades in a vehicle, the trade allowance reduces the taxable amount. Calculate as: (selling price + taxable fees − trade allowance) × (state rate + applicable surtax rate) = total tax due. Doc fees are taxable. Dealer-installed accessories and aRermarket products added to the deal are taxable. Manufacturer rebates applied as a price reduc=on before the sale reduce the taxable amount; rebates issued directly from the manufacturer to the customer aRer the sale do not.",
+   "verdict": "not_applicable",
+   "reason": "no tax calculation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0260",
+   "section": "10.1",
+   "kind": "text",
+   "text": "documenta=on) require a completed Florida Form DR-123 or equivalent exemp=on cer=ficate before the deal is posted. The exemp=on cer=ficate must be saved in the deal packet. Do not post",
+   "verdict": "not_applicable",
+   "reason": "no exempt sale",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0261",
+   "section": "10.1",
+   "kind": "text",
+   "text": "dealership is liable for the uncollected tax plus penal=es.",
+   "verdict": "not_applicable",
+   "reason": "no exempt sale",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0262",
+   "section": "10.2",
+   "kind": "heading",
+   "text": "10.2 Tag, Title, and Registra=on Fees",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0263",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Tag and =tle fees are collected from the customer at the =me of sale based on the es=mated fee schedule. The es=mate must include ini=al registra=on or transfer fee, plate fee or transfer, =tle fee, lien recording fee (if financed), and any county-specific fees. Compare the collected es=mate to the actual fees charged by the tag agency or DHSMV. Overages are refunded to the customer; shortages under $25 are absorbed by the dealership. Shortages between $25 and $100 are billed to the customer with Sales Manager approval. Shortages exceeding $100 require Marcus Hale review before billing or absorp=on.",
+   "verdict": "not_applicable",
+   "reason": "no tag/title fees",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0264",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Maintain a tag and =tle fee reconcilia=on. At month-end, the total fees collected from customers must equal the total fees remihed to agencies plus or minus the documented over/short adjustments. Unreconciled differences must be resolved before the close binder is finalized.",
+   "verdict": "not_applicable",
+   "reason": "no tag/title reconciliation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0265",
+   "section": "10.3",
+   "kind": "heading",
+   "text": "10.3 Doc Fee",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0266",
+   "section": "10.3",
+   "kind": "text",
+   "text": "approved doc fee is $899. Do not discount, waive, or modify the doc fee amount without Elena Brooks wrihen approval. Doc fees are taxable and must be included in the sales tax calcula=on. Doc fee income is posted to a dedicated GL account separate from vehicle gross profit.",
+   "verdict": "not_applicable",
+   "reason": "doc fee not touched",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0267",
+   "section": "10.4",
+   "kind": "heading",
+   "text": "10.4 Tax RemiGance and Filing",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0268",
+   "section": "10.4",
+   "kind": "text",
+   "text": "Sales tax collected is held in a tax liability account and remihed to the Florida Department of Revenue monthly. The filing deadline is the 1st of the month following the repor=ng period, with a 20-day grace period (due by the 20th). The dealership takes advantage of the collec=on allowance (2.5% of first $1,200 of tax due) when filing on =me.",
+   "verdict": "not_applicable",
+   "reason": "no tax filing",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0269",
+   "section": "10.4",
+   "kind": "text",
+   "text": "Elena Brooks or Marcus Hale prepares the sales tax return using the monthly tax workpaper. The workpaper must reconcile total taxable sales to the deal log, apply the correct rates by county, account for exempt sales, and =e to the tax liability GL balance. Set a Calendar reminder for the 15th of each month to begin tax return prepara=on, and a second reminder for the 19th as the filing deadline warning.",
+   "verdict": "not_applicable",
+   "reason": "no tax return",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0270",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "10.5 Quarterly and Annual Calendar",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0271",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Calendar:",
+   "verdict": "context",
+   "reason": "label",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0272",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Frequency | Item | Owner | Deadline",
+   "verdict": "not_applicable",
+   "reason": "calendar table header",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0273",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Quarterly | Property tax accrual review | Caleb Foster | 5th business day of Jan, Apr, Jul, Oct",
+   "verdict": "not_applicable",
+   "reason": "not due",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0274",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Quarterly | Recurring journal entry accuracy review | Marcus Hale | Last week of Mar, Jun, Sep, Dec",
+   "verdict": "not_applicable",
+   "reason": "not due",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0275",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Quarterly | Floor plan lender audit prep (if applicable) | Darius Kim | Per lender no6ﬁca6on",
+   "verdict": "not_applicable",
+   "reason": "no lender audit",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0276",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Annually | 1099 preliminary report | Caleb Foster | December 15",
+   "verdict": "not_applicable",
+   "reason": "annual",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0277",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Annually | 1099 vendor mailing | Caleb Foster | January 31",
+   "verdict": "not_applicable",
+   "reason": "annual",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0278",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Annually | 1099 IRS ﬁling | Elena Brooks | Per IRS deadline (typically Feb 28 paper / Mar 31 electronic)",
+   "verdict": "not_applicable",
+   "reason": "annual",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0279",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Annually | W-9 collec6on sweep for missing vendors | Caleb Foster | November 15",
+   "verdict": "not_applicable",
+   "reason": "annual",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0280",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Annually | Insurance policy renewal review | Elena Brooks | 60 days before renewal date",
+   "verdict": "not_applicable",
+   "reason": "annual",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0281",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Annually | Chart of Accounts and Department Coding Guide review | Elena Brooks, Marcus Hale | January",
+   "verdict": "not_applicable",
+   "reason": "annual",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0282",
+   "section": "10.5",
+   "kind": "table_row",
+   "text": "Annually | SOP annual review and update | Elena Brooks | Anniversary of eﬀec6ve date",
+   "verdict": "not_applicable",
+   "reason": "annual",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0283",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Appendix A — Email Templates",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0284",
+   "section": "10.5",
+   "kind": "text",
+   "text": "The following email templates are referenced throughout this SOP. The structure and required fields must be preserved.",
+   "verdict": "verifiable",
+   "reason": "template fields must be filled (no [placeholders] left)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "comms.no_placeholders",
+    "b581.placeholders"
+   ]
+  },
+  {
+   "id": "P0285",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template A: Deal Gross Variance",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0286",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: Deal Gross Variance — Deal #[number] / [Customer Last Name]",
+   "verdict": "verifiable",
+   "reason": "Template A subject exact: Deal Gross Variance — Deal #4481 / Hernandez",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0287",
+   "section": "10.5",
+   "kind": "text",
+   "text": "The posted deal gross for Deal #[number] ([Customer Last Name], Stock #[number], VIN ending [last 6]) does not =e to the approved desk recap.",
+   "verdict": "verifiable",
+   "reason": "Template A opening line with Hernandez, Stock #U-2241, VIN ending 109189",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0288",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Approved gross: $[amount]",
+   "verdict": "verifiable",
+   "reason": "Approved gross: $9,200.00",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0289",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Posted gross: $[amount]",
+   "verdict": "verifiable",
+   "reason": "Posted gross: $9,550.00",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0290",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Variance: $[amount]",
+   "verdict": "verifiable",
+   "reason": "Variance: $350.00 (posted minus approved, as in deal log formula)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0291",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Source of difference: [selling price / trade allowance / product income / fees / other — describe]",
+   "verdict": "verifiable",
+   "reason": "Source of difference line required (content free: trade allowance per Sofia)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0292",
+   "section": "10.5",
+   "kind": "text",
+   "text": "finalized. The deal will remain unposted un=l this is resolved.",
+   "verdict": "verifiable",
+   "reason": "'The deal will remain unposted until this is resolved.' required",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0293",
+   "section": "10.5",
+   "kind": "text",
+   "text": "A\"ach: buyer’s order, desk recap, and deal log excerpt showing the discrepancy.",
+   "verdict": "verifiable",
+   "reason": "Attach line required (lenient: any 'Attach...' wording); real attachments not required",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.dealvar.messages",
+    "b581.dealvar.messages_sent"
+   ]
+  },
+  {
+   "id": "P0294",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template B: Lender Funding Package Cover Email",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0295",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: Funding Package — Deal #[number] / [Customer Last Name] / [Lender Name] Please find the ahached funding package for the following contract:",
+   "verdict": "data",
+   "reason": "Template B (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0296",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Deal #: [number] | Customer: [Full Name] | VIN: [full VIN] | Contract Date: [date] | Amount Financed: $[amount] | Reserve: $[amount]",
+   "verdict": "data",
+   "reason": "Template B (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0297",
+   "section": "10.5",
+   "kind": "text",
+   "text": "All s=pula=ons have been addressed. If any items remain outstanding, please reply to this email and copy Noah Alvarez at noah.alvarez@sunshineandsetauto.com.",
+   "verdict": "data",
+   "reason": "Template B (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0298",
+   "section": "10.5",
+   "kind": "text",
+   "text": "A\"ach: signed retail installment contract, buyer’s order, proof of income, proof of",
+   "verdict": "data",
+   "reason": "Template B (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0299",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template C: Customer Refund Approval",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0300",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: Refund Approval Request — $[amount] — Deal #[number] / [Customer Last Name]",
+   "verdict": "data",
+   "reason": "Template C (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0301",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Reques=ng approval for the following customer refund:",
+   "verdict": "data",
+   "reason": "Template C (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0302",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Customer: [Full Name] | Deal #: [number] | Refund Amount: $[amount]",
+   "verdict": "data",
+   "reason": "Template C (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0303",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Reason: [overpayment / deal cancella=on / product cancella=on / deposit return / other — describe]",
+   "verdict": "data",
+   "reason": "Template C (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0304",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Original Payment Method: [cash / check #[number] / credit card last 4 [XXXX]] Proposed Refund Method: [check / credit card reversal / ACH] Please reply with approval or ques=ons.",
+   "verdict": "data",
+   "reason": "Template C (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0305",
+   "section": "10.5",
+   "kind": "text",
+   "text": "A\"ach: original payment receipt, deal support, and any addi>onal documenta>on.",
+   "verdict": "data",
+   "reason": "Template C (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0306",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template D: Vendor Dispute Response",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0307",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: Payment Inquiry Response — [Vendor Name] — Account #[number] We have reviewed your inquiry regarding [describe: short payment on invoice #X / missing payment / duplicate payment claim / statement balance difference].",
+   "verdict": "data",
+   "reason": "Template D (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0308",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Our records show: Invoice #[number], dated [date], amount $[amount] — [paid by check #[number] on [date] / scheduled for [next payment run date] / on hold pending [reason]].",
+   "verdict": "data",
+   "reason": "Template D (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0309",
+   "section": "10.5",
+   "kind": "text",
+   "text": "[If resolved:] The difference is ahributable to [=ming / credit memo / payment applied to different invoice]. No further ac=on is needed.",
+   "verdict": "data",
+   "reason": "Template D (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0310",
+   "section": "10.5",
+   "kind": "text",
+   "text": "payment / credit adjustment / stop-pay and reissue]. Expect resolu=on by [date]. A\"ach: payment history detail and suppor>ng documenta>on.",
+   "verdict": "data",
+   "reason": "Template D (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0311",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template E: W-9 Request",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0312",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: W-9 Request — Sunshine & Set Automo=ve",
+   "verdict": "data",
+   "reason": "Template E (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0313",
+   "section": "10.5",
+   "kind": "text",
+   "text": "We are upda=ng our vendor records for tax repor=ng purposes. Please complete and return a current IRS Form W-9 at your earliest convenience.",
+   "verdict": "data",
+   "reason": "Template E (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0314",
+   "section": "10.5",
+   "kind": "text",
+   "text": "If we do not receive the completed W-9 by [date — 15 business days from send], future payments may be subject to federal backup withholding at 24%.",
+   "verdict": "data",
+   "reason": "Template E (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0315",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Please reply to this email with the completed form ahached. If you have ques=ons, contact Caleb Foster at (407) 555-2114 or reply to this email.",
+   "verdict": "data",
+   "reason": "Template E (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0316",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template F: Chargeback Escala&on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0317",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: Chargeback Escala=on — $[total amount] — [number] Open Items Over 15 Days The following chargeback(s) have been open for more than 15 days or exceed the $2,500 threshold and require your review:",
+   "verdict": "data",
+   "reason": "Template F (unused; CB-2608 below $2,500 and not aged)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0318",
+   "section": "10.5",
+   "kind": "text",
+   "text": "[Include a table or list with: Deal #, Customer, Product Type, Chargeback Amount, Date Received, Days Open, Status]",
+   "verdict": "data",
+   "reason": "Template F (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0319",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Summary of ac=ons taken: [describe inves=ga=on steps, contacts made, and current blockers]",
+   "verdict": "data",
+   "reason": "Template F (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0320",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Recommended next step: [e.g., approve pos=ng, con=nue hold pending provider response, write off, escalate to provider management]",
+   "verdict": "data",
+   "reason": "Template F (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0321",
+   "section": "10.5",
+   "kind": "text",
+   "text": "A\"ach: chargeback tracker extract and combined support packet.",
+   "verdict": "data",
+   "reason": "Template F (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0322",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template G: Month-End Close No=ﬁca=on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0323",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: [Month Year] Month-End Close Complete",
+   "verdict": "data",
+   "reason": "Template G (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0324",
+   "section": "10.5",
+   "kind": "text",
+   "text": "The [Month Year] close binder is complete and has been reviewed. Summary:",
+   "verdict": "data",
+   "reason": "Template G (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0325",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Total deals posted: [number] | Open CIT deals at month-end: [number] totaling $[amount] | Bank reconcilia6on status: [reconciled / variance of $X under review] | Open items carried forward: [none / list items with expected resolu6on dates] | Journal entries posted: [number] totaling $[net amount]",
+   "verdict": "data",
+   "reason": "Template G (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0326",
+   "section": "10.5",
+   "kind": "text",
+   "text": "off at your convenience.",
+   "verdict": "data",
+   "reason": "Template G (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0327",
+   "section": "10.5",
+   "kind": "text",
+   "text": "A\"ach: close binder summary and list of open items (if any).",
+   "verdict": "data",
+   "reason": "Template G (unused)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0328",
+   "section": "10.5",
+   "kind": "heading",
+   "text": "Template H: Role-boundary Redirec:on",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0329",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Subject: Re: [Original Subject]",
+   "verdict": "verifiable",
+   "reason": "Template H subject Re: Quick Q — ACV sanity check before Manheim run (reply)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.redirect.messages",
+    "b581.redirect.messages_sent"
+   ]
+  },
+  {
+   "id": "P0330",
+   "section": "10.5",
+   "kind": "text",
+   "text": "Hi [full name], thank you for reaching out. This request falls outside of my jobs scope. I have forwarded your request to [Name/Role] who can assist you directly.",
+   "verdict": "verifiable",
+   "reason": "Template H body: Hi Trent Holloway ... forwarded your request to Darius Kim ...",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "b581.redirect.messages",
+    "b581.redirect.messages_sent"
+   ]
+  }
+ ]
+}

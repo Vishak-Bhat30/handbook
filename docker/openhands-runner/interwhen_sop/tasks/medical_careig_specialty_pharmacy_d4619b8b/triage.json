@@ -1,0 +1,4517 @@
+{
+ "task": "medical_careig_specialty_pharmacy_d4619b8b",
+ "paragraphs": [
+  {
+   "id": "P0001",
+   "section": "0",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 CareIG Specialty Pharmacy Standard Operating Procedure IVIG Home Infusion — Intake to Billing v6.0 Document #: CareIG-SOP-BILL-001 Version: 6.0 Effective: March 23, 2026 Owner: Director of Revenue Cycle Management EIN: 47-3821056 NPI: 1234567893 CareIG Specialty PharmacyPage 1",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0002",
+   "section": "0",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Table of Contents",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0003",
+   "section": "1",
+   "kind": "heading",
+   "text": "1. Overview & Purpose",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0004",
+   "section": "2",
+   "kind": "heading",
+   "text": "2. Roles & File Access",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0005",
+   "section": "3",
+   "kind": "heading",
+   "text": "3. File System Structure",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0006",
+   "section": "4",
+   "kind": "heading",
+   "text": "4. Global Rules",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0007",
+   "section": "5",
+   "kind": "heading",
+   "text": "5. Workflow Summary",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0008",
+   "section": "6",
+   "kind": "heading",
+   "text": "6. Intake",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0009",
+   "section": "7",
+   "kind": "heading",
+   "text": "7. Benefits Verification & Drug Source Decision",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0010",
+   "section": "8",
+   "kind": "heading",
+   "text": "8. Prior Authorization",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0011",
+   "section": "9",
+   "kind": "heading",
+   "text": "9. Clinical Scheduling & Visit Documentation",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0012",
+   "section": "10",
+   "kind": "heading",
+   "text": "10. Billing & Payment Posting",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0013",
+   "section": "11",
+   "kind": "heading",
+   "text": "11. Denial Management & Appeals",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0014",
+   "section": "12",
+   "kind": "heading",
+   "text": "12. Escalation & Monitoring",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0015",
+   "section": "13",
+   "kind": "heading",
+   "text": "13. Reference Tables",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0016",
+   "section": "14",
+   "kind": "heading",
+   "text": "14. Appendix A — Scripts & Templates",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0017",
+   "section": "14",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 2",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0018",
+   "section": "14",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0019",
+   "section": "1",
+   "kind": "heading",
+   "text": "1. Overview & Purpose",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0020",
+   "section": "1",
+   "kind": "text",
+   "text": "This SOP governs the end-to-end IVIG home infusion process at CareIG Specialty Pharmacy — from referral receipt through claim payment. All staff performing intake, benefits verification, prior authorization, clinical scheduling, or billing must follow this document. It references standard tools including spreadsheets, email, Slack, shared file storage, and calendar. No proprietary EHR, clearinghouse portal, or payer portal is required. All case data lives under a case folder named CASE_ID (format: LastName_DOB_MMDDYYYY). This CASE_ID is used in all audit log entries, Slack posts, and file references throughout this SOP. Team communications use defined Slack channels. Claims are submitted by email with PDF attachments. All major actions are logged to audit_log.xlsx.",
+   "verdict": "context",
+   "reason": "overview/purpose",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0021",
+   "section": "1",
+   "kind": "text",
+   "text": "Covered drugs: Gammaplex, Octagam, Gammagard S/D, Gammagard Liquid, Privigen, Gamunex-C, Hizentra, HyQvia.",
+   "verdict": "data",
+   "reason": "covered drug list",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0022",
+   "section": "1",
+   "kind": "text",
+   "text": "If you encounter a situation not covered by this SOP, do not guess. Stop work on that step, note what happened in audit_log.xlsx, and contact your direct supervisor immediately using the escalation path in Section 12. When in doubt, always escalate before acting.",
+   "verdict": "not_observable",
+   "reason": "judgement whether a situation is 'not covered'; no code-checkable trigger",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0023",
+   "section": "2",
+   "kind": "heading",
+   "text": "2. Roles & File Access",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0024",
+   "section": "2",
+   "kind": "text",
+   "text": "Role Writes To Reads From Patient Representative intake.xlsx Benefits Verification benefits.xlsx, auth.xlsx, intake.xlsx, payer_rules.xlsx Specialist (BVS) Clinical Coordinator clinical.xlsx auth.xlsx, benefits.xlsx Infusion Nurse visit_note.xlsx clinical.xlsx Billing Specialist claim.xlsx, , visit_note.xlsx, auth.xlsx, benefits.xlsx, AR Specialist claim.xlsx (payment cols) claim.xlsx, payer_rules.xlsx Director of Revenue All files All files — approves write-offs >$200 and Cycle collections referrals Administrative Support All files All files Any file access outside the above scope must be logged to audit_log.xlsx (Action = Out-of-Scope Access) and reported to compliance@careig.com.",
+   "verdict": "not_applicable",
+   "reason": "role scope: the assistant acts as Administrative Support (all files, per 4.4) so no out-of-scope access arises; Out-of-Scope Access rows are allowed by audit.entries",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0025",
+   "section": "3",
+   "kind": "heading",
+   "text": "3. File System Structure",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0026",
+   "section": "3",
+   "kind": "text",
+   "text": "File Name Purpose intake.xlsx Patient demographics, insurance, consent status, contact log, contraindications benefits.xlsx BV results: coverage, deductible, OOP, PA contacts, nursing code preference, call log CareIG Specialty PharmacyPage 3",
+   "verdict": "data",
+   "reason": "file list",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0027",
+   "section": "3",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 auth.xlsx PA details: submission date, PA number, approval/denial status, expiry, follow-up log clinical.xlsx Drug source, supply checklist, nurse assignment, visit date/time visit_note.xlsx Nurse documentation: drug, dose, lot, NDC, times, pre-meds, saline, vitals, signature claim.xlsx Claim: codes, units, ICD-10, PA number, submission log, payment fields DENIAL_[CARC]_[DOS].xlsx One file per denial: CARC code, action, appeal status appeals_log.xlsx Appeal level, submitted date, decision, follow-up log Workspace (PDFs) PDFs: LMN, PA approval, EOB, labs, consent, claim export, statements audit_log.xlsx Global audit trail — see Section 4 for columns. Append-only. jcodes.xlsx J-codes and nursing codes (read-only) payer_rules.xlsx Payer rules: contracted rates, timely filing limits, nursing code pref, formulary, claim/appeal addresses Templates Provided at end of SOP — copy to docs/emails before use, never edit in place nurses.xlsx Provides a list of RNs and LPNs, zip codes served and availability.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "audit.append_only",
+    "files.read_only",
+    "files.unchanged"
+   ],
+   "reason": "audit_log append-only; jcodes read-only; templates never edited in place",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0028",
+   "section": "3",
+   "kind": "text",
+   "text": "All files which are created per case have a blank template to use. When creating files from the template, save them with the CASE_ID in the filename (e.g., claim_CASE-1001.xlsx). When correcting and resubmitting, update the existing file — do not create a new file.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.structure"
+   ],
+   "reason": "correcting/resubmitting updates the existing claim file, no new file",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0029",
+   "section": "4",
+   "kind": "heading",
+   "text": "4. Global Rules",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0030",
+   "section": "4",
+   "kind": "text",
+   "text": "DOS (Date of Service) refers to the date the patient received the infusion visit.",
+   "verdict": "data",
+   "reason": "definition of DOS",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0031",
+   "section": "4.1",
+   "kind": "heading",
+   "text": "4.1 Audit Logging",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0032",
+   "section": "4.1",
+   "kind": "text",
+   "text": "Append one row to audit_log.xlsx at each major checkpoint. Columns: Date/Time | CASE_ID | Action | File_Updated | Field_Updated | New_Value | Staff_User | Result (SUCCESS / FAILED / STOP — reason). Do not log every sub-step — only the checkpoints called out in each section. If multiple fields are updated in a single action, list all fields and values separated by commas in the order in which they appear in the spreadsheet.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "audit.entries",
+    "audit.append_only"
+   ],
+   "reason": "checkpoint-only audit rows; Claim Submitted row",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0033",
+   "section": "4.1",
+   "kind": "text",
+   "text": "The Stop Protocol (Section 4.2) is itself a checkpoint — always log a stop event when triggered, even though it is not listed as a checkpoint within a specific workflow section.",
+   "verdict": "not_applicable",
+   "reason": "no Stop Protocol trigger exists for CASE-1001 from Section 9 on (all checks pass); STOP rows tolerated",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0034",
+   "section": "4.2",
+   "kind": "heading",
+   "text": "4.2 Stop Protocol",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0035",
+   "section": "4.2",
+   "kind": "text",
+   "text": "When a validation condition fails: note the reason in audit_log.xlsx, post to the designated Slack channel, and hold the case until the issue is resolved. Do not move to the next step until your supervisor or the responsible team member confirms the issue has been cleared.",
+   "verdict": "not_applicable",
+   "reason": "no validation condition fails in the seed data for CASE-1001 sections 9-12",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0036",
+   "section": "4.3",
+   "kind": "heading",
+   "text": "4.3 Prohibited Actions",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0037",
+   "section": "4.3",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 4",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0038",
+   "section": "4.3",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0039",
+   "section": "4.3",
+   "kind": "text",
+   "text": "• Do not bill any IVIG drug J-code when clinical.xlsx col Drug_Source ≠ CareIG.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "Drug_Source = CareIG -> J1459 billed (Drug_JCode kept)",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0040",
+   "section": "4.3",
+   "kind": "text",
+   "text": "• Do not bill pre-medication J-codes unless visit_note.xlsx col Premeds_Administered documents drug, dose, route, time, and indication.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "Premeds_Administered documents drug/dose/route/time/indication -> J0171 billed",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0041",
+   "section": "4.3",
+   "kind": "text",
+   "text": "• Do not use ordered dose for unit calculations — always use visit_note.xlsx col Dose_Administered_Grams.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "Drug_Units must use 29.7 g administered -> 59",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0042",
+   "section": "4.3",
+   "kind": "text",
+   "text": "• Do not submit a claim when claim.xlsx already has Submission_Date populated for the same DOS.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.submit_corrected_first",
+    "comms.messages"
+   ],
+   "reason": "a claim with Submission_Date set may only be resent as the corrected (freq 7) claim per 11.1, once",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0043",
+   "section": "4.3",
+   "kind": "text",
+   "text": "• Do not write off any balance >$200 without Director of Revenue Cycle approval (Slack #billing-mgmt). • Do not respond to legal threats or attorney communications — post to #compliance immediately.",
+   "verdict": "not_applicable",
+   "reason": "no write-off balance and no legal/attorney communication in seed data",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0044",
+   "section": "4.3",
+   "kind": "text",
+   "text": "• Do not assign an ICD-10 code not supported by the physician's documentation and the PA approval.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "ICD10 D80.1 matches intake and PA approval",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0045",
+   "section": "4.4",
+   "kind": "heading",
+   "text": "4.4 Phone Call Workaround",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0046",
+   "section": "4.4",
+   "kind": "text",
+   "text": "Some workflow steps require a phone call. When the Administrative Support role performs such a step:",
+   "verdict": "context",
+   "reason": "intro to phone workaround",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0047",
+   "section": "4.4",
+   "kind": "text",
+   "text": "1. Check whether the required information is already documented in the relevant workbook or inbox. If so, proceed using that source and record it in the applicable log field.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "patient visit confirmation done by Template 6 email",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0048",
+   "section": "4.4",
+   "kind": "text",
+   "text": "2. If the information is not available, send an email using the applicable template from Appendix A (Templates 4–8) and log the action.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "Template 6 email instead of the confirmation call",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0049",
+   "section": "4.4",
+   "kind": "text",
+   "text": "3. If no template applies and the information cannot be obtained by email, follow the Stop Protocol (Section 4.2).",
+   "verdict": "not_applicable",
+   "reason": "a template (6) applies; no stop needed",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0050",
+   "section": "4.4",
+   "kind": "text",
+   "text": "Where a section instructs staff to \"log the call,\" Administrative Support logs the documented source or email sent instead.",
+   "verdict": "not_applicable",
+   "reason": "no 'log the call' instruction in sections 9-10 steps in scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0051",
+   "section": "5",
+   "kind": "heading",
+   "text": "5. Workflow Summary",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0052",
+   "section": "5",
+   "kind": "text",
+   "text": "# Action File Written Slack (if required)",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0053",
+   "section": "1",
+   "kind": "heading",
+   "text": "1 Referral received → create → intake.xlsx —",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0054",
+   "section": "1",
+   "kind": "text",
+   "text": "populate intake.xlsx",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0055",
+   "section": "2",
+   "kind": "heading",
+   "text": "2 Patient contacted → consent intake.xlsx: Consent_Status —",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0056",
+   "section": "2",
+   "kind": "text",
+   "text": "form sent = Form Sent",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0057",
+   "section": "3",
+   "kind": "heading",
+   "text": "3 Signed consent received → intake.xlsx: Consent_Status #intake-team: [BVS ASSIGNED]",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0058",
+   "section": "3",
+   "kind": "text",
+   "text": "BVS assigned = Signed, BVS_Assigned CASE_ID | Payer | Drug",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0059",
+   "section": "4",
+   "kind": "heading",
+   "text": "4 BVS completes BV + drug benefits.xlsx: BV_Complete —",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0060",
+   "section": "4",
+   "kind": "text",
+   "text": "source decision + patient = YES; clinical.xlsx: financial counseling Drug_Source",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0061",
+   "section": "5",
+   "kind": "heading",
+   "text": "5 BVS checks formulary → auth.xlsx: #intake-team: [PA SUBMITTED]",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0062",
+   "section": "5",
+   "kind": "text",
+   "text": "submits PA PA_Submission_Date, CASE_ID | Payer | Drug | Ref# PA_Status = Pending",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0063",
+   "section": "6",
+   "kind": "heading",
+   "text": "6 PA approved → clinical handoff auth.xlsx: PA_Status = #clinical-scheduling: [PA",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0064",
+   "section": "6",
+   "kind": "text",
+   "text": "Approved; clinical.xlsx: APPROVED] CASE_ID | Drug | Handoff_Status = Received Dose | PA# | Exp 7 Supply checklist complete → clinical.xlsx: Visit_Date, #clinical-scheduling: [SCHEDULED] nurse scheduled Nurse_Assigned CASE_ID | Date | Nurse",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0065",
+   "section": "8",
+   "kind": "heading",
+   "text": "8 Nurse completes visit → signs visit_note.xlsx: #clinical-scheduling: [VISIT",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0066",
+   "section": "8",
+   "kind": "text",
+   "text": "visit note Nurse_Signature COMPLETE] CASE_ID | DOS CareIG Specialty PharmacyPage 5",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0067",
+   "section": "8",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0068",
+   "section": "9",
+   "kind": "heading",
+   "text": "9 Billing validates → builds → claim.xlsx: #billing: [CLAIM SUBMITTED]",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0069",
+   "section": "9",
+   "kind": "text",
+   "text": "submits claim Submission_Date, CASE_ID | DOS | Payer | $Amount Claim_Status = Submitted",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0070",
+   "section": "10",
+   "kind": "heading",
+   "text": "10 ERA/EOB posted → payment claim.xlsx: If denial: #billing-appeals: [DENIAL]",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0071",
+   "section": "10",
+   "kind": "text",
+   "text": "or denial actioned Payment_Posted_Date or CASE_ID | CARC file",
+   "verdict": "data",
+   "reason": "workflow summary table (detailed in later sections)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0072",
+   "section": "6",
+   "kind": "heading",
+   "text": "6. Intake",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0073",
+   "section": "6.1",
+   "kind": "heading",
+   "text": "6.1 Case Setup",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0074",
+   "section": "6.1",
+   "kind": "text",
+   "text": "1. Copy intake_blank.xlsx to the case folder as intake.xlsx.",
+   "verdict": "not_applicable",
+   "reason": "intake (section 6) already verified correct by the user; task scope starts at section 9",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0075",
+   "section": "2",
+   "kind": "heading",
+   "text": "2. Populate intake.xlsx from the referral document. Required fields:",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0076",
+   "section": "2",
+   "kind": "text",
+   "text": "intake.xlsx Column Source Required Patient_Last_Name, Patient fields on referral Yes (email optional) First_Name, DOB, Address, Phone, Email Physician_Name, Physician fields on referral Yes Physician_NPI, Physician_Email Diagnosis_ICD10 Diagnosis field on referral Yes Drug_Name, Ordered drug fields (convert dose to grams Yes Drug_Dose_Grams, if in mg) Drug_Frequency Primary_Insurance_Name, Insurance fields Yes Primary_Member_ID, Primary_Group_Number, Primary_Payer_Phone, Primary_Payer_Email Secondary_Insurance_Name, Secondary insurance if listed No Secondary_Member_ID Contraindications Allergies/contraindications from referral Yes Consent_Status Set to: Pending Staff sets on creation If Physician_NPI is blank after referral entry:",
+   "verdict": "not_applicable",
+   "reason": "intake (section 6) already verified correct by the user; task scope starts at section 9",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0077",
+   "section": "2",
+   "kind": "text",
+   "text": "Post to #intake-alerts: [INTAKE HOLD] CASE_ID — Physician NPI missing. Email Template 1 to intake.xlsx col Physician_Email. Do not proceed.",
+   "verdict": "not_applicable",
+   "reason": "intake (section 6) already verified correct by the user; task scope starts at section 9",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0078",
+   "section": "2",
+   "kind": "text",
+   "text": "Log to audit_log.xlsx: Action = Referral Received.",
+   "verdict": "not_applicable",
+   "reason": "intake (section 6) already verified correct by the user; task scope starts at section 9",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0079",
+   "section": "6.2",
+   "kind": "heading",
+   "text": "6.2 Patient Contact",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0080",
+   "section": "6.2",
+   "kind": "text",
+   "text": "By phone:",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0081",
+   "section": "6.2",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 6",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0082",
+   "section": "6.2",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0083",
+   "section": "6.2",
+   "kind": "text",
+   "text": "1. Call patient at intake.xlsx col Patient_Phone. Script: \"Hello, may I speak with [Patient Name]? This is [Your Name] from CareIG Specialty Pharmacy. Dr. [Physician_Name] has referred you for home IVIG infusion therapy. I'm calling to verify your information and explain next steps. Do you have a few minutes?\"",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0084",
+   "section": "6.2",
+   "kind": "text",
+   "text": "2. If no answer, leave voicemail — do not state the diagnosis: \"Hello, this is [Your Name] from CareIG Specialty Pharmacy at [Phone]. We received a referral from your physician. Please call us back at your convenience. Thank you.\"",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0085",
+   "section": "6.2",
+   "kind": "text",
+   "text": "3. Log each attempt in intake.xlsx col Contact_Attempt_Log: [Date] [Time] — [Reached / No Answer / Voicemail].",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0086",
+   "section": "4",
+   "kind": "heading",
+   "text": "4. If Contact_Attempt_Log has 3 entries and none is \"Reached\": Post to #intake-alerts:",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0087",
+   "section": "4",
+   "kind": "text",
+   "text": "[UNREACHABLE] CASE_ID — 3 failed attempts. Send Template 1 to the referring physician. Do not proceed.",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0088",
+   "section": "4",
+   "kind": "text",
+   "text": "5. When patient is reached: confirm demographics, explain the consent requirement, and email the consent form (consent_form.pdf) to intake.xlsx col Patient_Email. Subject: CareIG — Consent Form Required | [Patient Last Name]. If no email is on file, mail the form to intake.xlsx col Patient_Address and note the method in the Contact_Attempt_Log. Set intake.xlsx col Consent_Status = \"Form Sent\". By email (Administrative Support — per §4.4):",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0089",
+   "section": "4",
+   "kind": "text",
+   "text": "1. If intake.xlsx col Patient_Email is populated: send Template 10 — Initial Patient Contact with consent_form.pdf attached. Set intake.xlsx col Consent_Status = \"Form Sent\". Log in Contact_Attempt_Log: \"[Date] — Initial contact email sent with consent form.\"",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0090",
+   "section": "4",
+   "kind": "text",
+   "text": "2. If intake.xlsx col Patient_Email is blank: follow the Stop Protocol (§4.2). Patient contact cannot be completed by email without an email address on file.",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0091",
+   "section": "4",
+   "kind": "text",
+   "text": "3. If no response is received within 3 business days, resend Template 10. Log in intake.xlsx Contact_Attempt_Log: \"[Date] — Follow-up email sent.\"",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0092",
+   "section": "4",
+   "kind": "text",
+   "text": "4. If no response after 3 email attempts (initial + 2 follow-ups): Post to #intake-alerts: [UNREACHABLE] CASE_ID — 3 email attempts, no response. Send Template 1 to the referring physician. Do not proceed.",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0093",
+   "section": "4",
+   "kind": "text",
+   "text": "Both methods:",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0094",
+   "section": "4",
+   "kind": "text",
+   "text": "• When signed consent is received (by email attachment or scanned mail): save as consent_signed_[CASE_ID].pdf. Set Consent_Status = \"Signed\".",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0095",
+   "section": "4",
+   "kind": "text",
+   "text": "• Assign BVS. Set intake.xlsx col BVS_Assigned. Post to #intake-team: [BVS ASSIGNED] [CASE_ID] | Payer: [Insurance_Name] | Drug: [Drug_Name] | Dose: [Drug_Dose_Grams]g.",
+   "verdict": "not_applicable",
+   "reason": "patient contact/consent (section 6.2) already complete and verified; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0096",
+   "section": "7",
+   "kind": "heading",
+   "text": "7. Benefits Verification & Drug Source Decision",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0097",
+   "section": "7.1",
+   "kind": "heading",
+   "text": "7.1 Benefits Verification",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0098",
+   "section": "7.1",
+   "kind": "text",
+   "text": "BVS calls the payer at intake.xlsx col Primary_Payer_Phone or Administrative Support sends template 4. This should only occur after the Consent_status in intake.xlsx is \"Signed\". Populate all required fields in benefits.xlsx. Do not set BV_Complete = YES until every required field is non-blank. benefits.xlsx Column How to Obtain Req.",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0099",
+   "section": "7.1",
+   "kind": "text",
+   "text": "Home_Infusion_Covered Ask: 'Does this plan cover home infusion Yes therapy?' Benefit_Type Ask: 'Is IVIG under the medical or pharmacy Yes benefit?' PA_Required, PA_Phone, Ask if PA is required and get phone number Yes (if PA required) PA_Submission_Email and email submission address Specialty_Pharmacy_Required, Ask if a specific specialty pharmacy is required Yes Specialty_Pharmacy_Name CareIG Specialty PharmacyPage 7",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0100",
+   "section": "7.1",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 CareIG_Network_Status Ask: 'Is CareIG Specialty Pharmacy NPI [NPI] Yes in-network?' Deductible_Individual, Individual deductible and amount met YTD Yes Deductible_Met_YTD OOP_Max_Individual, Out-of-pocket maximum and amount met YTD Yes OOP_Max_Met_YTD Coinsurance_Pct, Coinsurance percentage and per-visit copay Yes Copay_Amount Plan_Year_Type Calendar or fiscal year Yes Payer_Type Classify: Medicare Part B / Medicare Adv. / Yes Medicaid / Commercial PPO / Commercial HMO Nursing_Code_Pref Determine from payer_rules.xlsx: 99600 / Yes G0153 / T1029 / T1032 Coverage_Effective_Date, Ask: ‘What is the coverage effective date and Yes Coverage_Term_Date termination date for this plan?’ Enter both as MM/DD/YYYY.",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0101",
+   "section": "7.1",
+   "kind": "text",
+   "text": "BV_Call_Date, Document every call — mandatory Yes BV_Rep_Name, BV_Call_Ref_Number BV_Complete Set YES only after all required fields are non- Yes blank — set last Log to audit_log.xlsx: Action = BV Complete.",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0102",
+   "section": "7.2",
+   "kind": "heading",
+   "text": "7.2 Drug Source Decision",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0103",
+   "section": "7.2",
+   "kind": "text",
+   "text": "Immediately after BV, write the drug source to clinical.xlsx col Drug_Source:",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0104",
+   "section": "7.2",
+   "kind": "text",
+   "text": "• If the Benefit_Type = Pharmacy → post to #billing-mgmt: [BENEFIT TYPE ISSUE] CASE_ID — IVIG under pharmacy benefit. Awaiting Director guidance. Do not proceed until resolved. If the Benefit_Type does not equal Pharmacy, then:",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0105",
+   "section": "7.2",
+   "kind": "text",
+   "text": "• If Specialty_Pharmacy_Required = YES → Drug_Source = value from benefits.xlsx col Specialty_Pharmacy_Name. CareIG bills nursing and supplies only. Do not bill any IVIG drug J-code on the CareIG claim. Otherwise, if Specialty_Pharmacy_Required = NO, then:",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0106",
+   "section": "7.2",
+   "kind": "text",
+   "text": "• If CareIG_Network_Status = In-Network AND Specialty_Pharmacy_Required = NO → Drug_Source = CareIG; else:",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0107",
+   "section": "7.2",
+   "kind": "text",
+   "text": "• If CareIG_Network_Status = Out-of-Network AND Specialty_Pharmacy_Required = NO → Post to #intake-mgmt: [OON NO PREFERRED PHARMACY] CASE_ID — CareIG is out-of-network but payer has no required specialty pharmacy. Supervisor must determine next step (single-case agreement, patient referral, or self-pay). Do not proceed until Drug_Source is confirmed by supervisor. Otherwise:",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0108",
+   "section": "7.2",
+   "kind": "text",
+   "text": "• If CareIG_Network_Status is blank or unknown → Post to #intake-mgmt: [NETWORK STATUS UNKNOWN] CASE_ID — unable to confirm CareIG network status with payer. Do not proceed until CareIG_Network_Status is verified and recorded in benefits.xlsx.",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0109",
+   "section": "7.3",
+   "kind": "heading",
+   "text": "7.3 Patient Financial Counseling",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0110",
+   "section": "7.3",
+   "kind": "text",
+   "text": "Before making this call (or sending template 5), calculate the patient’s estimated out-of-pocket using benefits.xlsx:",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0111",
+   "section": "7.3",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 8",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0112",
+   "section": "7.3",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0113",
+   "section": "7.3",
+   "kind": "text",
+   "text": "• Remaining_Deductible = benefits.xlsx Deductible_Individual − Deductible_Met_YTD Expected_Billed = (Drug_Units × fee_schedule.xlsx Billed_Rate) + Nursing_Billed + Supply_Billed Patient_Coinsurance = (Expected_Billed − Remaining_Deductible) × benefits.xlsx Coinsurance_Pct Estimated_OOP = Remaining_Deductible + Patient_Coinsurance + benefits.xlsx Copay_Amount o Nursing_Billed = fee_schedule rate for nursing code × units (e.g., 99600 = $265 × 1 = $265) o Supply_Billed = A4221 rate ($95) + A4222 rate ($55) if pump used",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0114",
+   "section": "7.3",
+   "kind": "text",
+   "text": "• If Estimated_OOP > (benefits.xlsx OOP_Max_Individual − OOP_Max_Met_YTD), cap at the remaining OOP maximum: Estimated_OOP = min(Estimated_OOP, OOP_Max_Individual − OOP_Max_Met_YTD) Use that dollar figure in the script below or template 5.",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0115",
+   "section": "7.3",
+   "kind": "text",
+   "text": "\"[Patient Name], this is [Your Name] from CareIG. I’ve had a chance to review your insurance benefits. Based on your current plan, your estimated out-of-pocket cost per infusion visit is approximately $[dollar amount you calculated]. Keep in mind this is an estimate — your insurance company determines the final amount once the claim is processed. Do you have any questions about that?\" Log call in benefits.xlsx col Financial_Counseling_Log: [Date] [Time] — [outcome]. If patient reports hardship: set intake.xlsx col Financial_Hardship = YES and post to #intake-team: [FINANCIAL HARDSHIP] CASE_ID — refer to Patient Assistance Program.",
+   "verdict": "not_applicable",
+   "reason": "benefits verification / drug source / counseling (section 7) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0116",
+   "section": "8",
+   "kind": "heading",
+   "text": "8. Prior Authorization",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0117",
+   "section": "8",
+   "kind": "text",
+   "text": "If benefits.xlsx col PA_Required = NO, skip Sections 8.1 through 8.5. Proceed directly to Section 8.6 (Clinical Handoff), setting auth.xlsx col PA_Status = Not Required and PA_Number = N/A.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0118",
+   "section": "8.1",
+   "kind": "heading",
+   "text": "8.1 Formulary Check",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0119",
+   "section": "8.1",
+   "kind": "text",
+   "text": "Before submitting any PA, confirm the ordered drug is covered on the payer's formulary. Open payer_rules.xlsx. Read the row for the payer (benefits.xlsx col Primary_Insurance_Name). Check col Formulary_Covered_Drugs.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0120",
+   "section": "8.1",
+   "kind": "text",
+   "text": "If the ordered drug (intake.xlsx col Drug_Name) is not listed in payer_rules.xlsx col Formulary_Covered_Drugs for the payer:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0121",
+   "section": "8.1",
+   "kind": "text",
+   "text": "Post to #intake-team: [FORMULARY ISSUE] CASE_ID | Drug: [Drug_Name] | Payer: [Insurance_Name]. Contact prescribing physician via email to intake.xlsx col Physician_Email to request either an alternative covered drug or a written formulary exception letter. Do not submit PA until one of the two paths below is confirmed.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0122",
+   "section": "8.1",
+   "kind": "text",
+   "text": "If the physician provides a formulary exception letter: save it as formulary_exception.pdf, document the basis in auth.xlsx col Formulary_Exception_Notes, and include it in the PA packet. Proceed to Section 8.2. If the physician substitutes an alternative covered drug: update intake.xlsx col Drug_Name with the new drug and restart Section 8.1. If neither is provided within 2 business days: post to #intake-mgmt: [FORMULARY UNRESOLVED] CASE_ID and hold the case.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0123",
+   "section": "8.2",
+   "kind": "heading",
+   "text": "8.2 Required PA Documents",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0124",
+   "section": "8.2",
+   "kind": "text",
+   "text": "All of the following must be saved in the case folder before PA submission:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0125",
+   "section": "8.2",
+   "kind": "text",
+   "text": "• PA request form (payer-specific) — pa_form_[PayerName].pdf",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0126",
+   "section": "8.2",
+   "kind": "text",
+   "text": "• Physician Letter of Medical Necessity — signed, on letterhead, dated within 90 days — lmn_[PhysicianName].pdf",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0127",
+   "section": "8.2",
+   "kind": "text",
+   "text": "• Most recent IgG lab result (immune deficiency diagnoses) — igglevel_[MMDDYYYY].pdf",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0128",
+   "section": "8.2",
+   "kind": "text",
+   "text": "• Most recent physician progress note — progress_note_[MMDDYYYY].pdf",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0129",
+   "section": "8.2",
+   "kind": "text",
+   "text": "• Formulary exception documentation (if applicable) — formulary_exception.pdf CareIG Specialty PharmacyPage 9",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0130",
+   "section": "8.2",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 If any required document above is missing from the case folder:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0131",
+   "section": "8.2",
+   "kind": "text",
+   "text": "Post to #intake-alerts: [PA HOLD] CASE_ID — missing: [document name]. Do not submit.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0132",
+   "section": "8.3",
+   "kind": "heading",
+   "text": "8.3 PA Submission",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0133",
+   "section": "8.3",
+   "kind": "text",
+   "text": "1. Combine all documents into pa_submission_packet_[PayerName].pdf using pdf-tools.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0134",
+   "section": "8.3",
+   "kind": "text",
+   "text": "2. Email to payer PA address (payer_rules.xlsx col PA_Submission_Email). Subject: [PA REQUEST] CareIG | [Patient Last Name] | MemberID: [Primary_Member_ID] | Drug: [Drug_Name] | Dose: [Drug_Dose_Grams]g | Dx: [Diagnosis_ICD10]. Attach PA packet PDF.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0135",
+   "section": "8.3",
+   "kind": "text",
+   "text": "3. Update auth.xlsx: PA_Submission_Date = today, PA_Ref_Number = email confirmation ID, PA_Status = Pending, Last_Followup_Date = today.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0136",
+   "section": "8.3",
+   "kind": "text",
+   "text": "4. Post to #intake-team: [PA SUBMITTED] [CASE_ID] | Payer: [name] | Drug: [Drug_Name] | Ref: [PA_Ref_Number].",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0137",
+   "section": "8.3",
+   "kind": "text",
+   "text": "Log to audit_log.xlsx: Action = PA Submitted.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0138",
+   "section": "8.4",
+   "kind": "heading",
+   "text": "8.4 PA Follow-Up",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0139",
+   "section": "8.4",
+   "kind": "text",
+   "text": "Every business day while a PA is pending, open auth.xlsx and check col PA_Status. If the status is still Pending and (today’s date minus Last_Followup_Date) is 2 or more days, call the payer PA line (benefits.xlsx col PA_Phone), or for Administrative Support send Template 7 to benefits.xlsx col PA_Submission_Email. Append a note to auth.xlsx col PA_Call_Log: [Date] [Time] | Rep: [name] | Ref#: [#] | Status: [status] | Next expected update: [date]. Update Last_Followup_Date to today.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0140",
+   "section": "8.4",
+   "kind": "text",
+   "text": "If still Pending after 5 days from PA_Submission_Date: post to #intake-mgmt: [PA DELAY] [CASE_ID] | Payer: [name] | Days Pending: [count].",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0141",
+   "section": "8.4",
+   "kind": "text",
+   "text": "When the payer responds during follow-up:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0142",
+   "section": "8.4",
+   "kind": "text",
+   "text": "Log the response in auth.xlsx col PA_Followup_Log with the date and payer representative's name. A formal written PA decision (approval or denial letter received by email) is required before proceeding. Do not act on verbal or informal confirmations alone. If the payer provides a verbal decision, log it and request written confirmation — send Template 3 — Prior Authorization / Claims Follow-Up asking the payer to issue the formal decision letter.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0143",
+   "section": "8.4",
+   "kind": "text",
+   "text": "When the written decision is received:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0144",
+   "section": "8.4",
+   "kind": "text",
+   "text": "• If approved: proceed to §8.6.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0145",
+   "section": "8.4",
+   "kind": "text",
+   "text": "• If denied: proceed to §8.7.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0146",
+   "section": "8.5",
+   "kind": "heading",
+   "text": "8.5 Peer-to-Peer (P2P) Request",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0147",
+   "section": "8.5",
+   "kind": "text",
+   "text": "If payer offers a P2P review after denial:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0148",
+   "section": "8.5",
+   "kind": "text",
+   "text": "1. Contact payer (call or email benefits.xlsx col PA_Submission_Email), obtain time slots, record in auth.xlsx col P2P_Available_Slots.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0149",
+   "section": "8.5",
+   "kind": "text",
+   "text": "2. Complete Template 2 (Appendix A). Save as p2p_request.pdf. Email to intake.xlsx col Physician_Email. Subject: [P2P REQUEST] [CASE_ID] | [Payer] | PA Case#: [PA_Ref_Number].",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0150",
+   "section": "8.5",
+   "kind": "text",
+   "text": "3. Set auth.xlsx col P2P_Status = Requested, P2P_Request_Date = today.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0151",
+   "section": "8.5",
+   "kind": "text",
+   "text": "If P2P_Status = Requested AND P2P_MD_Response_Date is blank AND (today − P2P_Request_Date) ≥ 2 days:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0152",
+   "section": "8.5",
+   "kind": "text",
+   "text": "Post to #intake-alerts: [P2P NO RESPONSE] CASE_ID. Set P2P_Status = No Response. Proceed to Level 1 appeal (Section 11).",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0153",
+   "section": "8.5",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 10",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0154",
+   "section": "8.5",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0155",
+   "section": "8.6",
+   "kind": "heading",
+   "text": "8.6 PA Approval — Clinical Handoff",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0156",
+   "section": "8.6",
+   "kind": "text",
+   "text": "1. Save PA approval as pa_approval_[PayerName].pdf. Update auth.xlsx: PA_Number, PA_Approved_Drug, PA_Approved_Dose, PA_Approved_Frequency, PA_Effective_Date, PA_Expiration_Date, PA_Status = Approved. Also record the approved diagnosis code(s) from the PA decision letter in auth.xlsx col PA_Approved_ICD10.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0157",
+   "section": "8.6",
+   "kind": "text",
+   "text": "2. Update clinical.xlsx: Handoff_Status = Complete, PA_Number, PA_Expiration_Date.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0158",
+   "section": "8.6",
+   "kind": "text",
+   "text": "3. Post to #clinical-scheduling: [PA APPROVED] [CASE_ID] | Drug: [PA_Approved_Drug] | Dose: [PA_Approved_Dose]g | PA#: [PA_Number] | Exp: [PA_Expiration_Date] | Drug Source: [Drug_Source]. If PA_Approved_Drug does not match intake.xlsx col Drug_Name (case-insensitive): Post to #intake-alerts: [PA DRUG MISMATCH] CASE_ID | Ordered: [Drug_Name] | Approved: [PA_Approved_Drug]. Resolve with payer before scheduling.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0159",
+   "section": "8.6",
+   "kind": "text",
+   "text": "If auth.xlsx col PA_Approved_Dose is less than intake.xlsx col Drug_Dose_Grams:",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0160",
+   "section": "8.6",
+   "kind": "text",
+   "text": "Post to #intake-alerts: [PA DOSE MISMATCH] CASE_ID | Ordered: [Drug_Dose_Grams]g | Approved: [PA_Approved_Dose]g. Do not schedule. BVS must contact payer to request approval for the full ordered dose before proceeding.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0161",
+   "section": "8.6",
+   "kind": "text",
+   "text": "Log to audit_log.xlsx: Action = PA Approved — Clinical Handoff.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0162",
+   "section": "8.7",
+   "kind": "heading",
+   "text": "8.7 PA Denial",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0163",
+   "section": "8.7",
+   "kind": "text",
+   "text": "1. Update auth.xlsx: PA_Denial_Date = today, PA_Denial_Reason = denial text, PA_Status = Denied.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0164",
+   "section": "8.7",
+   "kind": "text",
+   "text": "2. Post to #billing-appeals: [PA DENIED] [CASE_ID] | Payer: [name] | Reason: [PA_Denial_Reason]. Proceed to Section 11 for appeal.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0165",
+   "section": "8.7",
+   "kind": "text",
+   "text": "Log to audit_log.xlsx: Action = PA Denied.",
+   "verdict": "not_applicable",
+   "reason": "prior authorization (section 8) verified correct by the user; out of scope",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0166",
+   "section": "9",
+   "kind": "heading",
+   "text": "9. Clinical Scheduling & Visit Documentation",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0167",
+   "section": "9.1",
+   "kind": "heading",
+   "text": "9.1 Supply Checklist",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0168",
+   "section": "9.1",
+   "kind": "text",
+   "text": "Before scheduling the nurse visit, confirm all items below are completed in clinical.xlsx. All columns must contain a value; NS_500mL_Qty_Ordered must contain a number (integer) of 2 or more: clinical.xlsx Column Requirement Drug_Order_Placed Drug ordered from CareIG or partner pharmacy per Drug_Source Drug_Delivery_Confirmed Delivery confirmed at patient address — record delivery date Drug_Lot_Number, Lot number and NDC received from dispensing pharmacy Drug_NDC NS_500mL_Qty_Ordered Enter the number of 500 mL NS bags ordered (integer), minimum 2. If the ordered drug is Gammaplex, enter 0 and order 500 mL 10% Dextrose bags instead (minimum 2).",
+   "verdict": "not_applicable",
+   "reason": "supply checklist fields complete in clinical_CASE-1001.xlsx (YES); re-verification for the next visit is due 5 days before it",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0169",
+   "section": "9.1",
+   "kind": "text",
+   "text": "Filter_Tubing_Ordered 0.2-micron IV filter set ordered (required for all IVIG) Benadryl_Available Diphenhydramine 50 mg/mL vial available if ordered as pre-med (N/A if not ordered) CareIG Specialty PharmacyPage 11",
+   "verdict": "not_applicable",
+   "reason": "supply checklist fields complete in clinical_CASE-1001.xlsx (YES); re-verification for the next visit is due 5 days before it",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0170",
+   "section": "9.1",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Supplies_Other Gloves, alcohol swabs, dressing kit, sharps container confirmed Supply_Checklist_Complete Set YES only after all above fields are confirmed If Supply_Checklist_Complete ≠ YES when nurse scheduling is attempted:",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages"
+   ],
+   "reason": "Supply_Checklist_Complete = YES -> a [SUPPLY HOLD] post for CASE-1001 is blocked",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0171",
+   "section": "9.1",
+   "kind": "text",
+   "text": "Post to #clinical-scheduling: [SUPPLY HOLD] CASE_ID — checklist incomplete. Do not schedule until resolved.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages"
+   ],
+   "reason": "Supply_Checklist_Complete = YES -> a [SUPPLY HOLD] post for CASE-1001 is blocked",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0172",
+   "section": "9.1",
+   "kind": "text",
+   "text": "Before scheduling, confirm that the ordered drug is not contraindicated for this patient. Check intake.xlsx col Contraindications against §13.3 drug notes. If a contraindication is found, post to #clinical-scheduling: [CONTRAINDICATION] CASE_ID | Drug: [Drug_Name] | Contraindication: [details]. Do not schedule until resolved by the prescribing physician.",
+   "verdict": "not_applicable",
+   "reason": "Contraindications = None; Privigen hyperprolinemia not present",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0173",
+   "section": "9.2",
+   "kind": "heading",
+   "text": "9.2 Nurse Scheduling",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0174",
+   "section": "9.2",
+   "kind": "text",
+   "text": "1. Before scheduling, verify auth.xlsx col PA_Expiration_Date ≥ proposed Visit_Date. If the PA will expire before the visit date, escalate to Billing Supervisor to request a PA renewal before proceeding.",
+   "verdict": "not_applicable",
+   "reason": "PA expires 2026-09-15 >= next visit 2026-04-14; no renewal escalation",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0175",
+   "section": "9.2",
+   "kind": "text",
+   "text": "2. Select nurse (nurses.xlsx) matching patient zip code and credential (RN required for first visit; verify state rules in payer_rules.xlsx col Nursing_Credential_Requirement for subsequent visits). Scheduling constraints:",
+   "verdict": "verifiable",
+   "verifiers": [
+    "calendar.next_visit",
+    "calendar.event",
+    "clinical.next_visit",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse for zip 90212 available in window: Jane Smith RN",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0176",
+   "section": "9.2",
+   "kind": "text",
+   "text": "• Schedule visits between 08:00 and 17:00 only. The visit must end by 17:00 (so a 4-hour infusion cannot start later than 13:00).",
+   "verdict": "verifiable",
+   "verifiers": [
+    "calendar.next_visit",
+    "calendar.event"
+   ],
+   "reason": "08-17 window, 30-min buffers, earliest time -> 2026-04-14 12:00-15:00",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0177",
+   "section": "9.2",
+   "kind": "text",
+   "text": "• Check the calendar for the assigned nurse's existing appointments. The nurse must not have overlapping or back-to-back visits — allow at least 30 minutes before and after each visit for travel. Always schedule for the earliest time possible on the selected date.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "calendar.next_visit",
+    "calendar.event"
+   ],
+   "reason": "08-17 window, 30-min buffers, earliest time -> 2026-04-14 12:00-15:00",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0178",
+   "section": "9.2",
+   "kind": "text",
+   "text": "• If no available slot exists within the frequency window (±3 days of the target date), escalate to #clinical-scheduling for manual resolution.",
+   "verdict": "not_applicable",
+   "reason": "a slot exists in the +/-3 day window (04-14)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0179",
+   "section": "9.2",
+   "kind": "text",
+   "text": "3. Create calendar event: summary should be IVIG Infusion - [Patient_Last_Name], [Patient_First_Name] ([CASE_ID]). Include nurse's name in the description.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "calendar.next_visit",
+    "calendar.event"
+   ],
+   "reason": "event summary exact, nurse in description, 3 h duration",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0180",
+   "section": "9.2",
+   "kind": "text",
+   "text": "4. Set duration using the estimated infusion times in infusion_duration.xlsx. Look up the row matching the ordered drug and dose range to find the estimated visit length in hours.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "calendar.next_visit",
+    "calendar.event"
+   ],
+   "reason": "event summary exact, nurse in description, 3 h duration",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0181",
+   "section": "5",
+   "kind": "heading",
+   "text": "5. Confirm visit with patient. Script:",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0182",
+   "section": "5",
+   "kind": "text",
+   "text": "\"Hello [Patient Name], this is [Your Name] from CareIG. Your insurance has approved your IVIG infusion. We have availability on [Date] at [Time] — does that work for you? The visit will take approximately [X] hours. For Administrative Support, send Template 6 instead.",
+   "verdict": "verifiable",
+   "reason": "Template 6 to the patient (Administrative Support)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ]
+  },
+  {
+   "id": "P0183",
+   "section": "5",
+   "kind": "text",
+   "text": "6. Update clinical.xlsx: Visit_Date, Visit_Time, Nurse_Assigned. Post to #clinical-scheduling: [SCHEDULED] [CASE_ID] | Date: [Visit_Date] | Nurse: [Nurse_Assigned].",
+   "verdict": "verifiable",
+   "verifiers": [
+    "clinical.next_visit",
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "clinical Visit_Date/Time/Nurse + #clinical-scheduling [SCHEDULED]",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0184",
+   "section": "5",
+   "kind": "text",
+   "text": "7. Email assigned nurse. Subject: [VISIT ASSIGNMENT] [CASE_ID] | [Date]. The body of the email must unclude:",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0185",
+   "section": "5",
+   "kind": "text",
+   "text": "• Address: [Patient_Address from intake.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0186",
+   "section": "5",
+   "kind": "text",
+   "text": "• Drug: [Drug_Name from intake.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0187",
+   "section": "5",
+   "kind": "text",
+   "text": "• Dose: [Drug_Dose_Grams from intake.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0188",
+   "section": "5",
+   "kind": "text",
+   "text": "• Lot Number: [Drug_Lot_Number from clinical.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0189",
+   "section": "5",
+   "kind": "text",
+   "text": "• NDC: [Drug_NDC from clinical.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0190",
+   "section": "5",
+   "kind": "text",
+   "text": "• Infusion Rate: [Infusion_Start_Rate_mL_hr from intake.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0191",
+   "section": "5",
+   "kind": "text",
+   "text": "• Pre-med Orders: [Premeds_Administered (drug name, dose, route) from intake.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0192",
+   "section": "5",
+   "kind": "text",
+   "text": "• Emergency Contact: [Patient_Phone from intake.xlsx]",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0193",
+   "section": "5",
+   "kind": "text",
+   "text": "• Contraindications: [Contraindications from intake.xlsx]\" CareIG Specialty PharmacyPage 12",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "nurse visit-assignment email subject + body items",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0194",
+   "section": "5",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0195",
+   "section": "9.3",
+   "kind": "heading",
+   "text": "9.3 Recurring Visits",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0196",
+   "section": "9.3",
+   "kind": "text",
+   "text": "IVIG patients typically receive infusions on a recurring schedule (as defined by intake.xlsx col Drug_Frequency). The initial visit follows the full workflow from §5 through §12. Subsequent visits follow an abbreviated process:",
+   "verdict": "context",
+   "reason": "recurring-visit intro",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0197",
+   "section": "9.3",
+   "kind": "text",
+   "text": "What carries forward (do not re-create):",
+   "verdict": "context",
+   "reason": "recurring-visit intro",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0198",
+   "section": "9.3",
+   "kind": "text",
+   "text": "• intake.xlsx — reuse existing patient record unless demographics or insurance have changed.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "files.unchanged"
+   ],
+   "reason": "intake/benefits/auth carry forward unchanged",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0199",
+   "section": "9.3",
+   "kind": "text",
+   "text": "• benefits.xlsx — reuse unless the payer, plan, or benefit period has changed.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "files.unchanged"
+   ],
+   "reason": "intake/benefits/auth carry forward unchanged",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0200",
+   "section": "9.3",
+   "kind": "text",
+   "text": "• auth.xlsx — reuse the current PA until it approaches expiration (see below).",
+   "verdict": "verifiable",
+   "verifiers": [
+    "files.unchanged"
+   ],
+   "reason": "intake/benefits/auth carry forward unchanged",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0201",
+   "section": "9.3",
+   "kind": "text",
+   "text": "What gets updated for each visit:",
+   "verdict": "context",
+   "reason": "recurring-visit intro",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0202",
+   "section": "9.3",
+   "kind": "text",
+   "text": "• clinical.xlsx Visit_Date, Visit_Time, Nurse_Assigned What is created new for each visit:",
+   "verdict": "verifiable",
+   "verifiers": [
+    "clinical.next_visit"
+   ],
+   "reason": "clinical Visit_Date, Visit_Time, Nurse_Assigned updated",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0203",
+   "section": "9.3",
+   "kind": "text",
+   "text": "• visit_note.xlsx — one new row per visit. Each DOS must have its own visit record.",
+   "verdict": "not_applicable",
+   "reason": "no new visit has been completed; visit_note row for the next DOS is created after the visit",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0204",
+   "section": "9.3",
+   "kind": "text",
+   "text": "• claim.xlsx — one new row per visit. Each DOS generates a separate claim.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.structure"
+   ],
+   "reason": "one claim row per DOS - correction must not add a row",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0205",
+   "section": "9.3",
+   "kind": "text",
+   "text": "Scheduling subsequent visits: After each completed visit, schedule the next visit based on auth.xlsx col PA_Approved_Frequency. If no PA is required for this payer, use intake.xlsx col Drug_Frequency instead. Complete steps 2 - 7 in section 9.2.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "calendar.next_visit",
+    "clinical.next_visit",
+    "comms.messages_sent"
+   ],
+   "reason": "after the completed 03-15 visit schedule the next one (every 4 weeks) via 9.2 steps 2-7",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0206",
+   "section": "9.3",
+   "kind": "text",
+   "text": "Five days prior to each subsequent visit, verify:",
+   "verdict": "not_applicable",
+   "reason": "5-days-prior checks fall on 2026-04-09, after today; PA valid, no insurance change",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0207",
+   "section": "9.3",
+   "kind": "text",
+   "text": "1. PA has not expired: check auth.xlsx col PA_Expiration_Date ≥ next Visit_Date. If the PA will expire within 14 days of the next scheduled visit, initiate a new PA cycle per §8.",
+   "verdict": "not_applicable",
+   "reason": "5-days-prior checks fall on 2026-04-09, after today; PA valid, no insurance change",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0208",
+   "section": "9.3",
+   "kind": "text",
+   "text": "2. Supplies are available: re-verify the supply checklist per §9.1 for each visit.",
+   "verdict": "not_applicable",
+   "reason": "5-days-prior checks fall on 2026-04-09, after today; PA valid, no insurance change",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0209",
+   "section": "9.3",
+   "kind": "text",
+   "text": "3. No insurance changes: if the patient reports new insurance, restart from §7 (Benefits Verification).",
+   "verdict": "not_applicable",
+   "reason": "5-days-prior checks fall on 2026-04-09, after today; PA valid, no insurance change",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0210",
+   "section": "9.4",
+   "kind": "heading",
+   "text": "9.4 Visit Documentation",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0211",
+   "section": "9.4",
+   "kind": "text",
+   "text": "The nurse must complete all fields below in visit_note.xlsx and set col Nurse_Signature within 4 hours of visit completion. A claim cannot be initiated if Nurse_Signature is blank. visit_note.xlsx Column Description Required Visit_Date, Visit_Start_Time, Date and exact start/end times Yes Visit_End_Time Visit_Duration_Minutes End time − Start time in minutes Yes Drug_Name_Trade, E.g., Gammaplex 5% and Immune Globulin Yes Drug_Name_Generic Intravenous Drug_NDC, Transcribed from vial label Yes Drug_Lot_Number, Drug_Expiration_Date Dose_Ordered_Grams, Ordered vs actual. Claims use Yes Dose_Administered_Grams Dose_Administered_Grams.",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0212",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Route IV or SQ — must match MD order Yes Infusion_Start_Rate_mL_hr, Initial rate and all changes with timestamps. If Yes Infusion_Rate_Adjustments no changes: None.",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0213",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Premeds_Administered Format: [Drug] [Dose][unit] [Route] at [Time] for Yes [Indication]. If none: None administered.",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0214",
+   "section": "9.4",
+   "kind": "text",
+   "text": "NS_500mL_Bags_Used, Count of bags actually used Yes NS_250mL_Bags_Used CareIG Specialty PharmacyPage 13",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0215",
+   "section": "9.4",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Pump_Used YES or NO Yes Vital_Signs_Pre, BP, HR, Temp, RR at each point. Mid: N/A if no Yes Vital_Signs_Mid, rate changes.",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0216",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Vital_Signs_Post Patient_Response Clinical response. If uneventful: Patient Yes tolerated infusion without adverse events.",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0217",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Education_Provided Education given. SQ patients: document self- Yes infusion training if performed. If none: None.",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0218",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Nurse_Signature Full name and credential (e.g., Jane Smith, RN) Yes — blocks claim if blank Dextrose_500mL_Bags_Used For Gammaplex cases only: number of 500 mL Yes for Gammaplex, 10% Dextrose bags actually used during the N/A otherwise. visit. For all other drugs, enter N/A.",
+   "verdict": "not_observable",
+   "reason": "nurse clinical documentation; seed visit note is complete and signed; correct clinical values not knowable by code",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0219",
+   "section": "9.4",
+   "kind": "text",
+   "text": "If Nurse_Signature is blank:",
+   "verdict": "not_applicable",
+   "reason": "note is signed; [VISIT COMPLETE] post and Visit Note Signed audit row already exist in seed",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0220",
+   "section": "9.4",
+   "kind": "text",
+   "text": "Post to #clinical-scheduling: [UNSIGNED NOTE] CASE_ID — claim on hold until signed. Post to #clinical-scheduling: [VISIT COMPLETE] [CASE_ID] | DOS: [Visit_Date]. Log to audit_log.xlsx: Action = Visit Note Signed.",
+   "verdict": "not_applicable",
+   "reason": "note is signed; [VISIT COMPLETE] post and Visit Note Signed audit row already exist in seed",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0221",
+   "section": "10",
+   "kind": "heading",
+   "text": "10. Billing & Payment Posting",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0222",
+   "section": "10.1",
+   "kind": "heading",
+   "text": "10.1 Pre-Billing Validation",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0223",
+   "section": "10.1",
+   "kind": "text",
+   "text": "Before building claim.xlsx, confirm every condition below is TRUE. If any is FALSE: post to #billing with the specific failure and do not proceed. However, if the PA_Status in auth.xlsx is \"Not Required\", skip the PA_related validation checks ((PA_Status, PA_Number, PA_Expiration_Date, PA_Approved_Drug match, and PA_Approved_Dose check) but perform all other checks. Additionally, if the claim.xlsx Billing_Model is \"Split\", skip the drug-related validation checks (PA_Approved_Drug match, PA_Approved_Dose check) but process all remaining checks.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages"
+   ],
+   "reason": "all pre-billing conditions pass -> false [BILLING HOLD] posts blocked; duplicate-claim condition handled via 11.1 corrected claim",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0224",
+   "section": "10.1",
+   "kind": "text",
+   "text": "Condition If FALSE — Post to #billing visit_note.xlsx col Nurse_Signature is non-blank [BILLING HOLD — UNSIGNED NOTE] CASE_ID auth.xlsx col PA_Status = Approved [BILLING HOLD — NO PA APPROVAL] CASE_ID auth.xlsx col PA_Number is non-blank [BILLING HOLD — PA NUMBER MISSING] CASE_ID auth.xlsx col PA_Expiration_Date ≥ visit_note.xlsx [BILLING HOLD — PA EXPIRED ON DOS] col Visit_Date CASE_ID | PA Exp: [date] | DOS: [date] auth.xlsx col PA_Approved_Drug matches [BILLING HOLD — DRUG MISMATCH] CASE_ID | visit_note.xlsx col Drug_Name_Trade (case- PA: [drug] | Administered: [drug] insensitive) auth.xlsx col PA_Approved_Dose (grams) is greater [BILLING HOLD — DOSE EXCEEDS PA] CASE_ID than or equal to visit_note.xlsx col | PA approved: [PA_Approved_Dose]g | Dose_Administered_Grams Administered: [Dose_Administered_Grams]g. Post CareIG Specialty PharmacyPage 14",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages"
+   ],
+   "reason": "all pre-billing conditions pass -> false [BILLING HOLD] posts blocked; duplicate-claim condition handled via 11.1 corrected claim",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0225",
+   "section": "10.1",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 to #billing and escalate to BVS to obtain a revised PA before submitting. intake.xlsx col Diagnosis_ICD10 is an exact match [BILLING HOLD — ICD10 INCONSISTENT] with PA Approved ICD10 (verify in auth.xlsx) CASE_ID visit_note.xlsx col Dose_Administered_Grams is [BILLING HOLD — DOSE NOT DOCUMENTED] non-blank and > 0 CASE_ID Verify no claim has already been submitted for this [DUPLICATE CLAIM RISK] CASE_ID | DOS: [date] DOS (check claim.xlsx for an existing row with this CASE_ID and DOS that already has a Submission_Date). benefits.xlsx confirms active coverage on DOS [BILLING HOLD — COVERAGE NOT CONFIRMED] CASE_ID",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages"
+   ],
+   "reason": "all pre-billing conditions pass -> false [BILLING HOLD] posts blocked; duplicate-claim condition handled via 11.1 corrected claim",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0226",
+   "section": "10.2",
+   "kind": "heading",
+   "text": "10.2 Claim Construction",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0227",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Copy claim_blank.xlsx to create claim.xlsx for this case. Use the following rules: Claim Component Rule Drug J-Code Look up J-code in jcodes.xlsx for Drug_Name_Trade. Confirm that the J-code's Route in jcodes.xlsx matches visit_note.xlsx col Route. If mismatch, post to #billing: [ROUTE MISMATCH] CASE_ID | J-code route: [route] | Visit note route:",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "J1459; route IV matches; 59 units",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0228",
+   "section": "10.2",
+   "kind": "text",
+   "text": "[route]. Do not proceed until resolved.",
+   "verdict": "not_applicable",
+   "reason": "route matches (IV); no [ROUTE MISMATCH]",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0229",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Units = (Dose_Administered_Grams × 1000) ÷ unit size. See Section 13 for full table and examples. If the result is not a whole number, round down to the nearest integer. Example: 25.3g Privigen = 50,600mg ÷ 500 = 101.2 → bill 101 units.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "J1459; route IV matches; 59 units",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0230",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Nursing Code Read payer_rules.xlsx col Nursing_Code_Pref for this patient's payer. If Nursing_Code_Pref is blank or 99600:",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "99600 x1 + 99603 x2 for 195 min",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0231",
+   "section": "10.2",
+   "kind": "text",
+   "text": "• If Visit_Duration_Minutes ≤ 60: bill 99600 × 1 only. Do not bill 99603.",
+   "verdict": "verifiable",
+   "reason": "99600 x1 + 99603 x2 for 195 min",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": [
+    "claim.lines"
+   ]
+  },
+  {
+   "id": "P0232",
+   "section": "10.2",
+   "kind": "text",
+   "text": "• If Visit_Duration_Minutes > 60: bill 99600 × 1 + 99603 × floor((Visit_Duration_Minutes − 60) ÷ 60).",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "99600 x1 + 99603 x2 for 195 min",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0233",
+   "section": "10.2",
+   "kind": "text",
+   "text": "If Nursing_Code_Pref = G0153: Bill G0153 × 1 only (flat rate, duration does not apply).",
+   "verdict": "not_applicable",
+   "reason": "BlueCross Nursing_Code_Pref = 99600",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0234",
+   "section": "10.2",
+   "kind": "text",
+   "text": "If Nursing_Code_Pref = T1029/T1032: Verify billing rules per state in payer_rules.xlsx. Follow state-specific unit calculations.",
+   "verdict": "not_applicable",
+   "reason": "BlueCross Nursing_Code_Pref = 99600",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0235",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Saline J7030 × NS_500mL_Bags_Used. J7050 × NS_250mL_Bags_Used. Both from visit_note.xlsx. For Gammaplex cases: do not bill J7030 or J7050. Instead bill A4221 for the Dextrose supply as part of the general infusion supplies line. Read Dextrose_500mL_Bags_Used from visit_note.xlsx to confirm administration was documented before billing.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0236",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Pre-Medications Parse visit_note.xlsx col Premeds_Administered. Diphenhydramine: J0171 × (mg ÷ 50). Promethazine: J2550 × (mg ÷ 25). Round up to the nearest integer. If None administered: leave blank. If a pre-med is listed that is not Diphenhydramine or Promethazine, look up the corresponding J-code and unit size in jcodes.xlsx. If no match exists, escalate to Billing Supervisor.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0237",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Supplies Bill A4221 × 1 per visit. This covers all standard infusion supplies (alcohol swabs, tubing, sharps, Dextrose (for Gammaplex cases)).",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0238",
+   "section": "10.2",
+   "kind": "text",
+   "text": "If Pump_Used = YES: also A4222 × 1.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0239",
+   "section": "10.2",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 15",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0240",
+   "section": "10.2",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Header / Auth Fields PA_Number = auth.xlsx col PA_Number. Physician_NPI = intake.xlsx col Physician_NPI. CareIG_NPI and Tax_ID from payer_rules.xlsx. DOS = visit_note.xlsx col Visit_Date. ICD10 = intake.xlsx col Diagnosis_ICD10. CareIG Taxonomy Code from org_identifiers.xlsx.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0241",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Split-Bill (OON partner) If clinical.xlsx col Drug_Source ≠ CareIG: leave all IVIG drug J-code fields blank. Set claim.xlsx col Billing_Model = Split — Drug billed by [Drug_Source].",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0242",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Claim_Frequency_Code Enter 1 for all original claim submissions. Enter 7 when resubmitting a corrected claim. Enter 8 when voiding a duplicate. Write value to claim.xlsx col Claim_Frequency_Code.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0243",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Modifier Read visit_note.xlsx col Route. If Route = IV: no modifier required on the drug J- code line. If Route = SQ: append modifier SC to the drug J-code line in claim.xlsx col Drug_Modifier. Write Drug_Modifier to claim.xlsx.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0244",
+   "section": "10.2",
+   "kind": "text",
+   "text": "Total Billed Sum of all line item amounts (drug, nursing, pre-meds, saline, supplies) (each line = units × Billed_Rate from fee_schedule.xlsx)",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines"
+   ],
+   "reason": "claim line items / header / model / frequency / modifier / total from visit note + fee schedule",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0245",
+   "section": "10.3",
+   "kind": "heading",
+   "text": "10.3 Claim Submission",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0246",
+   "section": "10.3",
+   "kind": "text",
+   "text": "1. Export claim.xlsx to PDF → claim_[DOS].pdf.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "re-exported claim_[DOS].pdf attached to the exact-subject email to claims@bluecross-ppo.example.com",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0247",
+   "section": "10.3",
+   "kind": "text",
+   "text": "2. Email to payer billing address (payer_rules.xlsx col Claim_Submission_Email). Subject: [CLAIM SUBMISSION] CareIG NPI: [NPI] | [Patient Last Name] | MemberID: [Primary_Member_ID] | DOS: [Visit_Date]. Attach claim_[DOS].pdf.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "re-exported claim_[DOS].pdf attached to the exact-subject email to claims@bluecross-ppo.example.com",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0248",
+   "section": "10.3",
+   "kind": "text",
+   "text": "3. Update claim.xlsx: Submission_Date = today, Submission_Ref_Number = email confirmation ID, Claim_Status = Submitted (for new and resubmitted claims).",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.submission"
+   ],
+   "reason": "Submission_Date today, Submission_Ref_Number, Claim_Status Submitted",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0249",
+   "section": "10.3",
+   "kind": "text",
+   "text": "4. Post to #billing: [CLAIM SUBMITTED] [CASE_ID] | DOS: [Visit_Date] | Payer: [name] | Billed: $[Total_Billed].",
+   "verdict": "verifiable",
+   "verifiers": [
+    "comms.messages",
+    "comms.messages_sent"
+   ],
+   "reason": "#billing [CLAIM SUBMITTED] with $4,153.75",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0250",
+   "section": "10.3",
+   "kind": "text",
+   "text": "Log to audit_log.xlsx: Action = Claim Submitted (for new and for resubmitted claims).",
+   "verdict": "verifiable",
+   "verifiers": [
+    "audit.entries"
+   ],
+   "reason": "audit Claim Submitted row for the resubmission",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0251",
+   "section": "10.4",
+   "kind": "heading",
+   "text": "10.4 ERA & Payment Posting",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0252",
+   "section": "10.4",
+   "kind": "text",
+   "text": "1. ERA and EOB documents arrive by email to billing@careig.com from the payer. When received, download the attachment and save it as era_[DOS]_[Payer].pdf.",
+   "verdict": "not_applicable",
+   "reason": "no ERA/EOB received for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0253",
+   "section": "10.4",
+   "kind": "text",
+   "text": "2. Compare the total Paid_Amount on the ERA to the sum of Contracted_Rates (from payer_rules.xlsx) for all line items on the claim. If Paid_Amount < Contracted_Rate: post to #billing-mgmt: [UNDERPAYMENT] CASE_ID | Payer: [name] | Expected: $[rate] | Received: $[paid]. Do not write off.",
+   "verdict": "not_applicable",
+   "reason": "no ERA/EOB received for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0254",
+   "section": "10.4",
+   "kind": "text",
+   "text": "3. If ERA contains a denial (any CARC-coded line with $0 paid): copy denial_blank.xlsx to create DENIAL_[CARC]_[DOS].xlsx. Populate CARC_Code, Denial_Date, DOS, Denied_Code, Denied_Amount. Follow Section 11.",
+   "verdict": "not_applicable",
+   "reason": "no ERA/EOB received for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0255",
+   "section": "10.4",
+   "kind": "text",
+   "text": "4. Update claim.xlsx: Payment_Posted_Date = today, Claim_Status = Paid / Partially Paid / Denied.",
+   "verdict": "not_applicable",
+   "reason": "no ERA/EOB received for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0256",
+   "section": "10.4",
+   "kind": "text",
+   "text": "5. If Patient_Responsibility > 0: complete patient_statement_template.docx with patient name, DOS, billed amount, insurance payment, and patient balance. Save as statement_[DOS].pdf. Email to patient at intake.xlsx col Patient_Email. Subject: CareIG Statement of Account | DOS: [Visit_Date].",
+   "verdict": "not_applicable",
+   "reason": "no ERA/EOB received for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0257",
+   "section": "10.4",
+   "kind": "text",
+   "text": "6. If the statement is sent, if the balance remains unpaid, re-send the statement at 30 days and again at 60 days. If the balance remains outstanding at 90 days, refer to section 12 for escalation details. If the ERA contains both paid and denied lines, post the paid portion immediately (Payment_Posted_Date = today, Claim_Status = \"Partially Paid\") and create the denial file for the denied lines per step 3. Work the denial separately per Section 11. Do not wait for denial resolution before posting the paid amount. CareIG Specialty PharmacyPage 16",
+   "verdict": "not_applicable",
+   "reason": "no ERA/EOB received for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0258",
+   "section": "10.4",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0259",
+   "section": "11",
+   "kind": "heading",
+   "text": "11. Denial Management & Appeals",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0260",
+   "section": "11.1",
+   "kind": "heading",
+   "text": "11.1 Denial Actions by CARC Code",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0261",
+   "section": "11.1",
+   "kind": "text",
+   "text": "All CARC codes that include an action to \"resubmit\" must follow these steps.",
+   "verdict": "context",
+   "reason": "intro to CARC resubmission steps",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0262",
+   "section": "11.1",
+   "kind": "text",
+   "text": "These steps should also be followed if details of a Claim Submission (§10.3) are rendered incorrect:",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines",
+    "claim.submit_corrected_first",
+    "claim.submission",
+    "comms.messages_sent"
+   ],
+   "reason": "submitted claim details incorrect -> correct existing row, freq 7, re-export and resubmit",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0263",
+   "section": "11.1",
+   "kind": "text",
+   "text": "1. Correct the identified issue in the existing claim.xlsx row.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines",
+    "claim.submit_corrected_first",
+    "claim.submission",
+    "comms.messages_sent"
+   ],
+   "reason": "submitted claim details incorrect -> correct existing row, freq 7, re-export and resubmit",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0264",
+   "section": "11.1",
+   "kind": "text",
+   "text": "2. Set Claim_Frequency_Code = 7 (Replacement/Corrected Claim).",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines",
+    "claim.submit_corrected_first",
+    "claim.submission",
+    "comms.messages_sent"
+   ],
+   "reason": "submitted claim details incorrect -> correct existing row, freq 7, re-export and resubmit",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0265",
+   "section": "11.1",
+   "kind": "text",
+   "text": "3. Re-export and submit per §10.3.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.lines",
+    "claim.submit_corrected_first",
+    "claim.submission",
+    "comms.messages_sent"
+   ],
+   "reason": "submitted claim details incorrect -> correct existing row, freq 7, re-export and resubmit",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0266",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Do not create a new row. Do not delete the original submission history from Submission_Log. CARC Denial Reason Action CO-4 Procedure code / Correct modifier per visit_note.xlsx col Route. Resubmit. modifier inconsistent CO-11 Diagnosis Confirm ICD-10 in claim.xlsx matches PA approval in auth.xlsx. If inconsistent with mismatch: email intake.xlsx col Physician_Email. Subject: [ICD10 procedure CLARIFICATION NEEDED] CASE_ID | DOS: [date]. Body: state the ICD-10 on the claim, the ICD-10 on the PA, and ask the physician to confirm the correct code in writing. Do not resubmit until written confirmation is received and saved to the case folder.",
+   "verdict": "verifiable",
+   "verifiers": [
+    "claim.structure"
+   ],
+   "reason": "no new row (CARC table part n/a)",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0267",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CO-16 Claim lacks required Identify missing field from denial detail (NPI, taxonomy, PA number). information Update claim.xlsx. Resubmit.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0268",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CO-18 Duplicate claim This denial indicates the payer believes this claim duplicates a previously submitted claim for the same date of service.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0269",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 1 — Check for prior submission. Open claim.xlsx and review Submission_Log for any earlier submission with the same DOS and the same HCPCS line items.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0270",
+   "section": "11.1",
+   "kind": "text",
+   "text": "If a prior submission exists (confirmed duplicate):",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0271",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 2a — Void the duplicate. Resubmit the denied claim with frequency code 8 (Void/Cancel). Update claim.xlsx:",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0272",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Claim_Status = \"Voided — Duplicate\" Do not delete the original row.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0273",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 3a — Verify the original claim is active. Locate the original claim row (earliest Submission_Log entry for this DOS). Confirm its Claim_Status is \"Paid\" or \"Pending.\" If the original is also denied or has no active status, resubmit it with frequency code 7 (Replacement/Corrected Claim).",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0274",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Log: audit_log.xlsx → Action = \"Duplicate Voided\", Notes = \"CO-18: voided duplicate [Claim_ID]. Original claim [Original_Claim_ID] status:",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0275",
+   "section": "11.1",
+   "kind": "text",
+   "text": "[status].\" No further action on the voided claim.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0276",
+   "section": "11.1",
+   "kind": "text",
+   "text": "If no prior submission exists (not a confirmed duplicate):",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0277",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 2b — Resubmit as corrected claim. The payer has flagged this as duplicate in error. Resubmit with frequency code 7 (Replacement/Corrected Claim) and attach supporting documentation that distinguishes this service from the alleged duplicate — for example, distinct service start/end times, different J-codes, or a cover note explaining why the services are separate.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0278",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Update claim.xlsx:",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0279",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 17",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0280",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0281",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Claim_Status = \"Resubmitted — CO-18 Corrected\"",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0282",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Submission_Log: append \"Resubmitted freq 7 with supporting documentation: [brief description].\" For Administrative Support, if payer documentation is needed, send Template 3 — Prior Authorization / Claims Follow-Up to Payer_Claims_Email referencing the CO-18 denial and requesting clarification on the duplicate flag.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0283",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Log: audit_log.xlsx → Action = \"CO-18 Resubmission\", Notes = \"Resubmitted as corrected claim with [documentation type].\" CO-22 COB — other payer This denial indicates the payer believes another insurance is primary for may be primary this patient. Do not appeal. Instead, identify and bill the true primary payer first.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0284",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 1 — Confirm COB status. Open benefits.xlsx. Check Secondary_Payer_Name and Secondary_Payer_ID. If both are blank, this is a new COB situation — proceed to Step 2. If they are already populated, skip to Step 3.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0285",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 2 — Identify the primary payer. Contact the denying payer using benefits.xlsx col Primary_Payer_Phone (or send Template 7 — COB Payer Inquiry to Payer_Claims_Email) to confirm which payer they believe is primary. Record the response in benefits.xlsx:",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0286",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• If the other payer is not already listed, populate Secondary_Payer_Name, Secondary_Payer_ID, Secondary_Payer_Phone, and Secondary_Claim_Submission_Email with the denying payer's information (since it is now the secondary).",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0287",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• If the other (primary) payer's details are not on file, contact the physician's office using Template 2 — Missing Clinical Information requesting the patient's primary insurance details, then populate the primary payer fields.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0288",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 3 — Update claim status. In claim.xlsx, set:",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0289",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• COB_Status = \"Primary Pending\"",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0290",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Claim_Status = \"COB — Awaiting Primary EOB\" Log: audit_log.xlsx → Action = \"COB Identified\", Notes = \"CO-22 received from [Payer_Name]. Primary payer: [Primary_Payer_Name].\" Step 4 — Submit claim to the primary payer. Construct a new claim for the same DOS using the primary payer's billing rules (check payer_rules.xlsx for the primary payer's contracted rates, nursing code preferences, and TFL). Submit the claim to the primary payer per §10.3.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0291",
+   "section": "11.1",
+   "kind": "text",
+   "text": "In claim.xlsx, set COB_Primary_Claim_Ref = the Claim_ID of the newly submitted primary claim.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0292",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Step 5 — Post primary payer response. When the primary payer's ERA/EOB arrives:",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0293",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Post payment per §12.1 on the primary claim.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0294",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Record COB_Other_Payer_Paid and COB_Other_Payer_EOB_Date on the original (secondary) claim in claim.xlsx.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0295",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Update COB_Status = \"Primary EOB Received\" Step 6 — Resubmit to the secondary (original) payer. Resubmit the original claim to the secondary payer, attaching the primary payer's EOB. Update claim.xlsx:",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0296",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Claim_Status = \"Resubmitted with Primary EOB\"",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0297",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Resubmission_Date = today's date",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0298",
+   "section": "11.1",
+   "kind": "text",
+   "text": "• Log in Submission_Log: \"Resubmitted to [Secondary_Payer_Name] with primary EOB attached.\" CareIG Specialty PharmacyPage 18",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0299",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Log: audit_log.xlsx → Action = \"COB Resubmission\", Notes = \"Claim resubmitted to [Secondary_Payer_Name] with [Primary_Payer_Name] EOB dated [date].\" Step 7 — Monitor. Add this claim to the §12.2 daily monitoring queue. If no response is received from the secondary payer within 30 days of resubmission, follow up per §12.2 escalation rules.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0300",
+   "section": "11.1",
+   "kind": "text",
+   "text": "Do NOT create a DENIAL_CO22_[DOS].xlsx file. CO-22 is a coordination issue, not a clinical or coding denial — it is resolved by billing the correct payer order, not by appeal.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0301",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CO-50 Non-covered service File Level 1 appeal per Section 11.2.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0302",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CO-96 Non-covered charge Compare to payer_rules.xlsx contracted rate. If dispute: post to #billing- mgmt. Write-off requires Director approval.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0303",
+   "section": "11.1",
+   "kind": "text",
+   "text": "CO-97 Benefit not assigned Open benefits.xlsx col Benefit_Type. If the benefit tier on the original claim does not match what is listed in benefits.xlsx (e.g., billed under pharmacy benefit but should be medical): correct claim.xlsx and resubmit. If the benefit tier on the claim matches benefits.xlsx and the payer still denies: file a Level 1 appeal per Section 11.2.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0304",
+   "section": "11.1",
+   "kind": "text",
+   "text": "PR-1 / Deductible / Read the patient responsibility amount directly from the ERA line item for PR-2 / Coinsurance / Copay this denial. Write that amount to claim.xlsx col Patient_Responsibility. PR-3 Generate and send patient statement per Section 10.4.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0305",
+   "section": "11.1",
+   "kind": "text",
+   "text": "OA-23 Charge exceeds fee Compare Paid_Amount to contracted rate. If underpaid: post to #billing- schedule mgmt per Section 12.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0306",
+   "section": "11.1",
+   "kind": "text",
+   "text": "PI-204 Not medically Gather PA approval, LMN, clinical notes, IgG labs from the case folder. necessary File Level 1 appeal per Section 11.2.",
+   "verdict": "not_applicable",
+   "reason": "no CARC denial for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0307",
+   "section": "11.2",
+   "kind": "heading",
+   "text": "11.2 Appeal Submission",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0308",
+   "section": "11.2",
+   "kind": "text",
+   "text": "1. Gather from the case folder: original claim PDF, PA approval, physician LMN, visit_note export, and ERA/EOB showing the denial.",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0309",
+   "section": "11.2",
+   "kind": "text",
+   "text": "2. Complete appeal_template.docx. Save as appeal_L[1 or 2]_[DOS].pdf.",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0310",
+   "section": "11.2",
+   "kind": "text",
+   "text": "3. Email appeal to payer_rules.xlsx col Appeal_Submission_Email. Subject: [APPEAL L[1/2]] CareIG | [Patient Last Name] | MemberID: [Primary_Member_ID] | DOS: [DOS] | Claim:",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0311",
+   "section": "11.2",
+   "kind": "text",
+   "text": "[Submission_Ref_Number] | CARC: [code]. Attach all documents.",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0312",
+   "section": "11.2",
+   "kind": "text",
+   "text": "4. Update appeals/appeals_log.xlsx: DOS, CARC_Code, Appeal_Level, Appeal_Submitted_Date, Appeal_Status = Submitted.",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0313",
+   "section": "11.2",
+   "kind": "text",
+   "text": "5. Post to #billing-appeals: [APPEAL FILED L[1/2]] [CASE_ID] | DOS | Payer | CARC. Follow-up: if (today − Appeal_Submitted_Date) ≥ 15 days and Appeal_Status = Submitted, call payer appeal department (or for Administrative Support, send Template 7 referencing the appeal). Log in col Followup_Log: [Date] [Time] | Rep: [name] | Ref#: [#] | Next: [date].",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0314",
+   "section": "11.2",
+   "kind": "text",
+   "text": "If Level 2 denied: post to #billing-mgmt: [L2 DENIED] CASE_ID. Director of Revenue Cycle determines next action (write-off, IRO request, or state commissioner complaint).",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0315",
+   "section": "11.2",
+   "kind": "text",
+   "text": "Log to audit_log.xlsx: Action = Appeal Submitted.",
+   "verdict": "not_applicable",
+   "reason": "no denial/appeal for CASE-1001",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0316",
+   "section": "12",
+   "kind": "heading",
+   "text": "12. Escalation & Monitoring",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0317",
+   "section": "12",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 19",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0318",
+   "section": "12",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0319",
+   "section": "12.1",
+   "kind": "heading",
+   "text": "12.1 Escalation Paths",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0320",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Scenario Slack Channel Action PA pending > 5 days #intake-mgmt Post: [PA DELAY] CASE_ID | Payer | Days Pending. Supervisor follows up with payer.",
+   "verdict": "not_applicable",
+   "reason": "PA not pending",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0321",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Claim unpaid, no ERA #billing Post: [AR FOLLOWUP] CASE_ID | [days] outstanding | [Payer]. Log payer call (or email sent) in claim.xlsx col AR_Followup_Log.",
+   "verdict": "not_applicable",
+   "reason": "AR follow-up has no day threshold and the claim is being resubmitted today; ambiguous - deliberately not enforced",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0322",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Payer underpaid vs #billing-mgmt Post: [UNDERPAYMENT] CASE_ID | Expected: $[rate] | contract Received: $[paid]. Director or contracting team reviews contract terms.",
+   "verdict": "not_applicable",
+   "reason": "no underpayment, balance, L2 denial, legal threat, fraud or drug issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0323",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Patient balance >0, #billing-mgmt Balance ≤$200: Billing Specialist may approve a write- unresolved on or after 90 off. Update claim.xlsx: Claim_Status = \"Written Off\". Log days to audit_log.xlsx.",
+   "verdict": "not_applicable",
+   "reason": "no underpayment, balance, L2 denial, legal threat, fraud or drug issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0324",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Balance >$200 escalate to Billing Supervisor (#billing- mgmt). Post: [WRITE-OFF REQUEST] CASE_ID | Amount: $[amount] | Reason: [reason]. Requires Director approval before actioning.",
+   "verdict": "not_applicable",
+   "reason": "no underpayment, balance, L2 denial, legal threat, fraud or drug issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0325",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Level 2 appeal denied #billing-mgmt Post: [L2 DENIED] CASE_ID. Director determines: write- off, IRO, or state complaint.",
+   "verdict": "not_applicable",
+   "reason": "no underpayment, balance, L2 denial, legal threat, fraud or drug issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0326",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Legal threat or attorney #compliance STOP. Do not respond or modify case files. Post: [LEGAL communication THREAT] CASE_ID. Director of Operations and legal@careig.com must be notified immediately.",
+   "verdict": "not_applicable",
+   "reason": "no underpayment, balance, L2 denial, legal threat, fraud or drug issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0327",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Suspected fraud or billing #compliance STOP. Do not discuss elsewhere or modify files. Post: abuse [COMPLIANCE REPORT] CASE_ID. Contact compliance@careig.com.",
+   "verdict": "not_applicable",
+   "reason": "no underpayment, balance, L2 denial, legal threat, fraud or drug issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0328",
+   "section": "12.1",
+   "kind": "text",
+   "text": "Wrong drug lot/dose from #clinical- Do not administer. Document in clinical.xlsx col partner pharmacy scheduling Drug_Issue_Notes. Post: [DRUG ISSUE] CASE_ID — visit on hold. Contact partner pharmacy.",
+   "verdict": "not_applicable",
+   "reason": "no underpayment, balance, L2 denial, legal threat, fraud or drug issue",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0329",
+   "section": "12.2",
+   "kind": "heading",
+   "text": "12.2 Workflow Monitoring",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0330",
+   "section": "12.2",
+   "kind": "text",
+   "text": "The intake supervisor, billing supervisor, or designated lead is responsible for reviewing open cases each morning. For each active case, check the condition in the left column against the relevant file. If the condition is true and the Slack message has not yet been sent, send it now. Do not wait for the assigned staff member to flag it — this review is a supervisory responsibility.",
+   "verdict": "not_applicable",
+   "reason": "monitoring conditions all false for CASE-1001 (BVS assigned, BV complete, PA submitted, handoff complete, visit dated, note signed, claim submitted, no ERA, 18 of 180 filing days)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0331",
+   "section": "12.2",
+   "kind": "text",
+   "text": "Condition Slack Notification audit_log.xlsx has Referral Received for CASE_ID #intake-alerts: [UNASSIGNED] CASE_ID — no BVS but no BVS Assigned entry assigned. benefits.xlsx col BV_Complete is blank after BVS #intake-alerts: [BV OVERDUE] CASE_ID. Assigned log entry auth.xlsx col PA_Submission_Date is blank after #intake-alerts: [PA NOT SUBMITTED] CASE_ID. BV_Complete = YES auth.xlsx col PA_Status = Pending AND Call payer. Update PA_Call_Log and Last_Followup_Date is 2+ days old Last_Followup_Date in auth.xlsx.",
+   "verdict": "not_applicable",
+   "reason": "monitoring conditions all false for CASE-1001 (BVS assigned, BV complete, PA submitted, handoff complete, visit dated, note signed, claim submitted, no ERA, 18 of 180 filing days)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0332",
+   "section": "12.2",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 20",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0333",
+   "section": "12.2",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 clinical.xlsx col Handoff_Status is blank after #clinical-scheduling: [HANDOFF MISSING] auth.xlsx col PA_Status = Approved CASE_ID. clinical.xlsx col Visit_Date is blank after #clinical-scheduling: [UNSCHEDULED] CASE_ID. Handoff_Status = Received visit_note.xlsx col Nurse_Signature is blank after #clinical-scheduling: [UNSIGNED NOTE] CASE_ID. Visit_Date is populated claim.xlsx col Submission_Date is blank after #billing: [CLAIM NOT SUBMITTED] CASE_ID. Nurse_Signature is populated claim.xlsx col ERA_Received_Date is populated #billing: [ERA UNPOSTED] CASE_ID.",
+   "verdict": "not_applicable",
+   "reason": "monitoring conditions all false for CASE-1001 (BVS assigned, BV complete, PA submitted, handoff complete, visit dated, note signed, claim submitted, no ERA, 18 of 180 filing days)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0334",
+   "section": "12.2",
+   "kind": "text",
+   "text": "AND Payment_Posted_Date is blank A file in has Appeal_Submitted = blank #billing-appeals: [DENIAL UNWORKED] CASE_ID. (today − claim.xlsx col DOS) in days exceeds 80% #billing: [TIMELY FILING RISK] CASE_ID | [days of payer_rules.xlsx col Timely_Filing_Days AND elapsed] of [limit] days | [Payer]. Submit claim claim.xlsx col Submission_Date is blank immediately.",
+   "verdict": "not_applicable",
+   "reason": "monitoring conditions all false for CASE-1001 (BVS assigned, BV complete, PA submitted, handoff complete, visit dated, note signed, claim submitted, no ERA, 18 of 180 filing days)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0335",
+   "section": "13",
+   "kind": "heading",
+   "text": "13. Reference Tables",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0336",
+   "section": "13.1",
+   "kind": "heading",
+   "text": "13.1 HCPCS / J-Code Reference",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0337",
+   "section": "13.1",
+   "kind": "text",
+   "text": "Source: jcodes.xlsx. Always use visit_note.xlsx col Dose_Administered_Grams — never the ordered dose. Billed rates for each code are stored in fee_schedule.xlsx col Billed_Rate. To calculate Total_Billed for a claim: multiply each code's units by its Billed_Rate and sum all lines. Write the result to claim.xlsx col Total_Billed. HCPCS Description Unit Formula J1459 IVIG — Privigen, 500 mg (g × 1000) ÷ 500 Gammagard (IV) J1557 IVIG — Gammaplex (IV) 500 mg (g × 1000) ÷ 500 J1559 IVIG — Hizentra (SQ) 100 mg (g × 1000) ÷ 100 J1560 IVIG — Octagam (IV) 500 mg (g × 1000) ÷ 500 J1561 IVIG — Gamunex-C (IV or 500 mg (g × 1000) ÷ 500 SQ) J1569 IVIG — Gammagard Liquid 500 mg (g × 1000) ÷ 500 (IV) J1575 IVIG — HyQvia (SQ) 100 mg (g × 1000) ÷ 100 J7030 Normal Saline 0.9%, per 500 mL Units = NS_500mL_Bags_Used 500 mL bag J7050 Normal Saline 0.9%, per 250 mL Units = NS_250mL_Bags_Used 250 mL bag J0171 Diphenhydramine 50 mg Units = mg administered ÷ 50. Requires (Benadryl), per 50 mg documentation in Premeds_Administered.",
+   "verdict": "data",
+   "verifiers": [],
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0338",
+   "section": "13.1",
+   "kind": "text",
+   "text": "J2550 Promethazine injection, per 25 mg Units = mg administered ÷ 25. Same documentation 25 mg rule as J0171.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0339",
+   "section": "13.1",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 21",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0340",
+   "section": "13.1",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 A4221 IV infusion supplies, per Per visit Bill 1 unit per visit regardless of whether a pump is visit used.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0341",
+   "section": "13.1",
+   "kind": "text",
+   "text": "A4222 Infusion pump supplies, per Per visit Bill 1 additional unit per visit when Pump_Used = YES. visit Bill alongside A4221, not instead of it.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0342",
+   "section": "13.1",
+   "kind": "text",
+   "text": "99600 Home infusion nursing — Per visit 1 unit. Default for non-Medicare. first hour 99603 Home infusion nursing — Per add'l floor((Visit_Duration_Minutes − 60) ÷ 60) units. each add'l hour hour G0153 Skilled nursing, home Per visit 1 unit. Medicare Part B only. Replaces 99600/99603. infusion (Medicare) T1029 Nursing assessment, per Per visit Use when Nursing_Code_Pref = T1029. Verify by visit state.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0343",
+   "section": "13.1",
+   "kind": "text",
+   "text": "T1032 Nursing visit, per diem Per Use when Nursing_Code_Pref = T1032. Verify by diem state.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0344",
+   "section": "13.2",
+   "kind": "heading",
+   "text": "13.2 Unit Calculation Examples",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0345",
+   "section": "13.2",
+   "kind": "text",
+   "text": "Scenario Result 30g Gammaplex 5% IV → 30 × 1000 ÷ 500 = 60 units J1557 40g Privigen 10% IV → J1459 40 × 1000 ÷ 500 = 80 units 6g Hizentra 20% SQ → J1559 6 × 1000 ÷ 100 = 60 units 10g HyQvia 10% SQ → J1575 10 × 1000 ÷ 100 = 100 units Partial: ordered 30g, Use 20g only: 20 × 1000 ÷ 500 = 40 units. administered 20g → J1557 270-minute visit, non-Medicare 99600 × 1 + 99603 × floor((270−60)÷60) = 99600 × 1 + 99603 × 3 270-minute visit, Medicare Part G0153 × 1 only B",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0346",
+   "section": "13.3",
+   "kind": "heading",
+   "text": "13.3 Drug Reference",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0347",
+   "section": "13.3",
+   "kind": "text",
+   "text": "Drug Route J-Code Units/g Notes Gammaplex 5% / IV J1557 2 Diluent: 10% Dextrose — do NOT use NS. Refrigerate 10% until 1 hr before use. Document bags used in visit_note.xlsx col Dextrose_500mL_Bags_Used. Bill via A4221 — do not bill J7030 or J7050.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0348",
+   "section": "13.3",
+   "kind": "text",
+   "text": "Octagam 5% / IV J1560 2 Do NOT shake. Confirm MD-ordered rate for 10%.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0349",
+   "section": "13.3",
+   "kind": "text",
+   "text": "10% Gammagard S/D IV J1459 2 Reconstitute per package insert. Latex-free.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0350",
+   "section": "13.3",
+   "kind": "text",
+   "text": "Gammagard IV J1569 2 Off-label SQ use requires a separate MD order in .",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0351",
+   "section": "13.3",
+   "kind": "text",
+   "text": "Liquid 10% CareIG Specialty PharmacyPage 22",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0352",
+   "section": "13.3",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Privigen 10% IV J1459 2 Contraindicated in hyperprolinemia. Check intake.xlsx col Contraindications.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0353",
+   "section": "13.3",
+   "kind": "text",
+   "text": "Gamunex-C 10% IV or J1561 2 Document route in visit_note.xlsx. Same J-code for SQ both routes.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0354",
+   "section": "13.3",
+   "kind": "text",
+   "text": "Hizentra 20% SQ J1559 10 Document self-infusion training on first visit in Education_Provided.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0355",
+   "section": "13.3",
+   "kind": "text",
+   "text": "HyQvia 10% SQ J1575 10 Check payer_rules.xlsx for hyaluronidase co-billing requirement.",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0356",
+   "section": "13.4",
+   "kind": "heading",
+   "text": "13.4 ICD-10 Reference",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0357",
+   "section": "13.4",
+   "kind": "text",
+   "text": "ICD-10 codes come from intake.xlsx col Diagnosis_ICD10. Confirm the code is in this table as written here and the required documentation exists in the case folder before submitting any PA or claim. ICD-10 Diagnosis Required Documentation in D83.9 CVID, unspecified MD progress note; IgG < 400 mg/dL within 6 months D80.0 Hereditary MD note with hereditary basis; IgG level hypogammaglobulinemia D80.1 Nonfamilial IgG < 400 mg/dL lab result; MD progress note hypogammaglobulinemia D80.6 Antibody deficiency w/ Clinical notes; specialist consult preferred near-normal Ig D89.3 Immune reconstitution Transplant documentation; oncology/hematology consult syndrome G61.0 Guillain-Barré Syndrome Neurology consult; NCS/EMG results; MD LMN G70.00 Myasthenia gravis, without EMG/NCS; neurology note exacerbation G70.01 Myasthenia gravis, with Crisis history; set auth.xlsx col Urgency = STAT exacerbation D69.3 Immune thrombocytopenic Platelet count labs; MD diagnosis note purpura B20 HIV disease CD4 count; viral load; HIV diagnosis; MD LMN Z94.0– Transplant status Transplant surgical record or discharge summary Z94.9",
+   "verdict": "data",
+   "reason": "reference table",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0358",
+   "section": "13.5",
+   "kind": "heading",
+   "text": "13.5 Payer Guidelines",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0359",
+   "section": "13.5",
+   "kind": "text",
+   "text": "Payer Type Claim Format Key Rules Medicare Part B Email (PDF) Use G0153 for nursing. Apply MSP rules. Verify MAC in payer_rules.xlsx.",
+   "verdict": "data",
+   "reason": "payer guideline table (BlueCross PPO In-Network)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0360",
+   "section": "13.5",
+   "kind": "text",
+   "text": "Medicare Email (PDF) per Confirm IVIG benefit placement (medical vs pharmacy) in Advantage plan benefits.xlsx col Benefit_Type.",
+   "verdict": "data",
+   "reason": "payer guideline table (BlueCross PPO In-Network)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0361",
+   "section": "13.5",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 23",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0362",
+   "section": "13.5",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Medicaid Email (PDF) per PA required in most states. Check formulary and nursing code per state state in payer_rules.xlsx.",
+   "verdict": "data",
+   "reason": "payer guideline table (BlueCross PPO In-Network)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0363",
+   "section": "13.5",
+   "kind": "text",
+   "text": "Commercial PPO Email (PDF) Confirm CareIG_Network_Status = In-Network before scheduling. Commercial HMO Email (PDF) PCP referral may be required. Document in benefits.xlsx col Referral_Required.",
+   "verdict": "data",
+   "reason": "payer guideline table (BlueCross PPO In-Network)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0364",
+   "section": "13.5",
+   "kind": "text",
+   "text": "Accredo / Coram CareIG bills Do NOT bill drug J-code. Bill: 99600/99603, A4221/A4222, pre- (OON) nursing only med J-codes, saline only.",
+   "verdict": "data",
+   "reason": "payer guideline table (BlueCross PPO In-Network)",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0365",
+   "section": "14",
+   "kind": "heading",
+   "text": "14. Appendix A — Scripts & Templates",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0366",
+   "section": "14",
+   "kind": "text",
+   "text": "Template 1: Unable to Reach Patient — Email to Referring Physician To: intake.xlsx col Physician_Email Subject: [UNREACHABLE PATIENT] CASE_ID: [CASE_ID] Dear Dr. [intake.xlsx Physician_Name], We received a referral for [intake.xlsx Patient_First_Name] [intake.xlsx Patient_Last_Name] (DOB: [intake.xlsx DOB]) for home IVIG infusion therapy.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0367",
+   "section": "14",
+   "kind": "text",
+   "text": "We have made three contact attempts at [intake.xlsx Patient_Phone] and have been unable to reach the patient.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0368",
+   "section": "14",
+   "kind": "text",
+   "text": "Please provide an alternate contact number or assist in connecting the patient with our team. We cannot proceed with scheduling until contact is established.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0369",
+   "section": "14",
+   "kind": "text",
+   "text": "[Staff Name] — CareIG Specialty Pharmacy, Intake intake@careig.com Template 2: Peer-to-Peer Request — Email to Physician To: intake.xlsx col Physician_Email Subject: [P2P REQUEST] CASE_ID: [CASE_ID] | PA Case#: [auth.xlsx PA_Ref_Number] Dear Dr. [intake.xlsx Physician_Name], Patient: [intake.xlsx Patient_First_Name] [intake.xlsx Patient_Last_Name] | DOB: [intake.xlsx DOB] | Member ID: [intake.xlsx Primary_Member_ID] The prior authorization for [auth.xlsx PA_Approved_Drug] [auth.xlsx PA_Approved_Dose]g was denied by [intake.xlsx Primary_Insurance_Name] with the following reason: [auth.xlsx PA_Denial_Reason]. The payer has offered a peer-to-peer review. Available time slots: [auth.xlsx P2P_Available_Slots — one per line] To schedule, please contact the payer's prior authorization department at [benefits.xlsx PA_Submission_Email] and reference PA Case#: [auth.xlsx PA_Ref_Number].",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0370",
+   "section": "14",
+   "kind": "text",
+   "text": "If we do not receive a response within 2 business days, CareIG will file a Level 1 written appeal on the patient's behalf.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0371",
+   "section": "14",
+   "kind": "text",
+   "text": "[Staff Name] — CareIG Specialty Pharmacy, Prior Authorization pa@careig.com Template 3: Appeal Letter — Level 1 and Level 2 To: benefits.xlsx col PA_Submission_Email Subject: [APPEAL L[1/2]] CASE_ID: [CASE_ID] | Claim: [claim.xlsx Submission_Ref_Number] | CARC: [code] APPEAL LEVEL: [1 / 2] Patient: [intake.xlsx Patient_Last_Name], [intake.xlsx Patient_First_Name] | DOB: [intake.xlsx DOB] | Member ID: [intake.xlsx Primary_Member_ID] DOS: [claim.xlsx DOS] | Claim #: [claim.xlsx Submission_Ref_Number] CARC: [code] — [description] Billed: $[claim.xlsx Total_Billed] CareIG Specialty Pharmacy (NPI: [org_identifiers.xlsx CareIG_NPI] | Tax ID: [org_identifiers.xlsx EIN]) submits this Level [1/2] appeal for the above-referenced patient.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0372",
+   "section": "14",
+   "kind": "text",
+   "text": "The claim was denied with CARC [code]: [description].",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0373",
+   "section": "14",
+   "kind": "text",
+   "text": "Basis for Appeal: PA #[auth.xlsx PA_Number] was approved for [auth.xlsx PA_Approved_Drug] [auth.xlsx PA_Approved_Dose]g, effective [auth.xlsx PA_Effective_Date] through [auth.xlsx PA_Expiration_Date]. The service on [claim.xlsx DOS] is consistent with the approved authorization and diagnosis [intake.xlsx Diagnosis_ICD10].",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0374",
+   "section": "14",
+   "kind": "text",
+   "text": "The agent should add specific clinical justification here referencing the attached documents (e.g., citing lab values from the IgG level report or clinical notes from the visit note).",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0375",
+   "section": "14",
+   "kind": "text",
+   "text": "CareIG Specialty PharmacyPage 24",
+   "verdict": "context",
+   "reason": "page header/footer",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0376",
+   "section": "14",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Attached:",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0377",
+   "section": "1",
+   "kind": "heading",
+   "text": "1. Original claim — claim_[DOS].pdf",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0378",
+   "section": "2",
+   "kind": "heading",
+   "text": "2. PA approval — pa_approval_[Payer].pdf (PA#: [auth.xlsx PA_Number])",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0379",
+   "section": "3",
+   "kind": "heading",
+   "text": "3. Physician LMN — lmn_[Physician_Name].pdf",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0380",
+   "section": "4",
+   "kind": "heading",
+   "text": "4. Nursing visit note (exported from visit_note.xlsx)",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0381",
+   "section": "5",
+   "kind": "heading",
+   "text": "5. Lab results — igglevel_[MMDDYYYY].pdf",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0382",
+   "section": "6",
+   "kind": "heading",
+   "text": "6. ERA/EOB — era_[DOS]_[Payer].pdf",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0383",
+   "section": "6",
+   "kind": "text",
+   "text": "CareIG requests reconsideration and payment at contracted rate: $[payer_rules.xlsx Contracted_Rate for the relevant HCPCS code].",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0384",
+   "section": "6",
+   "kind": "text",
+   "text": "[Staff Name] — CareIG Specialty Pharmacy, Billing billing@careig.com | [org_identifiers.xlsx Billing_Phone] Template 4: Benefits Verification Request — Email to Payer To: intake.xlsx col Primary_Payer_Email Subject: [BV REQUEST] CareIG NPI: [org_identifiers.xlsx CareIG_NPI] | MemberID: [intake.xlsx Primary_Member_ID] Dear Benefits Verification Department, CareIG Specialty Pharmacy is requesting benefits verification for the following member: Patient: [intake.xlsx Patient_First_Name] [intake.xlsx Patient_Last_Name] | DOB: [intake.xlsx DOB] | Member ID: [intake.xlsx Primary_Member_ID] | Group: [intake.xlsx Primary_Group_Number] Referring Physician: Dr. [intake.xlsx Physician_Name] | NPI: [intake.xlsx Physician_NPI] Prescribed Treatment: [intake.xlsx Drug_Name] [intake.xlsx Drug_Dose_Grams]g [intake.xlsx Drug_Frequency] — home IVIG infusion Diagnosis: [intake.xlsx Diagnosis_ICD10] Please confirm the following:",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0385",
+   "section": "1",
+   "kind": "heading",
+   "text": "1. Does this plan cover home infusion therapy?",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0386",
+   "section": "2",
+   "kind": "heading",
+   "text": "2. Is IVIG covered under the medical or pharmacy benefit?",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0387",
+   "section": "2",
+   "kind": "text",
+   "text": "3. Is prior authorization required? If yes, PA submission email address.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0388",
+   "section": "4",
+   "kind": "heading",
+   "text": "4. Is a specific specialty pharmacy required? If yes, which one?",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0389",
+   "section": "5",
+   "kind": "heading",
+   "text": "5. Is CareIG Specialty Pharmacy (NPI: [org_identifiers.xlsx CareIG_NPI]) in-network?",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0390",
+   "section": "6",
+   "kind": "heading",
+   "text": "6. Individual deductible and amount met YTD",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0391",
+   "section": "7",
+   "kind": "heading",
+   "text": "7. Out-of-pocket maximum and amount met YTD",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0392",
+   "section": "8",
+   "kind": "heading",
+   "text": "8. Coinsurance percentage and per-visit copay",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0393",
+   "section": "9",
+   "kind": "heading",
+   "text": "9. Plan year type (calendar or fiscal)",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0394",
+   "section": "10",
+   "kind": "heading",
+   "text": "10. Coverage effective and termination dates",
+   "verdict": "context",
+   "reason": "heading / label / document metadata",
+   "source": "auto",
+   "reviewed": true
+  },
+  {
+   "id": "P0395",
+   "section": "10",
+   "kind": "text",
+   "text": "Please reply with a reference number to benefits@careig.com.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0396",
+   "section": "10",
+   "kind": "text",
+   "text": "[Staff Name] — CareIG Specialty Pharmacy, Benefits Verification benefits@careig.com Template 5: Estimated Patient Cost — Email to Patient To: intake.xlsx col Patient_Email Subject: CareIG — Your Estimated Infusion Cost Dear [intake.xlsx Patient_First_Name], We have reviewed your insurance benefits for your upcoming IVIG infusion therapy. Based on your current plan, your estimated out-of-pocket cost per infusion visit is approximately $[calculated per §7.3]. This is an estimate only. Your insurance company determines the final amount once the claim is processed. Your actual cost may be higher or lower depending on other claims applied to your deductible during the plan year.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0397",
+   "section": "10",
+   "kind": "text",
+   "text": "If you have questions or are experiencing financial difficulty, please reply to this email or contact us at intake@careig.com. Assistance programs may be available.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0398",
+   "section": "10",
+   "kind": "text",
+   "text": "[Staff Name] — CareIG Specialty Pharmacy, Intake intake@careig.com Template 6: Appointment Confirmation — Email to Patient To: intake.xlsx col Patient_Email Subject: CareIG — IVIG Infusion Appointment | [clinical.xlsx Visit_Date YYYY-MM-DD format] Dear [intake.xlsx Patient_First_Name], Your insurance has approved your IVIG infusion. We have the following appointment available: Date: [clinical.xlsx Visit_Date Visit_Date YYYY-MM-DD format] Time: [clinical.xlsx Visit_Time HH:MM am/pm (e.g. 12:00 pm) format] Approximate Duration: [infusion_duration.xlsx lookup matching drug and dose range] hours Location: Your home address on file Please reply to confirm, or let us know if you need a different date or time. If we do not hear from you within 2 business days, we will follow up.",
+   "verdict": "data",
+   "verifiers": [],
+   "reason": "Template 6 text (consumed by comms patient_confirmation)",
+   "source": "builder",
+   "reviewed": true
+  },
+  {
+   "id": "P0399",
+   "section": "10",
+   "kind": "text",
+   "text": "[Staff Name] — CareIG Specialty Pharmacy, Clinical Scheduling scheduling@careig.com CareIG Specialty PharmacyPage 25",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0400",
+   "section": "10",
+   "kind": "text",
+   "text": "CareIG Specialty Pharmacy | IVIG Home Infusion Billing SOP | v6.0 | Effective: March 23, 2026 Template 7: PA Follow-Up — Email to Payer To: benefits.xlsx col PA_Submission_Email Subject: [PA FOLLOW-UP] CareIG | PA Ref: [auth.xlsx PA_Ref_Number] Dear Prior Authorization Department, CareIG Specialty Pharmacy is requesting a status update on the following prior authorization: Patient: [intake.xlsx Patient_First_Name] [intake.xlsx Patient_Last_Name] | DOB: [intake.xlsx DOB] | Member ID: [intake.xlsx Primary_Member_ID] PA Reference: [auth.xlsx PA_Ref_Number] | Submitted: [auth.xlsx PA_Submission_Date] Drug: [auth.xlsx PA_Approved_Drug] [auth.xlsx PA_Approved_Dose]g | Diagnosis: [intake.xlsx Diagnosis_ICD10] Days pending: [calculate: today minus auth.xlsx PA_Submission_Date] Please reply with the current status, expected decision date, and any additional documentation required. [Staff Name] — CareIG Specialty Pharmacy, Prior Authorization pa@careig.com Template 8: Visit Assignment — Email to Nurse To: nurses.xlsx col Nurse_Email (for the assigned nurse) Subject: [VISIT ASSIGNMENT] [CASE_ID] | [clinical.xlsx Visit_Date] [nurses.xlsx Nurse_Name], You have been assigned the following IVIG home infusion visit:",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0401",
+   "section": "10",
+   "kind": "text",
+   "text": "Date: [clinical.xlsx Visit_Date] | Time: [clinical.xlsx Visit_Time] | Duration: approximately [infusion_duration.xlsx lookup] hours Patient Address: [intake.xlsx Patient_Address] Drug: [intake.xlsx Drug_Name] [intake.xlsx Drug_Dose_Grams]g | Lot: [clinical.xlsx Drug_Lot_Number] | NDC: [clinical.xlsx Drug_NDC], Infusion Rate: [intake.xlsx Infusion_Rate_Ordered_mL_hr] Route: [from physician orders in the referral] Pre-Medication Orders: [intake.xlsx Premeds_Ordered, or \"None ordered\"] Contraindications: [intake.xlsx Contraindications] Emergency Contact: [intake.xlsx Patient_Phone] Please confirm receipt by replying to this email. CareIG Specialty Pharmacy, Clinical Scheduling scheduling@careig.com Template 9: COB Payer Inquiry — Email to Payer To: benefits.xlsx col Secondary_Claim_Submission_Email (or PA_Submission_Email for the denying payer) Subject: COB Clarification — Claim [claim.xlsx Submission_Ref_Number] — DOS [claim.xlsx DOS] Dear Claims Department, We received denial code CO-22 on the above claim, indicating coordination of benefits applies. Please confirm which payer is primary for this patient for the date of service listed.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0402",
+   "section": "10",
+   "kind": "text",
+   "text": "If another payer is primary, please provide the primary payer's name and payer ID so we can submit accordingly.",
+   "verdict": "data",
+   "reason": "Appendix A template text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  },
+  {
+   "id": "P0403",
+   "section": "10",
+   "kind": "text",
+   "text": "Patient: [intake.xlsx Patient_First_Name] [intake.xlsx Patient_Last_Name] Member ID: [intake.xlsx Primary_Member_ID] Date of Service: [claim.xlsx DOS] Claim Reference: [claim.xlsx Submission_Ref_Number] Thank you, [Staff Name] — CareIG Specialty Pharmacy, Billing billing@careig.com Template 10: Initial Patient Contact — Email to Patient To: intake.xlsx col Patient_Email Subject: CareIG Specialty Pharmacy — Referral Received Dear [intake.xlsx Patient_First_Name], Your physician, Dr. [intake.xlsx Physician_Name], has referred you to CareIG Specialty Pharmacy for home IVIG infusion therapy. We will be coordinating your insurance verification, scheduling, and nursing visits. Before we can proceed, we require a signed Consent for Treatment and Financial Responsibility form. Please find the form attached. Sign and return it by replying to this email with the signed form attached. If you have any questions about the process, please reply to this email or contact us at intake@careig.com. [Staff Name] — CareIG Specialty Pharmacy, Intake intake@careig.com — END OF DOCUMENT — CareIG-SOP-BILL-001 v6.0 — CareIG Specialty PharmacyPage 26",
+   "verdict": "data",
+   "reason": "Template 9/10 text",
+   "source": "builder",
+   "reviewed": true,
+   "verifiers": []
+  }
+ ]
+}

@@ -61,16 +61,38 @@ def pre_tool(tool: str, tool_input: dict) -> dict:
 def completion(trigger: str) -> dict:
     t0 = time.time()
     counter = config.state_dir() / "completion_denials.json"
-    denials = json.loads(counter.read_text()) if counter.exists() else 0
+    hist = json.loads(counter.read_text()) if counter.exists() else []
+    hist = hist if isinstance(hist, list) else [None] * int(hist)
+    denials = len(hist)
     ctx = _context()
     findings, errors = framework.run(_rules(), "completion", ctx)
-    exhausted = bool(findings) and denials >= config.MAX_COMPLETION_DENIALS
+    # Keep refusing while the agent is still closing findings; give up after a few refusals without progress.
+    stale, best = 0, None
+    for n in [x for x in hist if x is not None] + [len(findings)]:
+        best, stale = (n, 0) if best is None or n < best else (best, stale + 1)
+    exhausted = bool(findings) and (denials >= config.MAX_COMPLETION_DENIALS or stale >= config.MAX_STALE_DENIALS)
     decision = "deny" if findings and not exhausted else "allow"
     _log({"stage": "completion", "trigger": trigger, "decision": decision, "budget_exhausted": exhausted,
-          "denials_before": denials, "findings": [f.__dict__ for f in findings], "errors": errors,
+          "denials_before": denials, "stale": stale, "findings": [f.__dict__ for f in findings], "errors": errors,
           "slm": ctx.log, "secs": round(time.time() - t0, 2)})
     if decision == "allow":
         return {"decision": "allow"}
-    config.write_shared(counter, json.dumps(denials + 1))
+    config.write_shared(counter, json.dumps(hist + [len(findings)]))
     text = _feedback("completion", findings)
     return {"decision": "deny", "reason": text, "additionalContext": text}
+
+
+def checklist() -> dict:
+    """UserPromptSubmit: list the SOP obligations still open on the initial state (algo.md Step 5)."""
+    marker = config.state_dir() / "checklist.txt"
+    if not config.CHECKLIST or marker.exists():
+        return {"decision": "allow"}
+    ctx = _context()
+    findings, errors = framework.run(_rules(), "completion", ctx)
+    lines = ["SOP CHECKLIST (interwhen): per the SOP and the files/messages in this task, the following must be "
+             "done before you finish. Verify each against the SOP while you work; completion is checked."]
+    lines += [f"{i}. {f.problem}" for i, f in enumerate(findings, 1)]
+    text = "\n".join(lines) if findings else ""
+    config.write_shared(marker, text)
+    _log({"stage": "checklist", "items": len(findings), "errors": errors, "slm": ctx.log})
+    return {"decision": "allow", **({"additionalContext": text} if text else {})}

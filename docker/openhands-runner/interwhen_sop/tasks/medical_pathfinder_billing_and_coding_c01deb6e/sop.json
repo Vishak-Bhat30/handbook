@@ -1,0 +1,3690 @@
+{
+ "source_pdf": "tasks/medical_pathfinder_billing_and_coding_c01deb6e/environment/initial_workspace/PBC_SOP.docx",
+ "toc": [
+  {
+   "section": "1",
+   "title": "Introduction & Definitions"
+  },
+  {
+   "section": "1.1",
+   "title": "Purpose"
+  },
+  {
+   "section": "1.2",
+   "title": "Definitions & Vocabulary"
+  },
+  {
+   "section": "1.3",
+   "title": "Confidentiality & Compliance"
+  },
+  {
+   "section": "1.4",
+   "title": "Audience & Role-Based Workflow"
+  },
+  {
+   "section": "2",
+   "title": "Organizational Roles & Responsibilities"
+  },
+  {
+   "section": "2.1",
+   "title": "Specialized Operations"
+  },
+  {
+   "section": "2.2",
+   "title": "The Claims Escalation Pathway"
+  },
+  {
+   "section": "3",
+   "title": "Triage & Routing Logic"
+  },
+  {
+   "section": "3.1",
+   "title": "Document Ingestion & Identification"
+  },
+  {
+   "section": "3.2",
+   "title": "Keyword Trigger & Routing Matrix"
+  },
+  {
+   "section": "3.2.1",
+   "title": "Support & Inquiry Triggers"
+  },
+  {
+   "section": "4",
+   "title": "Severity & SLA Matrix"
+  },
+  {
+   "section": "4.1",
+   "title": "Severity Levels & Response Windows"
+  },
+  {
+   "section": "4.2",
+   "title": "The \"TFL Warning\" Protocol"
+  },
+  {
+   "section": "4.3",
+   "title": "Financial Escalation Thresholds"
+  },
+  {
+   "section": "5",
+   "title": "Automation Triggers & Hard Rules"
+  },
+  {
+   "section": "5.1",
+   "title": "Small Balance Write-Off (SBWO) Guidelines"
+  },
+  {
+   "section": "5.2",
+   "title": "Proactive Clinical & Eligibility Alerts"
+  },
+  {
+   "section": "5.3",
+   "title": "Automated Status Polling"
+  },
+  {
+   "section": "6",
+   "title": "Workflow A: Denial Management"
+  },
+  {
+   "section": "6.1",
+   "title": "The Denial Triage"
+  },
+  {
+   "section": "6.2",
+   "title": "Recovery Plans"
+  },
+  {
+   "section": "1",
+   "title": "Eligibility Re-Check: Verify coverage for the Date of Service in"
+  },
+  {
+   "section": "6.3",
+   "title": "Modifier Logic (Special Handling)"
+  },
+  {
+   "section": "7",
+   "title": "Workflow B: Payment Posting"
+  },
+  {
+   "section": "7.1",
+   "title": "The ERA Accuracy Check (835 Workflow)"
+  },
+  {
+   "section": "7.2",
+   "title": "Handling Exceptions & Offsets"
+  },
+  {
+   "section": "7.3",
+   "title": "Daily Reconciliation"
+  },
+  {
+   "section": "8",
+   "title": "Workflow C: Medical Coding & Auditing"
+  },
+  {
+   "section": "8.1",
+   "title": "The Coding Process"
+  },
+  {
+   "section": "8.2",
+   "title": "NCCI PTP (Procedure-to-Procedure) Audits"
+  },
+  {
+   "section": "8.3",
+   "title": "Code Modifiers 25 & 59"
+  },
+  {
+   "section": "8.4",
+   "title": "The Provider Query Loop"
+  },
+  {
+   "section": "8.5",
+   "title": "Additional Modifier Categories"
+  },
+  {
+   "section": "9",
+   "title": "Escalation Protocols"
+  },
+  {
+   "section": "9.1",
+   "title": "The Escalation Chain"
+  },
+  {
+   "section": "9.2",
+   "title": "Legal Threat Protocol"
+  },
+  {
+   "section": "9.3",
+   "title": "High-Value Dispute Protocol ($10k+)"
+  },
+  {
+   "section": "9.4",
+   "title": "Escalation Redundancy Rule"
+  },
+  {
+   "section": "10",
+   "title": "Internal Communication Scripts"
+  },
+  {
+   "section": "10.1",
+   "title": "The Provider Query (CMC to Clinic)"
+  },
+  {
+   "section": "10.2",
+   "title": "The Payer Status Call (Resolution Auditor to Payer)"
+  },
+  {
+   "section": "10.3",
+   "title": "The COB Script (PFR to Patient)"
+  },
+  {
+   "section": "10.4",
+   "title": "The \"High-Value\" Escalation (Auditor to RCM Manager)"
+  },
+  {
+   "section": "10.5",
+   "title": "The Pattern Recurrence Report (Any Role to RCM Manager)"
+  },
+  {
+   "section": "11",
+   "title": "Compliance & HIPAA"
+  },
+  {
+   "section": "11.1",
+   "title": "PHI Handling Rules"
+  },
+  {
+   "section": "11.2",
+   "title": "Data Protection & Encryption"
+  },
+  {
+   "section": "11.3",
+   "title": "Security Standards Matrix"
+  },
+  {
+   "section": "11.4",
+   "title": "Breach Reporting & Incident Response"
+  },
+  {
+   "section": "12",
+   "title": "QA, Audit Workflow, CCR"
+  },
+  {
+   "section": "12.1",
+   "title": "The Target"
+  },
+  {
+   "section": "12.2",
+   "title": "The Weekly Precision Audit"
+  },
+  {
+   "section": "12.3",
+   "title": "The Error Correction Loop"
+  },
+  {
+   "section": "12.4",
+   "title": "Monthly Performance Dashboard"
+  },
+  {
+   "section": "13",
+   "title": "Emergency Protocols"
+  },
+  {
+   "section": "13.1",
+   "title": "Payer Outage Protocol"
+  },
+  {
+   "section": "13.2",
+   "title": "Data Breach Response (Emergency Phase)"
+  },
+  {
+   "section": "13.3",
+   "title": "Safety Recall Protocol"
+  },
+  {
+   "section": "13.4",
+   "title": "The \"Hard Stop\" Override"
+  },
+  {
+   "section": "1",
+   "title": "Original · 7 Replacement/corrected · 8 Void/cancel"
+  }
+ ],
+ "paragraphs": [
+  {
+   "id": "P0001",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "heading",
+   "text": "PATHFINDER BILLING AND CODING"
+  },
+  {
+   "id": "P0002",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "Standard Operating Procedure"
+  },
+  {
+   "id": "P0003",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "RCM & Claims Resolution"
+  },
+  {
+   "id": "P0004",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "Doc ID: SOP-RCM-024 Revision: 3.26 – Current Effective Date: Feb 23, 2026 Agency: Revenue Complete Management"
+  },
+  {
+   "id": "P0005",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "SOP-RCM-024"
+  },
+  {
+   "id": "P0006",
+   "section": "0",
+   "section_title": "Front matter",
+   "page": 0,
+   "kind": "text",
+   "text": "Pathfinder Billing and Coding"
+  },
+  {
+   "id": "P0007",
+   "section": "1",
+   "section_title": "Introduction & Definitions",
+   "page": 0,
+   "kind": "heading",
+   "text": "1. Introduction & Definitions"
+  },
+  {
+   "id": "P0008",
+   "section": "1.1",
+   "section_title": "Purpose",
+   "page": 0,
+   "kind": "heading",
+   "text": "1.1 Purpose"
+  },
+  {
+   "id": "P0009",
+   "section": "1.1",
+   "section_title": "Purpose",
+   "page": 0,
+   "kind": "text",
+   "text": "This Standard Operating Procedure (SOP) stands as the core guidelines for Pathfinder Billing and Coding (PBC). Our purpose is to perform our distinct Revenue Complete Management (RCM). Since we run in a highly regulated environment relying on specific data exchanges, clear communications, and patient data safety, accuracy is our number one priority. Our success metric is a 100% Clean Claim Rate (CCR), minimizing Days in Sales Outstanding (DSO) and maximizing practice and client revenue while minimizing costs to client patients."
+  },
+  {
+   "id": "P0010",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "heading",
+   "text": "1.2 Definitions & Vocabulary"
+  },
+  {
+   "id": "P0011",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "To ensure we have a comprehensive and thorough level of accuracy, all personnel and representatives must strictly adhere to the following specific terms:"
+  },
+  {
+   "id": "P0012",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "835 (Electronic Remittance Advice): A digital statement returned by the payer that explains how the claim was processed. This is the primary document for all payment posting. The 835 uses standardized Claim Adjustment Reason Codes (CARCs) and Remittance Advice Remark Codes (RARCs). These codes break down exactly why a balance was paid, adjusted, or denied. The codes will help us determine the next steps we have to take as a team. Inbound ERA files are stored as ERA_[BatchID].xlsx with one row per claim line."
+  },
+  {
+   "id": "P0013",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "837P (Professional Claim): A secure, electronic file we use to send medical billing data to the insurance payer. It is a total data package containing all the patient's information and reports in a special format. Before we send this, our team will ensure every piece of data including the provider's NPI, the patient's demographics, and every medical code is perfectly accurate so the payer doesn't instantly reject it when passed."
+  },
+  {
+   "id": "P0014",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "Business Day: Defined as Monday through Friday, 9:00 AM to 4:00 PM Central Time (CT), excluding PBC-recognized federal holidays. For the purposes of our SLA (Service Level Agreement), any file received after 4:00 PM CT, or on a weekend/holiday, is officially timestamped as received at 9:00 AM on the following Business Day. This ensures clocks remain accurate and fair across all tiers."
+  },
+  {
+   "id": "P0015",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "Clean Claim: A claim that passes all of our internal checks, the clearinghouse, and the payer with zero errors or denials. It pays out the full allowed amount. Achieving a 100% Clean Claim rate is our main goal, as it proves we met our most basic standard."
+  },
+  {
+   "id": "P0016",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "Clean Claim Rate (CCR): The percentage of claims that are successfully processed and paid upon first submission, without being rejected by the clearinghouse or denied by the payer. The CCR serves as the primary performance metric for the CMC and Billing Specialist, measuring the accuracy of the initial coding and data entry."
+  },
+  {
+   "id": "P0017",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "CPT (Current Procedural Terminology): The specific five-digit numbers used to communicate to the payer exactly what service, surgery, or exam the doctor or clinic performed. The CPT code is the core action of the bill. We will make sure every CPT code matches up logically with the patient's ICD-10 codes to validate the medical necessity of the visit. Our auditors will know exactly when to attach two-character Modifiers (such as Modifier 25 or 59) to these codes to ensure our clients get paid."
+  },
+  {
+   "id": "P0018",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "Dollar Value: The total gross financial amount associated with a single claim, a denial, or a batch of services. Dollar Value is a primary triage metric to prioritize high-impact revenue. By identifying and fast-tracking high-value claims, we protect our clients from significant financial risk and ensure their most critical cash flow is never delayed."
+  },
+  {
+   "id": "P0019",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "High-Value Dispute: Any claim, batch, or reimbursement conflict where the disputed amount exceeds $10,000.00. These disputes require a higher level of scrutiny and a more thorough Recovery Plan because they represent a significant percentage of a clinic's monthly cash flow."
+  },
+  {
+   "id": "P0020",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "ICD-10 (International Classification of Diseases): Alphanumeric codes we use to communicate to the payer exactly what diagnosis, symptom, or medical condition the patient has. Where the CPT code defines the exact action taken by the provider, the ICD-10 code establishes the medical necessity that justifies that CPT code."
+  },
+  {
+   "id": "P0021",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "LMN (Letter of Medical Necessity): A formal clinical document drafted to justify the necessity of a specific medical service, procedure, or piece of equipment for a patient's health. In the recovery process, an LMN serves as the primary evidence to overturn \"Lack of Medical Necessity\" denials. The LMN must be supported by documentation provided by the CMC and authorized by the RCM Manager."
+  },
+  {
+   "id": "P0022",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "NPI (National Provider Identifier): A unique 10-digit ID assigned to every healthcare provider and clinic. Missing or mis-mapped NPIs are cause for instant claim rejection as the payer won't know who provided the service or who to pay."
+  },
+  {
+   "id": "P0023",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "PLB (Provider Level Balance): A specific segment within an 835/ERA file used by insurance payers to report adjustments that are not related to a specific claim. These adjustments can include interest payments (positive), overpayments (negative), provider credentials fees, or federal/state taxes."
+  },
+  {
+   "id": "P0024",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "Provider Query: A professional, written request sent from a CMC or Resolution Auditor to a healthcare provider to clarify ambiguous, incomplete, or conflicting clinical documentation. To maintain compliance, all queries must be \"non-leading\" meaning they ask for clarification based on the facts of the case rather than suggesting a specific diagnosis to increase reimbursement."
+  },
+  {
+   "id": "P0025",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "PHI (Protected Health Information): Any data, medical or demographic, that can be used to identify a patient. PHI includes patient names, birth dates, social security numbers, and medical records. Protecting this information fulfills HIPAA legal obligations."
+  },
+  {
+   "id": "P0026",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "Small Balance Write-Off (SBWO): An automated or manual administrative adjustment used to clear negligible remaining balances from the ledger. An SBWO is triggered when the financial cost of further collection efforts outweighs the potential recovery value. By utilizing SBWO thresholds, PBC ensures our time and effort are saved for recovery of high-value claims rather than the maintenance of small balances."
+  },
+  {
+   "id": "P0027",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "SLA (Service Level Agreement): A documented commitment that defines the specific speed and quality standards for every task within the revenue cycle. At PBC, the SLA defines our operational standard. The SLA ensures every claim, inquiry, and appeal is processed within the mandatory window and the TFL is never breached."
+  },
+  {
+   "id": "P0028",
+   "section": "1.2",
+   "section_title": "Definitions & Vocabulary",
+   "page": 0,
+   "kind": "text",
+   "text": "TFL (Timely Filing Limit): A deadline set by an insurance company for our claim processing. The standard window is between 90 to 180 days from date of service. Beating the TFL is a core standard; we take the time to get the claim right the first time and submit it without ever being denied."
+  },
+  {
+   "id": "P0029",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "heading",
+   "text": "1.3 Confidentiality & Compliance"
+  },
+  {
+   "id": "P0030",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "2FA (Two-Factor Authentication): A security process requiring two distinct forms of identification to access an account. At Pathfinder, 2FA typically involves a standard password combined with a timesensitive code from a mobile authenticator app or hardware token. This is a mandatory requirement to prevent unauthorized access to PBC systems."
+  },
+  {
+   "id": "P0031",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "Accounts Receivable (A/R): The total amount of money owed to our clients by both payers and patients for services rendered. At PBC, \"working the A/R\" means identifying every unpaid claim and ensuring it moves from \"Pending\" to \"Paid,\" reducing the amount of days a balance stays on our books. Any balance over 60 days is a failure."
+  },
+  {
+   "id": "P0032",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "BAA (Business Associate Agreement): A legally binding contract required by HIPAA between a Covered Entity and PBC. The BAA outlines the specific responsibilities of the Associate regarding the protection, use, and disclosure of PHI. The BAA includes strict protocols for data encryption (2FA), breach notification timelines, and the secure return or destruction of data upon contract termination."
+  },
+  {
+   "id": "P0033",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "Credit Balance: A financial state where a patient or insurance payer has provided funds in excess of the total amount due for services rendered. At PBC, a credit balance is treated as a held liability. Every credit balance must be audited and either applied to another verified outstanding balance belonging to that patient or refunded to the original payer in full."
+  },
+  {
+   "id": "P0034",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "Data Isolation: All patient data, including names, dates of birth, and internal IDs, is classified as PHI. That data must never be shared, processed, or stored in unencrypted chat logs, personal devices, or unsecured directories. Protecting our patients' privacy is required."
+  },
+  {
+   "id": "P0035",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "EOB (Explanation of Benefits): A statement sent by the health insurance company to the patient explaining what medical treatments or services were paid for on their behalf. Think of the EOB as the patient-facing version of our 835. Our Patient Financial Representatives use the EOB to help patients understand their deductibles, copays, and coinsurance amounts so we can accurately and clearly collect their remaining balance."
+  },
+  {
+   "id": "P0036",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "HIPAA Mandate: Because the processing of Protected Health Information (PHI) is outlined herein, this document must be stored in a HIPAA-compliant encrypted directory with controlled access."
+  },
+  {
+   "id": "P0037",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "Legal Threat: Any formal or informal communication from an attorney, a government regulatory body, or a patient/provider that explicitly mentions litigation, fraud investigations, subpoenas, or breaches of HIPAA. In the Pathfinder model, a Legal Threat generates an email and Slack notification that bypasses all standard SLAs for immediate management intervention from an RCM Manager."
+  },
+  {
+   "id": "P0038",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "NCCI (National Correct Coding Initiative): A set of coding policies developed by the Centers for Medicare & Medicaid Services (CMS) to promote national correct coding methodologies and control improper coding. NCCI edits define which procedures cannot be billed together on the same date of service for the same patient."
+  },
+  {
+   "id": "P0039",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "Payer Outage: A systemic failure of an insurance company's electronic gateway that prevents the submission of 837P files or the receipt of 835 ERAs. At PBC, an outage is defined as any downtime exceeding 4 Business Hours."
+  },
+  {
+   "id": "P0040",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "PBC Central Gateway: PBC's secure, centralized digital entry point for all incoming clinical and financial data. The Gateway sanitizes, standardizes, tags, and routes data to the appropriate department. Operational data from the Gateway is surfaced through the file ecosystem described in Appendix A. All claim tracking, denial management, payment posting, and escalation logging is performed in these files."
+  },
+  {
+   "id": "P0041",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "Proprietary Logic: This SOP manual contains the proprietary operational workflows belonging to Pathfinder Billing and Coding. It is strictly intended for internal use, and unauthorized reproduction, distribution, or modification is expressly prohibited."
+  },
+  {
+   "id": "P0042",
+   "section": "1.3",
+   "section_title": "Confidentiality & Compliance",
+   "page": 0,
+   "kind": "text",
+   "text": "Safety Recall: A formal notification from a manufacturer, the FDA, or a regulatory body regarding a defect or risk associated with medical equipment, software, or pharmaceutical supplies used by PBC clients."
+  },
+  {
+   "id": "P0043",
+   "section": "1.4",
+   "section_title": "Audience & Role-Based Workflow",
+   "page": 0,
+   "kind": "heading",
+   "text": "1.4 Audience & Role-Based Workflow"
+  },
+  {
+   "id": "P0044",
+   "section": "1.4",
+   "section_title": "Audience & Role-Based Workflow",
+   "page": 0,
+   "kind": "text",
+   "text": "This SOP is written for all PBC operational staff. Each workflow section identifies which role is responsible. When you are assigned a task, follow the workflow for your role. If a step specifies a ' ' — different role (e.g., the CMC must provide... ), that step is their responsibility do not perform it yourself unless your role is explicitly named."
+  },
+  {
+   "id": "P0045",
+   "section": "2",
+   "section_title": "Organizational Roles & Responsibilities",
+   "page": 0,
+   "kind": "heading",
+   "text": "2. Organizational Roles & Responsibilities"
+  },
+  {
+   "id": "P0046",
+   "section": "2",
+   "section_title": "Organizational Roles & Responsibilities",
+   "page": 0,
+   "kind": "text",
+   "text": "Our workflow relies on a clean system of organization utilizing specialized skill sets. Every member of the PBC team is expected to understand their authorization limits, and know exactly when to escalate an issue. The SOP helps clarify these needs, and the employee's role within the SOP."
+  },
+  {
+   "id": "P0047",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "heading",
+   "text": "2.1 Specialized Operations"
+  },
+  {
+   "id": "P0048",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "text",
+   "text": "Certified Medical Coder (CMC) — The CMC is our connection to the clinic, they translate what needs communicating to the payer."
+  },
+  {
+   "id": "P0049",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Core Duties: A CMC will take the physician's chart notes and operation reports and translate them into accurate ICD-10 codes and their supporting CPT."
+  },
+  {
+   "id": "P0050",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Authorization Level: This role has the authority to assign, order, and certify diagnostic and procedural/operational codes based on clinic provided documentation and reporting."
+  },
+  {
+   "id": "P0051",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Escalation Trigger: In the event of an ambiguous note or missing signature, the CMC will issue a \"Provider Query\" to attempt to resolve the matter with the provider. If a consistent pattern emerges, five or more cases, then the CMC will escalate the issue to the RCM Manager to ensure patient cases are being handled before the TFL."
+  },
+  {
+   "id": "P0052",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "text",
+   "text": "Patient Financial Representative (PFR) — This is our representative to the patient, with a consistent, considerate, and courteous communication system in place to help the patient understand the costs and benefits they receive from PBC and the payer."
+  },
+  {
+   "id": "P0053",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Core Duties: Generating patient statements, assisting patients in understanding the EOB, collecting copay and deductibles, establishing and scheduling payment plans."
+  },
+  {
+   "id": "P0054",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Authorization Level: Authorized to collect payments over the phone or digitally, update patient demographic PHI, and establish and schedule structured payment plans within company guidelines."
+  },
+  {
+   "id": "P0055",
+   "section": "2.1",
+   "section_title": "Specialized Operations",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Escalation Trigger: Must immediately escalate any patient requesting a \"hardship waiver,\" any patient demanding a refund, or any patient threatening legal or retaliatory action."
+  },
+  {
+   "id": "P0056",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "heading",
+   "text": "2.2 The Claims Escalation Pathway"
+  },
+  {
+   "id": "P0057",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "text",
+   "text": "Tier 1: Billing Specialist — The Billing Specialist's primary responsibility is the accurate creation, editing, and submission of initial claims to ensure the highest possible Clean Claim rate."
+  },
+  {
+   "id": "P0058",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Core Duties: The Billing Specialist will validate clinic NPIs, verify that the reports provided by CMCs align logically within the claim register, push 837P files to the clearinghouse, and post routine payments from standard ERA files. The Billing Specialist will do all this in an efficient manner well before the TFL."
+  },
+  {
+   "id": "P0059",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Authorization Level: The Billing Specialist is authorized to post payments and execute standard contractual adjustments directly outlined by routine CARCs and RARCs."
+  },
+  {
+   "id": "P0060",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Escalation Trigger: The Billing Specialist will immediately escalate any claim that is rejected by the clearinghouse due to systemic errors to the RCM Manager. The Billing Specialist will return to the CMC any denial requiring the attachment of physical medical records or PHI, and will escalate to the Resolution Auditor any claim with an unexpected coding mismatch."
+  },
+  {
+   "id": "P0061",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "text",
+   "text": "Tier 2: Resolution Auditor — The Resolution Auditor handles complex accounts receivable (A/R) and denial management. They step in when a claim fails to process cleanly and requires expert intervention to rescue the revenue."
+  },
+  {
+   "id": "P0062",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Core Duties: The Resolution Auditor will investigate complex 835 denials, draft and submit written appeals, conduct follow-up calls with payer representatives, and ensure no claim passes the TFL. The Resolution Auditor monitors PBC_RA_Queue.xlsx for incoming work items."
+  },
+  {
+   "id": "P0063",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Authorization Level: The Resolution Auditor is authorized to apply corrective two-character Modifiers (such as 25 or 59) to resubmit claims. The Resolution Auditor is authorized to approve small-balance write-offs up to $250.00 without management approval to clear stagnant accounts."
+  },
+  {
+   "id": "P0064",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Escalation Trigger: The Resolution Auditor will escalate to the RCM Manager any denials citing \"Lack of Medical Necessity\" and will notify via email and Slack the CMC and Billing Specialist that authorized the claim, any sudden trend of mass rejections (5 or more) from a single payer, or a trend of rejections (5 or more) regarding a single patient."
+  },
+  {
+   "id": "P0065",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "text",
+   "text": "Tier 3: RCM Manager — The RCM Manager oversees the financial health of our assigned medical practices and handles any and all high-level operational, financial, and legal roadblocks."
+  },
+  {
+   "id": "P0066",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Core Duties: Provider relations, payer contract analysis, team performance auditing, and overall financial reporting. The RCM Manager reviews client cases of non-payment and emails the PFR to notify the patient that outstanding payments will be sent to an outside collection agency. They ensure the entire team is operating within HIPAA guidelines."
+  },
+  {
+   "id": "P0067",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Authorization Level: The RCM Manager is authorized to approve high-dollar write-offs up to $2,500.00. The RCM Manager is authorized to issue patient refunds after filing a report detailing the cause and reasoning. The RCM Manager is authorized to transfer patient demographic data necessary to transfer the patient case to an approved outside collection agency in the event of non-payment."
+  },
+  {
+   "id": "P0068",
+   "section": "2.2",
+   "section_title": "The Claims Escalation Pathway",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Escalation Trigger: The RCM Manager is the final level of contact for legal threats from patients, suspected PHI breaches, or critical payer contract disputes. Any issues here will be forwarded to PBC's legal team."
+  },
+  {
+   "id": "P0069",
+   "section": "3",
+   "section_title": "Triage & Routing Logic",
+   "page": 0,
+   "kind": "heading",
+   "text": "3. Triage & Routing Logic"
+  },
+  {
+   "id": "P0070",
+   "section": "3.1",
+   "section_title": "Document Ingestion & Identification",
+   "page": 0,
+   "kind": "heading",
+   "text": "3.1 Document Ingestion & Identification"
+  },
+  {
+   "id": "P0071",
+   "section": "3.1",
+   "section_title": "Document Ingestion & Identification",
+   "page": 0,
+   "kind": "text",
+   "text": "All incoming files are funneled through the PBC Central Gateway and surfaced in the operational files described in Appendix A. Files must be named according to our standard naming convention:"
+  },
+  {
+   "id": "P0072",
+   "section": "3.1",
+   "section_title": "Document Ingestion & Identification",
+   "page": 0,
+   "kind": "text",
+   "text": "[DATE],[PAYER],[FILETYPE],[TAG],[BATCHID]"
+  },
+  {
+   "id": "P0073",
+   "section": "3.1",
+   "section_title": "Document Ingestion & Identification",
+   "page": 0,
+   "kind": "bullet",
+   "text": "TAG is an optional classifier assigned by the Gateway (e.g., URGENT, CORRECTED, RESUBMIT). If no tag applies, the field is omitted."
+  },
+  {
+   "id": "P0074",
+   "section": "3.1",
+   "section_title": "Document Ingestion & Identification",
+   "page": 0,
+   "kind": "bullet",
+   "text": "PDF Files: Typically contain EOBs, medical records, or correspondence letters."
+  },
+  {
+   "id": "P0075",
+   "section": "3.1",
+   "section_title": "Document Ingestion & Identification",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Excel/CSV Files: Typically contain ERA data, patient manifests, or clinic reports."
+  },
+  {
+   "id": "P0076",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "heading",
+   "text": "3.2 Keyword Trigger & Routing Matrix"
+  },
+  {
+   "id": "P0077",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "text",
+   "text": "The following table outlines keywords used to route documents to the appropriate specialist. If a file contains any of these keywords in the filename or metadata, it follows the assigned path."
+  },
+  {
+   "id": "P0078",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Keyword Triggers | Primary Content | Assigned Role"
+  },
+  {
+   "id": "P0079",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "835, 837, 837P, 999, ACK, Batch, ERA, Pmt, Remit, Payment, Bill | Payment files and posting data | Billing Specialist"
+  },
+  {
+   "id": "P0080",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Denial, CO-, PR-, Appeal, TFL, Timely, Corrected, MOD, 25, 59 | Insurance rejections or partial payments | Resolution Auditor"
+  },
+  {
+   "id": "P0081",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Chart, Note, Op-Rpt, Query, Dr., MD, NP, Superbill, Encounter | Clinical documentation for coding | CMC"
+  },
+  {
+   "id": "P0082",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Stmt, Balance, Pt-Inq, Plan, Copay, Coinsurance, Deductible, Guarantor | Patient-facing financial data | PFR"
+  },
+  {
+   "id": "P0083",
+   "section": "3.2",
+   "section_title": "Keyword Trigger & Routing Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Audit, OIG, Attorney, Counsel, Refund, Legal, Subpoena, Breach, Contract, Credentialing, Enrollment, In- network | High-risk, legal or administrative data | RCM Manager"
+  },
+  {
+   "id": "P0084",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "heading",
+   "text": "3.2.1 Support & Inquiry Triggers"
+  },
+  {
+   "id": "P0085",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "text",
+   "text": "The Gateway also identifies support requests and routes them to ensure rapid response times."
+  },
+  {
+   "id": "P0086",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Keyword Triggers | Source | Assigned Role"
+  },
+  {
+   "id": "P0087",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Portal, Login, Password, Access, Ticket, Help | Provider (Tech) | Billing Specialist"
+  },
+  {
+   "id": "P0088",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Credentialing, Enrollment, In- network, Contract | Provider (Admin) | RCM Manager"
+  },
+  {
+   "id": "P0089",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Status, Update, Check on, Where is, Follow-up | Provider (Status) | Billing Specialist"
+  },
+  {
+   "id": "P0090",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Question, Dispute, Wrong, Error, Update Info | Patient | PFR"
+  },
+  {
+   "id": "P0091",
+   "section": "3.2.1",
+   "section_title": "Support & Inquiry Triggers",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Urgent, ASAP, Emergency, Complaint, Supervisor | Urgency | RCM Manager"
+  },
+  {
+   "id": "P0092",
+   "section": "4",
+   "section_title": "Severity & SLA Matrix",
+   "page": 0,
+   "kind": "heading",
+   "text": "4. Severity & SLA Matrix"
+  },
+  {
+   "id": "P0093",
+   "section": "4.1",
+   "section_title": "Severity Levels & Response Windows",
+   "page": 0,
+   "kind": "heading",
+   "text": "4.1 Severity Levels & Response Windows"
+  },
+  {
+   "id": "P0094",
+   "section": "4.1",
+   "section_title": "Severity Levels & Response Windows",
+   "page": 0,
+   "kind": "text",
+   "text": "Tasks are prioritized by impact on the clinic's bottom line. The TFL is defined the moment a file is timestamped by the PBC Gateway."
+  },
+  {
+   "id": "P0095",
+   "section": "4.1",
+   "section_title": "Severity Levels & Response Windows",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Severity Level | Criteria | Acknowledgment | Resolution Goal"
+  },
+  {
+   "id": "P0096",
+   "section": "4.1",
+   "section_title": "Severity Levels & Response Windows",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Level 1: Critical | Legal threats, PHI breaches, or claims >$10k within 15 days of TFL | 2 Hours or next Business Day | 24–48 Hours"
+  },
+  {
+   "id": "P0097",
+   "section": "4.1",
+   "section_title": "Severity Levels & Response Windows",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Level 2: High | Denials >$1,000, \"Urgent\" support triggers, or any claim within 30 days of TFL | 4 Hours or next Business Day | 48–120 Hours"
+  },
+  {
+   "id": "P0098",
+   "section": "4.1",
+   "section_title": "Severity Levels & Response Windows",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Level 3: Medium | Routine 837/835 posting, standard \"Status\" inquiries, and CMC coding batches | Within 1–2 Business Days | 3 Business Days"
+  },
+  {
+   "id": "P0099",
+   "section": "4.1",
+   "section_title": "Severity Levels & Response Windows",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Level 4: Low | Patient balance inquiries, routine demographic updates, or small-balance A/R (<$50) | Within 1–5 Business Days | 5 Business Days"
+  },
+  {
+   "id": "P0100",
+   "section": "4.2",
+   "section_title": "The \"TFL Warning\" Protocol",
+   "page": 0,
+   "kind": "heading",
+   "text": "4.2 The \"TFL Warning\" Protocol"
+  },
+  {
+   "id": "P0101",
+   "section": "4.2",
+   "section_title": "The \"TFL Warning\" Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "To ensure we never lose revenue to a missed deadline, the following automated alerts via Slack/email are triggered based on the TFL:"
+  },
+  {
+   "id": "P0102",
+   "section": "4.2",
+   "section_title": "The \"TFL Warning\" Protocol",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Yellow Alert (60 Days to TFL): The Billing Specialist must verify the claim is \"Accepted\" at the payer level"
+  },
+  {
+   "id": "P0103",
+   "section": "4.2",
+   "section_title": "The \"TFL Warning\" Protocol",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Orange Alert (30 Days to TFL): The claim is automatically escalated to a Resolution Auditor for"
+  },
+  {
+   "id": "P0104",
+   "section": "4.2",
+   "section_title": "The \"TFL Warning\" Protocol",
+   "page": 0,
+   "kind": "bullet",
+   "text": "manual intervention. A row is added to PBC_RA_Queue.xlsx ."
+  },
+  {
+   "id": "P0105",
+   "section": "4.2",
+   "section_title": "The \"TFL Warning\" Protocol",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Red Alert (15 Days to TFL): The RCM Manager is notified via Slack/Email for immediate assessment and direction."
+  },
+  {
+   "id": "P0106",
+   "section": "4.3",
+   "section_title": "Financial Escalation Thresholds",
+   "page": 0,
+   "kind": "heading",
+   "text": "4.3 Financial Escalation Thresholds"
+  },
+  {
+   "id": "P0107",
+   "section": "4.3",
+   "section_title": "Financial Escalation Thresholds",
+   "page": 0,
+   "kind": "text",
+   "text": "If a Resolution Auditor cannot resolve a denial within two Resolution Goal cycles, and the claim value exceeds $5,000, it must be escalated to the RCM Manager for a Review before it hits the TFL. Log the escalation in PBC_Escalation_Log.xlsx with Escalation Category Financial and Escalation Reason High Value Claim ."
+  },
+  {
+   "id": "P0108",
+   "section": "4.3",
+   "section_title": "Financial Escalation Thresholds",
+   "page": 0,
+   "kind": "text",
+   "text": "Escalation Reason High Value Claim is used when a claim valued over $5,000 fails to resolve within two Resolution Goal cycles (this section). Escalation Reason High-Value Dispute is used when a denial or underpayment on a claim exceeding $10,000 triggers the joint review protocol in Section 9.3."
+  },
+  {
+   "id": "P0109",
+   "section": "5",
+   "section_title": "Automation Triggers & Hard Rules",
+   "page": 0,
+   "kind": "heading",
+   "text": "5. Automation Triggers & Hard Rules"
+  },
+  {
+   "id": "P0110",
+   "section": "5.1",
+   "section_title": "Small Balance Write-Off (SBWO) Guidelines",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.1 Small Balance Write-Off (SBWO) Guidelines"
+  },
+  {
+   "id": "P0111",
+   "section": "5.1",
+   "section_title": "Small Balance Write-Off (SBWO) Guidelines",
+   "page": 0,
+   "kind": "text",
+   "text": "The cost of a human \"touch\" (labor + overhead) often exceeds the value of a tiny balance. At PBC we recognize that there is a value in following our SOP, but spending 48 man hours to pursue a $5 deficit is a poor use of that time. The SBWO is in place to protect our employees and mitigate waste within PBC. We authorize the following automated adjustments to keep our Accounts Receivable (A/R) clean and focused on recoverable revenue."
+  },
+  {
+   "id": "P0112",
+   "section": "5.1",
+   "section_title": "Small Balance Write-Off (SBWO) Guidelines",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Trigger Type | Criteria | Automated Action"
+  },
+  {
+   "id": "P0113",
+   "section": "5.1",
+   "section_title": "Small Balance Write-Off (SBWO) Guidelines",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Payer Underpayment | Any remaining insurance balance <$5.00 after an ERA is posted | Write-off as \"Contractual Adjustment\""
+  },
+  {
+   "id": "P0114",
+   "section": "5.1",
+   "section_title": "Small Balance Write-Off (SBWO) Guidelines",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Patient Penny-Balance | Any patient balance <$10.00 remaining after three (3) statements | Write-off as \"Administrative Adjustment\" (Small Balance)"
+  },
+  {
+   "id": "P0115",
+   "section": "5.1",
+   "section_title": "Small Balance Write-Off (SBWO) Guidelines",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Interest Discrepancy | Payer-issued interest payments <$1.00 that cause a ledger mismatch | Auto-post to \"Interest Earned\" and close the line item"
+  },
+  {
+   "id": "P0116",
+   "section": "5.1",
+   "section_title": "Small Balance Write-Off (SBWO) Guidelines",
+   "page": 0,
+   "kind": "text",
+   "text": "When an SBWO is applied, update the Claim Status in PBC_Claim_Register.xlsx to Written Off ."
+  },
+  {
+   "id": "P0117",
+   "section": "5.2",
+   "section_title": "Proactive Clinical & Eligibility Alerts",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.2 Proactive Clinical & Eligibility Alerts"
+  },
+  {
+   "id": "P0118",
+   "section": "5.2",
+   "section_title": "Proactive Clinical & Eligibility Alerts",
+   "page": 0,
+   "kind": "text",
+   "text": "These triggers optimize our efficiency before they even reach the Billing Specialist."
+  },
+  {
+   "id": "P0119",
+   "section": "5.2",
+   "section_title": "Proactive Clinical & Eligibility Alerts",
+   "page": 0,
+   "kind": "bullet",
+   "text": "If a file is routed to the CMC but remains in a \"Missing Signature\" status, a \"Provider Query\" email is sent to the clinic every 2 Business Days. If the query is sent three times with no response, the RCM Manager is notified via email and Slack for direct clinic intervention."
+  },
+  {
+   "id": "P0120",
+   "section": "5.2",
+   "section_title": "Proactive Clinical & Eligibility Alerts",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Upon receipt of a patient manifest, an automated Eligibility Verification is run against PBC_Eligibility_Responses.xlsx . Any patient flagged as \"Inactive\" or \"Plan Terminated\" is automatically pulled from the batch and sent to the PFR for immediate patient contact."
+  },
+  {
+   "id": "P0121",
+   "section": "5.2",
+   "section_title": "Proactive Clinical & Eligibility Alerts",
+   "page": 0,
+   "kind": "bullet",
+   "text": "The \"Duplicate Shield\": Any claim with an identical NPI, Date of Service, and CPT code submitted within 24 hours of a previous file is automatically rejected. Set Claim Status to Denied in PBC_Claim_Register.xlsx with a note \"Duplicate Shield — original Claim ID: [ID]\". The Billing Specialist must review and confirm whether the duplicate was an error or a legitimate resubmission before any further action. This prevents \"Double-Billing\" errors."
+  },
+  {
+   "id": "P0122",
+   "section": "5.3",
+   "section_title": "Automated Status Polling",
+   "page": 0,
+   "kind": "heading",
+   "text": "5.3 Automated Status Polling"
+  },
+  {
+   "id": "P0123",
+   "section": "5.3",
+   "section_title": "Automated Status Polling",
+   "page": 0,
+   "kind": "text",
+   "text": "To prevent claims from approaching the TFL, the system is programmed to poll payer portals automatically based on the following timeline:"
+  },
+  {
+   "id": "P0124",
+   "section": "5.3",
+   "section_title": "Automated Status Polling",
+   "page": 0,
+   "kind": "text",
+   "text": "1. 1 Business Day: System confirms receipt of the 837P file. Update Claim Status in the claim register to Acknowledged ."
+  },
+  {
+   "id": "P0125",
+   "section": "5.3",
+   "section_title": "Automated Status Polling",
+   "page": 0,
+   "kind": "text",
+   "text": "2. 15 Business Days: System polls the payer portal for an \"In-Process\" status. If the claim is not found, it emails the Billing Specialist to verify the clearinghouse handshake."
+  },
+  {
+   "id": "P0126",
+   "section": "5.3",
+   "section_title": "Automated Status Polling",
+   "page": 0,
+   "kind": "text",
+   "text": "3. 30 Business Days: If a claim remains \"In-Process\" without a payment or denial, the claim is automatically escalated to the Resolution Auditor via Slack and Email — a row is added to PBC_RA_Queue.xlsx to initiate a \"Status Call.\""
+  },
+  {
+   "id": "P0127",
+   "section": "6",
+   "section_title": "Workflow A: Denial Management",
+   "page": 0,
+   "kind": "heading",
+   "text": "6. Workflow A: Denial Management"
+  },
+  {
+   "id": "P0128",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "heading",
+   "text": "6.1 The Denial Triage"
+  },
+  {
+   "id": "P0129",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "text",
+   "text": "When a denial is identified (Triggers: CO-, PR-, OA-), it is routed to the Resolution Auditor by adding a row to PBC_RA_Queue.xlsx . A corresponding row is also created in"
+  },
+  {
+   "id": "P0130",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "text",
+   "text": "PBC_Denial_Worklist.xlsx with Recovery Status set to Pending Review . The Auditor must first categorize the denial to determine the \"Path of Least Resistance.\""
+  },
+  {
+   "id": "P0131",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Denial Category | Common Codes | Action Primary"
+  },
+  {
+   "id": "P0132",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Technical/Administrative | CO-16, CO-97 | Auditor corrects and resubmits"
+  },
+  {
+   "id": "P0133",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Clinical/Coding | CO-50, CO-59 | Auditor queries CMC for clinical support"
+  },
+  {
+   "id": "P0134",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Patient/Coverage | CO-22, CO-27 | Auditor routes to PFR for patient contact"
+  },
+  {
+   "id": "P0135",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Contractual/Payer Error | CO-45, CO-252 | Auditor initiates Payer Dispute/Appeal"
+  },
+  {
+   "id": "P0136",
+   "section": "6.1",
+   "section_title": "The Denial Triage",
+   "page": 0,
+   "kind": "text",
+   "text": "Note: Denial Categories (this table) are used for triage and Recovery Plan selection only. When logging an escalation in PBC_Escalation_Log.xlsx, use the Escalation Category values from Section 9.1 (Operational / Financial / Critical), not the denial triage categories from this table."
+  },
+  {
+   "id": "P0137",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "heading",
+   "text": "6.2 Recovery Plans"
+  },
+  {
+   "id": "P0138",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "All denials require a specific Recovery Plan to ensure one-touch resolution and the prevention of recurring errors. Correcting and resubmitting a claim means adding a new row in PBC_Claim_Register.xlsx that references the original Claim ID, and updating the Recovery Action and Recovery Status in PBC_Denial_Worklist.xlsx . If a denial is not resolved within 30 business days, escalate per Section 9."
+  },
+  {
+   "id": "P0139",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "heading",
+   "text": "CO-16: Claim Lacks Information"
+  },
+  {
+   "id": "P0140",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "Description: The payer cannot process the claim because a required data element is missing or invalid."
+  },
+  {
+   "id": "P0141",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "Recovery Plan:"
+  },
+  {
+   "id": "P0142",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Review RARC: Identify the specific missing element via the Remittance Advice Remark Code."
+  },
+  {
+   "id": "P0143",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Internal Audit: Check the original claim in PBC_Claim_Register.xlsx to see if the data was provided but missed during entry."
+  },
+  {
+   "id": "P0144",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Correction: Update the claim in the claim register and resubmit with Claim Frequency Code 7 ."
+  },
+  {
+   "id": "P0145",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "4. Update PBC_Denial_Worklist.xlsx : Set Recovery Action to Correct and Resubmit , Recovery Status to Resubmitted ."
+  },
+  {
+   "id": "P0146",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "5. Pattern Check: If this occurs 5+ times for one provider, escalate to the RCM Manager and submit an email report containing the 5+ instances. Log in PBC_Escalation_Log.xlsx with Escalation Reason Pattern Recurrence ."
+  },
+  {
+   "id": "P0147",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "heading",
+   "text": "CO-22: Coordination of Benefits (COB)"
+  },
+  {
+   "id": "P0148",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "Description: The payer believes another insurance company is primary."
+  },
+  {
+   "id": "P0149",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "Recovery Plan:"
+  },
+  {
+   "id": "P0150",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Manifest Audit: Search for a secondary insurance entry in PBC_Eligibility_Responses.xlsx for the patient."
+  },
+  {
+   "id": "P0151",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "2. PFR Handoff: If no secondary info exists, route the case to the PFR."
+  },
+  {
+   "id": "P0152",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Patient Contact: The PFR contacts the patient using the \"COB Script\" (Section 10.3) to instruct them to call their insurance."
+  },
+  {
+   "id": "P0153",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "4. Update claim register: Update COB information in PBC_Claim_Register.xlsx using the eligibility response before resubmitting."
+  },
+  {
+   "id": "P0154",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "5. Status Hold: Place the claim on a 15-Business Day hold. Email the RCM Manager to notify of the hold."
+  },
+  {
+   "id": "P0155",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "6. Update PBC_Denial_Worklist.xlsx : Set Recovery Action to Update COB and Resubmit ."
+  },
+  {
+   "id": "P0156",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "heading",
+   "text": "CO-27: Coverage Terminated"
+  },
+  {
+   "id": "P0157",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "Description: The patient's policy was not active on the Date of Service."
+  },
+  {
+   "id": "P0158",
+   "section": "6.2",
+   "section_title": "Recovery Plans",
+   "page": 0,
+   "kind": "text",
+   "text": "Recovery Plan:"
+  },
+  {
+   "id": "P0159",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "heading",
+   "text": "1. Eligibility Re-Check: Verify coverage for the Date of Service in"
+  },
+  {
+   "id": "P0160",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "bullet",
+   "text": "PBC_Eligibility_Responses.xlsx . Confirm that the patient documentation lists the date of their active insurance coverage."
+  },
+  {
+   "id": "P0161",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "2. PFR Handoff: If no active coverage is found, the PFR must contact the patient to request new insurance or establish and schedule a self-pay payment plan."
+  },
+  {
+   "id": "P0162",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "heading",
+   "text": "CO-45: Contractual Obligations"
+  },
+  {
+   "id": "P0163",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "Description: The amount charged exceeds the \"Allowed Amount\" per the payer contract. Recovery Plan:"
+  },
+  {
+   "id": "P0164",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Contract Audit: Compare the \"Allowed Amount\" to the contracted rate in PBC_Fee_Schedule.xlsx for the CPT code and Payer."
+  },
+  {
+   "id": "P0165",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Case Review: If the payment matches the contracted rate, execute a Contractual Adjustment (SBWO if within limits) and set Claim Status to Closed . If the payment does not match the contracted rate, set Recovery Action to Appeal - Contractual Rate Dispute and follow the Escalation Protocol in Section 9.1 to determine the appropriate escalation category and path. Set Claim Status to In Recovery while the appeal is in progress."
+  },
+  {
+   "id": "P0166",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Escalation Reason: Use the Payer Dispute escalation reason unless a different reason from Appendix B more accurately describes the situation (e.g., High Value Claim per Section 4.3 or High-Value Dispute per Section 9.3)."
+  },
+  {
+   "id": "P0167",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "heading",
+   "text": "CO-50: Medical Necessity"
+  },
+  {
+   "id": "P0168",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "Description: The payer denies the service as not \"reasonable or necessary\" for the diagnosis provided."
+  },
+  {
+   "id": "P0169",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "Recovery Plan:"
+  },
+  {
+   "id": "P0170",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Clinical Review: Gather the Operation Report or Chart Notes from the CMC."
+  },
+  {
+   "id": "P0171",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "2. LMN Draft: The Auditor drafts a formal email Letter of Medical Necessity (LMN)."
+  },
+  {
+   "id": "P0172",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Executive Sign-off: The RCM Manager must review the LMN and ensure it is compliant."
+  },
+  {
+   "id": "P0173",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "4. Appeal: Email the LMN and clinical notes as a formal Level 1 Appeal to the payer's designated appeals department."
+  },
+  {
+   "id": "P0174",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "5. Update PBC_Denial_Worklist.xlsx : Set Recovery Action to Appeal - Medical Necessity , Recovery Status to Appealed ."
+  },
+  {
+   "id": "P0175",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "heading",
+   "text": "CO-97: Procedure is Bundled"
+  },
+  {
+   "id": "P0176",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "Description: The payer believes the service is inclusive to another procedure performed on the same day."
+  },
+  {
+   "id": "P0177",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "Recovery Plan:"
+  },
+  {
+   "id": "P0178",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "1. NCCI Edit Check: Verify if the codes are actually \"bundled\" by looking up the code pair in PBC_NCCI_Edits.xlsx under National Correct Coding Initiative guidelines."
+  },
+  {
+   "id": "P0179",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Modifier Review: If the services are distinct (different site/separate encounter), determine the correct modifier per Section 8."
+  },
+  {
+   "id": "P0180",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "3. CMC Verification: If the clinical documentation does not clearly indicate distinct separations (incisions, anatomical sites, encounters, etc.), the Auditor must query the CMC to verify clinical distinction and submit a \"Provider Query.\""
+  },
+  {
+   "id": "P0181",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "4. Resubmit with the appropriate modifier. Set Recovery Action to Add Modifier and Resubmit ."
+  },
+  {
+   "id": "P0182",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "heading",
+   "text": "CO-252: Attachment Required"
+  },
+  {
+   "id": "P0183",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "Description: The payer requires physical documentation (notes, photos, or invoices) to process the claim."
+  },
+  {
+   "id": "P0184",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "Recovery Plan:"
+  },
+  {
+   "id": "P0185",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Document Retrieval: Gather the specific attachment from the CMC."
+  },
+  {
+   "id": "P0186",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Digital Upload: Prepare the document and attach it to the claim submission."
+  },
+  {
+   "id": "P0187",
+   "section": "1",
+   "section_title": "Eligibility Re-Check: Verify coverage for the Date of Service in",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Verification: Confirm the \"Attachment Received\" status within 5 Business Days."
+  },
+  {
+   "id": "P0188",
+   "section": "6.3",
+   "section_title": "Modifier Logic (Special Handling)",
+   "page": 0,
+   "kind": "heading",
+   "text": "6.3 Modifier Logic (Special Handling)"
+  },
+  {
+   "id": "P0189",
+   "section": "6.3",
+   "section_title": "Modifier Logic (Special Handling)",
+   "page": 0,
+   "kind": "text",
+   "text": "While not assigned a standard CO-code, denials regarding Modifiers 25 and 59 follow this specific protocol:"
+  },
+  {
+   "id": "P0190",
+   "section": "6.3",
+   "section_title": "Modifier Logic (Special Handling)",
+   "page": 0,
+   "kind": "text",
+   "text": "1. CMC Verification: The CMC must provide a statement confirming the modifier is supported by documentation."
+  },
+  {
+   "id": "P0191",
+   "section": "6.3",
+   "section_title": "Modifier Logic (Special Handling)",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Corrected Claim: Update or append the modifier as instructed by the CMC and resubmit via the claim register."
+  },
+  {
+   "id": "P0192",
+   "section": "6.3",
+   "section_title": "Modifier Logic (Special Handling)",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Red Alert: If a single payer rejects more than 5 claims for the same modifier over a period of 5 Business Days, escalate to the RCM Manager. Log in PBC_Escalation_Log.xlsx with Escalation Reason Pattern Recurrence ."
+  },
+  {
+   "id": "P0193",
+   "section": "7",
+   "section_title": "Workflow B: Payment Posting",
+   "page": 0,
+   "kind": "heading",
+   "text": "7. Workflow B: Payment Posting"
+  },
+  {
+   "id": "P0194",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "heading",
+   "text": "7.1 The ERA Accuracy Check (835 Workflow)"
+  },
+  {
+   "id": "P0195",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "Most payments arrive as an ERA file ( ERA_[BatchID].xlsx ). While these are automated, the Billing Specialist must perform an Accuracy Check to ensure the data hasn't been misapplied."
+  },
+  {
+   "id": "P0196",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "Posting a payment means matching each ERA line to the corresponding claim in PBC_Claim_Register.xlsx by Claim ID and updating the payment, adjustment, and patient balance fields. Always record the exact Paid Amount and Adjustment Amount from the ERA into the corresponding claim register columns, even when the payment is being held or routed to denial management. The Payment Amount column must reflect what the payer actually paid, not what was expected."
+  },
+  {
+   "id": "P0197",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "The Accuracy Check:"
+  },
+  {
+   "id": "P0198",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "1. The Deposit Match: The ERA Batch Total must match the Bank Deposit Total recorded in the ERA batch header. If these do not match, set Payment Posting Status to Held - Batch Mismatch."
+  },
+  {
+   "id": "P0199",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "2. The Line-Item Verification: The specialist must verify that each ERA line matches the corresponding claim in PBC_Claim_Register.xlsx by Claim ID and CPT code. Confirm the payment is applied to the correct claim line, not posted as a general account credit."
+  },
+  {
+   "id": "P0200",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "3. The Contractual Adjustment Verification: To verify a contractual adjustment, look up the CPT code and Payer in PBC_Fee_Schedule.xlsx and compare the contracted rate against the paid amount plus the adjustment amount. If they don’t match, hold the payment."
+  },
+  {
+   "id": "P0201",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "4. The PLB Audit: The specialist must review the PLB segment of the ERA. These are adjustments (like offsets or interest) that can result in amount mismatches if not manually reviewed."
+  },
+  {
+   "id": "P0202",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Checkpoint | Requirement | Failure Action"
+  },
+  {
+   "id": "P0203",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Batch Total | Must match bank deposit exactly | Set Payment Posting Status to Held - Batch Mismatch and escalate to RCM Manager"
+  },
+  {
+   "id": "P0204",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Contractual Adj | Paid amount plus adjustment amount must match the contracted rate in PBCFeeSchedule.xlsx | Set Payment Posting Status to Held - Contractual Variance. Route to Resolution Auditor for \"Payer Underpayment\" (CO-45)"
+  },
+  {
+   "id": "P0205",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Patient Resp | Must match the patient's deductible/copay manifest | Route to PFR for statement generation"
+  },
+  {
+   "id": "P0206",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PLB Mismatch | Interest and offsets must reconcile the ERA total to the bank deposit | Set Payment Posting Status to Held - PLB Variance. Do not post the batch. Escalate to the RCM Manager for manual reconciliation"
+  },
+  {
+   "id": "P0207",
+   "section": "7.1",
+   "section_title": "The ERA Accuracy Check (835 Workflow)",
+   "page": 0,
+   "kind": "text",
+   "text": "When a claim has multiple lines with mixed outcomes (e.g., one line paid and another denied), set Claim Status to Paid - Partial . Post payment for the paid line(s) and route the denied line(s) through their respective Recovery Plans independently."
+  },
+  {
+   "id": "P0208",
+   "section": "7.2",
+   "section_title": "Handling Exceptions & Offsets",
+   "page": 0,
+   "kind": "heading",
+   "text": "7.2 Handling Exceptions & Offsets"
+  },
+  {
+   "id": "P0209",
+   "section": "7.2",
+   "section_title": "Handling Exceptions & Offsets",
+   "page": 0,
+   "kind": "text",
+   "text": "The Offset Rule: A Billing Specialist is forbidden from simply \"ignoring\" a $0.00 payment line. They must locate the original claim being recouped, verify the validity of the take-back, and link the two entries in the claim register to maintain a clean audit trail."
+  },
+  {
+   "id": "P0210",
+   "section": "7.2",
+   "section_title": "Handling Exceptions & Offsets",
+   "page": 0,
+   "kind": "text",
+   "text": "The \"Unapplied\" Limit: No payment may sit in an Unapplied status for more than 3 Business Days. If a payment cannot be matched to a claim, it must be escalated to the Resolution Auditor by adding a row to PBC_RA_Queue.xlsx . If the Resolution Auditor cannot locate the payment, the case must be escalated to an RCM Manager and the PFR on the case must be emailed to follow up with the patient that payment was made and successful. Create a calendar entry for when the payment must be located by."
+  },
+  {
+   "id": "P0211",
+   "section": "7.3",
+   "section_title": "Daily Reconciliation",
+   "page": 0,
+   "kind": "heading",
+   "text": "7.3 Daily Reconciliation"
+  },
+  {
+   "id": "P0212",
+   "section": "7.3",
+   "section_title": "Daily Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "At 4:00 PM the Billing Specialist must generate a Daily Posting Log."
+  },
+  {
+   "id": "P0213",
+   "section": "7.3",
+   "section_title": "Daily Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Gross-to-Net: Compare total charges submitted vs. total payments posted + total contractual adjustments."
+  },
+  {
+   "id": "P0214",
+   "section": "7.3",
+   "section_title": "Daily Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Zero-Sum Goal: The total \"Posted\" amount must equal the total \"Deposited\" amount for that day."
+  },
+  {
+   "id": "P0215",
+   "section": "7.3",
+   "section_title": "Daily Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Verification: Confirm all posted payments balance against ERA batch totals and no claims remain in a Held or Unapplied status without an active escalation."
+  },
+  {
+   "id": "P0216",
+   "section": "7.3",
+   "section_title": "Daily Reconciliation",
+   "page": 0,
+   "kind": "text",
+   "text": "4. The Sign-off: Every Daily Posting Log must be uploaded with an RCM Manager's sign-off. Set all verified claims to Payment Posting Status Reconciled . Clean lines that pass all four checkpoints (Batch Total, Line-Item, Contractual Adjustment, and PLB) may be set to Payment Posting Status Reconciled at time of posting without requiring manager sign-off; the Daily Posting Log sign-off covers the batch as a whole."
+  },
+  {
+   "id": "P0217",
+   "section": "8",
+   "section_title": "Workflow C: Medical Coding & Auditing",
+   "page": 0,
+   "kind": "heading",
+   "text": "8. Workflow C: Medical Coding & Auditing"
+  },
+  {
+   "id": "P0218",
+   "section": "8.1",
+   "section_title": "The Coding Process",
+   "page": 0,
+   "kind": "heading",
+   "text": "8.1 The Coding Process"
+  },
+  {
+   "id": "P0219",
+   "section": "8.1",
+   "section_title": "The Coding Process",
+   "page": 0,
+   "kind": "text",
+   "text": "The process begins the moment a chart or note trigger is identified."
+  },
+  {
+   "id": "P0220",
+   "section": "8.1",
+   "section_title": "The Coding Process",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Documentation Review: The CMC will review the provider's note or chart for key elements including but not limited to, Chief Complaint, History of Present Illness (HPI), Exam, and Medical Decision Making (MDM)."
+  },
+  {
+   "id": "P0221",
+   "section": "8.1",
+   "section_title": "The Coding Process",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Workflow C assumes the CMC has received clinical documentation routed through the Gateway. If the required documentation is not present in the available files, follow the Provider Query process (Section 8.4) to request it before proceeding."
+  },
+  {
+   "id": "P0222",
+   "section": "8.1",
+   "section_title": "The Coding Process",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Code Selection: Codes are assigned based on the current year's CPT and ICD-10-CM guidelines."
+  },
+  {
+   "id": "P0223",
+   "section": "8.1",
+   "section_title": "The Coding Process",
+   "page": 0,
+   "kind": "text",
+   "text": "3. The Precision Audit: Before finalizing the batch, the CMC must run the codes through the NCCI Edit Check (Section 8.2) by looking up CPT code pairs in PBC_NCCI_Edits.xlsx ."
+  },
+  {
+   "id": "P0224",
+   "section": "8.1",
+   "section_title": "The Coding Process",
+   "page": 0,
+   "kind": "text",
+   "text": "4. Claim Release: Once verified, the claim is released to the Billing Specialist for the 4:00 PM batch submission."
+  },
+  {
+   "id": "P0225",
+   "section": "8.2",
+   "section_title": "NCCI PTP (Procedure-to-Procedure) Audits",
+   "page": 0,
+   "kind": "heading",
+   "text": "8.2 NCCI PTP (Procedure-to-Procedure) Audits"
+  },
+  {
+   "id": "P0226",
+   "section": "8.2",
+   "section_title": "NCCI PTP (Procedure-to-Procedure) Audits",
+   "page": 0,
+   "kind": "text",
+   "text": "The CMC must check every multi-code claim against the NCCI PTP Edit Tables in PBC_NCCI_Edits.xlsx . This prevents bundling errors that lead to automatic denials (CO-97)."
+  },
+  {
+   "id": "P0227",
+   "section": "8.2",
+   "section_title": "NCCI PTP (Procedure-to-Procedure) Audits",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Indicator 0: The codes are mutually exclusive and cannot be billed together. The CMC will select the most comprehensive code and drop the component code."
+  },
+  {
+   "id": "P0228",
+   "section": "8.2",
+   "section_title": "NCCI PTP (Procedure-to-Procedure) Audits",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Indicator 1: The codes are bundled but may be separated by a clinical modifier if the documentation provided asserts they were distinct services given by the provider."
+  },
+  {
+   "id": "P0229",
+   "section": "8.2",
+   "section_title": "NCCI PTP (Procedure-to-Procedure) Audits",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Indicator 9: NCCI edits do not apply to this code pair."
+  },
+  {
+   "id": "P0230",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "heading",
+   "text": "8.3 Code Modifiers 25 & 59"
+  },
+  {
+   "id": "P0231",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "text",
+   "text": "Payers often only recognize the first two modifiers on a line item. Functional modifiers that affect payment must be listed first; informational modifiers that dictate position, side of treatment, or style of provider care (such as in person, via teledoc, or by email) are listed secondarily to payment modifiers."
+  },
+  {
+   "id": "P0232",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "heading",
+   "text": "Modifier 25: Significant, Separately Identifiable E/M Service"
+  },
+  {
+   "id": "P0233",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "bullet",
+   "text": "When to use: When a provider performs an Evaluation and Management (E/M) service (like an office visit) on the same day they perform a minor procedure."
+  },
+  {
+   "id": "P0234",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Precision Rule: The E/M service must go \"above and beyond\" the standard pre-operative work of the procedure. If the visit was solely for the procedure, Modifier 25 is forbidden."
+  },
+  {
+   "id": "P0235",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "heading",
+   "text": "Modifier 59: Distinct Procedural Service"
+  },
+  {
+   "id": "P0236",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "bullet",
+   "text": "When to use: To identify procedures/services that are not normally reported together but are appropriate under the circumstances (e.g., a different site, different incision, or separate lesion)."
+  },
+  {
+   "id": "P0237",
+   "section": "8.3",
+   "section_title": "Code Modifiers 25 & 59",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Precision Rule: Modifier 59 is a \"Modifier of Last Resort.\" The CMC must first check if a more specific anatomical modifier (like -LT for Left or -RT for Right) exists before using 59."
+  },
+  {
+   "id": "P0238",
+   "section": "8.4",
+   "section_title": "The Provider Query Loop",
+   "page": 0,
+   "kind": "heading",
+   "text": "8.4 The Provider Query Loop"
+  },
+  {
+   "id": "P0239",
+   "section": "8.4",
+   "section_title": "The Provider Query Loop",
+   "page": 0,
+   "kind": "text",
+   "text": "If the clinical documentation is insufficient to support an NCCI-compliant code or a high-level modifier, the CMC must initiate a Provider Query."
+  },
+  {
+   "id": "P0240",
+   "section": "8.4",
+   "section_title": "The Provider Query Loop",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Response Window: The Provider has 3 Business Days to respond to a query."
+  },
+  {
+   "id": "P0241",
+   "section": "8.4",
+   "section_title": "The Provider Query Loop",
+   "page": 0,
+   "kind": "bullet",
+   "text": "The \"Hold\" Status: The claim is set to Claim Status On Hold in the claim register and Provider Query Status set to Sent . An email must be sent notifying a Resolution Auditor."
+  },
+  {
+   "id": "P0242",
+   "section": "8.4",
+   "section_title": "The Provider Query Loop",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Overdue: If no response after 3 Business Days, set Provider Query Status to Overdue ."
+  },
+  {
+   "id": "P0243",
+   "section": "8.4",
+   "section_title": "The Provider Query Loop",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Escalation: If a query remains unanswered after 5 Business Days, set Provider Query Status to Escalated . The CMC escalates the chart to the RCM Manager to prevent a TFL failure. Log in PBC_Escalation_Log.xlsx with Escalation Reason Provider Non-Response ."
+  },
+  {
+   "id": "P0244",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "heading",
+   "text": "8.5 Additional Modifier Categories"
+  },
+  {
+   "id": "P0245",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "heading",
+   "text": "A. Anatomical & Side-of-Body Modifiers (HCPCS)"
+  },
+  {
+   "id": "P0246",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-RT / -LT: Right Side / Left Side (e.g., a biopsy on the right arm)."
+  },
+  {
+   "id": "P0247",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-50 (Bilateral): Used when the exact same procedure is performed on both sides of the body during the same session."
+  },
+  {
+   "id": "P0248",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "E1–E4: Specific eyelids (e.g., Upper Left, Lower Right)."
+  },
+  {
+   "id": "P0249",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "F1–F9 / FA: Specific fingers (e.g., F2 is the Left Hand, Third Digit)."
+  },
+  {
+   "id": "P0250",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "T1–T9 / TA: Specific toes."
+  },
+  {
+   "id": "P0251",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "heading",
+   "text": "B. Professional & Technical Components"
+  },
+  {
+   "id": "P0252",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-26 (Professional Component): Used when the provider only interprets the results (e.g., reading an X-ray)."
+  },
+  {
+   "id": "P0253",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-TC (Technical Component): Used when the provider only owns the equipment or performs the test (e.g., the technician taking the X-ray)."
+  },
+  {
+   "id": "P0254",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Global Billing: If neither modifier is used, it implies the provider did both."
+  },
+  {
+   "id": "P0255",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "heading",
+   "text": "C. Surgery & Global Period Modifiers"
+  },
+  {
+   "id": "P0256",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-24: An unrelated Evaluation and Management (E/M) service performed by the same physician during a postoperative period."
+  },
+  {
+   "id": "P0257",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-57: The \"Decision for Surgery\"—used when an office visit results in the decision to perform major surgery the next day."
+  },
+  {
+   "id": "P0258",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-76 / -77: Repeat procedure by the same provider (-76) or a different provider (-77)."
+  },
+  {
+   "id": "P0259",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "heading",
+   "text": "D. Telehealth & New Technology (2026 Updates)"
+  },
+  {
+   "id": "P0260",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-95: Synchronous telemedicine rendered via real-time audio-video interaction."
+  },
+  {
+   "id": "P0261",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-FQ: Service furnished using audio-only communication technology."
+  },
+  {
+   "id": "P0262",
+   "section": "8.5",
+   "section_title": "Additional Modifier Categories",
+   "page": 0,
+   "kind": "bullet",
+   "text": "-93: Synchronous telemedicine rendered via audio-only."
+  },
+  {
+   "id": "P0263",
+   "section": "9",
+   "section_title": "Escalation Protocols",
+   "page": 0,
+   "kind": "heading",
+   "text": "9. Escalation Protocols"
+  },
+  {
+   "id": "P0264",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "heading",
+   "text": "9.1 The Escalation Chain"
+  },
+  {
+   "id": "P0265",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "text",
+   "text": "Information only moves upward or horizontally when a specific trigger is met. All escalations are logged in PBC_Escalation_Log.xlsx ."
+  },
+  {
+   "id": "P0266",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Level | Trigger | Escalation Path"
+  },
+  {
+   "id": "P0267",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Operational | Technical coding questions, routine 835 errors, system outages, or any single claim dispute under $5,000 | Billing Specialist to CMC or Resolution Auditor"
+  },
+  {
+   "id": "P0268",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Financial | Any single claim dispute between $5,000 and $10,000 | Resolution Auditor to RCM Manager"
+  },
+  {
+   "id": "P0269",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Critical | Legal threats, PHI breaches, or disputes over $10,000 | Any Role to RCM Manager / CFO"
+  },
+  {
+   "id": "P0270",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "text",
+   "text": "For internal routing, add a row to the appropriate queue file ( PBC_RA_Queue.xlsx or PBC_QA_Queue.xlsx ). For critical escalations (legal threats, $10k+ disputes, PHI incidents), also send an email to the RCM Manager using the template in Section 10.4. Standard operational and financial escalations are logged and queued only — no email required unless the SOP explicitly specifies one."
+  },
+  {
+   "id": "P0271",
+   "section": "9.1",
+   "section_title": "The Escalation Chain",
+   "page": 0,
+   "kind": "text",
+   "text": "The escalation category is determined by the claim’s Dollar Value (total gross billed amount as defined in Section 1.2), not the disputed difference or underpayment amount. CO-45 is classified as a denial only when the Paid Amount does not match the contracted rate in PBCFeeSchedule.xlsx. Routine contractual adjustments where payment matches the contracted rate are processed during Payment Posting (Section 7.1) and are NOT routed to Denial Management."
+  },
+  {
+   "id": "P0272",
+   "section": "9.2",
+   "section_title": "Legal Threat Protocol",
+   "page": 0,
+   "kind": "heading",
+   "text": "9.2 Legal Threat Protocol"
+  },
+  {
+   "id": "P0273",
+   "section": "9.2",
+   "section_title": "Legal Threat Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "The moment a Legal Threat is identified (via keyword triggers like Subpoena, Attorney, Counsel, or OIG), the following steps are mandatory:"
+  },
+  {
+   "id": "P0274",
+   "section": "9.2",
+   "section_title": "Legal Threat Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Cease Communication: The staff member must immediately stop all outgoing communication regarding the specific file or account. A calendar entry is made and an email and Slack notification must be sent notifying the RCM Manager and Resolution Auditor."
+  },
+  {
+   "id": "P0275",
+   "section": "9.2",
+   "section_title": "Legal Threat Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "2. The \"Freeze\" Stamp: The account is set to Claim Status On Hold in the claim register, preventing any automated statements or claims from going out. Log in PBC_Escalation_Log.xlsx with Escalation Category Critical and Escalation Reason Legal Threat Received ."
+  },
+  {
+   "id": "P0276",
+   "section": "9.2",
+   "section_title": "Legal Threat Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "3. The Management Handoff: All relevant documents (original charts, 837P files, and correspondence) must be bundled and shared with the RCM Manager via an Urgent Slack ping."
+  },
+  {
+   "id": "P0277",
+   "section": "9.2",
+   "section_title": "Legal Threat Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "4. Acknowledgment Window: An RCM Manager must acknowledge the escalation within 2 Business Hours, regardless of the 4:00 PM end of Business Day."
+  },
+  {
+   "id": "P0278",
+   "section": "9.3",
+   "section_title": "High-Value Dispute Protocol ($10k+)",
+   "page": 0,
+   "kind": "heading",
+   "text": "9.3 High-Value Dispute Protocol ($10k+)"
+  },
+  {
+   "id": "P0279",
+   "section": "9.3",
+   "section_title": "High-Value Dispute Protocol ($10k+)",
+   "page": 0,
+   "kind": "text",
+   "text": "When the Resolution Auditor identifies a denial or underpayment on a High-Value claim, they do not act alone."
+  },
+  {
+   "id": "P0280",
+   "section": "9.3",
+   "section_title": "High-Value Dispute Protocol ($10k+)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "The Joint Review: The notified Resolution Auditor and RCM Manager must conduct a joint review and develop a Recovery Plan."
+  },
+  {
+   "id": "P0281",
+   "section": "9.3",
+   "section_title": "High-Value Dispute Protocol ($10k+)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "The Clinical Anchor: The CMC must provide a secondary \"Validation Audit\" of the codes to ensure the appeal is verified before it is sent."
+  },
+  {
+   "id": "P0282",
+   "section": "9.3",
+   "section_title": "High-Value Dispute Protocol ($10k+)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Documentation: Every High-Value Dispute must include a documented timeline of all submissions, rejections, and portal checks to show the payer that PBC has followed all SOPs in the execution of the Recovery Plan. Log in PBC_Escalation_Log.xlsx with Escalation Category Critical and Escalation Reason High-Value Dispute ."
+  },
+  {
+   "id": "P0283",
+   "section": "9.4",
+   "section_title": "Escalation Redundancy Rule",
+   "page": 0,
+   "kind": "heading",
+   "text": "9.4 Escalation Redundancy Rule"
+  },
+  {
+   "id": "P0284",
+   "section": "9.4",
+   "section_title": "Escalation Redundancy Rule",
+   "page": 0,
+   "kind": "text",
+   "text": "To prevent tasks from disappearing, an escalation is not considered \"Complete\" until the receiving manager provides an email confirmation citing the escalation. If the team member that sent the escalation request hasn't received the email confirmation within 2 Business Hours, the sender is required to follow up with a high-priority email to ensure that the escalation is active."
+  },
+  {
+   "id": "P0285",
+   "section": "10",
+   "section_title": "Internal Communication Scripts",
+   "page": 0,
+   "kind": "heading",
+   "text": "10. Internal Communication Scripts"
+  },
+  {
+   "id": "P0286",
+   "section": "10",
+   "section_title": "Internal Communication Scripts",
+   "page": 0,
+   "kind": "text",
+   "text": "All external communication must be professional, concise, and grounded in data. These scripts ensure that every member of the team speaks with the authority of the Pathfinder brand. When sending any communication that references a claim, always include: Claim ID, Patient ID, DOS, CPT code(s), Payer, and the current Claim Status from the register."
+  },
+  {
+   "id": "P0287",
+   "section": "10.1",
+   "section_title": "The Provider Query (CMC to Clinic)",
+   "page": 0,
+   "kind": "heading",
+   "text": "10.1 The Provider Query (CMC to Clinic)"
+  },
+  {
+   "id": "P0288",
+   "section": "10.1",
+   "section_title": "The Provider Query (CMC to Clinic)",
+   "page": 0,
+   "kind": "text",
+   "text": "Use this when clinical documentation is missing a signature or is too vague to code."
+  },
+  {
+   "id": "P0289",
+   "section": "10.1",
+   "section_title": "The Provider Query (CMC to Clinic)",
+   "page": 0,
+   "kind": "text",
+   "text": "Subject: Action Required for [Patient Initials] – [Date of Service]"
+  },
+  {
+   "id": "P0290",
+   "section": "10.1",
+   "section_title": "The Provider Query (CMC to Clinic)",
+   "page": 0,
+   "kind": "text",
+   "text": "\"Hello [Doctor/Client Office Manager Name], This is [Your Name] with the Pathfinder Billing and Coding Team. While performing our audit for the date of service [Date], I noted that the clinical documentation for [Procedure] is currently [missing a signature / other cause]. To ensure this claim meets the payer's medical necessity requirements and to prevent a technical denial, please [sign the chart / submit the missing document] by [Date of Service + 3 Business Days]. We have placed this claim on a temporary 'Clinical Hold' to protect your Timely Filing Limit to maximize your return and maintain a strong client payer relationship.\""
+  },
+  {
+   "id": "P0291",
+   "section": "10.2",
+   "section_title": "The Payer Status Call (Resolution Auditor to Payer)",
+   "page": 0,
+   "kind": "heading",
+   "text": "10.2 The Payer Status Call (Resolution Auditor to Payer)"
+  },
+  {
+   "id": "P0292",
+   "section": "10.2",
+   "section_title": "The Payer Status Call (Resolution Auditor to Payer)",
+   "page": 0,
+   "kind": "text",
+   "text": "Use this for the 30-Business Day Recovery plan or a CO-16 recovery."
+  },
+  {
+   "id": "P0293",
+   "section": "10.2",
+   "section_title": "The Payer Status Call (Resolution Auditor to Payer)",
+   "page": 0,
+   "kind": "text",
+   "text": "\"Hello, this is [your name] calling from PBC on behalf of [Provider Name and NPI]. I am calling to check the status of a claim for [Patient Name], DOB [Date], for the amount of [total amount or line item amount based on code]. Our records show this was accepted at the [Clearinghouse name] on [Date] with Transaction ID [ID]. Since we are now [X] business days post-submission, I am requesting a status update. If the claim is 'InProcess,' can you confirm there are no pending 'Additional Information' requests or attachments needed? Please send an email reply to your unique payer contact email address. [If denied]: Thank you. Please provide the specific Remittance Advice Remark Code so I can ensure our corrected submission meets your internal processing requirements.\""
+  },
+  {
+   "id": "P0294",
+   "section": "10.3",
+   "section_title": "The COB Script (PFR to Patient)",
+   "page": 0,
+   "kind": "heading",
+   "text": "10.3 The COB Script (PFR to Patient)"
+  },
+  {
+   "id": "P0295",
+   "section": "10.3",
+   "section_title": "The COB Script (PFR to Patient)",
+   "page": 0,
+   "kind": "text",
+   "text": "This is the prompt used to resolve CO-22 denials."
+  },
+  {
+   "id": "P0296",
+   "section": "10.3",
+   "section_title": "The COB Script (PFR to Patient)",
+   "page": 0,
+   "kind": "text",
+   "text": "\"Hi this is [Name] on behalf of the Billing Office at [Clinic Name]. Can you please confirm your name for our records? *If patient provides name on record proceed, if not proceed to script 10.3a.* I'm calling because we're working to get your recent visit on [Date] taken care of by your insurance, but [Payer Name] has reached out stating they need a quick update from you regarding a Coordination of Benefits. They just need to confirm if you have any other active insurance coverage so they can process the payment correctly. To fix this and keep your account in good standing, call at the number on the back of your insurance card or go to the website listed and tell them you need to update your COB, or follow the COB update link on their website. Once that's done, they'll release the payment to us. Would you like me to provide their phone number and your policy ID to make that easier for you?\" *If patient affirms, provide payer contact information and patient policy ID. If patient declines:* \"Pathfinder Billing and Coding thanks you for your time and attention to this.\""
+  },
+  {
+   "id": "P0297",
+   "section": "10.3",
+   "section_title": "The COB Script (PFR to Patient)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "10.3a — If patient name does not match:"
+  },
+  {
+   "id": "P0298",
+   "section": "10.3",
+   "section_title": "The COB Script (PFR to Patient)",
+   "page": 0,
+   "kind": "text",
+   "text": "\"I apologize for the inconvenience, we were attempting to resolve a billing issue with [Clinic Name] please disregard this notice and have a nice day.\""
+  },
+  {
+   "id": "P0299",
+   "section": "10.3",
+   "section_title": "The COB Script (PFR to Patient)",
+   "page": 0,
+   "kind": "text",
+   "text": "End the call and log that the number provided was incorrect, then send an email to the provider and Billing Specialist on file and ask them to verify the patient contact information."
+  },
+  {
+   "id": "P0300",
+   "section": "10.4",
+   "section_title": "The \"High-Value\" Escalation (Auditor to RCM Manager)",
+   "page": 0,
+   "kind": "heading",
+   "text": "10.4 The \"High-Value\" Escalation (Auditor to RCM Manager)"
+  },
+  {
+   "id": "P0301",
+   "section": "10.4",
+   "section_title": "The \"High-Value\" Escalation (Auditor to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "Internal prompt for the escalation protocol."
+  },
+  {
+   "id": "P0302",
+   "section": "10.4",
+   "section_title": "The \"High-Value\" Escalation (Auditor to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "Slack/Email: \"Urgent Escalation: [Date] High-Value Dispute Claim Value: $[Amount] Payer: [Payer Name] Issue: Denied for [Code] despite [Modifier/Auth] being present. Action Taken: Checked NCCI edits and claim register; documentation is 100% compliant. Request: Requesting a review for a formal Level 1 Appeal. All documents are attached.\""
+  },
+  {
+   "id": "P0303",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "heading",
+   "text": "10.5 The Pattern Recurrence Report (Any Role to RCM Manager)"
+  },
+  {
+   "id": "P0304",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "Use this when a pattern recurrence threshold is met (5 or more instances of the same denial code for the same provider, patient, or payer). This email must be sent alongside the Escalation Log entry. Subject: Pattern Recurrence Alert: [Provider/Patient/Payer Name] — [Denial Code] — [Count] Instances"
+  },
+  {
+   "id": "P0305",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "\"Pattern Recurrence Report — [Date]"
+  },
+  {
+   "id": "P0306",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "This is [Your Name], [Your Role], reporting a pattern recurrence for [Provider Name], NPI: [NPI Number]. Denial Code: [CARC] — RARC: [RARC Code] — [Count] instances identified. Affected Claims:"
+  },
+  {
+   "id": "P0307",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Claim ID: [ID] — Patient ID: [PT-ID] — DOS: [Date] — CPT: [Code] — Status: [Current Claim Status]"
+  },
+  {
+   "id": "P0308",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Claim ID: [ID] — Patient ID: [PT-ID] — DOS: [Date] — CPT: [Code] — Status: [Current Claim Status]"
+  },
+  {
+   "id": "P0309",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "[Continue for all instances]"
+  },
+  {
+   "id": "P0310",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "Assessment: This pattern suggests [systemic submission error / recurring documentation gap / payer-specific processing issue]. Requesting management review to determine whether a corrective action plan or direct clinic intervention is warranted."
+  },
+  {
+   "id": "P0311",
+   "section": "10.5",
+   "section_title": "The Pattern Recurrence Report (Any Role to RCM Manager)",
+   "page": 0,
+   "kind": "text",
+   "text": "Escalation Log Entry ID: [ID]. Escalation Category: [Operational/Financial/Critical]. Escalation Reason: Pattern Recurrence.\""
+  },
+  {
+   "id": "P0312",
+   "section": "11",
+   "section_title": "Compliance & HIPAA",
+   "page": 0,
+   "kind": "heading",
+   "text": "11. Compliance & HIPAA"
+  },
+  {
+   "id": "P0313",
+   "section": "11.1",
+   "section_title": "PHI Handling Rules",
+   "page": 0,
+   "kind": "heading",
+   "text": "11.1 PHI Handling Rules"
+  },
+  {
+   "id": "P0314",
+   "section": "11.1",
+   "section_title": "PHI Handling Rules",
+   "page": 0,
+   "kind": "text",
+   "text": "All employees must adhere to the following data handling mandates:"
+  },
+  {
+   "id": "P0315",
+   "section": "11.1",
+   "section_title": "PHI Handling Rules",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Minimalist Access: Access to PHI is granted to only the staff and specialists involved with that specific case. Staff are only authorized to view data required to complete their specific assigned tasks. If access to unauthorized PHI is given to you, please forward the data to your RCM Manager including the employee who communicated it to you and disregard the information within. The RCM Manager will provide you with further steps to follow if necessary."
+  },
+  {
+   "id": "P0316",
+   "section": "11.1",
+   "section_title": "PHI Handling Rules",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Cloud-Only Environment: PHI must never be downloaded or stored on local hard drives, personal devices, or unencrypted external media. All work must be conducted within secure, approved billing platforms."
+  },
+  {
+   "id": "P0317",
+   "section": "11.1",
+   "section_title": "PHI Handling Rules",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Active Session Security: Physical workstations must be locked immediately when stepping away. In remote environments, screen filters must be used and screens should be positioned to prevent unauthorized viewing by non-employees. Two Factor Authentication must be used for any remote or local login."
+  },
+  {
+   "id": "P0318",
+   "section": "11.2",
+   "section_title": "Data Protection & Encryption",
+   "page": 0,
+   "kind": "heading",
+   "text": "11.2 Data Protection & Encryption"
+  },
+  {
+   "id": "P0319",
+   "section": "11.2",
+   "section_title": "Data Protection & Encryption",
+   "page": 0,
+   "kind": "text",
+   "text": "We utilize enterprise-grade encryption to secure data at all stages within PBC."
+  },
+  {
+   "id": "P0320",
+   "section": "11.2",
+   "section_title": "Data Protection & Encryption",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Encryption at Rest: All data is protected by AES-256 bit encryption."
+  },
+  {
+   "id": "P0321",
+   "section": "11.2",
+   "section_title": "Data Protection & Encryption",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Encryption in Transit: All data moving between the Clinic and the Payer is secured via TLS 1.3 protocols."
+  },
+  {
+   "id": "P0322",
+   "section": "11.2",
+   "section_title": "Data Protection & Encryption",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Communication Protocol: PHI must never be sent via standard, unencrypted email or Slack messages. PHI data may never be sent via text messages on personal or company phones. All patient-sensitive data must be transmitted through the secure portal or encrypted email services or approved Slack channels."
+  },
+  {
+   "id": "P0323",
+   "section": "11.3",
+   "section_title": "Security Standards Matrix",
+   "page": 0,
+   "kind": "heading",
+   "text": "11.3 Security Standards Matrix"
+  },
+  {
+   "id": "P0324",
+   "section": "11.3",
+   "section_title": "Security Standards Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Component | Precision Requirement"
+  },
+  {
+   "id": "P0325",
+   "section": "11.3",
+   "section_title": "Security Standards Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Authentication | 2 Factor Authentication (2FA) is mandatory for all system logins"
+  },
+  {
+   "id": "P0326",
+   "section": "11.3",
+   "section_title": "Security Standards Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Network | All remote access must be routed through a secure VPN from a list of approved providers. Contact your Resolution Auditor for a list of approved VPN providers"
+  },
+  {
+   "id": "P0327",
+   "section": "11.3",
+   "section_title": "Security Standards Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Mobile Access | Accessing, storing, transmitting, or discussing PHI on personal mobile devices is expressly prohibited"
+  },
+  {
+   "id": "P0328",
+   "section": "11.3",
+   "section_title": "Security Standards Matrix",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Data Disposal | Temporary audit files must be permanently deleted immediately upon task completion. Record of completion and confirmation of deletion must be emailed to the RCM Manager before end of Business Day"
+  },
+  {
+   "id": "P0329",
+   "section": "11.4",
+   "section_title": "Breach Reporting & Incident Response",
+   "page": 0,
+   "kind": "heading",
+   "text": "11.4 Breach Reporting & Incident Response"
+  },
+  {
+   "id": "P0330",
+   "section": "11.4",
+   "section_title": "Breach Reporting & Incident Response",
+   "page": 0,
+   "kind": "text",
+   "text": "Integrity requires immediate action when a potential risk is identified."
+  },
+  {
+   "id": "P0331",
+   "section": "11.4",
+   "section_title": "Breach Reporting & Incident Response",
+   "page": 0,
+   "kind": "text",
+   "text": "1. Reporting Window: Any suspected unauthorized access or loss of equipment must be reported to the RCM Manager within one (1) hour of discovery through email and Slack notification with \"Urgent\" in the subject line. Log in PBC_Escalation_Log.xlsx with Escalation Category Critical and Escalation Reason PHI Incident ."
+  },
+  {
+   "id": "P0332",
+   "section": "11.4",
+   "section_title": "Breach Reporting & Incident Response",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Immediate Containment: Management will immediately revoke all credentials for the affected account and initiate a third-party forensic audit of the system logs."
+  },
+  {
+   "id": "P0333",
+   "section": "11.4",
+   "section_title": "Breach Reporting & Incident Response",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Clinic Notification: If a breach is confirmed, the affected clinic will be notified according to the timeline established in our Business Associate Agreement (BAA)."
+  },
+  {
+   "id": "P0334",
+   "section": "12",
+   "section_title": "QA, Audit Workflow, CCR",
+   "page": 0,
+   "kind": "heading",
+   "text": "12. QA, Audit Workflow, CCR"
+  },
+  {
+   "id": "P0335",
+   "section": "12.1",
+   "section_title": "The Target",
+   "page": 0,
+   "kind": "heading",
+   "text": "12.1 The Target"
+  },
+  {
+   "id": "P0336",
+   "section": "12.1",
+   "section_title": "The Target",
+   "page": 0,
+   "kind": "text",
+   "text": "The industry average for clean claims often hovers around 70–80%. PBC has a higher standard. We strive for a 100% Clean Claim Rate. 98% meets our standard."
+  },
+  {
+   "id": "P0337",
+   "section": "12.1",
+   "section_title": "The Target",
+   "page": 0,
+   "kind": "bullet",
+   "text": "The remaining 2% is reserved for unpredictable payer logic changes or \"black box\" denials that could not have been reasonably foreseen. No system is perfect, and no person is either, but as a team we can reach 98% or higher through careful auditing and workflow."
+  },
+  {
+   "id": "P0338",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "heading",
+   "text": "12.2 The Weekly Precision Audit"
+  },
+  {
+   "id": "P0339",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "To ensure the CCR remains at or above 98%, the RCM Manager conducts a weekly audit of a randomized claim sample. Results are recorded in PBC_Audit_Log.xlsx ."
+  },
+  {
+   "id": "P0340",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "Sampling: Every Friday morning, the RCM Manager instructs the system to pull at least 5 random claims from each CMC and Billing Specialist's weekly output."
+  },
+  {
+   "id": "P0341",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "Cross-Verification:"
+  },
+  {
+   "id": "P0342",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "1. ICD-10 Specificity: The ICD-10-CM code must be coded to the maximum number of characters available for that code family. Truncated codes are a fail."
+  },
+  {
+   "id": "P0343",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "2. CPT Alignment: Every billed CPT must correspond to a service explicitly documented in the provider's note. A CPT code inferred but not documented is a fail."
+  },
+  {
+   "id": "P0344",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Modifier 25/59: Documentation must support any modifier present — Modifier 25 requires a separately identifiable E/M service documented beyond the procedure. Missing required modifiers are also a fail."
+  },
+  {
+   "id": "P0345",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "4. MDM Level: The E/M code level must match the medical decision-making complexity documented in the note."
+  },
+  {
+   "id": "P0346",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "5. Provider Signature: The chart must be finalized and electronically signed by the rendering provider. Unsigned notes are a fail."
+  },
+  {
+   "id": "P0347",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "Technical Accuracy:"
+  },
+  {
+   "id": "P0348",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "1. NPI: Verification of both the Individual NPI (Type 1) and Group NPI (Type 2)."
+  },
+  {
+   "id": "P0349",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "2. Tax ID: Ensuring the EIN matches the W-9 on file for that specific clinic."
+  },
+  {
+   "id": "P0350",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Payer ID: Confirming the 5-digit electronic routing ID is current (Payers change these frequently)."
+  },
+  {
+   "id": "P0351",
+   "section": "12.2",
+   "section_title": "The Weekly Precision Audit",
+   "page": 0,
+   "kind": "text",
+   "text": "Scoring: Each claim is scored using the QA Audit Result values in Appendix B. A claim passes only if all criteria are met. If any single criterion fails, use the most severe failure as the Audit Result."
+  },
+  {
+   "id": "P0352",
+   "section": "12.3",
+   "section_title": "The Error Correction Loop",
+   "page": 0,
+   "kind": "heading",
+   "text": "12.3 The Error Correction Loop"
+  },
+  {
+   "id": "P0353",
+   "section": "12.3",
+   "section_title": "The Error Correction Loop",
+   "page": 0,
+   "kind": "text",
+   "text": "When an error is identified during an audit, we investigate the root cause."
+  },
+  {
+   "id": "P0354",
+   "section": "12.3",
+   "section_title": "The Error Correction Loop",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Immediate Remediation: The claim is corrected and moved to a priority status for the next 4:00 PM batch. Failed claims return to the Billing Specialist or CMC for correction before resubmission."
+  },
+  {
+   "id": "P0355",
+   "section": "12.3",
+   "section_title": "The Error Correction Loop",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Calibration Sync: The RCM Manager meets with the staff member for a briefing to determine if the error was a human slip or a misunderstanding of a Recovery Plan."
+  },
+  {
+   "id": "P0356",
+   "section": "12.3",
+   "section_title": "The Error Correction Loop",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Gateway Update: If the error was caused by a new payer rule, the system logic is updated immediately to prevent the error from recurring across the entire client base."
+  },
+  {
+   "id": "P0357",
+   "section": "12.4",
+   "section_title": "Monthly Performance Dashboard",
+   "page": 0,
+   "kind": "heading",
+   "text": "12.4 Monthly Performance Dashboard"
+  },
+  {
+   "id": "P0358",
+   "section": "12.4",
+   "section_title": "Monthly Performance Dashboard",
+   "page": 0,
+   "kind": "text",
+   "text": "On the first Business Day of every month, a CCR Report is generated for the executives at PBC. This dashboard tracks:"
+  },
+  {
+   "id": "P0359",
+   "section": "12.4",
+   "section_title": "Monthly Performance Dashboard",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Net CCR: Percentage of claims paid on first pass across all clinics."
+  },
+  {
+   "id": "P0360",
+   "section": "12.4",
+   "section_title": "Monthly Performance Dashboard",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Denial Trends: Identifying if specific codes (like CO-16 or CO-97) are trending upward."
+  },
+  {
+   "id": "P0361",
+   "section": "12.4",
+   "section_title": "Monthly Performance Dashboard",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Recovery Velocity: How quickly the Resolution Auditor moved a denied claim from \"Rejected\" to \"Resolved.\""
+  },
+  {
+   "id": "P0362",
+   "section": "13",
+   "section_title": "Emergency Protocols",
+   "page": 0,
+   "kind": "heading",
+   "text": "13. Emergency Protocols"
+  },
+  {
+   "id": "P0363",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "heading",
+   "text": "13.1 Payer Outage Protocol"
+  },
+  {
+   "id": "P0364",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "In the event of a major payer portal or clearinghouse outage, a designated Resolution Auditor initiates the following:"
+  },
+  {
+   "id": "P0365",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "1. All 837P files destined for the affected payer are held to prevent \"Missing Claim\" errors."
+  },
+  {
+   "id": "P0366",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "2. The Auditor identifies any claims within 10 Business Days of their Timely Filing Limit (TFL). Creates a report containing those claims and emails it to the RCM Manager."
+  },
+  {
+   "id": "P0367",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "3. The Paper Backup: If the outage persists beyond 48 Hours, the designated Auditor is authorized to initiate \"Paper Claim\" submissions via Certified Mail to protect the clinic's right to reimbursement."
+  },
+  {
+   "id": "P0368",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "4. Client Notification: A \"Service Alert\" is sent to all affected clinics via the RCM Manager within 4 Business Hours of outage confirmation. Log in PBC_Escalation_Log.xlsx with Escalation Reason Payer System Outage ."
+  },
+  {
+   "id": "P0369",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "table_row",
+   "text": "Outage Duration | Action Level | Communication"
+  },
+  {
+   "id": "P0370",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "table_row",
+   "text": "< 4 Hours | Monitoring | Internal Slack only"
+  },
+  {
+   "id": "P0371",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "table_row",
+   "text": "4–24 Hours | Yellow Alert | Email to Clinic Office Managers"
+  },
+  {
+   "id": "P0372",
+   "section": "13.1",
+   "section_title": "Payer Outage Protocol",
+   "page": 0,
+   "kind": "table_row",
+   "text": "> 24 Hours | Red Alert | Direct call from RCM Manager to Clinic Owner"
+  },
+  {
+   "id": "P0373",
+   "section": "13.2",
+   "section_title": "Data Breach Response (Emergency Phase)",
+   "page": 0,
+   "kind": "heading",
+   "text": "13.2 Data Breach Response (Emergency Phase)"
+  },
+  {
+   "id": "P0374",
+   "section": "13.2",
+   "section_title": "Data Breach Response (Emergency Phase)",
+   "page": 0,
+   "kind": "text",
+   "text": "While Section 11 covers the legal requirements (BAA), this section covers the immediate Emergency Response."
+  },
+  {
+   "id": "P0375",
+   "section": "13.2",
+   "section_title": "Data Breach Response (Emergency Phase)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Step 1: Isolation. PBC executives or RCM Manager immediately revokes 2FA credentials for the suspected compromised account and logs out any remote access through the account."
+  },
+  {
+   "id": "P0376",
+   "section": "13.2",
+   "section_title": "Data Breach Response (Emergency Phase)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Step 2: Perimeter Check. The RCM Manager contacts PBC's contracted IT organization to perform a scan of the system for any unauthorized file downloads or IP addresses. Any downloaded files are logged and the report is emailed to the designated Resolution Auditor and RCM Manager."
+  },
+  {
+   "id": "P0377",
+   "section": "13.2",
+   "section_title": "Data Breach Response (Emergency Phase)",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Step 3: Documentation. A log is opened, time-stamping every action taken from the moment of discovery until the resolution of the data breach."
+  },
+  {
+   "id": "P0378",
+   "section": "13.3",
+   "section_title": "Safety Recall Protocol",
+   "page": 0,
+   "kind": "heading",
+   "text": "13.3 Safety Recall Protocol"
+  },
+  {
+   "id": "P0379",
+   "section": "13.3",
+   "section_title": "Safety Recall Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "If a clinic we serve is notified of a Safety Recall (e.g., a recalled surgical implant or a defective EMR software update):"
+  },
+  {
+   "id": "P0380",
+   "section": "13.3",
+   "section_title": "Safety Recall Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "1. The CMC immediately searches for all claims billed with the affected CPT/HCPCS codes or Manufacturer IDs within the last 12 months."
+  },
+  {
+   "id": "P0381",
+   "section": "13.3",
+   "section_title": "Safety Recall Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "2. The \"Recall Report\": A list of all affected patients and dates of service is generated and delivered to the Clinic's Medical Director and the RCM Manager within 1 Business Day."
+  },
+  {
+   "id": "P0382",
+   "section": "13.3",
+   "section_title": "Safety Recall Protocol",
+   "page": 0,
+   "kind": "text",
+   "text": "3. Billing Suspension: All pending claims involving the recalled item are placed on Claim Status On Hold until the clinic provides legal clearance to proceed."
+  },
+  {
+   "id": "P0383",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "heading",
+   "text": "13.4 The \"Hard Stop\" Override"
+  },
+  {
+   "id": "P0384",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "text",
+   "text": "In a true emergency (e.g., a Hurricane in Houston or a total ISP failure), the 4:00 PM Hard Stop is suspended."
+  },
+  {
+   "id": "P0385",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "bullet",
+   "text": "All staff are moved to \"Emergency Status.\""
+  },
+  {
+   "id": "P0386",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Communication shifts to the Secondary Backup Channel (established in the BAA)."
+  },
+  {
+   "id": "P0387",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "bullet",
+   "text": "Priority is shifted exclusively to High-Value Recovery ($10k+) until the system is stabilized."
+  },
+  {
+   "id": "P0388",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "heading",
+   "text": "Appendix A: File Ecosystem"
+  },
+  {
+   "id": "P0389",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "text",
+   "text": "The following files surface operational data from the PBC Central Gateway. All claim tracking, denial management, payment posting, and escalation logging is performed in these files."
+  },
+  {
+   "id": "P0390",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "File | Purpose"
+  },
+  {
+   "id": "P0391",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_Claim_Register.xlsx | Master claim record. All submissions, corrections, status updates, and payment postings"
+  },
+  {
+   "id": "P0392",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_Denial_Worklist.xlsx | Active denials requiring recovery action"
+  },
+  {
+   "id": "P0393",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_Fee_Schedule.xlsx | Contracted rates by Payer and CPT code. Used to verify contractual adjustments"
+  },
+  {
+   "id": "P0394",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_Eligibility_Responses.xlsx | Eligibility verification results by patient and date of service"
+  },
+  {
+   "id": "P0395",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_Audit_Log.xlsx | QA audit results per claim"
+  },
+  {
+   "id": "P0396",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_NCCI_Edits.xlsx | NCCI Procedure-to-Procedure edit pairs with Indicator column (0, 1, or 9)"
+  },
+  {
+   "id": "P0397",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "ERA_[BatchID].xlsx | Inbound payment file from payer. One row per claim line. Named by batch ID ERA files arriving through the Gateway are renamed to ERA_[BatchID].xlsx regardless of their original filename convention."
+  },
+  {
+   "id": "P0398",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_Escalation_Log.xlsx | All escalations with category, reason, and resolution tracking"
+  },
+  {
+   "id": "P0399",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_RA_Queue.xlsx | Resolution Auditor's open items. Routing to the RA means adding a row here"
+  },
+  {
+   "id": "P0400",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "table_row",
+   "text": "PBC_QA_Queue.xlsx | Claims awaiting QA review. Routing to QA means adding a row here"
+  },
+  {
+   "id": "P0401",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "heading",
+   "text": "Appendix B: Standard Field Values"
+  },
+  {
+   "id": "P0402",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "text",
+   "text": "Every status or action field uses controlled values. No free text."
+  },
+  {
+   "id": "P0403",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "heading",
+   "text": "Claim Status"
+  },
+  {
+   "id": "P0404",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "text",
+   "text": "New · Submitted · Acknowledged · Denied · In Recovery · Resubmitted · Appealed · Paid - Full · Paid - Partial · On Hold · Closed · Written Off"
+  },
+  {
+   "id": "P0405",
+   "section": "13.4",
+   "section_title": "The \"Hard Stop\" Override",
+   "page": 0,
+   "kind": "heading",
+   "text": "Claim Frequency Code"
+  },
+  {
+   "id": "P0406",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "1 Original · 7 Replacement/corrected · 8 Void/cancel"
+  },
+  {
+   "id": "P0407",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "Denial Recovery Action"
+  },
+  {
+   "id": "P0408",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Correct and Resubmit · Update COB and Resubmit · Add Modifier and Resubmit · Appeal - Documentation Supports Service · Appeal - Payer Processing Error · Appeal - Timely Filing Exception · Appeal - Contractual Rate Dispute · Appeal - Medical Necessity · Appeal - Prior Auth on File · Escalate to Resolution Auditor · Escalate to RCM Manager · Write Off"
+  },
+  {
+   "id": "P0409",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "Denial Recovery Status"
+  },
+  {
+   "id": "P0410",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Pending Review · In Progress · Resubmitted · Appealed · Escalated · Resolved · Written Off"
+  },
+  {
+   "id": "P0411",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "Payment Posting Status"
+  },
+  {
+   "id": "P0412",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Posted · Held - Batch Mismatch · Held - Contractual Variance · Held - PLB Variance · Unapplied · Reconciled"
+  },
+  {
+   "id": "P0413",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "Escalation Category"
+  },
+  {
+   "id": "P0414",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Operational (under $5,000) · Financial ($5,000 to $10,000) · Critical ($10,000+ / legal / PHI)"
+  },
+  {
+   "id": "P0415",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "Escalation Reason"
+  },
+  {
+   "id": "P0416",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Pattern Recurrence · High Value Claim · High-Value Dispute · TFL Approaching · Payer Dispute · Legal Threat Received · PHI Incident · Payer System Outage · Provider Non-Response"
+  },
+  {
+   "id": "P0417",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "QA Audit Result"
+  },
+  {
+   "id": "P0418",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Pass · Fail - ICD Specificity · Fail - CPT Alignment · Fail - Modifier Usage · Fail - MDM Level · Fail - Provider Signature · Fail - Missing Authorization"
+  },
+  {
+   "id": "P0419",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "Provider Query Status"
+  },
+  {
+   "id": "P0420",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Sent · Response Received · Overdue · Escalated · Resolved"
+  },
+  {
+   "id": "P0421",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "heading",
+   "text": "Global Formatting Standards"
+  },
+  {
+   "id": "P0422",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "All operational files in the PBC file ecosystem must use the following formatting conventions to ensure consistency across data entry, reporting, and automated processing. These standards apply to every field in every file listed in Appendix A."
+  },
+  {
+   "id": "P0423",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Dates: MM/DD/YYYY (e.g., 04/24/2026). All date fields including Date of Service, Date Opened, Date Resolved, Effective Date, and Queue Entry Date must use this format. Two-digit month and day are required (use leading zeros)."
+  },
+  {
+   "id": "P0424",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Dollar Amounts: $#,##0.00 (e.g., $1,800.00). Include the dollar sign, use commas as thousand separators, and always display two decimal places. This applies to Dollar Value, Payment Amount, Adjustment Amount, Patient Balance, and Contracted Rate fields."
+  },
+  {
+   "id": "P0425",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Identifier Formats: Claim IDs follow the format CLM-YYYY-NNNN (e.g., CLM-2026-0845), zero-padded to four digits. Patient IDs use PAT-NNNN (e.g., PAT-1021). Denial IDs use DEN-YYYY-NNNN. Escalation IDs use ESC-YYYY-NNNN. Queue Entry IDs use RA-YYYY-NNNN or QA-YYYY-NNNN. New IDs are assigned sequentially from the highest existing ID in each file."
+  },
+  {
+   "id": "P0426",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "NPI: 10-digit numeric with no dashes, spaces, or other separators (e.g., 1234567890)."
+  },
+  {
+   "id": "P0427",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "CPT and ICD-10 Codes: CPT codes are 5-digit numeric (e.g., 99213, 29881). ICD-10-CM codes use standard alphanumeric format with a period after the third character (e.g., M23.211, E11.65)."
+  },
+  {
+   "id": "P0428",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "ERA Batch ID: YYYYMMDD format derived from the batch date (e.g., 20260406). This is used in the ERA filename: ERA_[BatchID].xlsx."
+  },
+  {
+   "id": "P0429",
+   "section": "1",
+   "section_title": "Original · 7 Replacement/corrected · 8 Void/cancel",
+   "page": 0,
+   "kind": "text",
+   "text": "Names: All names should be written in full, first and last, with no other content."
+  }
+ ],
+ "templates": {},
+ "contacts": [],
+ "holidays": []
+}

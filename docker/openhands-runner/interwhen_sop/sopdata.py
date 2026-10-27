@@ -40,7 +40,7 @@ class SOP:
     def find(self, section: str, startswith: str) -> str:
         """Paragraph id in ``section`` whose text starts with ``startswith``."""
         for p in self.section(section):
-            if p["text"].startswith(startswith):
+            if p["text"].startswith(startswith) or re.sub(r"^[\s•●▪\-–]+", "", p["text"]).startswith(startswith):
                 return p["id"]
         raise KeyError(f"no paragraph in {section} starting with {startswith!r}")
 

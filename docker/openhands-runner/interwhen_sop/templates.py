@@ -36,8 +36,13 @@ def render(line: str, fill: dict[str, str]) -> str:
     return line
 
 
+# Bracketed text that a domain's SOP templates use literally (e.g. "[Suspense Escalation]").
+LITERAL: set[str] = set()
+LITERAL_RX: list[re.Pattern] = []
+
+
 def unfilled_placeholders(text: str) -> list[str]:
-    return sorted(set(PLACEHOLDER.findall(text)))
+    return sorted(p for p in set(PLACEHOLDER.findall(text)) - LITERAL if not any(rx.fullmatch(p) for rx in LITERAL_RX))
 
 
 @dataclass

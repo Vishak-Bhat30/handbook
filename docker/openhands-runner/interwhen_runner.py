@@ -30,6 +30,9 @@ def _configure(cfg: dict) -> None:
         os.environ["INTERWHEN_SLM_URL"] = iw["slmUrl"]
     if iw.get("maxCompletionDenials") is not None:
         os.environ["INTERWHEN_MAX_COMPLETION_DENIALS"] = str(iw["maxCompletionDenials"])
+    if iw.get("maxStaleDenials") is not None:
+        os.environ["INTERWHEN_MAX_STALE_DENIALS"] = str(iw["maxStaleDenials"])
+    os.environ["INTERWHEN_CHECKLIST"] = "1" if iw.get("checklist") else "0"
 
 
 def _install_hooks() -> dict:
@@ -53,6 +56,8 @@ def _install_hooks() -> dict:
     hooks = HookConfig(
         pre_tool_use=[HookMatcher(matcher="*", hooks=[HookDefinition(command=f"{cmd} pre", timeout=240)])],
         stop=[HookMatcher(matcher="*", hooks=[HookDefinition(command=f"{cmd} stop", timeout=240)])],
+        user_prompt_submit=([HookMatcher(matcher="*", hooks=[HookDefinition(command=f"{cmd} prompt", timeout=240)])]
+                            if config.CHECKLIST else []),
     )
 
     def record(event) -> None:

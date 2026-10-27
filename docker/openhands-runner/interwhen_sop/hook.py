@@ -1,6 +1,7 @@
 """OpenHands command-hook entry point.
 
     python -m interwhen_sop.hook pre    # PreToolUse  (stdin: HookEvent JSON)
+    python -m interwhen_sop.hook prompt # UserPromptSubmit (SOP checklist, INTERWHEN_CHECKLIST=1)
     python -m interwhen_sop.hook stop   # Stop
 
 Prints {"decision": "allow"|"deny", "reason": ...} on stdout and always exits 0,
@@ -24,6 +25,8 @@ def main() -> None:
             out = {"decision": "allow"}
         elif mode == "pre":
             out = engine.pre_tool(event.get("tool_name") or "", event.get("tool_input") or {})
+        elif mode == "prompt":
+            out = engine.checklist()
         else:
             out = engine.completion("stop_hook")
     except Exception:

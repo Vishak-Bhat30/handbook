@@ -1,0 +1,2472 @@
+{
+ "finance_meridian_partners_158b9045": {
+  "domain": "Meridian",
+  "opus": {
+   "n": 4,
+   "mean": 86.96,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    73,
+    100
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 93.71000000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    77,
+    100
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 99.00999999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    89,
+    100
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_meridian_partners_19d57538": {
+  "domain": "Meridian",
+  "opus": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    36,
+    36
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 97.2225,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    35,
+    36
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    36,
+    36
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_meridian_partners_331accf1": {
+  "domain": "Meridian",
+  "opus": {
+   "n": 4,
+   "mean": 81.64750000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    55,
+    76
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 60.4625,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    41,
+    76
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 92.635,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    64,
+    76
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_meridian_partners_4dace65e": {
+  "domain": "Meridian",
+  "opus": {
+   "n": 4,
+   "mean": 68.55499999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    43,
+    64
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 85.9375,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    55,
+    64
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 98.4375,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    63,
+    64
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_meridian_partners_a0895480": {
+  "domain": "Meridian",
+  "opus": {
+   "n": 4,
+   "mean": 90.625,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    29,
+    32
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 87.5,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    28,
+    32
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    32,
+    32
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_meridian_partners_cc2fc143": {
+  "domain": "Meridian",
+  "opus": {
+   "n": 4,
+   "mean": 85.355,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    23,
+    28
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 68.21249999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    13,
+    28
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 70.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    16,
+    28
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_sunshine_set_6b9398f4": {
+  "domain": "Sunshine",
+  "opus": {
+   "n": 4,
+   "mean": 92.855,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    28
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 73.2125,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    19,
+    28
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 61.42999999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    16,
+    28
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_sunshine_set_7c041148": {
+  "domain": "Sunshine",
+  "opus": {
+   "n": 4,
+   "mean": 95.46,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    51,
+    56
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 78.945,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    43,
+    56
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 78.57,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    44,
+    56
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_sunshine_set_b0b8129d": {
+  "domain": "Sunshine",
+  "opus": {
+   "n": 4,
+   "mean": 91.66499999999999,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    55,
+    60
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 84.9975,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    51,
+    60
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 90.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    54,
+    60
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_sunshine_set_b581c493": {
+  "domain": "Sunshine",
+  "opus": {
+   "n": 4,
+   "mean": 90.625,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    58,
+    64
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 92.1875,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    59,
+    64
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 93.75,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    60,
+    64
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_sunshine_set_d9d532c1": {
+  "domain": "Sunshine",
+  "opus": {
+   "n": 4,
+   "mean": 67.085,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    12,
+    24
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 87.5025,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    20,
+    24
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    24,
+    24
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "finance_sunshine_set_ebac9768": {
+  "domain": "Sunshine",
+  "opus": {
+   "n": 4,
+   "mean": 75.385,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    32,
+    52
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 70.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    30,
+    52
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 84.5475,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    33,
+    52
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_crestwood_university_1b602061": {
+  "domain": "Crestwood",
+  "opus": {
+   "n": 4,
+   "mean": 89.0475,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    75,
+    84
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 72.5,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    61,
+    84
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 88.095,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    74,
+    84
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_crestwood_university_2071c562": {
+  "domain": "Crestwood",
+  "opus": {
+   "n": 4,
+   "mean": 83.925,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    47,
+    56
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 0.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    0,
+    0
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 62.5,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    35,
+    56
+   ]
+  },
+  "haiku_crash": 4,
+  "blind_crash": 0
+ },
+ "hr_crestwood_university_79786c46": {
+  "domain": "Crestwood",
+  "opus": {
+   "n": 4,
+   "mean": 80.95,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    68,
+    84
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 90.4775,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    76,
+    84
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 90.4775,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    76,
+    84
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_crestwood_university_d93daa01": {
+  "domain": "Crestwood",
+  "opus": {
+   "n": 4,
+   "mean": 96.875,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    31,
+    32
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 93.75,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    30,
+    32
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 87.5,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    28,
+    32
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_crestwood_university_da394eac": {
+  "domain": "Crestwood",
+  "opus": {
+   "n": 4,
+   "mean": 77.49999999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    62,
+    80
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 81.875,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    65,
+    80
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 95.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    76,
+    80
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_crestwood_university_ee4d1791": {
+  "domain": "Crestwood",
+  "opus": {
+   "n": 4,
+   "mean": 75.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    54,
+    72
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 72.22,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    52,
+    72
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 94.44,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    68,
+    72
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_ridgeline_gear_co_2deeab56": {
+  "domain": "Ridgeline",
+  "opus": {
+   "n": 4,
+   "mean": 96.5875,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    41,
+    44
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 50.0,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    22,
+    22
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    44,
+    44
+   ]
+  },
+  "haiku_crash": 2,
+  "blind_crash": 0
+ },
+ "hr_ridgeline_gear_co_44e4c745": {
+  "domain": "Ridgeline",
+  "opus": {
+   "n": 4,
+   "mean": 87.63499999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    65,
+    76
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 94.08,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    72,
+    76
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 99.33999999999999,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    76,
+    76
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_ridgeline_gear_co_6950ff2b": {
+  "domain": "Ridgeline",
+  "opus": {
+   "n": 4,
+   "mean": 88.6375,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    39,
+    44
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 79.5475,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    35,
+    44
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 86.36500000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    38,
+    44
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_ridgeline_gear_co_6d4d0f70": {
+  "domain": "Ridgeline",
+  "opus": {
+   "n": 4,
+   "mean": 61.25000000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    23,
+    40
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 33.75,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    12,
+    30
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 90.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    36,
+    40
+   ]
+  },
+  "haiku_crash": 1,
+  "blind_crash": 0
+ },
+ "hr_ridgeline_gear_co_6e501f78": {
+  "domain": "Ridgeline",
+  "opus": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    28,
+    28
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 92.85749999999999,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    24,
+    28
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 96.42999999999999,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    28
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_ridgeline_gear_co_929c1527": {
+  "domain": "Ridgeline",
+  "opus": {
+   "n": 4,
+   "mean": 57.7275,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    24,
+    44
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 39.644999999999996,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    14,
+    44
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 91.955,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    39,
+    44
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "hr_ridgeline_gear_co_b337f86b": {
+  "domain": "Ridgeline",
+  "opus": {
+   "n": 4,
+   "mean": 82.5025,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    36,
+    44
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 65.9125,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    29,
+    44
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    44,
+    44
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_mojave_crest_assurance_company_187e3a8c": {
+  "domain": "Mojave",
+  "opus": {
+   "n": 4,
+   "mean": 96.145,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    56,
+    60
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 97.78,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    56,
+    60
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 96.365,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    50,
+    60
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_mojave_crest_assurance_company_2a800bf7": {
+  "domain": "Mojave",
+  "opus": {
+   "n": 4,
+   "mean": 64.28750000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    18,
+    28
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 53.5725,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    15,
+    28
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 96.4275,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    27,
+    28
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_mojave_crest_assurance_company_4d2a2588": {
+  "domain": "Mojave",
+  "opus": {
+   "n": 4,
+   "mean": 66.07,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    37,
+    56
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 66.0725,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    37,
+    56
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 87.5,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    49,
+    56
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_mojave_crest_assurance_company_5122b4da": {
+  "domain": "Mojave",
+  "opus": {
+   "n": 4,
+   "mean": 83.33500000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    40,
+    48
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 89.58500000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    43,
+    48
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 91.67,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    44,
+    48
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_mojave_crest_assurance_company_7245b8dd": {
+  "domain": "Mojave",
+  "opus": {
+   "n": 4,
+   "mean": 82.78000000000002,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    29,
+    36
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 84.4475,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    28,
+    36
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    36,
+    36
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_mojave_crest_assurance_company_ab59bcf7": {
+  "domain": "Mojave",
+  "opus": {
+   "n": 4,
+   "mean": 90.79,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    69,
+    76
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 82.8925,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    63,
+    76
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 84.21,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    64,
+    76
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_vanguard_shield_mutual_177fce83": {
+  "domain": "Vanguard",
+  "opus": {
+   "n": 4,
+   "mean": 53.059999999999995,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    25,
+    64
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 20.247500000000002,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    10,
+    64
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 46.8775,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    25,
+    64
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_vanguard_shield_mutual_4321b8e9": {
+  "domain": "Vanguard",
+  "opus": {
+   "n": 4,
+   "mean": 91.6675,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    44,
+    48
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 60.417500000000004,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    29,
+    48
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 25.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    12,
+    48
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_vanguard_shield_mutual_82da8d17": {
+  "domain": "Vanguard",
+  "opus": {
+   "n": 4,
+   "mean": 75.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    21,
+    28
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 71.43,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    20,
+    28
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 78.57000000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    22,
+    28
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_vanguard_shield_mutual_89007056": {
+  "domain": "Vanguard",
+  "opus": {
+   "n": 4,
+   "mean": 73.4375,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    47,
+    64
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 67.1875,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    43,
+    64
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 79.6875,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    51,
+    64
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_vanguard_shield_mutual_90ff0751": {
+  "domain": "Vanguard",
+  "opus": {
+   "n": 4,
+   "mean": 79.5475,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    35,
+    44
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 72.72999999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    32,
+    44
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 81.82000000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    36,
+    44
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_vanguard_shield_mutual_9b2f7a29": {
+  "domain": "Vanguard",
+  "opus": {
+   "n": 4,
+   "mean": 21.627499999999998,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    6,
+    48
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 43.235,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    11,
+    48
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 22.220000000000002,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    8,
+    48
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "insurance_vanguard_shield_mutual_fe30fce5": {
+  "domain": "Vanguard",
+  "opus": {
+   "n": 4,
+   "mean": 80.83500000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    23,
+    40
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 72.4025,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    18,
+    40
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 83.3925,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    24,
+    40
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_gear_sytems_inc_0807b5a6": {
+  "domain": "Gear Systems",
+  "opus": {
+   "n": 4,
+   "mean": 60.89750000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    31,
+    52
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 43.59,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    20,
+    52
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 92.31,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    48,
+    52
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_gear_sytems_inc_502e8c5e": {
+  "domain": "Gear Systems",
+  "opus": {
+   "n": 4,
+   "mean": 97.5,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    39,
+    40
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 62.5,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    25,
+    40
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 95.0,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    38,
+    40
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_gear_sytems_inc_74170ae1": {
+  "domain": "Gear Systems",
+  "opus": {
+   "n": 4,
+   "mean": 38.4225,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    29,
+    76
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 0.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    0,
+    0
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 0.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    0,
+    0
+   ]
+  },
+  "haiku_crash": 4,
+  "blind_crash": 4
+ },
+ "logistics_gear_sytems_inc_9b60992d": {
+  "domain": "Gear Systems",
+  "opus": {
+   "n": 4,
+   "mean": 17.207499999999996,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    0,
+    24
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 74.0925,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    16,
+    24
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 98.0775,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    20,
+    24
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_gear_sytems_inc_ad2ff597": {
+  "domain": "Gear Systems",
+  "opus": {
+   "n": 4,
+   "mean": 50.434999999999995,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    28,
+    68
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 47.585,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    30,
+    68
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 57.065,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    32,
+    68
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_gear_sytems_inc_dba0375e": {
+  "domain": "Gear Systems",
+  "opus": {
+   "n": 4,
+   "mean": 83.6675,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    35,
+    52
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 82.065,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    35,
+    52
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 80.5175,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    37,
+    52
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_prairie_star_creamery_27470081": {
+  "domain": "Prairie Creamery",
+  "opus": {
+   "n": 4,
+   "mean": 63.254999999999995,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    30,
+    60
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 43.487500000000004,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    18,
+    60
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 79.69500000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    39,
+    60
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_prairie_star_creamery_4a2f4b1a": {
+  "domain": "Prairie Creamery",
+  "opus": {
+   "n": 4,
+   "mean": 59.0925,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    44
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 68.1825,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    30,
+    44
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 79.5475,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    35,
+    44
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_prairie_star_creamery_7b63c60d": {
+  "domain": "Prairie Creamery",
+  "opus": {
+   "n": 4,
+   "mean": 66.67,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    8,
+    12
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 58.334999999999994,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    7,
+    12
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 66.67,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    8,
+    12
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_prairie_star_creamery_861b2650": {
+  "domain": "Prairie Creamery",
+  "opus": {
+   "n": 4,
+   "mean": 76.665,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    46,
+    60
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 84.165,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    50,
+    60
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 86.67,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    52,
+    60
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_prairie_star_creamery_a9dc52cb": {
+  "domain": "Prairie Creamery",
+  "opus": {
+   "n": 4,
+   "mean": 62.06,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    5,
+    16
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 47.15,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    3,
+    16
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 63.8175,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    7,
+    16
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "logistics_prairie_star_creamery_f382586a": {
+  "domain": "Prairie Creamery",
+  "opus": {
+   "n": 4,
+   "mean": 49.815000000000005,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    17,
+    36
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 77.03999999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    36
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 83.33500000000001,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    30,
+    36
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_careig_specialty_pharmacy_08ae3378": {
+  "domain": "CareIG",
+  "opus": {
+   "n": 4,
+   "mean": 97.405,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    40,
+    48
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 99.7175,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    45,
+    48
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    48,
+    48
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_careig_specialty_pharmacy_3c62ee67": {
+  "domain": "CareIG",
+  "opus": {
+   "n": 4,
+   "mean": 81.94749999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    56,
+    72
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 79.49000000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    56,
+    72
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 78.24,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    55,
+    72
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_careig_specialty_pharmacy_d3e312a5": {
+  "domain": "CareIG",
+  "opus": {
+   "n": 4,
+   "mean": 81.25,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    32
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 81.25,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    32
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 81.25,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    32
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_careig_specialty_pharmacy_d4619b8b": {
+  "domain": "CareIG",
+  "opus": {
+   "n": 4,
+   "mean": 34.375,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    14,
+    48
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 83.855,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    39,
+    48
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    48,
+    48
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_careig_specialty_pharmacy_ea622238": {
+  "domain": "CareIG",
+  "opus": {
+   "n": 4,
+   "mean": 43.75,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    19,
+    56
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 47.455000000000005,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    20,
+    56
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 84.6075,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    40,
+    56
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_careig_specialty_pharmacy_f5947c33": {
+  "domain": "CareIG",
+  "opus": {
+   "n": 4,
+   "mean": 58.5,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    38,
+    68
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 57.355000000000004,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    39,
+    68
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 74.9975,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    51,
+    68
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_careig_specialty_pharmacy_f6d19d30": {
+  "domain": "CareIG",
+  "opus": {
+   "n": 4,
+   "mean": 96.4275,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    27,
+    28
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 85.7125,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    24,
+    28
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 89.2825,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    25,
+    28
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_pathfinder_billing_and_coding_073e602b": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 82.1375,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    77,
+    100
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 79.33,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    75,
+    100
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 86.83,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    83,
+    100
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_pathfinder_billing_and_coding_1d8667fc": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 85.00000000000001,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    17,
+    20
+   ]
+  },
+  "haiku": {
+   "n": 6,
+   "mean": 26.666666666666668,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    8,
+    20
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 60.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    12,
+    20
+   ]
+  },
+  "haiku_crash": 2,
+  "blind_crash": 0
+ },
+ "medical_pathfinder_billing_and_coding_9d274282": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 83.5725,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    11,
+    20
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 67.86000000000001,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    5,
+    20
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 22.142500000000002,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    3,
+    5
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 3
+ },
+ "medical_pathfinder_billing_and_coding_a25684b9": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 91.66499999999999,
+   "sp1": 50.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    22,
+    24
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 95.8325,
+   "sp1": 75.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    23,
+    24
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 100.0,
+   "sp1": 100.0,
+   "spk": 100.0,
+   "spK": 100.0,
+   "rub": [
+    24,
+    24
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_pathfinder_billing_and_coding_a70deabc": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 52.38,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    13,
+    28
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 38.1,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    8,
+    28
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 71.43,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    20,
+    28
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_pathfinder_billing_and_coding_bbf1a560": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 64.99999999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    26,
+    40
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 85.0,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    34,
+    40
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 80.0,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    32,
+    40
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_pathfinder_billing_and_coding_c01deb6e": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 78.4625,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    67,
+    108
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 77.92999999999999,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    67,
+    108
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 86.0025,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    83,
+    108
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ },
+ "medical_pathfinder_billing_and_coding_ec505b6b": {
+  "domain": "Pathfinder",
+  "opus": {
+   "n": 4,
+   "mean": 82.8925,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    63,
+    76
+   ]
+  },
+  "haiku": {
+   "n": 4,
+   "mean": 56.315000000000005,
+   "sp1": 0.0,
+   "spk": 0.0,
+   "spK": 0.0,
+   "rub": [
+    42,
+    76
+   ]
+  },
+  "blind": {
+   "n": 4,
+   "mean": 98.0275,
+   "sp1": 25.0,
+   "spk": 100.0,
+   "spK": 0.0,
+   "rub": [
+    73,
+    76
+   ]
+  },
+  "haiku_crash": 0,
+  "blind_crash": 0
+ }
+}

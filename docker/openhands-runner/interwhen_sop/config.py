@@ -37,6 +37,8 @@ def xlsx_python() -> str:
 
 
 MAX_COMPLETION_DENIALS = int(os.environ.get("INTERWHEN_MAX_COMPLETION_DENIALS", "3"))
+MAX_STALE_DENIALS = int(os.environ.get("INTERWHEN_MAX_STALE_DENIALS", "1000"))
+CHECKLIST = os.environ.get("INTERWHEN_CHECKLIST", "0") == "1"
 
 
 def make_shared_dir(path: Path) -> None:
