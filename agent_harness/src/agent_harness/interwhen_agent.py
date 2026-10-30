@@ -7,8 +7,7 @@ tasks without it the runner falls back to the plain baseline loop.
 
     harbor run -p tasks/logistics_gear_sytems_inc_9b60992d \
         --agent-import-path agent_harness.interwhen_agent:InterwhenOpenHandsAgent \
-        -m openai/claude-opus-4.8 --ak reasoning_effort=max \
-        --ak slm_url=http://172.17.0.1:8000/v1 --env-file .env
+        -m openai/claude-opus-4.8 --ak reasoning_effort=max --env-file .env
 """
 
 from __future__ import annotations
@@ -31,8 +30,7 @@ class InterwhenOpenHandsAgent(OpenHandsAgent):
     runner_path = f"{REMOTE_IW_DIR}/interwhen_runner.py"
 
     def __init__(self, *args, **kwargs) -> None:
-        self.slm_url = kwargs.pop("slm_url", None) or os.environ.get(
-            "INTERWHEN_SLM_URL", "http://172.17.0.1:8000/v1")
+        self.slm_url = kwargs.pop("slm_url", None) or os.environ.get("INTERWHEN_SLM_URL")
         self.max_completion_denials = int(kwargs.pop("max_completion_denials", 3))
         self.max_stale_denials = int(kwargs.pop("max_stale_denials", 1000))
         self.checklist = str(kwargs.pop("checklist", "0")).lower() in ("1", "true", "yes")

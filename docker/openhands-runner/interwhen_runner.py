@@ -41,10 +41,12 @@ def _install_hooks() -> dict:
 
     from interwhen_sop import config, framework, ledger, slm, sopdata, workbooks
 
+    slm_configured = bool(os.environ.get("INTERWHEN_SLM_URL") or os.environ.get("INTERWHEN_SLM_MODEL"))
     info = {"task": config.task_id(), "sop_available": sopdata.available(),
             "verifier_module": framework.verifier_module(config.task_id()),
             "verifiers_available": framework.has_verifiers(config.task_id()),
-            "slm_model": slm.model_name(), "slm_url": config.slm_url(),
+            "slm_model": slm.model_name() if slm_configured else None,
+            "slm_url": config.slm_url() if slm_configured else None,
             "snapshot": workbooks.snapshot()}
     config.write_shared(config.state_dir() / "session.json", json.dumps(info, indent=2))
     base._log(f"interwhen: {info}")
